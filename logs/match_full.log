@@ -1,0 +1,679 @@
+[  20.574] [INFO   ] Match: Mumbai Indians vs Chennai Super Kings | 20 overs | Scheduler: Priority
+[  21.184] [SCHED  ] BATTING ORDER built:
+[  21.406] [SCHED  ]   FCFS: Rohit Sharma, Suryakumar, Ryan Rickelton ...
+[  21.584] [SCHED  ]   SJF:  Jasprit Bumrah(3), Deepak Chahar(4), Trent Boult(5) ...
+[  21.797] [SCHED  ] Scheduler: Bowler 'Rahul Chahar' added to RR queue (pos 0)
+[  22.047] [SCHED  ] Scheduler: Bowler 'Simarajeet Chahal' added to RR queue (pos 1)
+[  22.247] [SCHED  ] Scheduler: Bowler 'Matheesha Pathirana' added to RR queue (pos 2)
+[  22.427] [SCHED  ] Scheduler: Bowler 'Khalil Ahmed' added to RR queue (pos 3)
+[  22.647] [SCHED  ] Scheduler: Bowler 'Shivam Dube' added to RR queue (pos 4)
+[  22.850] [SCHED  ] Scheduler: Bowler 'Shreyash Gopal' added to RR queue (pos 5)
+[  23.184] [THREAD ] Umpire (Kernel) thread spawned [T-2144]
+[  23.213] [THREAD ] [UMPIRE T-2144] Kernel thread STARTED — polling every 50ms
+[  23.700] [THREAD ] [T-6736] FIELDER 'Simarajeet Chahal'(F) → cond_wait
+[  23.565] [THREAD ] [T-9440] FIELDER 'Rahul Chahar'(WK) → cond_wait
+[  23.800] [THREAD ] [T-4032] FIELDER 'Matheesha Pathirana'(F) → cond_wait
+[  23.933] [THREAD ] [T-1328] FIELDER 'Khalil Ahmed'(F) → cond_wait
+[  24.048] [THREAD ] [T-8624] FIELDER 'Shivam Dube'(F) → cond_wait
+[  24.137] [THREAD ] Spawned 6 fielder threads (all sleeping on cond_wait)
+[  24.159] [THREAD ] [T-5920] FIELDER 'Shreyash Gopal'(F) → cond_wait
+[  25.358] [THREAD ] Spawned BATSMAN 'Rohit Sharma' [T-3216]
+[  25.377] [THREAD ] [T-3216] BATSMAN 'Rohit Sharma' → sem_wait(crease) ...
+[  25.928] [THREAD ] [T-3216] BATSMAN 'Rohit Sharma' AT CREASE | wait=0.0ms | crease_sem=1
+[  25.778] [THREAD ] [T-0512] BATSMAN 'Suryakumar' → sem_wait(crease) ...
+[  26.425] [THREAD ] [T-0512] BATSMAN 'Suryakumar' AT CREASE | wait=0.0ms | crease_sem=0
+[  25.758] [THREAD ] Spawned BATSMAN 'Suryakumar' [T-0512]
+[  26.900] [SCHED  ] CONTEXT SWITCH #1: Loading bowler 'Simarajeet Chahal' (overs left: 4)
+[  27.112] [SCHED  ] Over 1: 'Simarajeet Chahal' bowling (140 km/h) | Scheduler: PRIORITY | Intensity: LOW
+[  27.426] [THREAD ] Spawned BOWLER 'Simarajeet Chahal' [T-7808]
+[  27.443] [THREAD ] [T-7808] BOWLER 'Simarajeet Chahal' START — over 1
+[  28.195] [BALL   ]    1.1  Rohit Sharma     [1;37m   1[0m   1/0
+[  28.549] [THREAD ] [T-5920] FIELDER 'Shreyash Gopal' exit
+[  28.548] [THREAD ] [T-1328] FIELDER 'Khalil Ahmed' exit
+[  46.858] [BALL   ]    1.2  Suryakumar       [1;37m   1[0m   2/0
+[  47.437] [THREAD ] [T-8624] FIELDER 'Shivam Dube' exit
+[  47.453] [THREAD ] [T-4032] FIELDER 'Matheesha Pathirana' exit
+[  62.114] [BALL   ]    1.3  Rohit Sharma     [0;37m •[0m   2/0
+[  75.734] [BALL   ]    1.4  Rohit Sharma     [1;37m   1[0m   3/0
+[  76.237] [THREAD ] [T-9440] FIELDER 'Rahul Chahar' exit
+[  76.239] [THREAD ] [T-6736] FIELDER 'Simarajeet Chahal' exit
+[  86.622] [BALL   ]    1.5  Suryakumar       [0;37m •[0m   3/0
+[ 100.184] [BALL   ]    1.6  Suryakumar       [1;31mW(B)[0m   3/1
+[ 111.106] [THREAD ] [T-7808] BOWLER 'Simarajeet Chahal' DONE — 1W 3R econ=3.0
+[ 111.604] [SCHED  ] CTX SAVE  → 'Simarajeet Chahal': 1 overs, 3 runs, 1 wkts, econ=3.00
+[ 111.935] [SCHED  ] OVER 1 COMPLETE — 'Simarajeet Chahal' finished over (1/4 overs)
+[ 112.251] [SCORE  ] End of over 1: 3/1  (Extras: 0)
+[ 113.929] [THREAD ] [T-0512] BATSMAN 'Suryakumar' LEFT crease → 1(3 balls) | sem=1
+[ 152.992] [SCHED  ] CONTEXT SWITCH #2: Loading bowler 'Matheesha Pathirana' (overs left: 4)
+[ 153.367] [SCHED  ] Over 2: 'Matheesha Pathirana' bowling (143 km/h) | Scheduler: PRIORITY | Intensity: LOW
+[ 153.725] [THREAD ] Spawned BOWLER 'Matheesha Pathirana' [T-7808]
+[ 153.750] [THREAD ] [T-7808] BOWLER 'Matheesha Pathirana' START — over 2
+[ 154.340] [BALL   ]    2.1  Rohit Sharma     [1;37m   2[0m   5/1
+[ 167.812] [BALL   ]    2.2  Rohit Sharma     [1;37m   3[0m   8/1
+[1183.469] [WARN   ] [T-7808] TIMEOUT waiting for batsman -> forcing progress
+[2198.069] [WARN   ] [T-7808] TIMEOUT waiting for batsman -> forcing progress
+[3213.957] [WARN   ] [T-7808] TIMEOUT waiting for batsman -> forcing progress
+[4226.507] [WARN   ] [T-7808] TIMEOUT waiting for batsman -> forcing progress
+[4237.903] [THREAD ] [T-7808] BOWLER 'Matheesha Pathirana' DONE — 0W 17R econ=17.0
+[4238.568] [SCHED  ] CTX SAVE  → 'Matheesha Pathirana': 1 overs, 17 runs, 0 wkts, econ=17.00
+[4239.016] [SCHED  ] OVER 2 COMPLETE — 'Matheesha Pathirana' finished over (1/4 overs)
+[4239.401] [SCORE  ] End of over 2: 8/1  (Extras: 0)
+[4280.124] [SCHED  ] CONTEXT SWITCH #3: Loading bowler 'Khalil Ahmed' (overs left: 4)
+[4280.545] [SCHED  ] Over 3: 'Khalil Ahmed' bowling (100 km/h) | Scheduler: PRIORITY | Intensity: LOW
+[4280.983] [THREAD ] Spawned BOWLER 'Khalil Ahmed' [T-7808]
+[4281.014] [THREAD ] [T-7808] BOWLER 'Khalil Ahmed' START — over 3
+[4281.691] [BALL   ]    3.1  Rohit Sharma     [1;37m   1[0m   9/1
+[5296.278] [WARN   ] [T-7808] TIMEOUT waiting for batsman -> forcing progress
+[6309.380] [WARN   ] [T-7808] TIMEOUT waiting for batsman -> forcing progress
+[7334.810] [WARN   ] [T-7808] TIMEOUT waiting for batsman -> forcing progress
+[8349.362] [WARN   ] [T-7808] TIMEOUT waiting for batsman -> forcing progress
+[9374.655] [WARN   ] [T-7808] TIMEOUT waiting for batsman -> forcing progress
+[9385.627] [THREAD ] [T-7808] BOWLER 'Khalil Ahmed' DONE — 0W 6R econ=6.0
+[9386.087] [SCHED  ] CTX SAVE  → 'Khalil Ahmed': 1 overs, 6 runs, 0 wkts, econ=6.00
+[9386.445] [SCHED  ] OVER 3 COMPLETE — 'Khalil Ahmed' finished over (1/4 overs)
+[9386.906] [SCORE  ] End of over 3: 9/1  (Extras: 0)
+[9427.833] [SCHED  ] CONTEXT SWITCH #4: Loading bowler 'Shivam Dube' (overs left: 4)
+[9428.233] [SCHED  ] Over 4: 'Shivam Dube' bowling (110 km/h) | Scheduler: PRIORITY | Intensity: LOW
+[9428.675] [THREAD ] Spawned BOWLER 'Shivam Dube' [T-7808]
+[9428.711] [THREAD ] [T-7808] BOWLER 'Shivam Dube' START — over 4
+[9429.452] [BALL   ]    4.1  Rohit Sharma     [1;32m   4[0m   13/1
+[9442.932] [BALL   ]    4.2  Rohit Sharma     [1;37m   1[0m   14/1
+[10453.710] [WARN   ] [T-7808] TIMEOUT waiting for batsman -> forcing progress
+[11465.441] [WARN   ] [T-7808] TIMEOUT waiting for batsman -> forcing progress
+[12476.892] [WARN   ] [T-7808] TIMEOUT waiting for batsman -> forcing progress
+[13495.462] [WARN   ] [T-7808] TIMEOUT waiting for batsman -> forcing progress
+[13506.184] [THREAD ] [T-7808] BOWLER 'Shivam Dube' DONE — 0W 9R econ=9.0
+[13506.632] [SCHED  ] CTX SAVE  → 'Shivam Dube': 1 overs, 9 runs, 0 wkts, econ=9.00
+[13506.985] [SCHED  ] OVER 4 COMPLETE — 'Shivam Dube' finished over (1/4 overs)
+[13507.313] [SCORE  ] End of over 4: 14/1  (Extras: 0)
+[13548.282] [SCHED  ] CONTEXT SWITCH #5: Loading bowler 'Shreyash Gopal' (overs left: 4)
+[13548.689] [SCHED  ] Over 5: 'Shreyash Gopal' bowling (125 km/h) | Scheduler: PRIORITY | Intensity: LOW
+[13549.158] [THREAD ] Spawned BOWLER 'Shreyash Gopal' [T-7808]
+[13549.180] [THREAD ] [T-7808] BOWLER 'Shreyash Gopal' START — over 5
+[13549.771] [BALL   ]    5.1  Rohit Sharma     [1;37m   2[0m   16/1
+[13563.212] [BALL   ]    5.2  Rohit Sharma     [1;31mW(L)[0m   16/2
+[13576.783] [THREAD ] [T-3216] BATSMAN 'Rohit Sharma' LEFT crease → 15(10 balls) | sem=2
+[14592.898] [WARN   ] [T-7808] TIMEOUT waiting for batsman -> forcing progress
+[15609.567] [WARN   ] [T-7808] TIMEOUT waiting for batsman -> forcing progress
+[16626.321] [WARN   ] [T-7808] TIMEOUT waiting for batsman -> forcing progress
+[16636.877] [THREAD ] [T-7808] BOWLER 'Shreyash Gopal' DONE — 5W 2R econ=2.0
+[16642.501] [SCHED  ] CTX SAVE  → 'Shreyash Gopal': 1 overs, 2 runs, 5 wkts, econ=2.00
+[16642.836] [SCHED  ] OVER 5 COMPLETE — 'Shreyash Gopal' finished over (1/4 overs)
+[16643.094] [SCHED  ] WICKET FELL — Next batsman: 'Ryan Rickelton' (burst=48 balls)
+[16643.448] [THREAD ] Spawned BATSMAN 'Ryan Rickelton' [T-7808]
+[16643.468] [THREAD ] [T-7808] BATSMAN 'Ryan Rickelton' → sem_wait(crease) ...
+[16644.171] [THREAD ] [T-7808] BATSMAN 'Ryan Rickelton' AT CREASE | wait=0.0ms | crease_sem=1
+[16643.855] [SCORE  ] End of over 5: 16/2  (Extras: 0)
+[16685.326] [SCHED  ] CONTEXT SWITCH #6: Loading bowler 'Rahul Chahar' (overs left: 4)
+[16685.864] [SCHED  ] Over 6: 'Rahul Chahar' bowling (150 km/h) | Scheduler: PRIORITY | Intensity: LOW
+[16686.417] [THREAD ] Spawned BOWLER 'Rahul Chahar' [T-5104]
+[16686.441] [THREAD ] [T-5104] BOWLER 'Rahul Chahar' START — over 6
+[17687.443] [WARN   ] [T-5104] TIMEOUT waiting for batsman -> forcing progress
+[18699.559] [WARN   ] [T-5104] TIMEOUT waiting for batsman -> forcing progress
+[19711.446] [WARN   ] [T-5104] TIMEOUT waiting for batsman -> forcing progress
+[20722.662] [WARN   ] [T-5104] TIMEOUT waiting for batsman -> forcing progress
+[21733.747] [WARN   ] [T-5104] TIMEOUT waiting for batsman -> forcing progress
+[22744.789] [WARN   ] [T-5104] TIMEOUT waiting for batsman -> forcing progress
+[22755.358] [THREAD ] [T-5104] BOWLER 'Rahul Chahar' DONE — 6W 0R econ=0.0
+[22755.892] [SCHED  ] CTX SAVE  → 'Rahul Chahar': 1 overs, 0 runs, 6 wkts, econ=0.00
+[22756.367] [SCHED  ] OVER 6 COMPLETE — 'Rahul Chahar' finished over (1/4 overs)
+[22756.777] [SCORE  ] End of over 6: 16/2  (Extras: 0)
+[22797.573] [SCHED  ] CONTEXT SWITCH #7: Loading bowler 'Simarajeet Chahal' (overs left: 3)
+[22797.925] [SCHED  ] Over 7: 'Simarajeet Chahal' bowling (140 km/h) | Scheduler: PRIORITY | Intensity: LOW
+[22798.372] [THREAD ] Spawned BOWLER 'Simarajeet Chahal' [T-5104]
+[22798.404] [THREAD ] [T-5104] BOWLER 'Simarajeet Chahal' START — over 7
+[22798.988] [BALL   ]    7.1  Ryan Rickelton   [1;37m   1[0m   17/2
+[23817.147] [WARN   ] [T-5104] TIMEOUT waiting for batsman -> forcing progress
+[24835.410] [WARN   ] [T-5104] TIMEOUT waiting for batsman -> forcing progress
+[25853.519] [WARN   ] [T-5104] TIMEOUT waiting for batsman -> forcing progress
+[26872.232] [WARN   ] [T-5104] TIMEOUT waiting for batsman -> forcing progress
+[27890.954] [WARN   ] [T-5104] TIMEOUT waiting for batsman -> forcing progress
+[27901.647] [THREAD ] [T-5104] BOWLER 'Simarajeet Chahal' DONE — 1W 9R econ=4.5
+[27902.276] [SCHED  ] CTX SAVE  → 'Simarajeet Chahal': 2 overs, 9 runs, 1 wkts, econ=4.50
+[27902.624] [SCHED  ] OVER 7 COMPLETE — 'Simarajeet Chahal' finished over (2/4 overs)
+[27902.942] [SCORE  ] End of over 7: 17/2  (Extras: 0)
+[27943.859] [SCHED  ] CONTEXT SWITCH #8: Loading bowler 'Matheesha Pathirana' (overs left: 3)
+[27944.402] [SCHED  ] Over 8: 'Matheesha Pathirana' bowling (143 km/h) | Scheduler: PRIORITY | Intensity: LOW
+[27944.960] [THREAD ] Spawned BOWLER 'Matheesha Pathirana' [T-5104]
+[27945.042] [THREAD ] [T-5104] BOWLER 'Matheesha Pathirana' START — over 8
+[27945.707] [BALL   ]    8.1  Ryan Rickelton   [1;37m   1[0m   18/2
+[28956.507] [WARN   ] [T-5104] TIMEOUT waiting for batsman -> forcing progress
+[29967.375] [WARN   ] [T-5104] TIMEOUT waiting for batsman -> forcing progress
+[30978.235] [WARN   ] [T-5104] TIMEOUT waiting for batsman -> forcing progress
+[31989.807] [WARN   ] [T-5104] TIMEOUT waiting for batsman -> forcing progress
+[33001.610] [WARN   ] [T-5104] TIMEOUT waiting for batsman -> forcing progress
+[33012.681] [THREAD ] [T-5104] BOWLER 'Matheesha Pathirana' DONE — 0W 23R econ=11.5
+[33013.172] [SCHED  ] CTX SAVE  → 'Matheesha Pathirana': 2 overs, 23 runs, 0 wkts, econ=11.50
+[33013.476] [SCHED  ] OVER 8 COMPLETE — 'Matheesha Pathirana' finished over (2/4 overs)
+[33013.815] [SCORE  ] End of over 8: 18/2  (Extras: 0)
+[33054.606] [SCHED  ] CONTEXT SWITCH #9: Loading bowler 'Khalil Ahmed' (overs left: 3)
+[33055.442] [SCHED  ] Over 9: 'Khalil Ahmed' bowling (100 km/h) | Scheduler: PRIORITY | Intensity: LOW
+[33056.076] [THREAD ] Spawned BOWLER 'Khalil Ahmed' [T-5104]
+[33056.128] [THREAD ] [T-5104] BOWLER 'Khalil Ahmed' START — over 9
+[33056.725] [BALL   ]    9.1  Ryan Rickelton   [0;37m •[0m   18/2
+[33070.128] [BALL   ]    9.2  Ryan Rickelton   [1;32m   4[0m   22/2
+[33083.635] [BALL   ]    9.3  Ryan Rickelton   [0;37m •[0m   22/2
+[33097.147] [BALL   ]    9.4  Ryan Rickelton   [1;37m   1[0m   23/2
+[34113.653] [WARN   ] [T-5104] TIMEOUT waiting for batsman -> forcing progress
+[35130.403] [WARN   ] [T-5104] TIMEOUT waiting for batsman -> forcing progress
+[35141.311] [THREAD ] [T-5104] BOWLER 'Khalil Ahmed' DONE — 0W 13R econ=6.5
+[35141.872] [SCHED  ] CTX SAVE  → 'Khalil Ahmed': 2 overs, 13 runs, 0 wkts, econ=6.50
+[35142.249] [SCHED  ] OVER 9 COMPLETE — 'Khalil Ahmed' finished over (2/4 overs)
+[35142.581] [SCORE  ] End of over 9: 23/2  (Extras: 0)
+[35183.424] [SCHED  ] CONTEXT SWITCH #10: Loading bowler 'Shivam Dube' (overs left: 3)
+[35183.840] [SCHED  ] Over 10: 'Shivam Dube' bowling (110 km/h) | Scheduler: PRIORITY | Intensity: LOW
+[35184.328] [THREAD ] Spawned BOWLER 'Shivam Dube' [T-5104]
+[35184.361] [THREAD ] [T-5104] BOWLER 'Shivam Dube' START — over 10
+[35184.970] [BALL   ]   10.1  Ryan Rickelton   [1;37m   1[0m   24/2
+[36198.314] [WARN   ] [T-5104] TIMEOUT waiting for batsman -> forcing progress
+[37212.117] [WARN   ] [T-5104] TIMEOUT waiting for batsman -> forcing progress
+[38225.564] [WARN   ] [T-5104] TIMEOUT waiting for batsman -> forcing progress
+[39238.669] [WARN   ] [T-5104] TIMEOUT waiting for batsman -> forcing progress
+[40251.824] [WARN   ] [T-5104] TIMEOUT waiting for batsman -> forcing progress
+[40262.723] [THREAD ] [T-5104] BOWLER 'Shivam Dube' DONE — 0W 15R econ=7.5
+[40263.157] [SCHED  ] CTX SAVE  → 'Shivam Dube': 2 overs, 15 runs, 0 wkts, econ=7.50
+[40263.490] [SCHED  ] OVER 10 COMPLETE — 'Shivam Dube' finished over (2/4 overs)
+[40263.861] [SCORE  ] End of over 10: 24/2  (Extras: 0)
+[40304.633] [SCHED  ] CONTEXT SWITCH #11: Loading bowler 'Shreyash Gopal' (overs left: 3)
+[40305.038] [SCHED  ] Over 11: 'Shreyash Gopal' bowling (125 km/h) | Scheduler: PRIORITY | Intensity: MEDIUM
+[40305.440] [THREAD ] Spawned BOWLER 'Shreyash Gopal' [T-5104]
+[40305.467] [THREAD ] [T-5104] BOWLER 'Shreyash Gopal' START — over 11
+[40306.193] [BALL   ]   11.1  Ryan Rickelton   [1;31mW(C)[0m   24/3
+[40319.685] [THREAD ] [T-7808] BATSMAN 'Ryan Rickelton' LEFT crease → 8(8 balls) | sem=2
+[41330.531] [WARN   ] [T-5104] TIMEOUT waiting for batsman -> forcing progress
+[42342.011] [WARN   ] [T-5104] TIMEOUT waiting for batsman -> forcing progress
+[43353.325] [WARN   ] [T-5104] TIMEOUT waiting for batsman -> forcing progress
+[44364.572] [WARN   ] [T-5104] TIMEOUT waiting for batsman -> forcing progress
+[44375.529] [THREAD ] [T-5104] BOWLER 'Shreyash Gopal' DONE — 11W 2R econ=1.0
+[44375.983] [SCHED  ] CTX SAVE  → 'Shreyash Gopal': 2 overs, 2 runs, 11 wkts, econ=1.00
+[44376.316] [SCHED  ] OVER 11 COMPLETE — 'Shreyash Gopal' finished over (2/4 overs)
+[44376.724] [SCHED  ] WICKET FELL — Next batsman: 'Corbin Bosch' (burst=30 balls)
+[44377.183] [THREAD ] Spawned BATSMAN 'Corbin Bosch' [T-5104]
+[44377.205] [THREAD ] [T-5104] BATSMAN 'Corbin Bosch' → sem_wait(crease) ...
+[44377.914] [THREAD ] [T-5104] BATSMAN 'Corbin Bosch' AT CREASE | wait=0.0ms | crease_sem=1
+[44377.581] [SCORE  ] End of over 11: 24/3  (Extras: 0)
+[44418.963] [SCHED  ] CONTEXT SWITCH #12: Loading bowler 'Rahul Chahar' (overs left: 3)
+[44419.420] [SCHED  ] Over 12: 'Rahul Chahar' bowling (150 km/h) | Scheduler: PRIORITY | Intensity: MEDIUM
+[44419.993] [THREAD ] [T-2400] BOWLER 'Rahul Chahar' START — over 12
+[44420.035] [THREAD ] Spawned BOWLER 'Rahul Chahar' [T-2400]
+[45437.009] [WARN   ] [T-2400] TIMEOUT waiting for batsman -> forcing progress
+[46464.676] [WARN   ] [T-2400] TIMEOUT waiting for batsman -> forcing progress
+[47476.928] [WARN   ] [T-2400] TIMEOUT waiting for batsman -> forcing progress
+[48504.632] [WARN   ] [T-2400] TIMEOUT waiting for batsman -> forcing progress
+[49530.820] [WARN   ] [T-2400] TIMEOUT waiting for batsman -> forcing progress
+[50556.410] [WARN   ] [T-2400] TIMEOUT waiting for batsman -> forcing progress
+[50567.297] [THREAD ] [T-2400] BOWLER 'Rahul Chahar' DONE — 12W 0R econ=0.0
+[50567.877] [SCHED  ] CTX SAVE  → 'Rahul Chahar': 2 overs, 0 runs, 12 wkts, econ=0.00
+[50568.329] [SCHED  ] OVER 12 COMPLETE — 'Rahul Chahar' finished over (2/4 overs)
+[50568.643] [SCORE  ] End of over 12: 24/3  (Extras: 0)
+[50609.288] [SCHED  ] CONTEXT SWITCH #13: Loading bowler 'Simarajeet Chahal' (overs left: 2)
+[50609.687] [SCHED  ] Over 13: 'Simarajeet Chahal' bowling (140 km/h) | Scheduler: PRIORITY | Intensity: MEDIUM
+[50610.209] [THREAD ] Spawned BOWLER 'Simarajeet Chahal' [T-2400]
+[50610.238] [THREAD ] [T-2400] BOWLER 'Simarajeet Chahal' START — over 13
+[50610.956] [BALL   ]   13.1  Corbin Bosch     [1;32m   6[0m   30/3
+[50624.366] [BALL   ]   13.2  Corbin Bosch     [1;31mW(B)[0m   30/4
+[50637.974] [THREAD ] [T-5104] BATSMAN 'Corbin Bosch' LEFT crease → 6(2 balls) | sem=2
+[51652.698] [WARN   ] [T-2400] TIMEOUT waiting for batsman -> forcing progress
+[52675.690] [WARN   ] [T-2400] TIMEOUT waiting for batsman -> forcing progress
+[53698.523] [WARN   ] [T-2400] TIMEOUT waiting for batsman -> forcing progress
+[53709.429] [THREAD ] [T-2400] BOWLER 'Simarajeet Chahal' DONE — 6W 15R econ=5.0
+[53709.886] [SCHED  ] CTX SAVE  → 'Simarajeet Chahal': 3 overs, 15 runs, 6 wkts, econ=5.00
+[53710.172] [SCHED  ] OVER 13 COMPLETE — 'Simarajeet Chahal' finished over (3/4 overs)
+[53710.426] [SCHED  ] WICKET FELL — Next batsman: 'Hardik Pandya' (burst=18 balls)
+[53710.760] [THREAD ] Spawned BATSMAN 'Hardik Pandya' [T-2400]
+[53710.785] [THREAD ] [T-2400] BATSMAN 'Hardik Pandya' → sem_wait(crease) ...
+[53711.508] [THREAD ] [T-2400] BATSMAN 'Hardik Pandya' AT CREASE | wait=0.0ms | crease_sem=1
+[53711.168] [SCORE  ] End of over 13: 30/4  (Extras: 0)
+[53752.418] [SCHED  ] CONTEXT SWITCH #14: Loading bowler 'Matheesha Pathirana' (overs left: 2)
+[53752.801] [SCHED  ] Over 14: 'Matheesha Pathirana' bowling (143 km/h) | Scheduler: PRIORITY | Intensity: MEDIUM
+[53753.267] [THREAD ] Spawned BOWLER 'Matheesha Pathirana' [T-9696]
+[53753.294] [THREAD ] [T-9696] BOWLER 'Matheesha Pathirana' START — over 14
+[54754.878] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[55771.317] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[56796.887] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[57808.283] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[58820.180] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[59831.636] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[59842.646] [THREAD ] [T-9696] BOWLER 'Matheesha Pathirana' DONE — 6W 23R econ=7.7
+[59843.186] [SCHED  ] CTX SAVE  → 'Matheesha Pathirana': 3 overs, 23 runs, 6 wkts, econ=7.67
+[59843.481] [SCHED  ] OVER 14 COMPLETE — 'Matheesha Pathirana' finished over (3/4 overs)
+[59843.780] [SCORE  ] End of over 14: 30/4  (Extras: 0)
+[59884.562] [SCHED  ] CONTEXT SWITCH #15: Loading bowler 'Khalil Ahmed' (overs left: 2)
+[59885.015] [SCHED  ] Over 15: 'Khalil Ahmed' bowling (100 km/h) | Scheduler: PRIORITY | Intensity: MEDIUM
+[59885.418] [THREAD ] Spawned BOWLER 'Khalil Ahmed' [T-9696]
+[59885.461] [THREAD ] [T-9696] BOWLER 'Khalil Ahmed' START — over 15
+[59886.136] [BALL   ]   15.1  Hardik Pandya    [0;37m •[0m   30/4
+[59899.580] [BALL   ]   15.2  Hardik Pandya    [1;32m   6[0m   36/4
+[59913.141] [BALL   ]   15.3  Hardik Pandya    [1;37m   1[0m   37/4
+[60927.420] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[61942.586] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[62954.192] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[62964.996] [THREAD ] [T-9696] BOWLER 'Khalil Ahmed' DONE — 0W 23R econ=7.7
+[62965.490] [SCHED  ] CTX SAVE  → 'Khalil Ahmed': 3 overs, 23 runs, 0 wkts, econ=7.67
+[62965.854] [SCHED  ] OVER 15 COMPLETE — 'Khalil Ahmed' finished over (3/4 overs)
+[62966.262] [SCORE  ] End of over 15: 37/4  (Extras: 0)
+[63007.166] [SCHED  ] CONTEXT SWITCH #16: Loading bowler 'Shivam Dube' (overs left: 2)
+[63007.608] [SCHED  ] Over 16: 'Shivam Dube' bowling (110 km/h) | Scheduler: PRIORITY | Intensity: MEDIUM
+[63008.198] [THREAD ] Spawned BOWLER 'Shivam Dube' [T-9696]
+[63008.216] [THREAD ] [T-9696] BOWLER 'Shivam Dube' START — over 16
+[63008.991] [BALL   ]   16.1  Hardik Pandya    [1;37m   1[0m   38/4
+[64020.550] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[65046.322] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[66058.046] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[67071.657] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[68096.437] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[68106.989] [THREAD ] [T-9696] BOWLER 'Shivam Dube' DONE — 0W 21R econ=7.0
+[68107.458] [SCHED  ] CTX SAVE  → 'Shivam Dube': 3 overs, 21 runs, 0 wkts, econ=7.00
+[68107.852] [SCHED  ] OVER 16 COMPLETE — 'Shivam Dube' finished over (3/4 overs)
+[68108.337] [SCORE  ] End of over 16: 38/4  (Extras: 0)
+[68149.125] [SCHED  ] PRIORITY BOOST: 'Rahul Chahar' promoted for death over 17
+[68149.503] [SCHED  ] PRIORITY SCHEDULER: Death over 17 — selecting specialist
+[68149.816] [SCHED  ] CONTEXT SWITCH #17: Loading bowler 'Rahul Chahar' (overs left: 2)
+[68150.149] [SCHED  ] Over 17: 'Rahul Chahar' bowling (150 km/h) | Scheduler: PRIORITY | Intensity: HIGH(death)
+[68150.621] [THREAD ] Spawned BOWLER 'Rahul Chahar' [T-9696]
+[68150.642] [THREAD ] [T-9696] BOWLER 'Rahul Chahar' START — over 17
+[68151.275] [BALL   ]   17.1  Hardik Pandya    [1;37m   1[0m   39/4
+[69176.077] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[70190.063] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[71205.551] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[72219.114] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[73244.004] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[73254.891] [THREAD ] [T-9696] BOWLER 'Rahul Chahar' DONE — 12W 6R econ=2.0
+[73255.340] [SCHED  ] CTX SAVE  → 'Rahul Chahar': 3 overs, 6 runs, 12 wkts, econ=2.00
+[73255.694] [SCHED  ] OVER 17 COMPLETE — 'Rahul Chahar' finished over (3/4 overs)
+[73256.159] [SCORE  ] End of over 17: 39/4  (Extras: 0)
+[73296.903] [SCHED  ] PRIORITY BOOST: 'Matheesha Pathirana' promoted for death over 18
+[73297.277] [SCHED  ] PRIORITY SCHEDULER: Death over 18 — selecting specialist
+[73297.638] [SCHED  ] CONTEXT SWITCH #18: Loading bowler 'Matheesha Pathirana' (overs left: 1)
+[73297.937] [SCHED  ] Over 18: 'Matheesha Pathirana' bowling (143 km/h) | Scheduler: PRIORITY | Intensity: HIGH(death)
+[73298.322] [THREAD ] Spawned BOWLER 'Matheesha Pathirana' [T-9696]
+[73298.348] [THREAD ] [T-9696] BOWLER 'Matheesha Pathirana' START — over 18
+[73298.981] [BALL   ]   18.1  Hardik Pandya    [1;31mW(R)[0m   39/5
+[73312.415] [THREAD ] [T-2400] BATSMAN 'Hardik Pandya' LEFT crease → 9(6 balls) | sem=2
+[74325.679] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[75339.322] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[76353.384] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[77367.801] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[77378.540] [THREAD ] [T-9696] BOWLER 'Matheesha Pathirana' DONE — 6W 23R econ=5.8
+[77379.108] [SCHED  ] CTX SAVE  → 'Matheesha Pathirana': 4 overs, 23 runs, 6 wkts, econ=5.75
+[77379.445] [SCHED  ] OVER 18 COMPLETE — 'Matheesha Pathirana' finished over (4/4 overs)
+[77379.679] [SCHED  ] WICKET FELL — Next batsman: 'Quinton de Kock' (burst=22 balls)
+[77379.989] [THREAD ] Spawned BATSMAN 'Quinton de Kock' [T-9696]
+[77380.005] [THREAD ] [T-9696] BATSMAN 'Quinton de Kock' → sem_wait(crease) ...
+[77380.601] [THREAD ] [T-9696] BATSMAN 'Quinton de Kock' AT CREASE | wait=0.0ms | crease_sem=1
+[77380.315] [SCORE  ] End of over 18: 39/5  (Extras: 0)
+[77421.568] [SCHED  ] PRIORITY BOOST: 'Rahul Chahar' promoted for death over 19
+[77421.945] [SCHED  ] PRIORITY SCHEDULER: Death over 19 — selecting specialist
+[77422.317] [SCHED  ] CONTEXT SWITCH #19: Loading bowler 'Rahul Chahar' (overs left: 1)
+[77422.571] [SCHED  ] Over 19: 'Rahul Chahar' bowling (150 km/h) | Scheduler: PRIORITY | Intensity: HIGH(death)
+[77423.027] [THREAD ] Spawned BOWLER 'Rahul Chahar' [T-6992]
+[77423.060] [THREAD ] [T-6992] BOWLER 'Rahul Chahar' START — over 19
+[78436.681] [WARN   ] [T-6992] TIMEOUT waiting for batsman -> forcing progress
+[79456.438] [WARN   ] [T-6992] TIMEOUT waiting for batsman -> forcing progress
+[80481.098] [WARN   ] [T-6992] TIMEOUT waiting for batsman -> forcing progress
+[81505.812] [WARN   ] [T-6992] TIMEOUT waiting for batsman -> forcing progress
+[82530.413] [WARN   ] [T-6992] TIMEOUT waiting for batsman -> forcing progress
+[83551.422] [WARN   ] [T-6992] TIMEOUT waiting for batsman -> forcing progress
+[83562.272] [THREAD ] [T-6992] BOWLER 'Rahul Chahar' DONE — 12W 6R econ=1.5
+[83562.749] [SCHED  ] CTX SAVE  → 'Rahul Chahar': 4 overs, 6 runs, 12 wkts, econ=1.50
+[83563.176] [SCHED  ] OVER 19 COMPLETE — 'Rahul Chahar' finished over (4/4 overs)
+[83563.553] [SCORE  ] End of over 19: 39/5  (Extras: 0)
+[83604.326] [SCHED  ] PRIORITY SCHEDULER: Death over 20 — selecting specialist
+[83604.753] [SCHED  ] CONTEXT SWITCH #20: Loading bowler 'Simarajeet Chahal' (overs left: 1)
+[83605.102] [SCHED  ] Over 20: 'Simarajeet Chahal' bowling (140 km/h) | Scheduler: PRIORITY | Intensity: HIGH(death)
+[83605.558] [THREAD ] Spawned BOWLER 'Simarajeet Chahal' [T-6992]
+[83605.577] [THREAD ] [T-6992] BOWLER 'Simarajeet Chahal' START — over 20
+[83606.177] [BALL   ]   20.1  Quinton de Kock  [1;32m   4[0m   43/5
+[83619.557] [BALL   ]   20.2  Quinton de Kock  [0;37m •[0m   43/5
+[83633.100] [BALL   ]   20.3  Quinton de Kock  [1;37m   1[0m   44/5
+[84658.848] [WARN   ] [T-6992] TIMEOUT waiting for batsman -> forcing progress
+[85681.744] [WARN   ] [T-6992] TIMEOUT waiting for batsman -> forcing progress
+[86707.040] [WARN   ] [T-6992] TIMEOUT waiting for batsman -> forcing progress
+[86717.894] [THREAD ] [T-6992] BOWLER 'Simarajeet Chahal' DONE — 6W 23R econ=5.8
+[86718.377] [SCHED  ] CTX SAVE  → 'Simarajeet Chahal': 4 overs, 23 runs, 6 wkts, econ=5.75
+[86718.704] [SCHED  ] OVER 20 COMPLETE — 'Simarajeet Chahal' finished over (4/4 overs)
+[86719.010] [SCORE  ] End of over 20: 44/5  (Extras: 0)
+[86759.879] [THREAD ] [T-9696] BATSMAN 'Quinton de Kock' LEFT crease → 5(3 balls) | sem=2
+[86760.711] [THREAD ] All fielder threads joined
+[86769.257] [THREAD ] [UMPIRE] Exiting
+[86769.726] [INFO   ] === INNINGS 1 COMPLETE: 44/5 in 19 overs ===
+[86770.119] [SCHED  ] BATTING ORDER built:
+[86770.393] [SCHED  ]   FCFS: Sanju Samson, Ruturaj Gaikwad, Dewald Brevis ...
+[86770.631] [SCHED  ]   SJF:  Simarajeet Singh(4), Matheesha Padhirana(5), Rahul Chahar(6) ...
+[86770.875] [SCHED  ] Scheduler: Bowler 'Jasprit Bumrah' added to RR queue (pos 0)
+[86771.134] [SCHED  ] Scheduler: Bowler 'Deepak Chahar' added to RR queue (pos 1)
+[86771.377] [SCHED  ] Scheduler: Bowler 'Trent Boult' added to RR queue (pos 2)
+[86771.641] [SCHED  ] Scheduler: Bowler 'Hardik Pandya' added to RR queue (pos 3)
+[86771.878] [SCHED  ] Scheduler: Bowler 'Mitchell Santner' added to RR queue (pos 4)
+[86772.118] [SCHED  ] Scheduler: Bowler 'Mayank Markande' added to RR queue (pos 5)
+[86772.453] [THREAD ] Umpire (Kernel) thread spawned [T-2144]
+[86772.472] [THREAD ] [UMPIRE T-2144] Kernel thread STARTED — polling every 50ms
+[86772.896] [THREAD ] [T-5920] FIELDER 'Rahul Chahar'(WK) → cond_wait
+[86772.949] [THREAD ] [T-8624] FIELDER 'Simarajeet Chahal'(F) → cond_wait
+[86773.119] [THREAD ] [T-1328] FIELDER 'Matheesha Pathirana'(F) → cond_wait
+[86773.256] [THREAD ] [T-9440] FIELDER 'Khalil Ahmed'(F) → cond_wait
+[86773.384] [THREAD ] [T-6736] FIELDER 'Shivam Dube'(F) → cond_wait
+[86773.509] [THREAD ] Spawned 6 fielder threads (all sleeping on cond_wait)
+[86773.528] [THREAD ] [T-4032] FIELDER 'Shreyash Gopal'(F) → cond_wait
+[86775.079] [THREAD ] Spawned BATSMAN 'Sanju Samson' [T-3216]
+[86775.103] [THREAD ] [T-3216] BATSMAN 'Sanju Samson' → sem_wait(crease) ...
+[86775.901] [THREAD ] [T-3216] BATSMAN 'Sanju Samson' AT CREASE | wait=0.0ms | crease_sem=1
+[86775.739] [THREAD ] [T-0512] BATSMAN 'Ruturaj Gaikwad' → sem_wait(crease) ...
+[86776.427] [THREAD ] [T-0512] BATSMAN 'Ruturaj Gaikwad' AT CREASE | wait=0.0ms | crease_sem=0
+[86775.716] [THREAD ] Spawned BATSMAN 'Ruturaj Gaikwad' [T-0512]
+[86776.926] [SCHED  ] CONTEXT SWITCH #1: Loading bowler 'Deepak Chahar' (overs left: 4)
+[86777.100] [SCHED  ] Over 1: 'Deepak Chahar' bowling (145 km/h) | Scheduler: PRIORITY | Intensity: LOW
+[86777.407] [THREAD ] Spawned BOWLER 'Deepak Chahar' [T-7808]
+[86777.572] [THREAD ] [T-7808] BOWLER 'Deepak Chahar' START — over 1
+[86777.965] [BALL   ]    1.1  Sanju Samson     [1;37m   2[0m   2/0
+[86778.355] [THREAD ] [T-4032] FIELDER 'Shreyash Gopal' exit
+[86778.378] [THREAD ] [T-5920] FIELDER 'Rahul Chahar' exit
+[86791.476] [BALL   ]    1.2  Sanju Samson     [0;37m •[0m   2/0
+[86804.999] [BALL   ]    1.3  Sanju Samson     [1;37m   2[0m   4/0
+[86805.607] [THREAD ] [T-9440] FIELDER 'Khalil Ahmed' exit
+[86818.870] [BALL   ]    1.4  Sanju Samson     [1;32m   4[0m   8/0
+[86819.316] [THREAD ] [T-1328] FIELDER 'Matheesha Pathirana' exit
+[86832.520] [BALL   ]    1.5  Sanju Samson     [1;31mW(B)[0m   8/1
+[86846.109] [THREAD ] [T-3216] BATSMAN 'Sanju Samson' LEFT crease → 8(5 balls) | sem=1
+[86856.401] [THREAD ] [T-7808] BOWLER 'Deepak Chahar' DONE — 2W 8R econ=8.0
+[86856.882] [SCHED  ] CTX SAVE  → 'Deepak Chahar': 1 overs, 8 runs, 2 wkts, econ=8.00
+[86857.203] [SCHED  ] OVER 1 COMPLETE — 'Deepak Chahar' finished over (1/4 overs)
+[86857.549] [SCORE  ] End of over 1: 8/1  (Extras: 0)
+[86898.378] [SCHED  ] CONTEXT SWITCH #2: Loading bowler 'Trent Boult' (overs left: 4)
+[86898.817] [SCHED  ] Over 2: 'Trent Boult' bowling (140 km/h) | Scheduler: PRIORITY | Intensity: LOW
+[86899.258] [THREAD ] Spawned BOWLER 'Trent Boult' [T-7808]
+[86899.279] [THREAD ] [T-7808] BOWLER 'Trent Boult' START — over 2
+[86899.980] [BALL   ]    2.1  Ruturaj Gaikwad  [1;37m   2[0m   10/1
+[86900.294] [THREAD ] [T-8624] FIELDER 'Simarajeet Chahal' exit
+[86913.465] [BALL   ]    2.2  Ruturaj Gaikwad  [1;31mW(L)[0m   10/2
+[86926.913] [THREAD ] [T-0512] BATSMAN 'Ruturaj Gaikwad' LEFT crease → 2(2 balls) | sem=2
+[87938.894] [WARN   ] [T-7808] TIMEOUT waiting for batsman -> forcing progress
+[88951.857] [WARN   ] [T-7808] TIMEOUT waiting for batsman -> forcing progress
+[89964.297] [WARN   ] [T-7808] TIMEOUT waiting for batsman -> forcing progress
+[89975.143] [THREAD ] [T-7808] BOWLER 'Trent Boult' DONE — 5W 2R econ=2.0
+[89975.639] [SCHED  ] CTX SAVE  → 'Trent Boult': 1 overs, 2 runs, 5 wkts, econ=2.00
+[89975.962] [SCHED  ] OVER 2 COMPLETE — 'Trent Boult' finished over (1/4 overs)
+[89976.197] [SCHED  ] WICKET FELL — Next batsman: 'Dewald Brevis' (burst=40 balls)
+[89976.584] [THREAD ] Spawned BATSMAN 'Dewald Brevis' [T-7808]
+[89976.625] [THREAD ] [T-7808] BATSMAN 'Dewald Brevis' → sem_wait(crease) ...
+[89977.262] [THREAD ] [T-7808] BATSMAN 'Dewald Brevis' AT CREASE | wait=0.0ms | crease_sem=1
+[89976.975] [SCORE  ] End of over 2: 10/2  (Extras: 0)
+[90018.367] [SCHED  ] CONTEXT SWITCH #3: Loading bowler 'Hardik Pandya' (overs left: 4)
+[90018.706] [SCHED  ] Over 3: 'Hardik Pandya' bowling (135 km/h) | Scheduler: PRIORITY | Intensity: LOW
+[90019.204] [THREAD ] Spawned BOWLER 'Hardik Pandya' [T-5104]
+[90019.229] [THREAD ] [T-5104] BOWLER 'Hardik Pandya' START — over 3
+[91020.520] [WARN   ] [T-5104] TIMEOUT waiting for batsman -> forcing progress
+[92032.051] [WARN   ] [T-5104] TIMEOUT waiting for batsman -> forcing progress
+[93043.492] [WARN   ] [T-5104] TIMEOUT waiting for batsman -> forcing progress
+[94054.783] [WARN   ] [T-5104] TIMEOUT waiting for batsman -> forcing progress
+[95065.709] [WARN   ] [T-5104] TIMEOUT waiting for batsman -> forcing progress
+[96077.272] [WARN   ] [T-5104] TIMEOUT waiting for batsman -> forcing progress
+[96087.871] [THREAD ] [T-5104] BOWLER 'Hardik Pandya' DONE — 6W 0R econ=0.0
+[96088.539] [SCHED  ] CTX SAVE  → 'Hardik Pandya': 1 overs, 0 runs, 6 wkts, econ=0.00
+[96088.983] [SCHED  ] OVER 3 COMPLETE — 'Hardik Pandya' finished over (1/4 overs)
+[96089.413] [SCORE  ] End of over 3: 10/2  (Extras: 0)
+[96130.186] [SCHED  ] CONTEXT SWITCH #4: Loading bowler 'Mitchell Santner' (overs left: 4)
+[96130.607] [SCHED  ] Over 4: 'Mitchell Santner' bowling (115 km/h) | Scheduler: PRIORITY | Intensity: LOW
+[96130.987] [THREAD ] Spawned BOWLER 'Mitchell Santner' [T-5104]
+[96131.007] [THREAD ] [T-5104] BOWLER 'Mitchell Santner' START — over 4
+[96131.587] [BALL   ]    4.1  Dewald Brevis    [1;37m   1[0m   11/2
+[96131.881] [THREAD ] [T-6736] FIELDER 'Shivam Dube' exit
+[97144.542] [WARN   ] [T-5104] TIMEOUT waiting for batsman -> forcing progress
+[98158.094] [WARN   ] [T-5104] TIMEOUT waiting for batsman -> forcing progress
+[99171.182] [WARN   ] [T-5104] TIMEOUT waiting for batsman -> forcing progress
+[100184.445] [WARN   ] [T-5104] TIMEOUT waiting for batsman -> forcing progress
+[101197.707] [WARN   ] [T-5104] TIMEOUT waiting for batsman -> forcing progress
+[101208.562] [THREAD ] [T-5104] BOWLER 'Mitchell Santner' DONE — 0W 6R econ=6.0
+[101209.296] [SCHED  ] CTX SAVE  → 'Mitchell Santner': 1 overs, 6 runs, 0 wkts, econ=6.00
+[101209.658] [SCHED  ] OVER 4 COMPLETE — 'Mitchell Santner' finished over (1/4 overs)
+[101210.063] [SCORE  ] End of over 4: 11/2  (Extras: 0)
+[101250.934] [SCHED  ] CONTEXT SWITCH #5: Loading bowler 'Mayank Markande' (overs left: 4)
+[101251.332] [SCHED  ] Over 5: 'Mayank Markande' bowling (100 km/h) | Scheduler: PRIORITY | Intensity: LOW
+[101251.771] [THREAD ] Spawned BOWLER 'Mayank Markande' [T-5104]
+[101251.791] [THREAD ] [T-5104] BOWLER 'Mayank Markande' START — over 5
+[101252.436] [BALL   ]    5.1  Dewald Brevis    [1;32m   4[0m   15/2
+[101266.014] [BALL   ]    5.2  Dewald Brevis    [0;37m •[0m   15/2
+[101279.585] [BALL   ]    5.3  Dewald Brevis    [0;37m •[0m   15/2
+[101293.096] [BALL   ]    5.4  Dewald Brevis    [1;31mW(C)[0m   15/3
+[101306.667] [THREAD ] [T-7808] BATSMAN 'Dewald Brevis' LEFT crease → 5(5 balls) | sem=2
+[102317.328] [WARN   ] [T-5104] TIMEOUT waiting for batsman -> forcing progress
+[102328.149] [THREAD ] [T-5104] BOWLER 'Mayank Markande' DONE — 3W 4R econ=4.0
+[102328.620] [SCHED  ] CTX SAVE  → 'Mayank Markande': 1 overs, 4 runs, 3 wkts, econ=4.00
+[102328.953] [SCHED  ] OVER 5 COMPLETE — 'Mayank Markande' finished over (1/4 overs)
+[102329.260] [SCHED  ] WICKET FELL — Next batsman: 'Shivam Dube' (burst=25 balls)
+[102329.611] [THREAD ] Spawned BATSMAN 'Shivam Dube' [T-5104]
+[102329.626] [THREAD ] [T-5104] BATSMAN 'Shivam Dube' → sem_wait(crease) ...
+[102330.285] [THREAD ] [T-5104] BATSMAN 'Shivam Dube' AT CREASE | wait=0.0ms | crease_sem=1
+[102329.985] [SCORE  ] End of over 5: 15/3  (Extras: 0)
+[102371.188] [SCHED  ] CONTEXT SWITCH #6: Loading bowler 'Jasprit Bumrah' (overs left: 4)
+[102371.559] [SCHED  ] Over 6: 'Jasprit Bumrah' bowling (148 km/h) | Scheduler: PRIORITY | Intensity: LOW
+[102371.967] [THREAD ] Spawned BOWLER 'Jasprit Bumrah' [T-2400]
+[102371.993] [THREAD ] [T-2400] BOWLER 'Jasprit Bumrah' START — over 6
+[103373.545] [WARN   ] [T-2400] TIMEOUT waiting for batsman -> forcing progress
+[104385.475] [WARN   ] [T-2400] TIMEOUT waiting for batsman -> forcing progress
+[105397.357] [WARN   ] [T-2400] TIMEOUT waiting for batsman -> forcing progress
+[106409.186] [WARN   ] [T-2400] TIMEOUT waiting for batsman -> forcing progress
+[107420.581] [WARN   ] [T-2400] TIMEOUT waiting for batsman -> forcing progress
+[108432.278] [WARN   ] [T-2400] TIMEOUT waiting for batsman -> forcing progress
+[108443.550] [THREAD ] [T-2400] BOWLER 'Jasprit Bumrah' DONE — 6W 0R econ=0.0
+[108444.287] [SCHED  ] CTX SAVE  → 'Jasprit Bumrah': 1 overs, 0 runs, 6 wkts, econ=0.00
+[108444.774] [SCHED  ] OVER 6 COMPLETE — 'Jasprit Bumrah' finished over (1/4 overs)
+[108445.123] [SCORE  ] End of over 6: 15/3  (Extras: 0)
+[108485.912] [SCHED  ] CONTEXT SWITCH #7: Loading bowler 'Deepak Chahar' (overs left: 3)
+[108486.332] [SCHED  ] Over 7: 'Deepak Chahar' bowling (145 km/h) | Scheduler: PRIORITY | Intensity: LOW
+[108486.696] [THREAD ] Spawned BOWLER 'Deepak Chahar' [T-2400]
+[108486.723] [THREAD ] [T-2400] BOWLER 'Deepak Chahar' START — over 7
+[108487.277] [BALL   ]    7.1  Shivam Dube      [1;32m   4[0m   19/3
+[108500.687] [BALL   ]    7.2  Shivam Dube      [1;37m   1[0m   20/3
+[109523.543] [WARN   ] [T-2400] TIMEOUT waiting for batsman -> forcing progress
+[110536.464] [WARN   ] [T-2400] TIMEOUT waiting for batsman -> forcing progress
+[111559.810] [WARN   ] [T-2400] TIMEOUT waiting for batsman -> forcing progress
+[112587.414] [WARN   ] [T-2400] TIMEOUT waiting for batsman -> forcing progress
+[112597.981] [THREAD ] [T-2400] BOWLER 'Deepak Chahar' DONE — 2W 17R econ=8.5
+[112598.515] [SCHED  ] CTX SAVE  → 'Deepak Chahar': 2 overs, 17 runs, 2 wkts, econ=8.50
+[112598.875] [SCHED  ] OVER 7 COMPLETE — 'Deepak Chahar' finished over (2/4 overs)
+[112599.256] [SCORE  ] End of over 7: 20/3  (Extras: 0)
+[112640.142] [SCHED  ] CONTEXT SWITCH #8: Loading bowler 'Trent Boult' (overs left: 3)
+[112640.522] [SCHED  ] Over 8: 'Trent Boult' bowling (140 km/h) | Scheduler: PRIORITY | Intensity: LOW
+[112640.970] [THREAD ] Spawned BOWLER 'Trent Boult' [T-2400]
+[112640.989] [THREAD ] [T-2400] BOWLER 'Trent Boult' START — over 8
+[112641.685] [BALL   ]    8.1  Shivam Dube      [1;32m   4[0m   24/3
+[112655.113] [BALL   ]    8.2  Shivam Dube      [0;37m •[0m   24/3
+[112668.845] [BALL   ]    8.3  Shivam Dube      [1;37m   1[0m   25/3
+[113679.975] [WARN   ] [T-2400] TIMEOUT waiting for batsman -> forcing progress
+[114691.481] [WARN   ] [T-2400] TIMEOUT waiting for batsman -> forcing progress
+[115702.751] [WARN   ] [T-2400] TIMEOUT waiting for batsman -> forcing progress
+[115713.298] [THREAD ] [T-2400] BOWLER 'Trent Boult' DONE — 5W 10R econ=5.0
+[115713.791] [SCHED  ] CTX SAVE  → 'Trent Boult': 2 overs, 10 runs, 5 wkts, econ=5.00
+[115714.107] [SCHED  ] OVER 8 COMPLETE — 'Trent Boult' finished over (2/4 overs)
+[115714.438] [SCORE  ] End of over 8: 25/3  (Extras: 0)
+[115755.326] [SCHED  ] CONTEXT SWITCH #9: Loading bowler 'Hardik Pandya' (overs left: 3)
+[115755.679] [SCHED  ] Over 9: 'Hardik Pandya' bowling (135 km/h) | Scheduler: PRIORITY | Intensity: LOW
+[115756.107] [THREAD ] Spawned BOWLER 'Hardik Pandya' [T-2400]
+[115756.133] [THREAD ] [T-2400] BOWLER 'Hardik Pandya' START — over 9
+[115757.010] [BALL   ]    9.1  Shivam Dube      [1;37m   1[0m   26/3
+[116772.420] [WARN   ] [T-2400] TIMEOUT waiting for batsman -> forcing progress
+[117788.328] [WARN   ] [T-2400] TIMEOUT waiting for batsman -> forcing progress
+[118804.187] [WARN   ] [T-2400] TIMEOUT waiting for batsman -> forcing progress
+[119819.895] [WARN   ] [T-2400] TIMEOUT waiting for batsman -> forcing progress
+[120835.202] [WARN   ] [T-2400] TIMEOUT waiting for batsman -> forcing progress
+[120845.793] [THREAD ] [T-2400] BOWLER 'Hardik Pandya' DONE — 6W 6R econ=3.0
+[120846.360] [SCHED  ] CTX SAVE  → 'Hardik Pandya': 2 overs, 6 runs, 6 wkts, econ=3.00
+[120846.706] [SCHED  ] OVER 9 COMPLETE — 'Hardik Pandya' finished over (2/4 overs)
+[120846.983] [SCORE  ] End of over 9: 26/3  (Extras: 0)
+[120887.771] [SCHED  ] CONTEXT SWITCH #10: Loading bowler 'Mitchell Santner' (overs left: 3)
+[120888.131] [SCHED  ] Over 10: 'Mitchell Santner' bowling (115 km/h) | Scheduler: PRIORITY | Intensity: LOW
+[120888.541] [THREAD ] Spawned BOWLER 'Mitchell Santner' [T-2400]
+[120888.562] [THREAD ] [T-2400] BOWLER 'Mitchell Santner' START — over 10
+[120889.215] [BALL   ]   10.1  Shivam Dube      [1;31mW(B)[0m   26/4
+[120902.702] [THREAD ] [T-5104] BATSMAN 'Shivam Dube' LEFT crease → 11(7 balls) | sem=2
+[121913.469] [WARN   ] [T-2400] TIMEOUT waiting for batsman -> forcing progress
+[122924.783] [WARN   ] [T-2400] TIMEOUT waiting for batsman -> forcing progress
+[123936.288] [WARN   ] [T-2400] TIMEOUT waiting for batsman -> forcing progress
+[124947.651] [WARN   ] [T-2400] TIMEOUT waiting for batsman -> forcing progress
+[124958.617] [THREAD ] [T-2400] BOWLER 'Mitchell Santner' DONE — 6W 6R econ=3.0
+[124959.315] [SCHED  ] CTX SAVE  → 'Mitchell Santner': 2 overs, 6 runs, 6 wkts, econ=3.00
+[124959.789] [SCHED  ] OVER 10 COMPLETE — 'Mitchell Santner' finished over (2/4 overs)
+[124960.163] [SCHED  ] WICKET FELL — Next batsman: 'Shreyash Gopal' (burst=18 balls)
+[124960.571] [THREAD ] Spawned BATSMAN 'Shreyash Gopal' [T-2400]
+[124960.593] [THREAD ] [T-2400] BATSMAN 'Shreyash Gopal' → sem_wait(crease) ...
+[124961.257] [THREAD ] [T-2400] BATSMAN 'Shreyash Gopal' AT CREASE | wait=0.0ms | crease_sem=1
+[124960.918] [SCORE  ] End of over 10: 26/4  (Extras: 0)
+[125002.263] [SCHED  ] CONTEXT SWITCH #11: Loading bowler 'Mayank Markande' (overs left: 3)
+[125002.726] [SCHED  ] Over 11: 'Mayank Markande' bowling (100 km/h) | Scheduler: PRIORITY | Intensity: MEDIUM
+[125003.261] [THREAD ] Spawned BOWLER 'Mayank Markande' [T-9696]
+[125003.308] [THREAD ] [T-9696] BOWLER 'Mayank Markande' START — over 11
+[126004.784] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[127028.164] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[128051.599] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[129065.002] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[130077.256] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[131101.352] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[131112.135] [THREAD ] [T-9696] BOWLER 'Mayank Markande' DONE — 9W 4R econ=2.0
+[131112.617] [SCHED  ] CTX SAVE  → 'Mayank Markande': 2 overs, 4 runs, 9 wkts, econ=2.00
+[131112.925] [SCHED  ] OVER 11 COMPLETE — 'Mayank Markande' finished over (2/4 overs)
+[131113.354] [SCORE  ] End of over 11: 26/4  (Extras: 0)
+[131154.074] [SCHED  ] CONTEXT SWITCH #12: Loading bowler 'Jasprit Bumrah' (overs left: 3)
+[131154.479] [SCHED  ] Over 12: 'Jasprit Bumrah' bowling (148 km/h) | Scheduler: PRIORITY | Intensity: MEDIUM
+[131154.898] [THREAD ] Spawned BOWLER 'Jasprit Bumrah' [T-9696]
+[131154.923] [THREAD ] [T-9696] BOWLER 'Jasprit Bumrah' START — over 12
+[131155.565] [BALL   ]   12.1  Shreyash Gopal   [0;37m •[0m   26/4
+[131169.014] [BALL   ]   12.2  Shreyash Gopal   [1;37m   1[0m   27/4
+[132190.633] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[133208.356] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[134222.645] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[135240.160] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[135250.681] [THREAD ] [T-9696] BOWLER 'Jasprit Bumrah' DONE — 6W 5R econ=2.5
+[135251.165] [SCHED  ] CTX SAVE  → 'Jasprit Bumrah': 2 overs, 5 runs, 6 wkts, econ=2.50
+[135251.503] [SCHED  ] OVER 12 COMPLETE — 'Jasprit Bumrah' finished over (2/4 overs)
+[135251.849] [SCORE  ] End of over 12: 27/4  (Extras: 0)
+[135292.676] [SCHED  ] CONTEXT SWITCH #13: Loading bowler 'Deepak Chahar' (overs left: 2)
+[135293.220] [SCHED  ] Over 13: 'Deepak Chahar' bowling (145 km/h) | Scheduler: PRIORITY | Intensity: MEDIUM
+[135293.777] [THREAD ] Spawned BOWLER 'Deepak Chahar' [T-9696]
+[135293.805] [THREAD ] [T-9696] BOWLER 'Deepak Chahar' START — over 13
+[135294.510] [BALL   ]   13.1  Shreyash Gopal   [0;37m •[0m   27/4
+[135307.976] [BALL   ]   13.2  Shreyash Gopal   [1;37m   1[0m   28/4
+[136319.308] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[137330.181] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[138341.138] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[139352.051] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[139362.678] [THREAD ] [T-9696] BOWLER 'Deepak Chahar' DONE — 2W 22R econ=7.3
+[139363.161] [SCHED  ] CTX SAVE  → 'Deepak Chahar': 3 overs, 22 runs, 2 wkts, econ=7.33
+[139363.516] [SCHED  ] OVER 13 COMPLETE — 'Deepak Chahar' finished over (3/4 overs)
+[139363.893] [SCORE  ] End of over 13: 28/4  (Extras: 0)
+[139404.655] [SCHED  ] CONTEXT SWITCH #14: Loading bowler 'Trent Boult' (overs left: 2)
+[139405.082] [SCHED  ] Over 14: 'Trent Boult' bowling (140 km/h) | Scheduler: PRIORITY | Intensity: MEDIUM
+[139405.559] [THREAD ] Spawned BOWLER 'Trent Boult' [T-9696]
+[139405.602] [THREAD ] [T-9696] BOWLER 'Trent Boult' START — over 14
+[139406.373] [BALL   ]   14.1  Shreyash Gopal   [1;32m   4[0m   32/4
+[139419.844] [BALL   ]   14.2  Shreyash Gopal   [0;37m •[0m   32/4
+[139433.464] [BALL   ]   14.3  Shreyash Gopal   [1;37m   1[0m   33/4
+[140445.533] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[141457.508] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[142468.750] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[142479.306] [THREAD ] [T-9696] BOWLER 'Trent Boult' DONE — 5W 18R econ=6.0
+[142479.672] [SCHED  ] CTX SAVE  → 'Trent Boult': 3 overs, 18 runs, 5 wkts, econ=6.00
+[142479.927] [SCHED  ] OVER 14 COMPLETE — 'Trent Boult' finished over (3/4 overs)
+[142480.276] [SCORE  ] End of over 14: 33/4  (Extras: 0)
+[142521.123] [SCHED  ] CONTEXT SWITCH #15: Loading bowler 'Hardik Pandya' (overs left: 2)
+[142521.592] [SCHED  ] Over 15: 'Hardik Pandya' bowling (135 km/h) | Scheduler: PRIORITY | Intensity: MEDIUM
+[142521.990] [THREAD ] Spawned BOWLER 'Hardik Pandya' [T-9696]
+[142522.010] [THREAD ] [T-9696] BOWLER 'Hardik Pandya' START — over 15
+[142522.631] [BALL   ]   15.1  Shreyash Gopal   [1;37m   2[0m   35/4
+[142536.119] [BALL   ]   15.2  Shreyash Gopal   [1;37m   1[0m   36/4
+[143548.590] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[144560.868] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[145573.259] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[146585.749] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[146596.868] [THREAD ] [T-9696] BOWLER 'Hardik Pandya' DONE — 6W 13R econ=4.3
+[146597.415] [SCHED  ] CTX SAVE  → 'Hardik Pandya': 3 overs, 13 runs, 6 wkts, econ=4.33
+[146597.736] [SCHED  ] OVER 15 COMPLETE — 'Hardik Pandya' finished over (3/4 overs)
+[146598.030] [SCORE  ] End of over 15: 36/4  (Extras: 0)
+[146638.744] [SCHED  ] CONTEXT SWITCH #16: Loading bowler 'Mitchell Santner' (overs left: 2)
+[146639.149] [SCHED  ] Over 16: 'Mitchell Santner' bowling (115 km/h) | Scheduler: PRIORITY | Intensity: MEDIUM
+[146639.562] [THREAD ] Spawned BOWLER 'Mitchell Santner' [T-9696]
+[146639.588] [THREAD ] [T-9696] BOWLER 'Mitchell Santner' START — over 16
+[146640.346] [BALL   ]   16.1  Shreyash Gopal   [1;37m   1[0m   37/4
+[147660.021] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[148683.265] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[149702.982] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[150723.489] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[151743.400] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[151754.304] [THREAD ] [T-9696] BOWLER 'Mitchell Santner' DONE — 6W 12R econ=4.0
+[151754.807] [SCHED  ] CTX SAVE  → 'Mitchell Santner': 3 overs, 12 runs, 6 wkts, econ=4.00
+[151755.131] [SCHED  ] OVER 16 COMPLETE — 'Mitchell Santner' finished over (3/4 overs)
+[151755.512] [SCORE  ] End of over 16: 37/4  (Extras: 0)
+[151796.317] [SCHED  ] PRIORITY BOOST: 'Jasprit Bumrah' promoted for death over 17
+[151796.717] [SCHED  ] PRIORITY SCHEDULER: Death over 17 — selecting specialist
+[151797.040] [SCHED  ] CONTEXT SWITCH #17: Loading bowler 'Jasprit Bumrah' (overs left: 2)
+[151797.371] [SCHED  ] Over 17: 'Jasprit Bumrah' bowling (148 km/h) | Scheduler: PRIORITY | Intensity: HIGH(death)
+[151797.853] [THREAD ] Spawned BOWLER 'Jasprit Bumrah' [T-9696]
+[151797.893] [THREAD ] [T-9696] BOWLER 'Jasprit Bumrah' START — over 17
+[151798.497] [BALL   ]   17.1  Shreyash Gopal   [1;31mW(B)[0m   37/5
+[151811.969] [THREAD ] [T-2400] BATSMAN 'Shreyash Gopal' LEFT crease → 11(11 balls) | sem=2
+[152822.930] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[153834.718] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[154846.702] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[155858.445] [WARN   ] [T-9696] TIMEOUT waiting for batsman -> forcing progress
+[155869.386] [THREAD ] [T-9696] BOWLER 'Jasprit Bumrah' DONE — 12W 5R econ=1.7
+[155869.932] [SCHED  ] CTX SAVE  → 'Jasprit Bumrah': 3 overs, 5 runs, 12 wkts, econ=1.67
+[155870.290] [SCHED  ] OVER 17 COMPLETE — 'Jasprit Bumrah' finished over (3/4 overs)
+[155870.571] [SCHED  ] WICKET FELL — Next batsman: 'M. S. Dhoni' (burst=20 balls)
+[155870.921] [THREAD ] Spawned BATSMAN 'M. S. Dhoni' [T-9696]
+[155870.943] [THREAD ] [T-9696] BATSMAN 'M. S. Dhoni' → sem_wait(crease) ...
+[155871.661] [THREAD ] [T-9696] BATSMAN 'M. S. Dhoni' AT CREASE | wait=0.0ms | crease_sem=1
+[155871.267] [SCORE  ] End of over 17: 37/5  (Extras: 0)
+[155912.667] [SCHED  ] PRIORITY BOOST: 'Trent Boult' promoted for death over 18
+[155913.115] [SCHED  ] PRIORITY SCHEDULER: Death over 18 — selecting specialist
+[155913.455] [SCHED  ] CONTEXT SWITCH #18: Loading bowler 'Trent Boult' (overs left: 1)
+[155913.743] [SCHED  ] Over 18: 'Trent Boult' bowling (140 km/h) | Scheduler: PRIORITY | Intensity: HIGH(death)
+[155914.132] [THREAD ] Spawned BOWLER 'Trent Boult' [T-6992]
+[155914.143] [THREAD ] [T-6992] BOWLER 'Trent Boult' START — over 18
+[156916.016] [WARN   ] [T-6992] TIMEOUT waiting for batsman -> forcing progress
+[157928.067] [WARN   ] [T-6992] TIMEOUT waiting for batsman -> forcing progress
+[158940.013] [WARN   ] [T-6992] TIMEOUT waiting for batsman -> forcing progress
+[159952.304] [WARN   ] [T-6992] TIMEOUT waiting for batsman -> forcing progress
+[160964.214] [WARN   ] [T-6992] TIMEOUT waiting for batsman -> forcing progress
+[161976.333] [WARN   ] [T-6992] TIMEOUT waiting for batsman -> forcing progress
+[161987.562] [THREAD ] [T-6992] BOWLER 'Trent Boult' DONE — 11W 18R econ=4.5
+[161988.415] [SCHED  ] CTX SAVE  → 'Trent Boult': 4 overs, 18 runs, 11 wkts, econ=4.50
+[161988.781] [SCHED  ] OVER 18 COMPLETE — 'Trent Boult' finished over (4/4 overs)
+[161989.218] [SCORE  ] End of over 18: 37/5  (Extras: 0)
+[162030.289] [SCHED  ] PRIORITY BOOST: 'Jasprit Bumrah' promoted for death over 19
+[162030.759] [SCHED  ] PRIORITY SCHEDULER: Death over 19 — selecting specialist
+[162031.122] [SCHED  ] CONTEXT SWITCH #19: Loading bowler 'Jasprit Bumrah' (overs left: 1)
+[162031.416] [SCHED  ] Over 19: 'Jasprit Bumrah' bowling (148 km/h) | Scheduler: PRIORITY | Intensity: HIGH(death)
+[162031.783] [THREAD ] Spawned BOWLER 'Jasprit Bumrah' [T-6992]
+[162031.802] [THREAD ] [T-6992] BOWLER 'Jasprit Bumrah' START — over 19
+[162032.376] [BALL   ]   19.1  M. S. Dhoni      [1;37m   1[0m   38/5
+[163060.964] [WARN   ] [T-6992] TIMEOUT waiting for batsman -> forcing progress
+[164072.828] [WARN   ] [T-6992] TIMEOUT waiting for batsman -> forcing progress
+[165084.542] [WARN   ] [T-6992] TIMEOUT waiting for batsman -> forcing progress
+[166096.277] [WARN   ] [T-6992] TIMEOUT waiting for batsman -> forcing progress
+[167108.646] [WARN   ] [T-6992] TIMEOUT waiting for batsman -> forcing progress
+[167119.641] [THREAD ] [T-6992] BOWLER 'Jasprit Bumrah' DONE — 12W 11R econ=2.8
+[167120.322] [SCHED  ] CTX SAVE  → 'Jasprit Bumrah': 4 overs, 11 runs, 12 wkts, econ=2.75
+[167120.771] [SCHED  ] OVER 19 COMPLETE — 'Jasprit Bumrah' finished over (4/4 overs)
+[167121.160] [SCORE  ] End of over 19: 38/5  (Extras: 0)
+[167162.066] [SCHED  ] PRIORITY SCHEDULER: Death over 20 — selecting specialist
+[167162.507] [SCHED  ] CONTEXT SWITCH #20: Loading bowler 'Deepak Chahar' (overs left: 1)
+[167162.847] [SCHED  ] Over 20: 'Deepak Chahar' bowling (145 km/h) | Scheduler: PRIORITY | Intensity: HIGH(death)
+[167163.196] [THREAD ] Spawned BOWLER 'Deepak Chahar' [T-6992]
+[167163.215] [THREAD ] [T-6992] BOWLER 'Deepak Chahar' START — over 20
+[167163.726] [BALL   ]   20.1  M. S. Dhoni      [0;37m •[0m   38/5
+[167177.168] [BALL   ]   20.2  M. S. Dhoni      [1;37m   1[0m   39/5
+[168188.629] [WARN   ] [T-6992] TIMEOUT waiting for batsman -> forcing progress
+[169200.234] [WARN   ] [T-6992] TIMEOUT waiting for batsman -> forcing progress
+[170211.820] [WARN   ] [T-6992] TIMEOUT waiting for batsman -> forcing progress
+[171222.573] [WARN   ] [T-6992] TIMEOUT waiting for batsman -> forcing progress
+[171233.331] [THREAD ] [T-6992] BOWLER 'Deepak Chahar' DONE — 2W 27R econ=6.8
+[171233.832] [SCHED  ] CTX SAVE  → 'Deepak Chahar': 4 overs, 27 runs, 2 wkts, econ=6.75
+[171234.186] [SCHED  ] OVER 20 COMPLETE — 'Deepak Chahar' finished over (4/4 overs)
+[171234.725] [SCORE  ] End of over 20: 39/5  (Extras: 0)
+[171275.328] [THREAD ] [T-9696] BATSMAN 'M. S. Dhoni' LEFT crease → 2(3 balls) | sem=2
+[171275.969] [THREAD ] All fielder threads joined
+[171322.448] [THREAD ] [UMPIRE] Exiting
+[171323.012] [INFO   ] === INNINGS 2 COMPLETE: 39/5 in 19 overs ===
+[171323.612] [SCHED  ] === Scheduler Stats === Type: Priority | Context Switches: 20 | Avg Wait: 0.0ms
+[171324.891] [INFO   ] Gantt data written to logs/gantt_data.csv
+[171325.164] [INFO   ] Run: python3 visualizer/gantt_plotter.py

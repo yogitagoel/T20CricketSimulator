@@ -1,0 +1,43 @@
+[   3.027] [INFO   ] Match: India vs Australia | 5 overs | Scheduler: Round Robin
+[   3.843] [SCHED  ] BATTING ORDER built:
+[   4.215] [SCHED  ]   FCFS: Rohit Sharma, KL Rahul, Virat Kohli ...
+[   4.525] [SCHED  ]   SJF:  Jasprit Bumrah(3), Mohammed Shami(4), Kuldeep Yadav(5) ...
+[   4.831] [SCHED  ] Scheduler: Bowler 'Jasprit Bumrah' added to RR queue (pos 0)
+[   5.131] [SCHED  ] Scheduler: Bowler 'Mohammed Shami' added to RR queue (pos 1)
+[   5.501] [SCHED  ] Scheduler: Bowler 'Arshdeep Singh' added to RR queue (pos 2)
+[   5.844] [SCHED  ] Scheduler: Bowler 'Hardik Pandya' added to RR queue (pos 3)
+[   6.172] [SCHED  ] Scheduler: Bowler 'Ravindra Jadeja' added to RR queue (pos 4)
+[   6.435] [SCHED  ] Scheduler: Bowler 'Kuldeep Yadav' added to RR queue (pos 5)
+[   7.117] [THREAD ] Umpire (Kernel) thread spawned [T-2592]
+[   7.167] [THREAD ] [UMPIRE T-2592] Kernel thread STARTED — polling every 50ms
+[   7.621] [THREAD ] [T-9888] FIELDER 'Mitchell Starc'(WK) → cond_wait
+[   8.180] [THREAD ] Spawned 6 fielder threads (all sleeping on cond_wait)
+[   7.872] [THREAD ] [T-4480] FIELDER 'Pat Cummins'(F) → cond_wait
+[   7.951] [THREAD ] [T-1776] FIELDER 'Adam Zampa'(F) → cond_wait
+[   8.078] [THREAD ] [T-9072] FIELDER 'Glenn Maxwell'(F) → cond_wait
+[   8.202] [THREAD ] [T-6368] FIELDER 'Marcus Stoinis'(F) → cond_wait
+[   7.779] [THREAD ] [T-7184] FIELDER 'Josh Hazlewood'(F) → cond_wait
+[   8.624] [THREAD ] Spawned BATSMAN 'Rohit Sharma' [T-3664]
+[   8.651] [THREAD ] [T-3664] BATSMAN 'Rohit Sharma' → sem_wait(crease) ...
+[  10.632] [THREAD ] [T-3664] BATSMAN 'Rohit Sharma' AT CREASE | wait=0.0ms | crease_sem=1
+[  10.499] [THREAD ] [T-0960] BATSMAN 'KL Rahul' → sem_wait(crease) ...
+[  11.208] [THREAD ] [T-0960] BATSMAN 'KL Rahul' AT CREASE | wait=0.0ms | crease_sem=0
+[  10.476] [THREAD ] Spawned BATSMAN 'KL Rahul' [T-0960]
+[  11.766] [SCHED  ] CONTEXT SWITCH #1: Loading bowler 'Mohammed Shami' (overs left: 4)
+[  12.013] [SCHED  ] Over 1: 'Mohammed Shami' bowling (145 km/h) | Scheduler: RR | Intensity: LOW
+[  12.418] [THREAD ] Spawned BOWLER 'Mohammed Shami' [T-8256]
+[  12.438] [THREAD ] [T-8256] BOWLER 'Mohammed Shami' START — over 1
+[  13.200] [BALL   ]    1.1  Rohit Sharma     [1;37m   1[0m   1/0
+[  31.666] [BALL   ]    1.2  KL Rahul         [1;37m   2[0m   3/0
+[  54.618] [BALL   ]    1.3  KL Rahul         [1;37m   1[0m   4/0
+[  76.087] [BALL   ]    1.4  Rohit Sharma     [1;37m   3[0m   7/0
+[  93.137] [BALL   ]    1.5  KL Rahul         [1;32m   4[0m   11/0
+[ 116.211] [BALL   ]    1.6  KL Rahul         [0;37m •[0m   11/0
+[ 133.902] [THREAD ] [T-8256] BOWLER 'Mohammed Shami' DONE — 0W 11R econ=11.0
+[ 134.657] [SCHED  ] CTX SAVE  → 'Mohammed Shami': 1 overs, 11 runs, 0 wkts, econ=11.00
+[ 135.024] [SCHED  ] OVER 1 COMPLETE — 'Mohammed Shami' finished over (1/4 overs)
+[ 135.359] [SCORE  ] End of over 1: 11/0  (Extras: 0)
+[ 201.990] [SCHED  ] CONTEXT SWITCH #2: Loading bowler 'Arshdeep Singh' (overs left: 4)
+[ 203.039] [SCHED  ] Over 2: 'Arshdeep Singh' bowling (140 km/h) | Scheduler: RR | Intensity: LOW
+[ 203.652] [THREAD ] Spawned BOWLER 'Arshdeep Singh' [T-8256]
+[ 203.717] [THREAD ] [T-8256] BOWLER 'Arshdeep Singh' START — over 2
