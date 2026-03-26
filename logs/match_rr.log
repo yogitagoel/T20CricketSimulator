@@ -1,0 +1,232 @@
+[   0.581] [INFO   ] Match: Mumbai_Indians vs Chennai_Super_Kings | 5 overs | Scheduler: Round Robin
+[   0.852] [SCHED  ] BATTING ORDER built:
+[   1.030] [SCHED  ]   FCFS: Sanju Samson, Ruturaj Gaikwad, Dewald Brevis ...
+[   1.143] [SCHED  ]   SJF:  Simarajeet Singh(4), Matheesha Padhirana(5), Rahul Chahar(6) ...
+[   1.360] [SCHED  ] Scheduler: Bowler 'Jasprit Bumrah' added to RR queue (pos 0)
+[   1.465] [SCHED  ] Scheduler: Bowler 'Deepak Chahar' added to RR queue (pos 1)
+[   1.648] [SCHED  ] Scheduler: Bowler 'Trent Boult' added to RR queue (pos 2)
+[   1.785] [SCHED  ] Scheduler: Bowler 'Hardik Pandya' added to RR queue (pos 3)
+[   1.926] [SCHED  ] Scheduler: Bowler 'Mitchell Santner' added to RR queue (pos 4)
+[   2.012] [SCHED  ] Scheduler: Bowler 'Mayank Markande' added to RR queue (pos 5)
+[   2.425] [THREAD ] Umpire (Kernel) thread spawned [T-8160]
+[   2.452] [THREAD ] [UMPIRE T-8160] Kernel thread STARTED — polling every 50ms
+[   2.655] [THREAD ] [T-4016] FIELDER 'Jasprit Bumrah'(WK) → cond_wait
+[   2.786] [THREAD ] [T-9872] FIELDER 'Deepak Chahar'(F) → cond_wait
+[   2.856] [THREAD ] [T-5728] FIELDER 'Trent Boult'(F) → cond_wait
+[   2.930] [THREAD ] [T-1584] FIELDER 'Hardik Pandya'(F) → cond_wait
+[   3.042] [THREAD ] [T-7440] FIELDER 'Mitchell Santner'(F) → cond_wait
+[   3.045] [THREAD ] Spawned 6 fielder threads (all sleeping on cond_wait)
+[   3.097] [THREAD ] [T-3296] FIELDER 'Mayank Markande'(F) → cond_wait
+[   3.687] [THREAD ] Spawned BATSMAN 'Sanju Samson' [T-9152]
+[   3.734] [THREAD ] [T-9152] BATSMAN 'Sanju Samson' → sem_wait(crease) ...
+[   3.983] [THREAD ] [T-9152] BATSMAN 'Sanju Samson' AT CREASE | wait=0.0ms | crease_sem=1
+[   3.940] [THREAD ] Spawned BATSMAN 'Ruturaj Gaikwad' [T-5008]
+[   4.034] [THREAD ] [T-5008] BATSMAN 'Ruturaj Gaikwad' → sem_wait(crease) ...
+[   4.616] [THREAD ] [T-5008] BATSMAN 'Ruturaj Gaikwad' AT CREASE | wait=0.0ms | crease_sem=0
+[   4.362] [SCHED  ] CONTEXT SWITCH #1: Loading bowler 'Deepak Chahar' (overs left: 4)
+[   4.844] [SCHED  ] Over 1: 'Deepak Chahar' bowling (145 km/h) | Scheduler: RR | Intensity: LOW
+[   5.051] [THREAD ] Spawned BOWLER 'Deepak Chahar' [T-0864]
+[   5.101] [THREAD ] [T-0864] BOWLER 'Deepak Chahar' START — over 1
+[   5.457] [BALL   ]    1.1  Sanju Samson     [0;37m •[0m   0/0
+[  29.074] [BALL   ]    1.2  Sanju Samson     [1;37m   1[0m   1/0
+[  29.447] [THREAD ] [T-1584] FIELDER 'Hardik Pandya' exit
+[  52.683] [BALL   ]    1.3  Ruturaj Gaikwad  [1;37m   1[0m   2/0
+[  52.993] [THREAD ] [T-7440] FIELDER 'Mitchell Santner' exit
+[  73.683] [BALL   ]    1.4  Sanju Samson     [1;37m   2[0m   4/0
+[  74.155] [THREAD ] [T-9872] FIELDER 'Deepak Chahar' exit
+[  97.133] [BALL   ]    1.5  Sanju Samson     [0;37m •[0m   4/0
+[ 120.727] [BALL   ]    1.6  Sanju Samson     [1;32m   4[0m   8/0
+[ 121.080] [THREAD ] [T-3296] FIELDER 'Mayank Markande' exit
+[ 137.794] [THREAD ] [T-0864] BOWLER 'Deepak Chahar' DONE — 0W 8R econ=8.0
+[ 138.045] [SCHED  ] CTX SAVE  → 'Deepak Chahar': 1 overs, 8 runs, 0 wkts, econ=8.00
+[ 138.225] [SCHED  ] OVER 1 COMPLETE — 'Deepak Chahar' finished over (1/4 overs)
+[ 138.459] [SCORE  ] End of over 1: 8/0  (Extras: 0)
+[ 208.181] [SCHED  ] CONTEXT SWITCH #2: Loading bowler 'Trent Boult' (overs left: 4)
+[ 208.424] [SCHED  ] Over 2: 'Trent Boult' bowling (140 km/h) | Scheduler: RR | Intensity: LOW
+[ 208.691] [THREAD ] Spawned BOWLER 'Trent Boult' [T-0864]
+[ 208.706] [THREAD ] [T-0864] BOWLER 'Trent Boult' START — over 2
+[ 208.931] [BALL   ]    2.1  Ruturaj Gaikwad  [1;37m   1[0m   9/0
+[ 209.119] [THREAD ] [T-5728] FIELDER 'Trent Boult' exit
+[ 228.852] [BALL   ] NEW BATSMAN: 'Dewald Brevis' coming to crease
+[ 229.429] [THREAD ] Spawned BATSMAN 'Dewald Brevis' [T-6720]
+[ 229.744] [BALL   ]    2.2  Sanju Samson     [1;31mW(C)[0m   9/1
+[ 229.466] [THREAD ] [T-6720] BATSMAN 'Dewald Brevis' → sem_wait(crease) ...
+[ 230.282] [THREAD ] [T-4016] FIELDER 'Jasprit Bumrah' exit
+[ 253.999] [THREAD ] [T-9152] BATSMAN 'Sanju Samson' LEFT crease → 7(6 balls) | sem=1
+[ 254.047] [THREAD ] [T-6720] BATSMAN 'Dewald Brevis' AT CREASE | wait=23.7ms | crease_sem=0
+[ 254.936] [BALL   ] NEW BATSMAN: 'Shivam Dube' coming to crease
+[ 255.256] [THREAD ] [T-2576] BATSMAN 'Shivam Dube' → sem_wait(crease) ...
+[ 255.199] [THREAD ] Spawned BATSMAN 'Shivam Dube' [T-2576]
+[ 255.673] [BALL   ]    2.3  Dewald Brevis    [1;31mW(B)[0m   9/2
+[ 279.331] [THREAD ] [T-6720] BATSMAN 'Dewald Brevis' LEFT crease → 0(1 balls) | sem=1
+[ 279.356] [THREAD ] [T-2576] BATSMAN 'Shivam Dube' AT CREASE | wait=23.9ms | crease_sem=0
+[ 279.620] [BALL   ]    2.4  Shivam Dube      [0;37m •[0m   9/2
+[ 302.787] [BALL   ]    2.5  Shivam Dube      [0;37m •[0m   9/2
+[ 323.701] [THREAD ] [T-0864] BOWLER 'Trent Boult' DONE — 3W 1R econ=1.0
+[ 323.940] [SCHED  ] CTX SAVE  → 'Trent Boult': 1 overs, 1 runs, 3 wkts, econ=1.00
+[ 324.068] [SCHED  ] OVER 2 COMPLETE — 'Trent Boult' finished over (1/4 overs)
+[ 324.172] [SCORE  ] End of over 2: 9/2  (Extras: 0)
+[ 395.199] [SCHED  ] CONTEXT SWITCH #3: Loading bowler 'Hardik Pandya' (overs left: 4)
+[ 395.500] [SCHED  ] Over 3: 'Hardik Pandya' bowling (135 km/h) | Scheduler: RR | Intensity: LOW
+[ 396.732] [THREAD ] Spawned BOWLER 'Hardik Pandya' [T-0864]
+[ 396.950] [THREAD ] [T-0864] BOWLER 'Hardik Pandya' START — over 3
+[ 399.138] [BALL   ]    3.1  Ruturaj Gaikwad  [1;37m   2[0m   11/2
+[ 423.754] [BALL   ]    3.2  Ruturaj Gaikwad  [1;37m   2[0m   13/2
+[ 447.893] [BALL   ]    3.3  Ruturaj Gaikwad  [1;37m   1[0m   14/2
+[ 466.295] [BALL   ]    3.4  Shivam Dube      [1;37m   1[0m   15/2
+[ 487.923] [BALL   ]    3.5  Ruturaj Gaikwad  [1;37m   1[0m   16/2
+[ 505.176] [BALL   ]    3.6  Shivam Dube      [0;37m •[0m   16/2
+[ 524.416] [THREAD ] [T-0864] BOWLER 'Hardik Pandya' DONE — 0W 7R econ=7.0
+[ 524.796] [SCHED  ] CTX SAVE  → 'Hardik Pandya': 1 overs, 7 runs, 0 wkts, econ=7.00
+[ 525.003] [SCHED  ] OVER 3 COMPLETE — 'Hardik Pandya' finished over (1/4 overs)
+[ 525.188] [SCORE  ] End of over 3: 16/2  (Extras: 0)
+[ 594.159] [SCHED  ] CONTEXT SWITCH #4: Loading bowler 'Mitchell Santner' (overs left: 4)
+[ 594.392] [SCHED  ] Over 4: 'Mitchell Santner' bowling (115 km/h) | Scheduler: RR | Intensity: LOW
+[ 594.623] [THREAD ] Spawned BOWLER 'Mitchell Santner' [T-0864]
+[ 594.636] [THREAD ] [T-0864] BOWLER 'Mitchell Santner' START — over 4
+[ 595.008] [BALL   ]    4.1  Ruturaj Gaikwad  [1;32m   4[0m   20/2
+[ 615.880] [BALL   ]    4.2  Shivam Dube      [1;32m   4[0m   24/2
+[ 639.592] [BALL   ]    4.3  Shivam Dube      [1;32m   4[0m   28/2
+[ 662.637] [BALL   ]    4.4  Shivam Dube      [0;37m •[0m   28/2
+[ 685.787] [BALL   ] NEW BATSMAN: 'Shreyash Gopal' coming to crease
+[ 686.190] [THREAD ] Spawned BATSMAN 'Shreyash Gopal' [T-8432]
+[ 686.210] [THREAD ] [T-8432] BATSMAN 'Shreyash Gopal' → sem_wait(crease) ...
+[ 686.323] [BALL   ]    4.5  Shivam Dube      [1;31mW(L)[0m   28/3
+[ 710.680] [THREAD ] [T-2576] BATSMAN 'Shivam Dube' LEFT crease → 9(8 balls) | sem=1
+[ 710.714] [THREAD ] [T-8432] BATSMAN 'Shreyash Gopal' AT CREASE | wait=24.3ms | crease_sem=0
+[ 711.208] [BALL   ]    4.6  Shreyash Gopal   [1;37m   1[0m   29/3
+[ 722.891] [THREAD ] [T-0864] BOWLER 'Mitchell Santner' DONE — 2W 12R econ=12.0
+[ 723.405] [SCHED  ] CTX SAVE  → 'Mitchell Santner': 1 overs, 12 runs, 2 wkts, econ=12.00
+[ 723.609] [SCHED  ] OVER 4 COMPLETE — 'Mitchell Santner' finished over (1/4 overs)
+[ 723.767] [SCORE  ] End of over 4: 29/3  (Extras: 0)
+[ 791.396] [SCHED  ] CONTEXT SWITCH #5: Loading bowler 'Mayank Markande' (overs left: 4)
+[ 791.693] [SCHED  ] Over 5: 'Mayank Markande' bowling (100 km/h) | Scheduler: RR | Intensity: LOW
+[ 792.027] [THREAD ] Spawned BOWLER 'Mayank Markande' [T-0864]
+[ 792.062] [THREAD ] [T-0864] BOWLER 'Mayank Markande' START — over 5
+[ 792.735] [BALL   ]    5.0  Shreyash Gopal   [1;33m  Wd[0m   30/3
+[ 811.975] [BALL   ]    5.1  Ruturaj Gaikwad  [1;32m   4[0m   34/3
+[ 839.631] [BALL   ] NEW BATSMAN: 'M. S. Dhoni' coming to crease
+[ 840.231] [THREAD ] Spawned BATSMAN 'M. S. Dhoni' [T-3264]
+[ 840.435] [BALL   ]    5.2  Ruturaj Gaikwad  [1;31mW(B)[0m   34/4
+[ 840.258] [THREAD ] [T-3264] BATSMAN 'M. S. Dhoni' → sem_wait(crease) ...
+[ 866.670] [THREAD ] [T-5008] BATSMAN 'Ruturaj Gaikwad' LEFT crease → 16(9 balls) | sem=1
+[ 866.713] [THREAD ] [T-3264] BATSMAN 'M. S. Dhoni' AT CREASE | wait=25.7ms | crease_sem=0
+[ 867.477] [BALL   ]    5.3  M. S. Dhoni      [1;37m   1[0m   35/4
+[ 879.866] [BALL   ]    5.4  Shreyash Gopal   [0;37m •[0m   35/4
+[ 904.051] [BALL   ]    5.5  Shreyash Gopal   [1;37m   1[0m   36/4
+[ 917.141] [BALL   ] NEW BATSMAN: 'Shivam Dube' coming to crease
+[ 917.808] [THREAD ] Spawned BATSMAN 'Shivam Dube' [T-9120]
+[ 918.083] [BALL   ]    5.6  M. S. Dhoni      [1;31mW(B)[0m   36/5
+[ 917.840] [THREAD ] [T-9120] BATSMAN 'Shivam Dube' → sem_wait(crease) ...
+[ 929.836] [THREAD ] [T-0864] BOWLER 'Mayank Markande' DONE — 2W 7R econ=6.0
+[ 930.339] [SCHED  ] CTX SAVE  → 'Mayank Markande': 1 overs, 7 runs, 2 wkts, econ=7.00
+[ 930.706] [SCHED  ] OVER 5 COMPLETE — 'Mayank Markande' finished over (1/4 overs)
+[ 931.049] [SCORE  ] End of over 5: 36/5  (Extras: 1)
+[ 940.824] [THREAD ] [T-3264] BATSMAN 'M. S. Dhoni' LEFT crease → 1(2 balls) | sem=1
+[ 940.904] [THREAD ] [T-9120] BATSMAN 'Shivam Dube' AT CREASE | wait=22.1ms | crease_sem=0
+[ 998.649] [THREAD ] [T-8432] BATSMAN 'Shreyash Gopal' LEFT crease → 2(3 balls) | sem=1
+[1011.897] [THREAD ] [T-9120] BATSMAN 'Shivam Dube' LEFT crease → 0(0 balls) | sem=2
+[1012.342] [THREAD ] All fielder threads joined
+[1044.054] [THREAD ] [UMPIRE] Exiting
+[1044.391] [INFO   ] === INNINGS 1 COMPLETE: 36/5 in 4 overs ===
+[1044.586] [SCHED  ] BATTING ORDER built:
+[1044.735] [SCHED  ]   FCFS: Rohit Sharma, Suryakumar, Ryan Rickelton ...
+[1044.913] [SCHED  ]   SJF:  Jasprit Bumrah(3), Deepak Chahar(4), Trent Boult(5) ...
+[1045.065] [SCHED  ] Scheduler: Bowler 'Rahul Chahar' added to RR queue (pos 0)
+[1045.183] [SCHED  ] Scheduler: Bowler 'Simarajeet Chahal' added to RR queue (pos 1)
+[1045.601] [SCHED  ] Scheduler: Bowler 'Matheesha Pathirana' added to RR queue (pos 2)
+[1045.813] [SCHED  ] Scheduler: Bowler 'Khalil Ahmed' added to RR queue (pos 3)
+[1045.965] [SCHED  ] Scheduler: Bowler 'Shivam Dube' added to RR queue (pos 4)
+[1046.152] [SCHED  ] Scheduler: Bowler 'Shreyash Gopal' added to RR queue (pos 5)
+[1046.403] [THREAD ] [UMPIRE T-8160] Kernel thread STARTED — polling every 50ms
+[1046.417] [THREAD ] Umpire (Kernel) thread spawned [T-8160]
+[1046.761] [THREAD ] [T-3296] FIELDER 'Jasprit Bumrah'(WK) → cond_wait
+[1047.104] [THREAD ] [T-5728] FIELDER 'Mayank Markande'(F) → cond_wait
+[1046.845] [THREAD ] [T-1584] FIELDER 'Trent Boult'(F) → cond_wait
+[1046.948] [THREAD ] [T-4016] FIELDER 'Hardik Pandya'(F) → cond_wait
+[1046.996] [THREAD ] [T-9872] FIELDER 'Mitchell Santner'(F) → cond_wait
+[1047.058] [THREAD ] Spawned 6 fielder threads (all sleeping on cond_wait)
+[1046.811] [THREAD ] [T-7440] FIELDER 'Deepak Chahar'(F) → cond_wait
+[1048.055] [THREAD ] Spawned BATSMAN 'Rohit Sharma' [T-9152]
+[1048.083] [THREAD ] [T-9152] BATSMAN 'Rohit Sharma' → sem_wait(crease) ...
+[1048.380] [THREAD ] Spawned BATSMAN 'Suryakumar' [T-5008]
+[1048.390] [THREAD ] [T-9152] BATSMAN 'Rohit Sharma' AT CREASE | wait=0.0ms | crease_sem=1
+[1048.374] [THREAD ] [T-5008] BATSMAN 'Suryakumar' → sem_wait(crease) ...
+[1048.807] [THREAD ] [T-5008] BATSMAN 'Suryakumar' AT CREASE | wait=0.0ms | crease_sem=0
+[1048.526] [SCHED  ] CONTEXT SWITCH #1: Loading bowler 'Simarajeet Chahal' (overs left: 4)
+[1048.955] [SCHED  ] Over 1: 'Simarajeet Chahal' bowling (140 km/h) | Scheduler: RR | Intensity: LOW
+[1049.155] [THREAD ] Spawned BOWLER 'Simarajeet Chahal' [T-0864]
+[1049.178] [THREAD ] [T-0864] BOWLER 'Simarajeet Chahal' START — over 1
+[1049.410] [BALL   ] NEW BATSMAN: 'Ryan Rickelton' coming to crease
+[1049.644] [THREAD ] Spawned BATSMAN 'Ryan Rickelton' [T-6720]
+[1049.780] [BALL   ]    1.1  Rohit Sharma     [1;31mW(C)[0m   0/1
+[1049.671] [THREAD ] [T-6720] BATSMAN 'Ryan Rickelton' → sem_wait(crease) ...
+[1049.997] [THREAD ] [T-1584] FIELDER 'Trent Boult' exit
+[1074.615] [THREAD ] [T-9152] BATSMAN 'Rohit Sharma' LEFT crease → 0(1 balls) | sem=1
+[1074.676] [THREAD ] [T-6720] BATSMAN 'Ryan Rickelton' AT CREASE | wait=24.6ms | crease_sem=0
+[1075.722] [BALL   ]    1.2  Ryan Rickelton   [1;37m   1[0m   1/1
+[1076.137] [THREAD ] [T-4016] FIELDER 'Hardik Pandya' exit
+[1091.089] [BALL   ]    1.3  Suryakumar       [1;32m   4[0m   5/1
+[1091.474] [THREAD ] [T-9872] FIELDER 'Mitchell Santner' exit
+[1114.708] [BALL   ]    1.4  Suryakumar       [0;37m •[0m   5/1
+[1140.014] [BALL   ]    1.5  Suryakumar       [0;37m •[0m   5/1
+[1161.563] [THREAD ] [T-0864] BOWLER 'Simarajeet Chahal' DONE — 2W 5R econ=5.0
+[1162.116] [SCHED  ] CTX SAVE  → 'Simarajeet Chahal': 1 overs, 5 runs, 2 wkts, econ=5.00
+[1162.464] [SCHED  ] OVER 1 COMPLETE — 'Simarajeet Chahal' finished over (1/4 overs)
+[1162.858] [SCORE  ] End of over 1: 6/1  (Extras: 0)
+[1162.768] [BALL   ]    1.6  Suryakumar       [1;37m   1[0m   6/1
+[1163.696] [THREAD ] [T-7440] FIELDER 'Deepak Chahar' exit
+[1231.026] [SCHED  ] CONTEXT SWITCH #2: Loading bowler 'Matheesha Pathirana' (overs left: 4)
+[1231.330] [SCHED  ] Over 2: 'Matheesha Pathirana' bowling (143 km/h) | Scheduler: RR | Intensity: LOW
+[1231.656] [THREAD ] Spawned BOWLER 'Matheesha Pathirana' [T-0864]
+[1231.731] [THREAD ] [T-0864] BOWLER 'Matheesha Pathirana' START — over 2
+[1232.288] [BALL   ]    2.1  Suryakumar       [1;37m   2[0m   8/1
+[1232.584] [THREAD ] [T-5728] FIELDER 'Mayank Markande' exit
+[1255.972] [BALL   ]    2.2  Suryakumar       [1;37m   2[0m   10/1
+[1256.422] [THREAD ] [T-3296] FIELDER 'Jasprit Bumrah' exit
+[1279.449] [BALL   ]    2.3  Suryakumar       [1;37m   1[0m   11/1
+[1300.919] [BALL   ]    2.4  Ryan Rickelton   [1;37m   2[0m   13/1
+[1324.931] [BALL   ]    2.5  Ryan Rickelton   [1;37m   1[0m   14/1
+[1350.426] [BALL   ]    2.6  Suryakumar       [1;37m   2[0m   16/1
+[1367.800] [THREAD ] [T-0864] BOWLER 'Matheesha Pathirana' DONE — 0W 10R econ=10.0
+[1368.238] [SCHED  ] CTX SAVE  → 'Matheesha Pathirana': 1 overs, 10 runs, 0 wkts, econ=10.00
+[1368.433] [SCHED  ] OVER 2 COMPLETE — 'Matheesha Pathirana' finished over (1/4 overs)
+[1368.614] [SCORE  ] End of over 2: 16/1  (Extras: 0)
+[1437.394] [SCHED  ] CONTEXT SWITCH #3: Loading bowler 'Khalil Ahmed' (overs left: 4)
+[1437.729] [SCHED  ] Over 3: 'Khalil Ahmed' bowling (100 km/h) | Scheduler: RR | Intensity: LOW
+[1438.080] [THREAD ] Spawned BOWLER 'Khalil Ahmed' [T-0864]
+[1438.127] [THREAD ] [T-0864] BOWLER 'Khalil Ahmed' START — over 3
+[1439.677] [BALL   ]    3.1  Suryakumar       [0;37m •[0m   16/1
+[1464.127] [BALL   ]    3.2  Suryakumar       [1;37m   2[0m   18/1
+[1487.304] [BALL   ]    3.3  Suryakumar       [1;37m   1[0m   19/1
+[1509.422] [BALL   ]    3.3  Ryan Rickelton   [1;33m  Wd[0m   20/1
+[1528.193] [BALL   ] NEW BATSMAN: 'Corbin Bosch' coming to crease
+[1528.702] [THREAD ] Spawned BATSMAN 'Corbin Bosch' [T-2576]
+[1528.986] [BALL   ]    3.4  Suryakumar       [1;31mW(L)[0m   20/2
+[1528.730] [THREAD ] [T-2576] BATSMAN 'Corbin Bosch' → sem_wait(crease) ...
+[1556.652] [THREAD ] [T-5008] BATSMAN 'Suryakumar' LEFT crease → 15(12 balls) | sem=1
+[1556.692] [THREAD ] [T-2576] BATSMAN 'Corbin Bosch' AT CREASE | wait=26.5ms | crease_sem=0
+[1557.252] [BALL   ]    3.5  Corbin Bosch     [1;32m   4[0m   24/2
+[1580.487] [BALL   ]    3.6  Corbin Bosch     [1;32m   4[0m   28/2
+[1580.592] [THREAD ] [T-0864] BOWLER 'Khalil Ahmed' DONE — 2W 8R econ=6.9
+[1581.188] [SCHED  ] CTX SAVE  → 'Khalil Ahmed': 1 overs, 8 runs, 2 wkts, econ=8.00
+[1581.508] [SCHED  ] OVER 3 COMPLETE — 'Khalil Ahmed' finished over (1/4 overs)
+[1581.907] [SCORE  ] End of over 3: 28/2  (Extras: 1)
+[1649.173] [SCHED  ] CONTEXT SWITCH #4: Loading bowler 'Shivam Dube' (overs left: 4)
+[1649.494] [SCHED  ] Over 4: 'Shivam Dube' bowling (110 km/h) | Scheduler: RR | Intensity: LOW
+[1649.871] [THREAD ] Spawned BOWLER 'Shivam Dube' [T-0864]
+[1649.906] [THREAD ] [T-0864] BOWLER 'Shivam Dube' START — over 4
+[1650.519] [BALL   ]    4.1  Corbin Bosch     [1;32m   4[0m   32/2
+[1678.477] [BALL   ]    4.2  Corbin Bosch     [1;32m   4[0m   36/2
+[1703.971] [BALL   ]    4.3  Corbin Bosch     [1;32m   4[0m   40/2
+[1722.589] [THREAD ] [UMPIRE] Match-end: all_out=0 chased=1
+[1723.107] [THREAD ] [UMPIRE] Exiting
+[1726.804] [THREAD ] [T-2576] BATSMAN 'Corbin Bosch' LEFT crease → 20(5 balls) | sem=1
+[1732.790] [THREAD ] [T-6720] BATSMAN 'Ryan Rickelton' LEFT crease → 4(3 balls) | sem=2
+[1741.133] [THREAD ] [T-0864] BOWLER 'Shivam Dube' DONE — 0W 16R econ=24.0
+[1741.452] [SCHED  ] CTX SAVE  → 'Shivam Dube': 0 overs, 16 runs, 0 wkts, econ=0.00
+[1741.725] [SCHED  ] OVER 4 COMPLETE — 'Shivam Dube' finished over (0/4 overs)
+[1741.891] [SCORE  ] End of over 4: 40/2  (Extras: 1)
+[1812.671] [THREAD ] All fielder threads joined
+[1813.045] [INFO   ] === INNINGS 2 COMPLETE: 40/2 in 3 overs ===
+[1813.358] [SCHED  ] === Scheduler Stats === Type: Round Robin | Context Switches: 4 | Avg Wait: 0.0ms

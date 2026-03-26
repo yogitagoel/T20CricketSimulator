@@ -13,11 +13,33 @@
 #include <vector>
 #include <string>
 
+// Pools
+extern std::vector<Player> batsmen_pool;
+extern std::vector<Player> wicketkeeper_pool;
+extern std::vector<Player> bowlers_pool;
+extern std::vector<Player> allrounders_pool;
+
 // Default player rosters 
 std::vector<Player> build_mi_batting();
 std::vector<Player> build_mi_bowling();
 std::vector<Player> build_csk_batting();
 std::vector<Player> build_csk_bowling();
+
+int rand_range(int l, int r);
+float rand_float(float l, float r);
+void init_batsmen(int &id);
+void init_wicketkeepers(int &id);
+void init_bowlers(int &id);
+void init_allrounders(int &id);
+void init_all_players();
+void shuffle_pool(std::vector<Player>& pool);
+Player pick_player(std::vector<Player>& pool);
+std::vector<Player> select_team();
+void create_teams(std::vector<Player>& teamA, std::vector<Player>& teamB);
+void print_team(const std::vector<Player>& team, const std::string& name);  
+std::vector<Player> get_batting_team(const std::vector<Player>& team);
+std::vector<Player> get_bowling_team(const std::vector<Player>& team);
+void ensure_teams_ready();
 
 // Match engine 
 class MatchEngine {
@@ -37,7 +59,6 @@ public:
     // Post-match analysis
     void print_final_scorecard() const;
     void run_sjf_vs_fcfs_analysis();
-
 private:
     MatchConfig  config_;
     MatchState   state_;

@@ -5,6 +5,7 @@
  * Gantt chart generation, and post-match analysis.
  */
 
+#include "../include/cricket_types.h"
 #include "../include/match_engine.h"
 #include "../include/player_threads.h"
 #include "../include/synchronization.h"
@@ -15,6 +16,13 @@
 #include <algorithm>
 #include <numeric>
 #include <cassert>
+#include <cstdlib>
+#include <ctime>
+#include <algorithm>
+#include <random>
+#include <iostream>
+#include <vector>
+#include <string>
 
 // Helper: build a Player struct 
 static Player make_player(int id, const char* name, PlayerRole role,
@@ -45,60 +53,240 @@ static Player make_player(int id, const char* name, PlayerRole role,
 
 // Team Rosters 
 
-std::vector<Player> build_mi_batting() {
-    return {
-        // id  name              role           skill  expBalls  avg    SR
-        make_player( 1, "Rohit Sharma",     ROLE_OPENER,    9,  42, 32.0f, 140.0f),
-        make_player( 2, "Suryakumar",       ROLE_OPENER,    8,  35, 28.0f, 135.0f),
-        make_player( 3, "Ryan Rickelton",   ROLE_MIDDLE,   10,  48, 48.0f, 138.0f),
-        make_player( 4, "Corbin Bosch",     ROLE_MIDDLE,    9,  30, 36.0f, 175.0f),
-        make_player( 5, "Hardik Pandya",    ROLE_ALLROUNDER,7, 18, 22.0f, 155.0f),
-        make_player( 6, "Quinton de Kock",  ROLE_WK,        8,  22, 25.0f, 150.0f),
-        make_player( 7, "Mitchell Santner", ROLE_ALLROUNDER,6, 12, 15.0f, 120.0f),
-        make_player( 8, "Mayank Markande",  ROLE_LOWER,     5,  10,  8.0f, 110.0f),
-        make_player( 9, "Trent Boult",      ROLE_TAILENDER, 3,   5,  4.0f,  80.0f),
-        make_player(10, "Deepak Chahar",    ROLE_TAILENDER, 2,   4,  3.0f,  70.0f),
-        make_player(11, "Jasprit Bumrah",   ROLE_TAILENDER, 2,   3,  2.0f,  60.0f),
+// Players pool generation
+
+int rand_range(int l, int r) {
+    return l + rand() % (r - l + 1);
+}
+float rand_float(float l, float r) {
+    return l + static_cast<float>(rand()) / RAND_MAX * (r - l);
+}
+std::vector<Player> batsmen_pool;
+std::vector<Player> wicketkeeper_pool;
+std::vector<Player> bowlers_pool;
+std::vector<Player> allrounders_pool;
+
+// Batsman pool hving 20 batsman
+void init_batsmen(int &id) {
+    std::vector<std::string> names = {
+        "Virat Kohli","Joe Root","Steve Smith","Kane Williamson","Rohit Sharma","Shubhman Gill","David Warner",
+        "KL Rahul","Travis Head","Jos Buttler","Aiden Markram","Devon Conway","Harry Brook","Shahi Hope",
+        "Glenn Phillips","Daryl Mitchell","Nicholas Pooran","Rahmanullah Gurbaz","Shikhar Dhawan","Suresh Raina"
     };
+
+    for (auto &name : names) {
+        batsmen_pool.push_back(
+            make_player(id++, name.c_str(), BATSMAN,
+                rand_range(70,95),
+                rand_range(20,40),
+                rand_float(35,55),
+                rand_float(120,180)
+            )
+        );
+    }
+}
+
+// Wicket-keeper pool having 6 wicket-keepers
+void init_wicketkeepers(int &id) {
+    std::vector<std::string> names = {
+        "M S Dhoni","Dinesh Karthik","Quinton de Kock","Rishabh Pant","Sanju Samson","Alex Carey"
+    };
+
+    for (auto &name : names) {
+        wicketkeeper_pool.push_back(
+            make_player(id++, name.c_str(), WICKET_KEEPER,
+                rand_range(65,90),
+                rand_range(20,35),
+                rand_float(30,45),
+                rand_float(120,160)
+            )
+        );
+    }
+}
+
+// All-rounder pool having 15 all-rounders
+void init_allrounders(int &id) {
+    std::vector<std::string> names = {
+        "Benn Stokes","Hardik Pandya","Shakib al Hasan","Ravindra Jadeja","Glenn Maxwell",
+        "Mitchell Marsh","Andre Russell","Marcus Stoinis","Sam Curran","Chris Woakes",
+        "Auqib Nabi","Wanindu Hasaranga","Axar Patel","Cameron Green","Jason Holder"
+    };
+
+    for (auto &name : names) {
+        allrounders_pool.push_back(
+            make_player(id++, name.c_str(), ALL_ROUNDER,
+                rand_range(60,85),
+                rand_range(10,30),
+                rand_float(25,45),
+                rand_float(110,160),
+                rand_float(6.5,9.0),
+                rand_float(110,140),
+                rand()%2,
+                4
+            )
+        );
+    }
+}
+
+// Bowler pool having 15 bowlers
+void init_bowlers(int &id) {
+    std::vector<std::string> names = {
+        "Japreet Bumrah","Mitchell Starc","Shoaib Akhtar","Kagiso Rabada","Trent Boult",
+        "Mohammad Shami","Anrich Nortje","Mark Wood","Lockie Ferguson","Adam Zampa",
+        "Adil Rashid","Kuldeep Yadav","Josh Hazlewood","Mustafizur Rehman","Deepak Chahal"
+    };
+
+    for (auto &name : names) {
+        bowlers_pool.push_back(
+            make_player(id++, name.c_str(), BOWLER,
+                rand_range(70,95),
+                0,
+                rand_float(10,25),
+                rand_float(80,120),
+                rand_float(6.0,8.5),
+                rand_float(120,150),
+                rand()%2,
+                4
+            )
+        );
+    }
+}
+
+
+
+void init_all_players() {
+    srand(time(NULL));
+    int id = 0;
+
+    init_batsmen(id);
+    init_wicketkeepers(id);
+    init_allrounders(id);
+    init_bowlers(id);
+}
+
+// Shuffle pools
+std::mt19937 rng(std::random_device{}());
+
+void shuffle_pool(std::vector<Player>& pool) {
+    std::shuffle(pool.begin(), pool.end(), rng);
+}
+
+Player pick_player(std::vector<Player>& pool) {
+    Player p = pool.back();
+    pool.pop_back();
+    return p;
+}
+
+// Team selection
+std::vector<Player> select_team() {
+    std::vector<Player> team;
+
+    for (int i = 0; i < 4; i++)
+        team.push_back(pick_player(batsmen_pool));
+
+    team.push_back(pick_player(wicketkeeper_pool));
+
+    for (int i = 0; i < 3; i++)
+        team.push_back(pick_player(bowlers_pool));
+
+    for (int i = 0; i < 3; i++)
+        team.push_back(pick_player(allrounders_pool));
+
+    return team;
+}
+
+void create_teams(std::vector<Player>& teamA, std::vector<Player>& teamB) {
+
+    shuffle_pool(batsmen_pool);
+    shuffle_pool(wicketkeeper_pool);
+    shuffle_pool(bowlers_pool);
+    shuffle_pool(allrounders_pool);
+
+    // Safety check
+    if (batsmen_pool.size() < 8 ||
+        wicketkeeper_pool.size() < 2 ||
+        bowlers_pool.size() < 6 ||
+        allrounders_pool.size() < 6) {
+        printf("Not enough players!\n");
+        exit(1);
+    }
+
+    teamA = select_team();
+    teamB = select_team();
+}
+
+
+// Print teams
+void print_team(const std::vector<Player>& team, const std::string& name) {
+    printf(COL_ORANGE" \n=== %s ===\n", name.c_str(),
+    COL_RESET<"\n");
+    for (const auto& p : team) {
+        std::string role;
+        if (p.role == BATSMAN) role = "Batsman";
+        else if (p.role == BOWLER) role = "Bowler";
+        else if(p.role == ALL_ROUNDER) role="All Rounder";
+        else role = "Wicket Keeper";
+
+        printf(COL_ORANGE"%s (%s)\n", p.name.c_str(), role.c_str(),
+               COL_RESET);
+    }
+}
+
+std::vector<Player> get_batting_team(const std::vector<Player>& team) {
+    std::vector<Player> batting;
+
+    for (const auto& p : team) {
+        if (p.role == BATSMAN || p.role == ALL_ROUNDER) {
+            batting.push_back(p);
+        }
+    }
+
+    return batting;
+}
+
+std::vector<Player> get_bowling_team(const std::vector<Player>& team) {
+    std::vector<Player> bowling;
+
+    for (const auto& p : team) {
+        if (p.role == BOWLER || p.role == ALL_ROUNDER) {
+            bowling.push_back(p);
+        }
+    }
+
+    return bowling;
+}
+
+
+static std::vector<Player> MI;
+static std::vector<Player> CSK;
+static bool teams_initialized = false;
+
+void ensure_teams_ready() {
+    if (!teams_initialized) {
+        init_all_players();
+        create_teams(MI, CSK);
+        teams_initialized = true;
+    }
+}
+
+std::vector<Player> build_mi_batting() {
+    ensure_teams_ready();
+    return get_batting_team(MI);
 }
 
 std::vector<Player> build_mi_bowling() {
-    // economy, speed, death_specialist, max_overs
-    return {
-        make_player( 1, "Jasprit Bumrah",   ROLE_BOWLER, 10, 0, 0, 0, 6.5f, 148.0f, true,  4),
-        make_player( 2, "Deepak Chahar",    ROLE_BOWLER,  9, 0, 0, 0, 7.0f, 145.0f, false, 4),
-        make_player( 3, "Trent Boult",      ROLE_BOWLER,  8, 0, 0, 0, 7.5f, 140.0f, true,  4),
-        make_player( 4, "Hardik Pandya",  ROLE_ALLROUNDER,7,0,0, 0, 8.0f, 135.0f, false, 4),
-        make_player( 5, "Mitchell Santner", ROLE_ALLROUNDER,7,0,0, 0, 7.8f, 115.0f, false, 4),
-        make_player( 6, "Mayank Markande",  ROLE_BOWLER,  8, 0, 0, 0, 7.2f, 100.0f, false, 4),
-    };
+    ensure_teams_ready();
+    return get_bowling_team(MI);
 }
 
 std::vector<Player> build_csk_batting() {
-    return {
-        make_player(21, "Sanju Samson",       ROLE_OPENER,    9,  38, 33.0f, 143.0f),
-        make_player(22, "Ruturaj Gaikwad",    ROLE_OPENER,    8,  32, 29.0f, 148.0f),
-        make_player(23, "Dewald Brevis",      ROLE_MIDDLE,    9,  40, 40.0f, 130.0f),
-        make_player(24, "Shivam Dube",        ROLE_MIDDLE,    9,  25, 35.0f, 165.0f),
-        make_player(25, "Shreyash Gopal",     ROLE_ALLROUNDER,7, 18, 24.0f, 152.0f),
-        make_player(26, "M. S. Dhoni",        ROLE_WK,        7,  20, 22.0f, 145.0f),
-        make_player(27, "Shivam Dube",        ROLE_ALLROUNDER,6, 14, 18.0f, 130.0f),
-        make_player(28, "Khalil Ahmed",       ROLE_LOWER,     4,   8, 10.0f, 100.0f),
-        make_player(29, "Rahul Chahar",       ROLE_TAILENDER, 3,   6,  5.0f,  85.0f),
-        make_player(30, "Simarajeet Singh",   ROLE_TAILENDER, 2,   4,  3.0f,  70.0f),
-        make_player(31, "Matheesha Padhirana",ROLE_TAILENDER, 3,   5,  4.0f,  75.0f),
-    };
+    ensure_teams_ready();
+    return get_batting_team(CSK);
 }
 
 std::vector<Player> build_csk_bowling() {
-    return {
-        make_player(21, "Rahul Chahar",        ROLE_BOWLER, 10, 0, 0, 0, 7.0f, 150.0f, true,  4),
-        make_player(22, "Simarajeet Chahal",   ROLE_BOWLER,  9, 0, 0, 0, 6.8f, 140.0f, false, 4),
-        make_player(23, "Matheesha Pathirana", ROLE_BOWLER,  9, 0, 0, 0, 7.2f, 143.0f, true,  4),
-        make_player(24, "Khalil Ahmed",        ROLE_BOWLER,  8, 0, 0, 0, 7.5f, 100.0f, false, 4),
-        make_player(25, "Shivam Dube",         ROLE_ALLROUNDER,7,0,0, 0, 8.5f, 110.0f, false, 4),
-        make_player(26, "Shreyash Gopal",      ROLE_ALLROUNDER,6,0,0, 0, 9.0f, 125.0f, false, 4),
-    };
+    ensure_teams_ready();
+    return get_bowling_team(CSK);
 }
 
 //----------------------------------------------------------------------------------------------
@@ -126,7 +314,7 @@ MatchEngine::MatchEngine(const MatchConfig& cfg)
     fielders_.clear();
     for (size_t i = 0; i < team2_bowl_.size(); i++) {
         Player fp = team2_bowl_[i];
-        fp.role = (i == 0) ? ROLE_WK : ROLE_BOWLER;
+        fp.role = (i == 0) ? WICKET_KEEPER : BOWLER;
         fp.id  += 200; 
         fielders_.push_back(fp);
     }
@@ -270,7 +458,7 @@ stroke_done    = false;
 g_striker_id_local = -1;
 safe_mutex_unlock(&delivery_mutex, "delivery_mutex");
         
-        // 🔥 FIX: Ensure striker exists before over starts
+        // FIX: Ensure striker exists before over starts
 if (state_.striker_id == -1) {
 
     log_msg(LOG_WARN, "No striker at over start → assigning new batsman");

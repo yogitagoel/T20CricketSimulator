@@ -1,0 +1,223 @@
+[   1.176] [INFO   ] Match: Chennai Super Kings vs Mumbai Indians | 20 overs | Scheduler: Priority
+[   1.538] [SCHED  ] BATTING ORDER built:
+[   1.651] [SCHED  ]   FCFS: Rohit Sharma, Rahmanullah Gurbaz, Harry Brook ...
+[   1.746] [SCHED  ]   SJF:  Shakib al Hasan(12), Wanindu Hasaranga(16), Rohit Sharma(22) ...
+[   1.840] [SCHED  ] Scheduler: Bowler 'Mustafizur Rehman' added to RR queue (pos 0)
+[   1.987] [SCHED  ] Scheduler: Bowler 'Lockie Ferguson' added to RR queue (pos 1)
+[   2.244] [SCHED  ] Scheduler: Bowler 'Adam Zampa' added to RR queue (pos 2)
+[   2.335] [SCHED  ] Scheduler: Bowler 'Auqib Nabi' added to RR queue (pos 3)
+[   2.411] [SCHED  ] Scheduler: Bowler 'Jason Holder' added to RR queue (pos 4)
+[   2.540] [SCHED  ] Scheduler: Bowler 'Chris Woakes' added to RR queue (pos 5)
+[   2.813] [THREAD ] Umpire (Kernel) thread spawned [T-5168]
+[   2.845] [THREAD ] [UMPIRE T-5168] Kernel thread STARTED — polling every 50ms
+[   3.127] [THREAD ] [T-1024] FIELDER 'Mustafizur Rehman'(WK) → cond_wait
+[   3.246] [THREAD ] [T-6880] FIELDER 'Lockie Ferguson'(F) → cond_wait
+[   3.366] [THREAD ] [T-2736] FIELDER 'Adam Zampa'(F) → cond_wait
+[   3.486] [THREAD ] [T-8592] FIELDER 'Auqib Nabi'(F) → cond_wait
+[   3.526] [THREAD ] [T-4448] FIELDER 'Jason Holder'(F) → cond_wait
+[   3.657] [THREAD ] [T-0304] FIELDER 'Chris Woakes'(F) → cond_wait
+[   3.679] [THREAD ] Spawned 6 fielder threads (all sleeping on cond_wait)
+[   4.432] [THREAD ] Spawned BATSMAN 'Rohit Sharma' [T-6160]
+[   4.446] [THREAD ] [T-6160] BATSMAN 'Rohit Sharma' → sem_wait(crease) ...
+[   4.731] [THREAD ] [T-6160] BATSMAN 'Rohit Sharma' AT CREASE | wait=0.0ms | crease_sem=1
+[   4.711] [THREAD ] [T-2016] BATSMAN 'Rahmanullah Gurbaz' → sem_wait(crease) ...
+[   5.335] [THREAD ] [T-2016] BATSMAN 'Rahmanullah Gurbaz' AT CREASE | wait=0.0ms | crease_sem=0
+[   4.681] [THREAD ] Spawned BATSMAN 'Rahmanullah Gurbaz' [T-2016]
+[   5.614] [SCHED  ] CONTEXT SWITCH #1: Loading bowler 'Lockie Ferguson' (overs left: 4)
+[   5.716] [SCHED  ] Over 1: 'Lockie Ferguson' bowling (136 km/h) | Scheduler: PRIORITY | Intensity: LOW
+[   6.137] [THREAD ] Spawned BOWLER 'Lockie Ferguson' [T-7872]
+[   6.286] [THREAD ] [T-7872] BOWLER 'Lockie Ferguson' START — over 1
+[   6.751] [BALL   ]    1.1  Rohit Sharma     [1;32m   4[0m   4/0
+[   6.989] [THREAD ] [T-0304] FIELDER 'Chris Woakes' exit
+[   6.991] [THREAD ] [T-4448] FIELDER 'Jason Holder' exit
+[   6.996] [THREAD ] [T-1024] FIELDER 'Mustafizur Rehman' exit
+[  20.436] [BALL   ]    1.2  Rohit Sharma     [1;37m   2[0m   6/0
+[  20.896] [THREAD ] [T-2736] FIELDER 'Adam Zampa' exit
+[  34.414] [BALL   ]    1.3  Rohit Sharma     [1;32m   4[0m   10/0
+[  34.698] [THREAD ] [T-6880] FIELDER 'Lockie Ferguson' exit
+[  48.419] [BALL   ]    1.3  Rohit Sharma     [1;33m  Wd[0m   11/0
+[  69.160] [BALL   ]    1.4  Rahmanullah Gurbaz  [1;32m   4[0m   15/0
+[  69.508] [THREAD ] [T-8592] FIELDER 'Auqib Nabi' exit
+[  86.582] [BALL   ]    1.5  Rahmanullah Gurbaz  [1;32m   4[0m   19/0
+[ 103.562] [BALL   ]    1.6  Rahmanullah Gurbaz  [0;37m •[0m   19/0
+[ 116.817] [THREAD ] [T-7872] BOWLER 'Lockie Ferguson' DONE — 0W 19R econ=16.3
+[ 117.415] [SCHED  ] CTX SAVE  → 'Lockie Ferguson': 1 overs, 19 runs, 0 wkts, econ=19.00
+[ 117.783] [SCHED  ] OVER 1 COMPLETE — 'Lockie Ferguson' finished over (1/4 overs)
+[ 118.073] [SCORE  ] End of over 1: 19/0  (Extras: 1)
+[ 159.504] [SCHED  ] CONTEXT SWITCH #2: Loading bowler 'Adam Zampa' (overs left: 4)
+[ 159.885] [SCHED  ] Over 2: 'Adam Zampa' bowling (143 km/h) | Scheduler: PRIORITY | Intensity: LOW
+[ 160.355] [THREAD ] Spawned BOWLER 'Adam Zampa' [T-7872]
+[ 160.451] [THREAD ] [T-7872] BOWLER 'Adam Zampa' START — over 2
+[ 161.473] [BALL   ]    2.1  Rohit Sharma     [1;32m   4[0m   23/0
+[ 174.995] [BALL   ]    2.2  Rahmanullah Gurbaz  [0;37m •[0m   23/0
+[ 192.293] [BALL   ]    2.3  Rahmanullah Gurbaz  [1;32m   4[0m   27/0
+[ 207.239] [BALL   ]    2.4  Rahmanullah Gurbaz  [1;37m   1[0m   28/0
+[ 218.680] [BALL   ] NEW BATSMAN: 'Harry Brook' coming to crease
+[ 219.208] [THREAD ] Spawned BATSMAN 'Harry Brook' [T-3728]
+[ 219.984] [BALL   ]    2.5  Rohit Sharma     [1;31mW(B)[0m   28/1
+[ 219.250] [THREAD ] [T-3728] BATSMAN 'Harry Brook' → sem_wait(crease) ...
+[ 233.504] [THREAD ] [T-6160] BATSMAN 'Rohit Sharma' LEFT crease → 14(5 balls) | sem=1
+[ 233.547] [THREAD ] [T-3728] BATSMAN 'Harry Brook' AT CREASE | wait=13.2ms | crease_sem=0
+[ 233.919] [BALL   ]    2.6  Harry Brook      [1;32m   4[0m   32/1
+[ 241.465] [THREAD ] [T-7872] BOWLER 'Adam Zampa' DONE — 2W 9R econ=9.0
+[ 241.889] [SCHED  ] CTX SAVE  → 'Adam Zampa': 1 overs, 9 runs, 2 wkts, econ=9.00
+[ 242.081] [SCHED  ] OVER 2 COMPLETE — 'Adam Zampa' finished over (1/4 overs)
+[ 242.322] [SCORE  ] End of over 2: 32/1  (Extras: 1)
+[ 287.116] [SCHED  ] CONTEXT SWITCH #3: Loading bowler 'Auqib Nabi' (overs left: 4)
+[ 287.468] [SCHED  ] Over 3: 'Auqib Nabi' bowling (132 km/h) | Scheduler: PRIORITY | Intensity: LOW
+[ 287.753] [THREAD ] Spawned BOWLER 'Auqib Nabi' [T-7872]
+[ 287.811] [THREAD ] [T-7872] BOWLER 'Auqib Nabi' START — over 3
+[ 288.514] [BALL   ]    3.1  Harry Brook      [1;32m   4[0m   36/1
+[ 302.409] [BALL   ]    3.2  Harry Brook      [1;37m   1[0m   37/1
+[ 315.841] [BALL   ]    3.3  Rahmanullah Gurbaz  [1;37m   1[0m   38/1
+[ 327.892] [BALL   ]    3.4  Harry Brook      [1;32m   4[0m   42/1
+[ 342.976] [BALL   ]    3.5  Harry Brook      [1;32m   4[0m   46/1
+[ 357.643] [BALL   ]    3.5  Harry Brook      [1;33m  Nb[0m   47/1
+[ 372.677] [BALL   ]    3.6  Rahmanullah Gurbaz  [1;37m   1[0m   48/1
+[ 389.783] [THREAD ] [T-7872] BOWLER 'Auqib Nabi' DONE — 0W 16R econ=13.7
+[ 390.247] [SCHED  ] CTX SAVE  → 'Auqib Nabi': 1 overs, 16 runs, 0 wkts, econ=16.00
+[ 390.481] [SCHED  ] OVER 3 COMPLETE — 'Auqib Nabi' finished over (1/4 overs)
+[ 390.702] [SCORE  ] End of over 3: 48/1  (Extras: 2)
+[ 431.240] [SCHED  ] CONTEXT SWITCH #4: Loading bowler 'Jason Holder' (overs left: 4)
+[ 431.464] [SCHED  ] Over 4: 'Jason Holder' bowling (111 km/h) | Scheduler: PRIORITY | Intensity: LOW
+[ 431.704] [THREAD ] Spawned BOWLER 'Jason Holder' [T-7872]
+[ 431.720] [THREAD ] [T-7872] BOWLER 'Jason Holder' START — over 4
+[ 432.218] [BALL   ]    4.1  Rahmanullah Gurbaz  [0;37m •[0m   48/1
+[ 447.016] [BALL   ]    4.2  Rahmanullah Gurbaz  [1;32m   4[0m   52/1
+[ 463.634] [BALL   ]    4.3  Rahmanullah Gurbaz  [1;37m   1[0m   53/1
+[ 477.294] [BALL   ]    4.4  Harry Brook      [0;37m •[0m   53/1
+[ 491.319] [BALL   ]    4.5  Harry Brook      [1;37m   1[0m   54/1
+[ 505.466] [BALL   ]    4.6  Rahmanullah Gurbaz  [0;37m •[0m   54/1
+[ 518.923] [THREAD ] [T-7872] BOWLER 'Jason Holder' DONE — 0W 6R econ=6.0
+[ 519.470] [SCHED  ] CTX SAVE  → 'Jason Holder': 1 overs, 6 runs, 0 wkts, econ=6.00
+[ 519.761] [SCHED  ] OVER 4 COMPLETE — 'Jason Holder' finished over (1/4 overs)
+[ 519.977] [SCORE  ] End of over 4: 54/1  (Extras: 2)
+[ 564.385] [SCHED  ] CONTEXT SWITCH #5: Loading bowler 'Chris Woakes' (overs left: 4)
+[ 564.729] [SCHED  ] Over 5: 'Chris Woakes' bowling (135 km/h) | Scheduler: PRIORITY | Intensity: LOW
+[ 565.109] [THREAD ] Spawned BOWLER 'Chris Woakes' [T-7872]
+[ 565.153] [THREAD ] [T-7872] BOWLER 'Chris Woakes' START — over 5
+[ 565.816] [BALL   ]    5.1  Rahmanullah Gurbaz  [0;37m •[0m   54/1
+[ 583.791] [BALL   ]    5.2  Rahmanullah Gurbaz  [0;37m •[0m   54/1
+[ 601.762] [BALL   ] NEW BATSMAN: 'Shubhman Gill' coming to crease
+[ 602.431] [THREAD ] Spawned BATSMAN 'Shubhman Gill' [T-2128]
+[ 602.703] [BALL   ]    5.3  Rahmanullah Gurbaz  [1;31mW(C)[0m   54/2
+[ 602.470] [THREAD ] [T-2128] BATSMAN 'Shubhman Gill' → sem_wait(crease) ...
+[ 619.591] [THREAD ] [T-2016] BATSMAN 'Rahmanullah Gurbaz' LEFT crease → 20(15 balls) | sem=1
+[ 619.643] [THREAD ] [T-2128] BATSMAN 'Shubhman Gill' AT CREASE | wait=16.3ms | crease_sem=0
+[ 620.432] [BALL   ]    5.4  Shubhman Gill    [1;32m   4[0m   58/2
+[ 634.705] [BALL   ]    5.5  Shubhman Gill    [1;37m   1[0m   59/2
+[ 647.786] [THREAD ] [T-7872] BOWLER 'Chris Woakes' DONE — 2W 5R econ=5.0
+[ 648.401] [SCHED  ] CTX SAVE  → 'Chris Woakes': 1 overs, 5 runs, 2 wkts, econ=5.00
+[ 648.688] [SCHED  ] OVER 5 COMPLETE — 'Chris Woakes' finished over (1/4 overs)
+[ 648.968] [BALL   ]    5.6  Shubhman Gill    [1;32m   6[0m   65/2
+[ 648.996] [SCORE  ] End of over 5: 65/2  (Extras: 2)
+[ 690.321] [SCHED  ] CONTEXT SWITCH #6: Loading bowler 'Mustafizur Rehman' (overs left: 4)
+[ 690.638] [SCHED  ] Over 6: 'Mustafizur Rehman' bowling (145 km/h) | Scheduler: PRIORITY | Intensity: LOW
+[ 690.994] [THREAD ] Spawned BOWLER 'Mustafizur Rehman' [T-7872]
+[ 691.019] [THREAD ] [T-7872] BOWLER 'Mustafizur Rehman' START — over 6
+[ 691.736] [BALL   ]    6.1  Harry Brook      [0;37m •[0m   65/2
+[ 706.386] [BALL   ]    6.2  Harry Brook      [1;32m   4[0m   69/2
+[ 720.446] [BALL   ]    6.3  Harry Brook      [1;32m   4[0m   73/2
+[ 734.414] [BALL   ] NEW BATSMAN: 'Wanindu Hasaranga' coming to crease
+[ 734.936] [THREAD ] Spawned BATSMAN 'Wanindu Hasaranga' [T-7984]
+[ 735.271] [BALL   ]    6.4  Harry Brook      [1;31mW(C)[0m   73/3
+[ 734.983] [THREAD ] [T-7984] BATSMAN 'Wanindu Hasaranga' → sem_wait(crease) ...
+[ 749.679] [THREAD ] [T-3728] BATSMAN 'Harry Brook' LEFT crease → 26(11 balls) | sem=1
+[ 749.716] [THREAD ] [T-7984] BATSMAN 'Wanindu Hasaranga' AT CREASE | wait=13.7ms | crease_sem=0
+[ 750.142] [BALL   ]    6.5  Wanindu Hasaranga  [1;37m   1[0m   74/3
+[ 757.584] [BALL   ]    6.6  Shubhman Gill    [0;37m •[0m   74/3
+[ 769.707] [THREAD ] [T-7872] BOWLER 'Mustafizur Rehman' DONE — 2W 9R econ=9.0
+[ 770.193] [SCHED  ] CTX SAVE  → 'Mustafizur Rehman': 1 overs, 9 runs, 2 wkts, econ=9.00
+[ 770.529] [SCHED  ] OVER 6 COMPLETE — 'Mustafizur Rehman' finished over (1/4 overs)
+[ 770.768] [SCORE  ] End of over 6: 74/3  (Extras: 2)
+[ 816.404] [SCHED  ] CONTEXT SWITCH #7: Loading bowler 'Lockie Ferguson' (overs left: 3)
+[ 816.650] [SCHED  ] Over 7: 'Lockie Ferguson' bowling (136 km/h) | Scheduler: PRIORITY | Intensity: LOW
+[ 816.945] [THREAD ] Spawned BOWLER 'Lockie Ferguson' [T-7872]
+[ 816.962] [THREAD ] [T-7872] BOWLER 'Lockie Ferguson' START — over 7
+[ 817.287] [BALL   ]    7.1  Wanindu Hasaranga  [1;37m   2[0m   76/3
+[ 830.973] [BALL   ]    7.2  Shubhman Gill    [1;37m   2[0m   78/3
+[ 845.676] [BALL   ]    7.3  Shubhman Gill    [1;32m   4[0m   82/3
+[ 861.071] [BALL   ]    7.4  Shubhman Gill    [0;37m •[0m   82/3
+[ 875.970] [BALL   ]    7.5  Shubhman Gill    [1;37m   1[0m   83/3
+[ 900.073] [BALL   ]    7.6  Wanindu Hasaranga  [1;32m   4[0m   87/3
+[ 912.329] [THREAD ] [T-7872] BOWLER 'Lockie Ferguson' DONE — 0W 32R econ=14.8
+[ 913.296] [SCHED  ] CTX SAVE  → 'Lockie Ferguson': 2 overs, 32 runs, 0 wkts, econ=16.00
+[ 913.969] [SCHED  ] OVER 7 COMPLETE — 'Lockie Ferguson' finished over (2/4 overs)
+[ 915.800] [SCORE  ] End of over 7: 87/3  (Extras: 2)
+[ 960.662] [SCHED  ] CONTEXT SWITCH #8: Loading bowler 'Adam Zampa' (overs left: 3)
+[ 960.994] [SCHED  ] Over 8: 'Adam Zampa' bowling (143 km/h) | Scheduler: PRIORITY | Intensity: LOW
+[ 961.470] [THREAD ] Spawned BOWLER 'Adam Zampa' [T-7872]
+[ 961.499] [THREAD ] [T-7872] BOWLER 'Adam Zampa' START — over 8
+[ 962.227] [BALL   ]    8.1  Shubhman Gill    [0;37m •[0m   87/3
+[ 973.690] [BALL   ]    8.2  Wanindu Hasaranga  [1;37m   1[0m   88/3
+[ 986.236] [BALL   ]    8.3  Shubhman Gill    [1;37m   1[0m   89/3
+[ 999.936] [BALL   ]    8.4  Wanindu Hasaranga  [1;37m   1[0m   90/3
+[1010.583] [BALL   ]    8.5  Shubhman Gill    [1;37m   2[0m   92/3
+[1025.801] [BALL   ]    8.6  Shubhman Gill    [0;37m •[0m   92/3
+[1037.538] [THREAD ] [T-7872] BOWLER 'Adam Zampa' DONE — 2W 14R econ=7.0
+[1037.878] [SCHED  ] CTX SAVE  → 'Adam Zampa': 2 overs, 14 runs, 2 wkts, econ=7.00
+[1038.139] [SCHED  ] OVER 8 COMPLETE — 'Adam Zampa' finished over (2/4 overs)
+[1038.524] [SCORE  ] End of over 8: 92/3  (Extras: 2)
+[1080.052] [SCHED  ] CONTEXT SWITCH #9: Loading bowler 'Auqib Nabi' (overs left: 3)
+[1080.388] [SCHED  ] Over 9: 'Auqib Nabi' bowling (132 km/h) | Scheduler: PRIORITY | Intensity: LOW
+[1080.614] [THREAD ] Spawned BOWLER 'Auqib Nabi' [T-7872]
+[1080.694] [THREAD ] [T-7872] BOWLER 'Auqib Nabi' START — over 9
+[1081.026] [BALL   ]    9.1  Wanindu Hasaranga  [1;37m   1[0m   93/3
+[1095.021] [BALL   ]    9.1  Shubhman Gill    [1;33m  Wd[0m   94/3
+[1106.885] [BALL   ]    9.2  Wanindu Hasaranga  [1;32m   4[0m   98/3
+[1121.083] [BALL   ] NEW BATSMAN: 'Shakib al Hasan' coming to crease
+[1121.469] [THREAD ] Spawned BATSMAN 'Shakib al Hasan' [T-3840]
+[1121.636] [BALL   ]    9.3  Shubhman Gill    [1;31mW(B)[0m   98/4
+[1121.491] [THREAD ] [T-3840] BATSMAN 'Shakib al Hasan' → sem_wait(crease) ...
+[1136.087] [THREAD ] [T-2128] BATSMAN 'Shubhman Gill' LEFT crease → 21(13 balls) | sem=1
+[1136.128] [THREAD ] [T-3840] BATSMAN 'Shakib al Hasan' AT CREASE | wait=14.2ms | crease_sem=0
+[1136.444] [BALL   ]    9.4  Shakib al Hasan  [1;37m   1[0m   99/4
+[1144.062] [BALL   ]    9.5  Wanindu Hasaranga  [1;37m   1[0m   100/4
+[1156.801] [BALL   ] NEW BATSMAN: 'Cameron Green' coming to crease
+[1157.511] [THREAD ] Spawned BATSMAN 'Cameron Green' [T-9696]
+[1157.782] [BALL   ]    9.6  Shakib al Hasan  [1;31mW(L)[0m   100/5
+[1157.571] [THREAD ] [T-9696] BATSMAN 'Cameron Green' → sem_wait(crease) ...
+[1168.867] [THREAD ] [T-7872] BOWLER 'Auqib Nabi' DONE — 2W 24R econ=10.3
+[1169.267] [SCHED  ] CTX SAVE  → 'Auqib Nabi': 2 overs, 24 runs, 2 wkts, econ=12.00
+[1169.533] [SCHED  ] OVER 9 COMPLETE — 'Auqib Nabi' finished over (2/4 overs)
+[1169.859] [SCORE  ] End of over 9: 100/5  (Extras: 3)
+[1172.487] [THREAD ] [T-3840] BATSMAN 'Shakib al Hasan' LEFT crease → 1(2 balls) | sem=1
+[1172.543] [THREAD ] [T-9696] BATSMAN 'Cameron Green' AT CREASE | wait=13.9ms | crease_sem=0
+[1212.991] [SCHED  ] CONTEXT SWITCH #10: Loading bowler 'Jason Holder' (overs left: 3)
+[1213.311] [SCHED  ] Over 10: 'Jason Holder' bowling (111 km/h) | Scheduler: PRIORITY | Intensity: LOW
+[1213.648] [THREAD ] Spawned BOWLER 'Jason Holder' [T-7872]
+[1213.700] [THREAD ] [T-7872] BOWLER 'Jason Holder' START — over 10
+[1214.424] [BALL   ]   10.1  Wanindu Hasaranga  [1;37m   1[0m   101/5
+[1225.554] [BALL   ]   10.2  Cameron Green    [1;32m   4[0m   105/5
+[1242.690] [BALL   ]   10.3  Cameron Green    [1;32m   6[0m   111/5
+[1258.293] [BALL   ]   10.3  Cameron Green    [1;33m  Wd[0m   112/5
+[1272.021] [BALL   ]   10.4  Wanindu Hasaranga  [1;32m   4[0m   116/5
+[1286.311] [BALL   ]   10.5  Wanindu Hasaranga  [0;37m •[0m   116/5
+[1300.317] [BALL   ]   10.6  Wanindu Hasaranga  [1;32m   4[0m   120/5
+[1311.444] [THREAD ] [T-7872] BOWLER 'Jason Holder' DONE — 0W 26R econ=12.0
+[1311.784] [SCHED  ] CTX SAVE  → 'Jason Holder': 2 overs, 26 runs, 0 wkts, econ=13.00
+[1311.955] [SCHED  ] OVER 10 COMPLETE — 'Jason Holder' finished over (2/4 overs)
+[1312.057] [SCORE  ] End of over 10: 120/5  (Extras: 4)
+[1357.030] [SCHED  ] CONTEXT SWITCH #11: Loading bowler 'Chris Woakes' (overs left: 3)
+[1357.369] [SCHED  ] Over 11: 'Chris Woakes' bowling (135 km/h) | Scheduler: PRIORITY | Intensity: MEDIUM
+[1357.686] [THREAD ] Spawned BOWLER 'Chris Woakes' [T-7872]
+[1357.724] [THREAD ] [T-7872] BOWLER 'Chris Woakes' START — over 11
+[1358.215] [BALL   ]   11.1  Wanindu Hasaranga  [1;37m   1[0m   121/5
+[1369.508] [BALL   ]   11.2  Cameron Green    [1;37m   1[0m   122/5
+[1381.683] [BALL   ]   11.3  Wanindu Hasaranga  [1;37m   1[0m   123/5
+[1394.872] [BALL   ]   11.4  Cameron Green    [0;37m •[0m   123/5
+[1412.434] [BALL   ]   11.4  Cameron Green    [1;33m  Wd[0m   124/5
+[1424.321] [BALL   ]   11.5  Wanindu Hasaranga  [1;32m   4[0m   128/5
+[1438.308] [BALL   ]   11.6  Wanindu Hasaranga  [1;32m   4[0m   132/5
+[1450.361] [THREAD ] [T-7872] BOWLER 'Chris Woakes' DONE — 2W 17R econ=7.8
+[1450.733] [SCHED  ] CTX SAVE  → 'Chris Woakes': 2 overs, 17 runs, 2 wkts, econ=8.50
+[1450.878] [SCHED  ] OVER 11 COMPLETE — 'Chris Woakes' finished over (2/4 overs)
+[1451.113] [SCORE  ] End of over 11: 132/5  (Extras: 5)
+[1497.273] [SCHED  ] CONTEXT SWITCH #12: Loading bowler 'Mustafizur Rehman' (overs left: 3)
+[1497.402] [SCHED  ] Over 12: 'Mustafizur Rehman' bowling (145 km/h) | Scheduler: PRIORITY | Intensity: MEDIUM
+[1497.537] [THREAD ] Spawned BOWLER 'Mustafizur Rehman' [T-7872]
+[1497.555] [THREAD ] [T-7872] BOWLER 'Mustafizur Rehman' START — over 12
+[1498.111] [BALL   ]   12.1  Cameron Green    [0;37m •[0m   132/5
+[1509.482] [BALL   ]   12.2  Wanindu Hasaranga  [1;32m   4[0m   136/5
+[1523.555] [BALL   ]   12.3  Wanindu Hasaranga  [1;31mW(B)[0m   136/6
+[1537.687] [THREAD ] [T-7984] BATSMAN 'Wanindu Hasaranga' LEFT crease → 38(18 balls) | sem=1

@@ -44,13 +44,10 @@ typedef enum {
 
 // Player roles
 typedef enum {
-    ROLE_OPENER     = 0,
-    ROLE_MIDDLE     = 1,
-    ROLE_LOWER      = 2,
-    ROLE_TAILENDER  = 3,
-    ROLE_BOWLER     = 4,
-    ROLE_ALLROUNDER = 5,
-    ROLE_WK         = 6   // Wicket Keeper
+    BATSMAN       = 0,
+    WICKET_KEEPER = 1,
+    BOWLER        = 2,
+    ALL_ROUNDER   = 3,
 } PlayerRole;
 
 // Scheduler algorithms
@@ -135,7 +132,12 @@ typedef struct {
     double      total_wait_ms;    
     double      entry_time_ms;     
 
+
 } Player;
+//Function Declarations
+    void init_all_players();
+    void create_teams(std::vector<Player>& teamA, std::vector<Player>& teamB);
+    void print_team(const std::vector<Player>& team, const std::string& name);
 
 //  Global Match State 
 typedef struct {

@@ -12,6 +12,11 @@
 #include <string>
 #include <sys/stat.h>
 #include <sys/types.h>
+#include <iostream>
+#include <vector>
+#include <random>
+#include <algorithm>
+#include <unistd.h>
 
 static void print_help(const char* prog) {
     printf(
@@ -56,6 +61,7 @@ int toss(const std::string& t1,const std::string& t2){
     return w;
 }
 int main(int argc, char* argv[]) {
+    srand(time(0)+getpid());
     // Defaults 
     MatchConfig cfg;
     //Toss winner bats first
@@ -66,7 +72,6 @@ int main(int argc, char* argv[]) {
         }else{
             cfg.team1_name = "Mumbai Indians";
             cfg.team2_name = "Chennai Super Kings";
-            
         }
     cfg.scheduler_type      = CRICKET_SCHED_RR;
     cfg.enable_deadlock_sim = false;
@@ -76,6 +81,11 @@ int main(int argc, char* argv[]) {
     cfg.verbose             = false;
     cfg.log_file            = "logs/match.log";
     unsigned int seed       = (unsigned int)time(NULL);
+
+    std::vector<Player> MI, CSK;
+    init_all_players();
+    create_teams(MI, CSK);
+
 
     for (int i = 1; i < argc; i++) {
         const char* arg = argv[i];
@@ -182,6 +192,9 @@ int main(int argc, char* argv[]) {
         "\n TOSS: %s wins and elects to BAT first.\n"
         COL_RESET "\n",
            (toss_winner==0?cfg.team1_name.c_str():cfg.team2_name.c_str()));
+
+           print_team(MI, "Mumbai Indians");
+           print_team(CSK, "Chennai Super Kings");
            
     // Run the match 
     MatchEngine engine(cfg);
