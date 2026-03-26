@@ -270,7 +270,27 @@ stroke_done    = false;
 g_striker_id_local = -1;
 safe_mutex_unlock(&delivery_mutex, "delivery_mutex");
         
-        assert(state_.striker_id != -1);
+        // 🔥 FIX: Ensure striker exists before over starts
+if (state_.striker_id == -1) {
+
+    log_msg(LOG_WARN, "No striker at over start → assigning new batsman");
+
+    // Find next available batsman
+    for (auto& p : batting) {
+        if (!p.is_out && !p.is_active) {
+
+            state_.striker_id = p.id;
+
+            BatsmanArgs* nba = new BatsmanArgs{
+                &p, &state_, &config_, &batting, &event_log_,
+                true, get_time_ms()
+            };
+
+            spawn_batsman(&p, nba);
+            break;
+        }
+    }
+}
         print_separator(("OVER " + std::to_string(ov)).c_str());
 
         // Select bowler for this over (scheduler decision)
@@ -305,7 +325,7 @@ safe_mutex_unlock(&delivery_mutex, "delivery_mutex");
         scheduler_.notify_over_complete(bowler, &state_);
 
         // Handle wickets that fell this over - spawn new batsmen
-        while (next_bat_idx < (int)batting.size() &&
+      /*  while (next_bat_idx < (int)batting.size() &&
                state_.wickets.load() >= next_bat_idx &&
                !is_innings_over()) {
             Player& incoming = batting[next_bat_idx];
@@ -340,7 +360,7 @@ safe_mutex_unlock(&delivery_mutex, "delivery_mutex");
             };
             spawn_batsman(next_bat, nba);
             next_bat_idx++;
-        }
+        }*/
 
         // End-of-over strike rotation
         if (!is_innings_over()) {

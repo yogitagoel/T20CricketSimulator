@@ -76,17 +76,7 @@ void* bowler_thread_func(void* arg) {
         safe_mutex_lock(&delivery_mutex, "delivery_mutex");
 
 
-        if (ms->striker_id < 0) {
-           log_msg(LOG_WARN,
-           "[T-%04lu] No valid striker → skipping ball",
-           pthread_self() % 10000);
-
-           stroke_done = true;  
-
-           safe_mutex_unlock(&delivery_mutex, "delivery_mutex");
-           safe_mutex_unlock(&pitch_mutex, "pitch_mutex");
-           continue; 
-}
+        
 
 
 memcpy(&ms->pitch_buffer, &del, sizeof(Delivery));
@@ -105,21 +95,15 @@ safe_mutex_unlock(&delivery_mutex, "delivery_mutex");
         // Wait for batsman to complete stroke (Consumer acknowledges)
         safe_mutex_lock(&delivery_mutex, "delivery_mutex");
         while (!stroke_done && !ms->match_over) {
-    struct timespec ts;
-    clock_gettime(CLOCK_REALTIME, &ts);
-    ts.tv_sec += 1;  // 1 second timeout
-
-    int rc = pthread_cond_timedwait(&stroke_done_cond, &delivery_mutex, &ts);
-
-    if (rc == ETIMEDOUT) {
-        // SAFETY FALLBACK - prevent deadlock
-        log_msg(LOG_WARN,
-            "[T-%04lu] TIMEOUT waiting for batsman -> forcing progress",
-            pthread_self() % 10000);
-
+   
+    if (ms->striker_id < 0) {
         stroke_done = true;
         break;
     }
+
+    pthread_cond_wait(&stroke_done_cond, &delivery_mutex);
+
+    
 }
         stroke_done = false;
         safe_mutex_unlock(&delivery_mutex, "delivery_mutex");
@@ -132,7 +116,8 @@ safe_mutex_unlock(&delivery_mutex, "delivery_mutex");
         pthread_mutex_lock(&g_res_mutex);
         BallOutcome outcome = g_last_outcome;
         int         runs_g  = g_last_runs;
-        pthread_mutex_unlock(&g_res_mutex);
+        // 🔥 FIX 1: If striker got out → invalidate striker immediately
+    pthread_mutex_unlock(&g_res_mutex);
 
         if (outcome != BALL_WIDE && outcome != BALL_NOBALL) {
             legal_balls++;
@@ -211,7 +196,7 @@ void* batsman_thread_func(void* arg) {
         safe_mutex_lock(&delivery_mutex, "delivery_mutex");
         p->state = THREAD_WAITING;
 
-        while ((!delivery_ready || g_striker_id_local != p->id)
+        while ((!delivery_ready && !ms->match_over && !p->is_out)
                && !ms->match_over && !p->is_out) {
             pthread_cond_wait(&delivery_ready_cond, &delivery_mutex);
         }
@@ -254,7 +239,54 @@ void* batsman_thread_func(void* arg) {
             case BALL_WICKET:
             case BALL_LBW:
             case BALL_CAUGHT:
-            case BALL_RUNOUT: runs=0; p->is_out=true; ms->wickets++;       break;
+           case BALL_RUNOUT:
+   { runs = 0;
+    p->is_out = true;
+    ms->wickets++;
+
+    // 🔥 STEP 1: find next batsman
+    Player* next_bat = nullptr;
+    for (auto& bp : *a->all_batsmen) {
+        if (!bp.is_out && !bp.is_active) {
+            next_bat = &bp;
+            break;
+        }
+    }
+
+    if (next_bat) {
+        log_msg(LOG_EVENT, "NEW BATSMAN: '%s' coming to crease",
+                next_bat->name.c_str());
+
+        // 🔥 STEP 2: update striker + non-striker
+        safe_mutex_lock(&state_mutex, "state_mutex");
+
+        for (auto& bp : *a->all_batsmen) {
+            if (bp.is_active && !bp.is_out && bp.id != p->id) {
+                ms->non_striker_id = bp.id;
+                break;
+            }
+        }
+
+        ms->striker_id = next_bat->id;
+
+        safe_mutex_unlock(&state_mutex, "state_mutex");
+
+        // 🔥 STEP 3: spawn new batsman thread
+        BatsmanArgs* nba = new BatsmanArgs{
+            next_bat, a->match, a->config, a->all_batsmen, a->event_log,
+            true, get_time_ms()
+        };
+
+        spawn_batsman(next_bat, nba);
+    }
+
+    // 🔥 STEP 4: wake bowler
+    safe_mutex_lock(&delivery_mutex, "delivery_mutex");
+    stroke_done = true;
+    pthread_cond_signal(&stroke_done_cond);
+    safe_mutex_unlock(&delivery_mutex, "delivery_mutex");
+
+    break;}
             default:          runs=0;                                        break;
         }
         if (outcome != BALL_WIDE && outcome != BALL_NOBALL) {

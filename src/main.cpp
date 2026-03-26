@@ -51,11 +51,23 @@ static bool starts_with(const char* s, const char* prefix) {
     return strncmp(s, prefix, strlen(prefix)) == 0;
 }
 
+int toss(const std::string& t1,const std::string& t2){
+    int w=((int)(rand()*10))%2;
+    return w;
+}
 int main(int argc, char* argv[]) {
     // Defaults 
     MatchConfig cfg;
-    cfg.team1_name          = "Mumbai Indians";
-    cfg.team2_name          = "Chennai Super Kings";
+    //Toss winner bats first
+        int toss_winner = toss("Mumbai Indians", "Chennai Super Kings");
+        if(toss_winner==0){
+            cfg.team1_name = "Chennai Super Kings";
+            cfg.team2_name = "Mumbai Indians";
+        }else{
+            cfg.team1_name = "Mumbai Indians";
+            cfg.team2_name = "Chennai Super Kings";
+            
+        }
     cfg.scheduler_type      = CRICKET_SCHED_RR;
     cfg.enable_deadlock_sim = false;
     cfg.enable_gantt        = false;
@@ -166,6 +178,11 @@ int main(int argc, char* argv[]) {
            "    Run-out       = Deadlock           (circular wait on ends)\n"
            COL_RESET "\n");
 
+           printf(COL_ORANGE
+        "\n TOSS: %s wins and elects to BAT first.\n"
+        COL_RESET "\n",
+           (toss_winner==0?cfg.team1_name.c_str():cfg.team2_name.c_str()));
+           
     // Run the match 
     MatchEngine engine(cfg);
     engine.run();

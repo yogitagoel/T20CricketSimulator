@@ -49,7 +49,7 @@ clean:
 run: $(TARGET)
 	@mkdir -p logs
 	./$(TARGET) --scheduler=RR --overs=5 --speed=3 \
-	            --team1=India --team2=Australia \
+	            --team1=Mumbai_Indians --team2=Chennai_Super_Kings \
 	            --log=logs/match_rr.log
 
 # SJF batting order + wait time analysis table
