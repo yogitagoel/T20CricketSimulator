@@ -59,7 +59,8 @@ bool    rng_chance(float probability);
 // Ball outcome generation
 BallOutcome generate_outcome(const Player* batsman,
                              const Delivery* delivery,
-                             bool enable_runout);
+                             bool enable_runout,
+                            const MatchState* ms);
 
 std::string outcome_to_string(BallOutcome outcome);
 std::string outcome_color(BallOutcome outcome);
