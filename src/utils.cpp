@@ -15,6 +15,9 @@
 #include <stdarg.h>
 #include <sys/time.h>
 #include <algorithm>
+#include <cstdint>
+
+#define PID(t) ((unsigned long)((uintptr_t)(t) % 10000u))
 
 // Logger state 
 static FILE*  g_log_file  = NULL;
@@ -125,54 +128,181 @@ bool rng_chance(float probability) {
     return rng_float() < probability;
 }
 
-// Ball outcome generation 
+// generate_shot() 
 /*
- * Probabilities are weighted by:
- *   - batsman skill_rating  (higher = better)
- *   - delivery quality      (yorker + high speed = harder)
- *   - realistic T20 rates   (approx. 15% boundary rate for top batsmen)
+ * Determines what kind of shot the batsman plays.
+ * Pre-decided outcomes (wide, bowled, lbw, dot, six) are returned directly.
+ * SHOT_AERIAL / SHOT_GROUND trigger the fielder race in player_threads.cpp:
+ *   • direction_zone (0-9) tells each fielder how far it must sprint
+ *   • power (0-1) controls ball speed → boundary time for ground shots
+ *                              and flight time for aerial shots
+ *
+ * Power <-> intended outcome mapping (fielder race adds realistic variance):
+ *   0.10-0.30 → single    | 0.30-0.55 → two   | 0.50-0.70 → three
+ *   0.70-0.92 → four      | 0.92-1.00 → six (pre-decided as SHOT_BOUNDARY_6)
+ *   0.25-0.65 → aerial (catch possible, else 2 runs)
  */
-BallOutcome generate_outcome(const Player* bat, const Delivery* del,
-                              bool enable_runout) {
-    float skill = bat->skill_rating / 10.0f;  // 0.0 to 1.0
-    float diff  = (del->speed_kmh - 120.0f) / 50.0f; // delivery difficulty
-    float adj   = skill - diff * 0.3f;
-    adj = std::max(0.05f, std::min(0.95f, adj));
+ShotResult generate_shot(const Player* bat, const Delivery* del,
+                          bool enable_runout, const MatchState* ms)
+{
+    ShotResult result = {SHOT_DOT_BLOCK, 0, 0.0f, 0.0f};
+
+    int phase     = ms ? ms->current_phase   : PHASE_MIDDLE;
+    int intensity = ms ? ms->phase_intensity : 15;
+    int balls_in  = bat->balls_faced;
+
+    // Set-batsman acceleration (same as before)
+    int set_bonus = (balls_in >= 35) ? 18
+                  : (balls_in >= 20) ? 14
+                  : (balls_in >=  8) ?  8 : 0;
+    float eff_skill = std::min(105.0f, (float)(bat->skill_rating + set_bonus)) / 100.0f;
+    float diff  = (del->speed_kmh - 120.0f) / 50.0f;
+    float adj   = std::max(0.05f, std::min(0.95f, eff_skill - diff * 0.25f));
 
     float r = rng_float();
-    // Wide / no-ball 
-    if (r < 0.06f) return BALL_WIDE;
-    if (r < 0.08f) return BALL_NOBALL;
 
-    // Wicket probability 
-    float wicket_p = 0.15f - adj * 0.10f + diff * 0.05f;
-    wicket_p = std::max(0.03f, std::min(0.25f, wicket_p));
-    if (r < 0.08f + wicket_p) {
-        
+    // Wide / no-ball
+    if (r < 0.05f) { result.type = SHOT_WIDE;   return result; }
+    if (r < 0.07f) { result.type = SHOT_NOBALL; return result; }
+
+    // Wicket probability (role-aware, phase-aware — identical to old code)
+    float wk_base = ((1.0f - (bat->strike_rate / 200.0f)) * 0.10f)
+                  + (diff * 0.015f)
+                  + ((float)intensity / 100.0f) * 0.005f;
+    if (phase == PHASE_DEATH) wk_base *= 1.10f;
+    float wk_lo = (bat->strike_rate >= 130) ? 0.012f
+                : (bat->strike_rate >=  90) ? 0.018f : 0.025f;
+    float wk_hi = (bat->strike_rate >= 130) ? 0.032f
+                : (bat->strike_rate >=  90) ? 0.048f : 0.065f;
+    float wicket_p = std::max(wk_lo, std::min(wk_hi, wk_base));
+
+    if (r < 0.07f + wicket_p) {
         float w2 = rng_float();
-        if (w2 < 0.35f) return BALL_CAUGHT;
-        if (w2 < 0.60f) return BALL_WICKET;   
-        if (w2 < 0.80f) return BALL_LBW;
-        if (enable_runout && w2 < 0.95f) return BALL_RUNOUT;
-        return BALL_WICKET;
+        result.direction_zone = rng_range(0, 9);
+        if (w2 < 0.35f) {
+            // Aerial chance — fielder race decides caught vs 2 runs
+            result.type           = SHOT_AERIAL;
+            result.power          = 0.25f + rng_float() * 0.40f;
+            result.flight_time_ms = 300.0f + result.power * 500.0f;
+            return result;
+        }
+        if (w2 < 0.60f) { result.type = SHOT_BOWLED; return result; }
+        if (w2 < 0.80f) { result.type = SHOT_LBW;    return result; }
+        if (enable_runout && w2 < 0.92f) { result.type = SHOT_RUNOUT; return result; }
+        result.type = SHOT_BOWLED;
+        return result;
     }
 
-    // Scoring probabilities
-    float dot_p   = 0.40f - adj * 0.20f;
-    float single_p= 0.30f;
-    float two_p   = 0.08f;
-    float three_p = 0.03f;
-    float four_p  = 0.10f + adj * 0.08f;
-    float six_p   = 0.05f + adj * 0.06f;
+    // Phase aggression multiplier
+    float pm = (phase == PHASE_POWERPLAY) ? 0.90f
+             : (phase == PHASE_MIDDLE)    ? 0.80f : 1.20f;
 
-    float cumulative = 0.08f + wicket_p;
-    cumulative += dot_p;   if (r < cumulative) return BALL_DOT;
-    cumulative += single_p;if (r < cumulative) return BALL_SINGLE;
-    cumulative += two_p;   if (r < cumulative) return BALL_TWO;
-    cumulative += three_p; if (r < cumulative) return BALL_THREE;
-    cumulative += four_p;  if (r < cumulative) return BALL_FOUR;
-    cumulative += six_p;   if (r < cumulative) return BALL_SIX;
-    return BALL_SINGLE;
+    // Scoring probabilities (unchanged from generate_outcome)
+    float six_p    = 0.04f + adj * 0.07f * pm;
+    float four_p   = 0.09f + adj * 0.08f * pm;
+    float three_p  = 0.02f;
+    float two_p    = 0.10f + adj * 0.04f;
+    float single_p = 0.25f + adj * 0.05f;
+    float dot_p    = 1.0f - (six_p + four_p + three_p + two_p
+                              + single_p + 0.07f + wicket_p);
+    dot_p = std::max(0.10f, dot_p);
+
+    float cumulative = 0.07f + wicket_p;
+
+    cumulative += dot_p;
+    if (r < cumulative) { result.type = SHOT_DOT_BLOCK; return result; }
+
+    result.direction_zone = rng_range(0, 9);
+
+    cumulative += single_p;
+    if (r < cumulative) {
+        result.type  = SHOT_GROUND;
+        result.power = 0.10f + rng_float() * 0.20f;   // low power → 1 run expected
+        return result;
+    }
+
+    cumulative += two_p;
+    if (r < cumulative) {
+        result.type  = SHOT_GROUND;
+        result.power = 0.30f + rng_float() * 0.22f;   // medium power → 2 runs expected
+        return result;
+    }
+
+    cumulative += three_p;
+    if (r < cumulative) {
+        result.type  = SHOT_GROUND;
+        result.power = 0.52f + rng_float() * 0.18f;   // higher power → 3 runs expected
+        return result;
+    }
+
+    cumulative += four_p;
+    if (r < cumulative) {
+        result.type  = SHOT_GROUND;
+        result.power = 0.72f + rng_float() * 0.20f;   // high power → boundary expected
+        return result;
+    }
+
+    // Six — over the rope, pre-decided (no fielder can stop it)
+    result.type  = SHOT_BOUNDARY_6;
+    result.power = 0.92f + rng_float() * 0.08f;
+    return result;
+}
+
+// resolve_fielding_outcome() 
+/*
+ * Called by batsman thread AFTER g_shot_state is fully populated by fielders.
+ *
+ * SHOT_AERIAL physics:
+ *   winner_reach_ms < flight_time_ms  → fielder got there in time → skill check → caught or dropped
+ *   winner_reach_ms >= flight_time_ms → ball fell uncaught → 2 runs
+ *
+ * SHOT_GROUND physics:
+ *   boundary_time = 800 - power*600  (ms for ball to reach rope: 200-800ms)
+ *   Fielder with min reach_ms intercepts or doesn't:
+ *     reach ≥ boundary_time → FOUR
+ *     reach ∈ [400, boundary) → THREE
+ *     reach ∈ [200, 400)     → TWO
+ *     reach < 200            → SINGLE
+ */
+BallOutcome resolve_fielding_outcome(const ShotResult& shot)
+{
+    int   winner    = g_shot_state.winner_idx;
+    float reach_ms  = (winner >= 0) ? g_shot_state.winner_reach_ms : 99999.0f;
+
+    if (shot.type == SHOT_AERIAL) {
+        if (winner >= 0 && reach_ms < shot.flight_time_ms && g_shot_state.winner_caught)
+            return BALL_CAUGHT;
+        return BALL_TWO;   // dropped or nobody reached → ball fell, 2 runs
+    }
+
+    if (shot.type == SHOT_GROUND) {
+        float boundary_time = 800.0f - shot.power * 600.0f;   // 200-800ms
+        if (reach_ms >= boundary_time) return BALL_FOUR;
+        if (reach_ms >= 400.0f)        return BALL_THREE;
+        if (reach_ms >= 200.0f)        return BALL_TWO;
+        return BALL_SINGLE;
+    }
+
+    return BALL_DOT;  // shouldn't reach here for pre-decided shots
+}
+
+// Ball outcome generation 
+BallOutcome generate_outcome(const Player* bat, const Delivery* del,
+                              bool enable_runout, const MatchState* ms)
+{
+    ShotResult s = generate_shot(bat, del, enable_runout, ms);
+    switch (s.type) {
+        case SHOT_WIDE:       return BALL_WIDE;
+        case SHOT_NOBALL:     return BALL_NOBALL;
+        case SHOT_BOWLED:     return BALL_WICKET;
+        case SHOT_LBW:        return BALL_LBW;
+        case SHOT_RUNOUT:     return BALL_RUNOUT;
+        case SHOT_DOT_BLOCK:  return BALL_DOT;
+        case SHOT_BOUNDARY_6: return BALL_SIX;
+        case SHOT_AERIAL:     return BALL_CAUGHT;   // placeholder
+        case SHOT_GROUND:     return BALL_SINGLE;   // placeholder
+        default:              return BALL_DOT;
+    }
 }
 
 std::string outcome_to_string(BallOutcome o) {
@@ -231,40 +361,31 @@ void print_scoreboard(const MatchState* ms,
                       const std::vector<Player>& bowlers) {
     // Use read lock - scoreboard never modifies game state
     pthread_rwlock_rdlock(&scoreboard_rwlock);
-
+   const char* phase_str = (ms->current_phase == PHASE_POWERPLAY) ? "POWERPLAY"
+                          : (ms->current_phase == PHASE_DEATH)     ? "DEATH"
+                          :                                           "MIDDLE";
     printf(COL_YELLOW);
     printf("\n┌─ SCOREBOARD ──────────────────────────────────────────┐\n");
-    printf("│  Score: %d/%d   Over: %d.%d   Extras: %d",
+   printf("│  Score: %d/%d   Over: %d.%d   Phase: %s   Extras: %d",
            ms->total_runs.load(), ms->wickets.load(),
-           ms->current_over, ms->current_ball, ms->extras);
+           ms->current_over, ms->current_ball,
+           phase_str, ms->extras);
     if (ms->innings == 2 && ms->target > 0) {
-        int need = ms->target - ms->total_runs.load();
-        int balls_left = (ms->current_over < MAX_OVERS) ?
-            ((MAX_OVERS - ms->current_over) * 6 - ms->current_ball) : 0;
-        printf("   Need: %d off %d balls", need, balls_left);
+        int need      = ms->target - ms->total_runs.load();
+        int overs_rem = MAX_OVERS - ms->current_over;
+        printf("   Need: %d off %d overs", need, overs_rem);
     }
-    printf("\n");
-
-    // Active batsmen
+    printf("\n│  Intensity: %d/50\n", ms->phase_intensity);
     for (const auto& p : batsmen) {
-        if (p.is_active && !p.is_out) {
+        if (p.is_active && !p.is_out)
             printf("│  %-15s %3d(%3d)  %s\n",
                    p.name.c_str(), p.runs_scored, p.balls_faced,
                    (p.id == ms->striker_id ? "* STRIKER" : "  non-striker"));
-        }
     }
-
-    // Current bowler
-    /*for (const auto& b : bowlers) {
-        if (b.id == (int)batsmen[0].id || b.is_active) { // rough match
-            // just show last active bowler
-        }
-    }*/
-
-    printf("└───────────────────────────────────────────────────────┘\n");
+    printf("└───────────────────────────────────────────────────────────────┘\n");
     printf(COL_RESET);
-
     pthread_rwlock_unlock(&scoreboard_rwlock);
+    (void)bowlers;
 }
 
 void print_over_summary(int over_num, const std::vector<BallEvent>& events) {
@@ -301,8 +422,8 @@ void print_match_result(const MatchState* ms,
 }
 
 void print_thread_state(const Player* p) {
-    printf(COL_CYAN "  [Thread %lu] %-15s → %s\n" COL_RESET,
-           p->thread_id % 10000,
+    printf(COL_CYAN "  [Thread %lu] %-15s -> %s\n" COL_RESET,
+           PID(p->thread_id),
            p->name.c_str(),
            thread_state_str(p->state).c_str());
 }
