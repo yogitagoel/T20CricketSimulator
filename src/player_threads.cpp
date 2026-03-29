@@ -172,13 +172,13 @@ void* batsman_thread_func(void* arg) {
             TID(), p->name.c_str());
 
     double t_wait = get_time_ms();
-    safe_sem_wait(&crease_semaphore, "crease");
+    safe_sem_wait(crease_semaphore, "crease");
     p->total_wait_ms = get_time_ms() - t_wait;
     p->entry_time_ms = get_time_ms();
     p->is_active     = true;
     p->state         = THREAD_RUNNING;
 
-    int sv = 0; sem_value(crease_semaphore, &sv);
+    int sv = 0; sem_val(crease_semaphore, &sv);
     log_msg(LOG_THREAD,
             "[T-%04lu] BATSMAN '%s' AT CREASE | wait=%.1fms | crease_sem=%d",
             TID(), p->name.c_str(), p->total_wait_ms, sv);
@@ -476,7 +476,6 @@ void* batsman_thread_func(void* arg) {
   *   4=Mid On         5=Long On      6=Long Off     7=Mid Off
   *   8=Cover Point    9=Third Man
   */
- */
 void* fielder_thread_func(void* arg) {
      FielderArgs* a    = (FielderArgs*)arg;
      Player*      p    = a->player;

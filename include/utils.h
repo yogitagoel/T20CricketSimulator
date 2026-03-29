@@ -56,6 +56,11 @@ int     rng_range(int lo, int hi);
 float   rng_float();                     
 bool    rng_chance(float probability);  
 
+ShotResult generate_shot(const Player* batsman,
+                             const Delivery* delivery,
+                             bool enable_runout,
+                            const MatchState* ms);
+BallOutcome resolve_fielding_outcome(const ShotResult& shot);          
 // Ball outcome generation
 BallOutcome generate_outcome(const Player* batsman,
                              const Delivery* delivery,

@@ -1,223 +1,997 @@
-[   1.176] [INFO   ] Match: Chennai Super Kings vs Mumbai Indians | 20 overs | Scheduler: Priority
-[   1.538] [SCHED  ] BATTING ORDER built:
-[   1.651] [SCHED  ]   FCFS: Rohit Sharma, Rahmanullah Gurbaz, Harry Brook ...
-[   1.746] [SCHED  ]   SJF:  Shakib al Hasan(12), Wanindu Hasaranga(16), Rohit Sharma(22) ...
-[   1.840] [SCHED  ] Scheduler: Bowler 'Mustafizur Rehman' added to RR queue (pos 0)
-[   1.987] [SCHED  ] Scheduler: Bowler 'Lockie Ferguson' added to RR queue (pos 1)
-[   2.244] [SCHED  ] Scheduler: Bowler 'Adam Zampa' added to RR queue (pos 2)
-[   2.335] [SCHED  ] Scheduler: Bowler 'Auqib Nabi' added to RR queue (pos 3)
-[   2.411] [SCHED  ] Scheduler: Bowler 'Jason Holder' added to RR queue (pos 4)
-[   2.540] [SCHED  ] Scheduler: Bowler 'Chris Woakes' added to RR queue (pos 5)
-[   2.813] [THREAD ] Umpire (Kernel) thread spawned [T-5168]
-[   2.845] [THREAD ] [UMPIRE T-5168] Kernel thread STARTED — polling every 50ms
-[   3.127] [THREAD ] [T-1024] FIELDER 'Mustafizur Rehman'(WK) → cond_wait
-[   3.246] [THREAD ] [T-6880] FIELDER 'Lockie Ferguson'(F) → cond_wait
-[   3.366] [THREAD ] [T-2736] FIELDER 'Adam Zampa'(F) → cond_wait
-[   3.486] [THREAD ] [T-8592] FIELDER 'Auqib Nabi'(F) → cond_wait
-[   3.526] [THREAD ] [T-4448] FIELDER 'Jason Holder'(F) → cond_wait
-[   3.657] [THREAD ] [T-0304] FIELDER 'Chris Woakes'(F) → cond_wait
-[   3.679] [THREAD ] Spawned 6 fielder threads (all sleeping on cond_wait)
-[   4.432] [THREAD ] Spawned BATSMAN 'Rohit Sharma' [T-6160]
-[   4.446] [THREAD ] [T-6160] BATSMAN 'Rohit Sharma' → sem_wait(crease) ...
-[   4.731] [THREAD ] [T-6160] BATSMAN 'Rohit Sharma' AT CREASE | wait=0.0ms | crease_sem=1
-[   4.711] [THREAD ] [T-2016] BATSMAN 'Rahmanullah Gurbaz' → sem_wait(crease) ...
-[   5.335] [THREAD ] [T-2016] BATSMAN 'Rahmanullah Gurbaz' AT CREASE | wait=0.0ms | crease_sem=0
-[   4.681] [THREAD ] Spawned BATSMAN 'Rahmanullah Gurbaz' [T-2016]
-[   5.614] [SCHED  ] CONTEXT SWITCH #1: Loading bowler 'Lockie Ferguson' (overs left: 4)
-[   5.716] [SCHED  ] Over 1: 'Lockie Ferguson' bowling (136 km/h) | Scheduler: PRIORITY | Intensity: LOW
-[   6.137] [THREAD ] Spawned BOWLER 'Lockie Ferguson' [T-7872]
-[   6.286] [THREAD ] [T-7872] BOWLER 'Lockie Ferguson' START — over 1
-[   6.751] [BALL   ]    1.1  Rohit Sharma     [1;32m   4[0m   4/0
-[   6.989] [THREAD ] [T-0304] FIELDER 'Chris Woakes' exit
-[   6.991] [THREAD ] [T-4448] FIELDER 'Jason Holder' exit
-[   6.996] [THREAD ] [T-1024] FIELDER 'Mustafizur Rehman' exit
-[  20.436] [BALL   ]    1.2  Rohit Sharma     [1;37m   2[0m   6/0
-[  20.896] [THREAD ] [T-2736] FIELDER 'Adam Zampa' exit
-[  34.414] [BALL   ]    1.3  Rohit Sharma     [1;32m   4[0m   10/0
-[  34.698] [THREAD ] [T-6880] FIELDER 'Lockie Ferguson' exit
-[  48.419] [BALL   ]    1.3  Rohit Sharma     [1;33m  Wd[0m   11/0
-[  69.160] [BALL   ]    1.4  Rahmanullah Gurbaz  [1;32m   4[0m   15/0
-[  69.508] [THREAD ] [T-8592] FIELDER 'Auqib Nabi' exit
-[  86.582] [BALL   ]    1.5  Rahmanullah Gurbaz  [1;32m   4[0m   19/0
-[ 103.562] [BALL   ]    1.6  Rahmanullah Gurbaz  [0;37m •[0m   19/0
-[ 116.817] [THREAD ] [T-7872] BOWLER 'Lockie Ferguson' DONE — 0W 19R econ=16.3
-[ 117.415] [SCHED  ] CTX SAVE  → 'Lockie Ferguson': 1 overs, 19 runs, 0 wkts, econ=19.00
-[ 117.783] [SCHED  ] OVER 1 COMPLETE — 'Lockie Ferguson' finished over (1/4 overs)
-[ 118.073] [SCORE  ] End of over 1: 19/0  (Extras: 1)
-[ 159.504] [SCHED  ] CONTEXT SWITCH #2: Loading bowler 'Adam Zampa' (overs left: 4)
-[ 159.885] [SCHED  ] Over 2: 'Adam Zampa' bowling (143 km/h) | Scheduler: PRIORITY | Intensity: LOW
-[ 160.355] [THREAD ] Spawned BOWLER 'Adam Zampa' [T-7872]
-[ 160.451] [THREAD ] [T-7872] BOWLER 'Adam Zampa' START — over 2
-[ 161.473] [BALL   ]    2.1  Rohit Sharma     [1;32m   4[0m   23/0
-[ 174.995] [BALL   ]    2.2  Rahmanullah Gurbaz  [0;37m •[0m   23/0
-[ 192.293] [BALL   ]    2.3  Rahmanullah Gurbaz  [1;32m   4[0m   27/0
-[ 207.239] [BALL   ]    2.4  Rahmanullah Gurbaz  [1;37m   1[0m   28/0
-[ 218.680] [BALL   ] NEW BATSMAN: 'Harry Brook' coming to crease
-[ 219.208] [THREAD ] Spawned BATSMAN 'Harry Brook' [T-3728]
-[ 219.984] [BALL   ]    2.5  Rohit Sharma     [1;31mW(B)[0m   28/1
-[ 219.250] [THREAD ] [T-3728] BATSMAN 'Harry Brook' → sem_wait(crease) ...
-[ 233.504] [THREAD ] [T-6160] BATSMAN 'Rohit Sharma' LEFT crease → 14(5 balls) | sem=1
-[ 233.547] [THREAD ] [T-3728] BATSMAN 'Harry Brook' AT CREASE | wait=13.2ms | crease_sem=0
-[ 233.919] [BALL   ]    2.6  Harry Brook      [1;32m   4[0m   32/1
-[ 241.465] [THREAD ] [T-7872] BOWLER 'Adam Zampa' DONE — 2W 9R econ=9.0
-[ 241.889] [SCHED  ] CTX SAVE  → 'Adam Zampa': 1 overs, 9 runs, 2 wkts, econ=9.00
-[ 242.081] [SCHED  ] OVER 2 COMPLETE — 'Adam Zampa' finished over (1/4 overs)
-[ 242.322] [SCORE  ] End of over 2: 32/1  (Extras: 1)
-[ 287.116] [SCHED  ] CONTEXT SWITCH #3: Loading bowler 'Auqib Nabi' (overs left: 4)
-[ 287.468] [SCHED  ] Over 3: 'Auqib Nabi' bowling (132 km/h) | Scheduler: PRIORITY | Intensity: LOW
-[ 287.753] [THREAD ] Spawned BOWLER 'Auqib Nabi' [T-7872]
-[ 287.811] [THREAD ] [T-7872] BOWLER 'Auqib Nabi' START — over 3
-[ 288.514] [BALL   ]    3.1  Harry Brook      [1;32m   4[0m   36/1
-[ 302.409] [BALL   ]    3.2  Harry Brook      [1;37m   1[0m   37/1
-[ 315.841] [BALL   ]    3.3  Rahmanullah Gurbaz  [1;37m   1[0m   38/1
-[ 327.892] [BALL   ]    3.4  Harry Brook      [1;32m   4[0m   42/1
-[ 342.976] [BALL   ]    3.5  Harry Brook      [1;32m   4[0m   46/1
-[ 357.643] [BALL   ]    3.5  Harry Brook      [1;33m  Nb[0m   47/1
-[ 372.677] [BALL   ]    3.6  Rahmanullah Gurbaz  [1;37m   1[0m   48/1
-[ 389.783] [THREAD ] [T-7872] BOWLER 'Auqib Nabi' DONE — 0W 16R econ=13.7
-[ 390.247] [SCHED  ] CTX SAVE  → 'Auqib Nabi': 1 overs, 16 runs, 0 wkts, econ=16.00
-[ 390.481] [SCHED  ] OVER 3 COMPLETE — 'Auqib Nabi' finished over (1/4 overs)
-[ 390.702] [SCORE  ] End of over 3: 48/1  (Extras: 2)
-[ 431.240] [SCHED  ] CONTEXT SWITCH #4: Loading bowler 'Jason Holder' (overs left: 4)
-[ 431.464] [SCHED  ] Over 4: 'Jason Holder' bowling (111 km/h) | Scheduler: PRIORITY | Intensity: LOW
-[ 431.704] [THREAD ] Spawned BOWLER 'Jason Holder' [T-7872]
-[ 431.720] [THREAD ] [T-7872] BOWLER 'Jason Holder' START — over 4
-[ 432.218] [BALL   ]    4.1  Rahmanullah Gurbaz  [0;37m •[0m   48/1
-[ 447.016] [BALL   ]    4.2  Rahmanullah Gurbaz  [1;32m   4[0m   52/1
-[ 463.634] [BALL   ]    4.3  Rahmanullah Gurbaz  [1;37m   1[0m   53/1
-[ 477.294] [BALL   ]    4.4  Harry Brook      [0;37m •[0m   53/1
-[ 491.319] [BALL   ]    4.5  Harry Brook      [1;37m   1[0m   54/1
-[ 505.466] [BALL   ]    4.6  Rahmanullah Gurbaz  [0;37m •[0m   54/1
-[ 518.923] [THREAD ] [T-7872] BOWLER 'Jason Holder' DONE — 0W 6R econ=6.0
-[ 519.470] [SCHED  ] CTX SAVE  → 'Jason Holder': 1 overs, 6 runs, 0 wkts, econ=6.00
-[ 519.761] [SCHED  ] OVER 4 COMPLETE — 'Jason Holder' finished over (1/4 overs)
-[ 519.977] [SCORE  ] End of over 4: 54/1  (Extras: 2)
-[ 564.385] [SCHED  ] CONTEXT SWITCH #5: Loading bowler 'Chris Woakes' (overs left: 4)
-[ 564.729] [SCHED  ] Over 5: 'Chris Woakes' bowling (135 km/h) | Scheduler: PRIORITY | Intensity: LOW
-[ 565.109] [THREAD ] Spawned BOWLER 'Chris Woakes' [T-7872]
-[ 565.153] [THREAD ] [T-7872] BOWLER 'Chris Woakes' START — over 5
-[ 565.816] [BALL   ]    5.1  Rahmanullah Gurbaz  [0;37m •[0m   54/1
-[ 583.791] [BALL   ]    5.2  Rahmanullah Gurbaz  [0;37m •[0m   54/1
-[ 601.762] [BALL   ] NEW BATSMAN: 'Shubhman Gill' coming to crease
-[ 602.431] [THREAD ] Spawned BATSMAN 'Shubhman Gill' [T-2128]
-[ 602.703] [BALL   ]    5.3  Rahmanullah Gurbaz  [1;31mW(C)[0m   54/2
-[ 602.470] [THREAD ] [T-2128] BATSMAN 'Shubhman Gill' → sem_wait(crease) ...
-[ 619.591] [THREAD ] [T-2016] BATSMAN 'Rahmanullah Gurbaz' LEFT crease → 20(15 balls) | sem=1
-[ 619.643] [THREAD ] [T-2128] BATSMAN 'Shubhman Gill' AT CREASE | wait=16.3ms | crease_sem=0
-[ 620.432] [BALL   ]    5.4  Shubhman Gill    [1;32m   4[0m   58/2
-[ 634.705] [BALL   ]    5.5  Shubhman Gill    [1;37m   1[0m   59/2
-[ 647.786] [THREAD ] [T-7872] BOWLER 'Chris Woakes' DONE — 2W 5R econ=5.0
-[ 648.401] [SCHED  ] CTX SAVE  → 'Chris Woakes': 1 overs, 5 runs, 2 wkts, econ=5.00
-[ 648.688] [SCHED  ] OVER 5 COMPLETE — 'Chris Woakes' finished over (1/4 overs)
-[ 648.968] [BALL   ]    5.6  Shubhman Gill    [1;32m   6[0m   65/2
-[ 648.996] [SCORE  ] End of over 5: 65/2  (Extras: 2)
-[ 690.321] [SCHED  ] CONTEXT SWITCH #6: Loading bowler 'Mustafizur Rehman' (overs left: 4)
-[ 690.638] [SCHED  ] Over 6: 'Mustafizur Rehman' bowling (145 km/h) | Scheduler: PRIORITY | Intensity: LOW
-[ 690.994] [THREAD ] Spawned BOWLER 'Mustafizur Rehman' [T-7872]
-[ 691.019] [THREAD ] [T-7872] BOWLER 'Mustafizur Rehman' START — over 6
-[ 691.736] [BALL   ]    6.1  Harry Brook      [0;37m •[0m   65/2
-[ 706.386] [BALL   ]    6.2  Harry Brook      [1;32m   4[0m   69/2
-[ 720.446] [BALL   ]    6.3  Harry Brook      [1;32m   4[0m   73/2
-[ 734.414] [BALL   ] NEW BATSMAN: 'Wanindu Hasaranga' coming to crease
-[ 734.936] [THREAD ] Spawned BATSMAN 'Wanindu Hasaranga' [T-7984]
-[ 735.271] [BALL   ]    6.4  Harry Brook      [1;31mW(C)[0m   73/3
-[ 734.983] [THREAD ] [T-7984] BATSMAN 'Wanindu Hasaranga' → sem_wait(crease) ...
-[ 749.679] [THREAD ] [T-3728] BATSMAN 'Harry Brook' LEFT crease → 26(11 balls) | sem=1
-[ 749.716] [THREAD ] [T-7984] BATSMAN 'Wanindu Hasaranga' AT CREASE | wait=13.7ms | crease_sem=0
-[ 750.142] [BALL   ]    6.5  Wanindu Hasaranga  [1;37m   1[0m   74/3
-[ 757.584] [BALL   ]    6.6  Shubhman Gill    [0;37m •[0m   74/3
-[ 769.707] [THREAD ] [T-7872] BOWLER 'Mustafizur Rehman' DONE — 2W 9R econ=9.0
-[ 770.193] [SCHED  ] CTX SAVE  → 'Mustafizur Rehman': 1 overs, 9 runs, 2 wkts, econ=9.00
-[ 770.529] [SCHED  ] OVER 6 COMPLETE — 'Mustafizur Rehman' finished over (1/4 overs)
-[ 770.768] [SCORE  ] End of over 6: 74/3  (Extras: 2)
-[ 816.404] [SCHED  ] CONTEXT SWITCH #7: Loading bowler 'Lockie Ferguson' (overs left: 3)
-[ 816.650] [SCHED  ] Over 7: 'Lockie Ferguson' bowling (136 km/h) | Scheduler: PRIORITY | Intensity: LOW
-[ 816.945] [THREAD ] Spawned BOWLER 'Lockie Ferguson' [T-7872]
-[ 816.962] [THREAD ] [T-7872] BOWLER 'Lockie Ferguson' START — over 7
-[ 817.287] [BALL   ]    7.1  Wanindu Hasaranga  [1;37m   2[0m   76/3
-[ 830.973] [BALL   ]    7.2  Shubhman Gill    [1;37m   2[0m   78/3
-[ 845.676] [BALL   ]    7.3  Shubhman Gill    [1;32m   4[0m   82/3
-[ 861.071] [BALL   ]    7.4  Shubhman Gill    [0;37m •[0m   82/3
-[ 875.970] [BALL   ]    7.5  Shubhman Gill    [1;37m   1[0m   83/3
-[ 900.073] [BALL   ]    7.6  Wanindu Hasaranga  [1;32m   4[0m   87/3
-[ 912.329] [THREAD ] [T-7872] BOWLER 'Lockie Ferguson' DONE — 0W 32R econ=14.8
-[ 913.296] [SCHED  ] CTX SAVE  → 'Lockie Ferguson': 2 overs, 32 runs, 0 wkts, econ=16.00
-[ 913.969] [SCHED  ] OVER 7 COMPLETE — 'Lockie Ferguson' finished over (2/4 overs)
-[ 915.800] [SCORE  ] End of over 7: 87/3  (Extras: 2)
-[ 960.662] [SCHED  ] CONTEXT SWITCH #8: Loading bowler 'Adam Zampa' (overs left: 3)
-[ 960.994] [SCHED  ] Over 8: 'Adam Zampa' bowling (143 km/h) | Scheduler: PRIORITY | Intensity: LOW
-[ 961.470] [THREAD ] Spawned BOWLER 'Adam Zampa' [T-7872]
-[ 961.499] [THREAD ] [T-7872] BOWLER 'Adam Zampa' START — over 8
-[ 962.227] [BALL   ]    8.1  Shubhman Gill    [0;37m •[0m   87/3
-[ 973.690] [BALL   ]    8.2  Wanindu Hasaranga  [1;37m   1[0m   88/3
-[ 986.236] [BALL   ]    8.3  Shubhman Gill    [1;37m   1[0m   89/3
-[ 999.936] [BALL   ]    8.4  Wanindu Hasaranga  [1;37m   1[0m   90/3
-[1010.583] [BALL   ]    8.5  Shubhman Gill    [1;37m   2[0m   92/3
-[1025.801] [BALL   ]    8.6  Shubhman Gill    [0;37m •[0m   92/3
-[1037.538] [THREAD ] [T-7872] BOWLER 'Adam Zampa' DONE — 2W 14R econ=7.0
-[1037.878] [SCHED  ] CTX SAVE  → 'Adam Zampa': 2 overs, 14 runs, 2 wkts, econ=7.00
-[1038.139] [SCHED  ] OVER 8 COMPLETE — 'Adam Zampa' finished over (2/4 overs)
-[1038.524] [SCORE  ] End of over 8: 92/3  (Extras: 2)
-[1080.052] [SCHED  ] CONTEXT SWITCH #9: Loading bowler 'Auqib Nabi' (overs left: 3)
-[1080.388] [SCHED  ] Over 9: 'Auqib Nabi' bowling (132 km/h) | Scheduler: PRIORITY | Intensity: LOW
-[1080.614] [THREAD ] Spawned BOWLER 'Auqib Nabi' [T-7872]
-[1080.694] [THREAD ] [T-7872] BOWLER 'Auqib Nabi' START — over 9
-[1081.026] [BALL   ]    9.1  Wanindu Hasaranga  [1;37m   1[0m   93/3
-[1095.021] [BALL   ]    9.1  Shubhman Gill    [1;33m  Wd[0m   94/3
-[1106.885] [BALL   ]    9.2  Wanindu Hasaranga  [1;32m   4[0m   98/3
-[1121.083] [BALL   ] NEW BATSMAN: 'Shakib al Hasan' coming to crease
-[1121.469] [THREAD ] Spawned BATSMAN 'Shakib al Hasan' [T-3840]
-[1121.636] [BALL   ]    9.3  Shubhman Gill    [1;31mW(B)[0m   98/4
-[1121.491] [THREAD ] [T-3840] BATSMAN 'Shakib al Hasan' → sem_wait(crease) ...
-[1136.087] [THREAD ] [T-2128] BATSMAN 'Shubhman Gill' LEFT crease → 21(13 balls) | sem=1
-[1136.128] [THREAD ] [T-3840] BATSMAN 'Shakib al Hasan' AT CREASE | wait=14.2ms | crease_sem=0
-[1136.444] [BALL   ]    9.4  Shakib al Hasan  [1;37m   1[0m   99/4
-[1144.062] [BALL   ]    9.5  Wanindu Hasaranga  [1;37m   1[0m   100/4
-[1156.801] [BALL   ] NEW BATSMAN: 'Cameron Green' coming to crease
-[1157.511] [THREAD ] Spawned BATSMAN 'Cameron Green' [T-9696]
-[1157.782] [BALL   ]    9.6  Shakib al Hasan  [1;31mW(L)[0m   100/5
-[1157.571] [THREAD ] [T-9696] BATSMAN 'Cameron Green' → sem_wait(crease) ...
-[1168.867] [THREAD ] [T-7872] BOWLER 'Auqib Nabi' DONE — 2W 24R econ=10.3
-[1169.267] [SCHED  ] CTX SAVE  → 'Auqib Nabi': 2 overs, 24 runs, 2 wkts, econ=12.00
-[1169.533] [SCHED  ] OVER 9 COMPLETE — 'Auqib Nabi' finished over (2/4 overs)
-[1169.859] [SCORE  ] End of over 9: 100/5  (Extras: 3)
-[1172.487] [THREAD ] [T-3840] BATSMAN 'Shakib al Hasan' LEFT crease → 1(2 balls) | sem=1
-[1172.543] [THREAD ] [T-9696] BATSMAN 'Cameron Green' AT CREASE | wait=13.9ms | crease_sem=0
-[1212.991] [SCHED  ] CONTEXT SWITCH #10: Loading bowler 'Jason Holder' (overs left: 3)
-[1213.311] [SCHED  ] Over 10: 'Jason Holder' bowling (111 km/h) | Scheduler: PRIORITY | Intensity: LOW
-[1213.648] [THREAD ] Spawned BOWLER 'Jason Holder' [T-7872]
-[1213.700] [THREAD ] [T-7872] BOWLER 'Jason Holder' START — over 10
-[1214.424] [BALL   ]   10.1  Wanindu Hasaranga  [1;37m   1[0m   101/5
-[1225.554] [BALL   ]   10.2  Cameron Green    [1;32m   4[0m   105/5
-[1242.690] [BALL   ]   10.3  Cameron Green    [1;32m   6[0m   111/5
-[1258.293] [BALL   ]   10.3  Cameron Green    [1;33m  Wd[0m   112/5
-[1272.021] [BALL   ]   10.4  Wanindu Hasaranga  [1;32m   4[0m   116/5
-[1286.311] [BALL   ]   10.5  Wanindu Hasaranga  [0;37m •[0m   116/5
-[1300.317] [BALL   ]   10.6  Wanindu Hasaranga  [1;32m   4[0m   120/5
-[1311.444] [THREAD ] [T-7872] BOWLER 'Jason Holder' DONE — 0W 26R econ=12.0
-[1311.784] [SCHED  ] CTX SAVE  → 'Jason Holder': 2 overs, 26 runs, 0 wkts, econ=13.00
-[1311.955] [SCHED  ] OVER 10 COMPLETE — 'Jason Holder' finished over (2/4 overs)
-[1312.057] [SCORE  ] End of over 10: 120/5  (Extras: 4)
-[1357.030] [SCHED  ] CONTEXT SWITCH #11: Loading bowler 'Chris Woakes' (overs left: 3)
-[1357.369] [SCHED  ] Over 11: 'Chris Woakes' bowling (135 km/h) | Scheduler: PRIORITY | Intensity: MEDIUM
-[1357.686] [THREAD ] Spawned BOWLER 'Chris Woakes' [T-7872]
-[1357.724] [THREAD ] [T-7872] BOWLER 'Chris Woakes' START — over 11
-[1358.215] [BALL   ]   11.1  Wanindu Hasaranga  [1;37m   1[0m   121/5
-[1369.508] [BALL   ]   11.2  Cameron Green    [1;37m   1[0m   122/5
-[1381.683] [BALL   ]   11.3  Wanindu Hasaranga  [1;37m   1[0m   123/5
-[1394.872] [BALL   ]   11.4  Cameron Green    [0;37m •[0m   123/5
-[1412.434] [BALL   ]   11.4  Cameron Green    [1;33m  Wd[0m   124/5
-[1424.321] [BALL   ]   11.5  Wanindu Hasaranga  [1;32m   4[0m   128/5
-[1438.308] [BALL   ]   11.6  Wanindu Hasaranga  [1;32m   4[0m   132/5
-[1450.361] [THREAD ] [T-7872] BOWLER 'Chris Woakes' DONE — 2W 17R econ=7.8
-[1450.733] [SCHED  ] CTX SAVE  → 'Chris Woakes': 2 overs, 17 runs, 2 wkts, econ=8.50
-[1450.878] [SCHED  ] OVER 11 COMPLETE — 'Chris Woakes' finished over (2/4 overs)
-[1451.113] [SCORE  ] End of over 11: 132/5  (Extras: 5)
-[1497.273] [SCHED  ] CONTEXT SWITCH #12: Loading bowler 'Mustafizur Rehman' (overs left: 3)
-[1497.402] [SCHED  ] Over 12: 'Mustafizur Rehman' bowling (145 km/h) | Scheduler: PRIORITY | Intensity: MEDIUM
-[1497.537] [THREAD ] Spawned BOWLER 'Mustafizur Rehman' [T-7872]
-[1497.555] [THREAD ] [T-7872] BOWLER 'Mustafizur Rehman' START — over 12
-[1498.111] [BALL   ]   12.1  Cameron Green    [0;37m •[0m   132/5
-[1509.482] [BALL   ]   12.2  Wanindu Hasaranga  [1;32m   4[0m   136/5
-[1523.555] [BALL   ]   12.3  Wanindu Hasaranga  [1;31mW(B)[0m   136/6
-[1537.687] [THREAD ] [T-7984] BATSMAN 'Wanindu Hasaranga' LEFT crease → 38(18 balls) | sem=1
+[   0.221] [INFO   ] Match: Mumbai Indians vs Chennai Super Kings | 20 overs | Scheduler: Priority
+[   0.267] [SCHED  ] BATTING ORDER built (FCFS: Travis Head | SJF: Jason Holder ...)
+[   0.272] [SCHED  ] Scheduler: Bowler 'Cameron Green' added to RR queue (pos 0)
+[   0.275] [SCHED  ] Scheduler: Bowler 'Ravindra Jadeja' added to RR queue (pos 1)
+[   0.278] [SCHED  ] Scheduler: Bowler 'Adam Zampa' added to RR queue (pos 2)
+[   0.280] [SCHED  ] Scheduler: Bowler 'Trent Boult' added to RR queue (pos 3)
+[   0.282] [SCHED  ] Scheduler: Bowler 'Kagiso Rabada' added to RR queue (pos 4)
+[   0.331] [THREAD ] Umpire thread spawned [T-6128]
+[   0.339] [THREAD ] [UMPIRE T-6128] Kernel thread STARTED — polling every 50ms
+[   0.402] [THREAD ] [T-0720] FIELDER 'David Warner' @ Fine Leg      -> cond_wait
+[   0.408] [THREAD ] [T-3424] FIELDER 'Dinesh Karthik' @ Wicket Keeper -> cond_wait
+[   0.421] [THREAD ] [T-8016] FIELDER 'Devon Conway' @ Square Leg    -> cond_wait
+[   0.439] [THREAD ] [T-5312] FIELDER 'Babar Azam' @ Mid Wicket    -> cond_wait
+[   0.459] [THREAD ] [T-2608] FIELDER 'KL Rahul' @ Mid On        -> cond_wait
+[   0.481] [THREAD ] [T-9904] FIELDER 'Andre Russell' @ Long On       -> cond_wait
+[   0.501] [THREAD ] [T-7200] FIELDER 'Cameron Green' @ Long Off      -> cond_wait
+[   0.523] [THREAD ] [T-4496] FIELDER 'Ravindra Jadeja' @ Mid Off       -> cond_wait
+[   0.541] [THREAD ] [T-1792] FIELDER 'Cameron Green' @ Cover Point   -> cond_wait
+[   0.554] [THREAD ] Spawned 10 fielder threads (all sleeping on cond_wait)
+[   0.561] [THREAD ] ── THREAD POOL: 1 bowler + 2 batsmen + 10 fielders + 1 umpire + 1 scoreboard = 15 total concurrent threads ──
+[   0.558] [THREAD ] [T-9088] FIELDER 'Ravindra Jadeja' @ Third Man     -> cond_wait
+[   0.586] [THREAD ] Spawned BATSMAN 'Travis Head' [T-6384]
+[   0.591] [THREAD ] [T-6384] BATSMAN 'Travis Head' → sem_wait(crease) ...
+[   0.598] [THREAD ] [T-6384] BATSMAN 'Travis Head' AT CREASE | wait=0.0ms | crease_sem=1
+[   0.609] [THREAD ] Spawned BATSMAN 'Shikhar Dhawan' [T-3680]
+[   0.614] [SCHED  ] OPENER RULE: 'Trent Boult' (swing/pace) mandated for over 1  score=100
+[   0.618] [SCHED  ] DYNAMIC PRIORITY: 'Trent Boult' selected  score=100  overs_left=20  phase=POWERPLAY
+[   0.613] [THREAD ] [T-3680] BATSMAN 'Shikhar Dhawan' → sem_wait(crease) ...
+[   0.625] [THREAD ] [T-3680] BATSMAN 'Shikhar Dhawan' AT CREASE | wait=0.0ms | crease_sem=0
+[   0.620] [SCHED  ] CTX RESTORE ← 'Trent Boult': 0 overs, 0 runs, 0 wkts
+[   0.631] [SCHED  ] CONTEXT SWITCH #1 -> 'Trent Boult'  overs=0/4  economy=0.0
+[   0.634] [SCHED  ] Over 1: 'Trent Boult' (136 km/h) | Scheduler: PRIORITY | Phase: LOW(powerplay) | Intensity: 1
+[   0.659] [THREAD ] Spawned BOWLER 'Trent Boult' [T-0976]
+[   0.664] [THREAD ] [T-0976] BOWLER 'Trent Boult' START — over 1
+[   0.753] [BALL   ]    0.1  Travis Head      [0;37m •[0m   0/0
+[  13.949] [BALL   ]   [RACE] GROUND winner='Cameron Green' @ Long Off reach=160ms boundary=611ms -> ONE
+[  13.992] [BALL   ]    0.2  Travis Head      [1;37m   1[0m   1/0
+[  24.275] [BALL   ]    0.3  Shikhar Dhawan   [1;32m   6[0m   7/0
+[  37.421] [BALL   ]    0.4  Shikhar Dhawan   [0;37m •[0m   7/0
+[  50.692] [BALL   ]   [RACE] GROUND winner='Dinesh Karthik' @ Wicket Keeper reach=40ms boundary=366ms -> ONE
+[  50.832] [BALL   ]    0.5  Shikhar Dhawan   [1;37m   1[0m   8/0
+[  61.336] [BALL   ]   [RACE] GROUND winner='Babar Azam' @ Mid Wicket reach=317ms boundary=296ms -> FOUR
+[  61.406] [BALL   ]    0.6  Travis Head      [1;32m   4[0m   12/0
+[  71.545] [THREAD ] [T-0976] BOWLER 'Trent Boult' DONE — 0W 12R econ=12.0
+[  71.641] [SCHED  ] CTX SAVE  → 'Trent Boult': 1 overs, 12 runs, 0 wkts, econ=12.00
+[  71.652] [SCHED  ] OVER 1 COMPLETE: 'Trent Boult' (1/4 overs)
+[  71.659] [SCORE  ] End of over 1: 12/0  (Extras: 0)  Intensity: 1
+[ 111.772] [SCHED  ]   Candidate: Cameron Green         skill=75  econ=0.0  wkts=0  spec=medium  pri=84
+[ 111.861] [SCHED  ]   Candidate: Ravindra Jadeja       skill=78  econ=0.0  wkts=0  spec=spin    pri=55
+[ 111.878] [SCHED  ]   Candidate: Adam Zampa            skill=84  econ=0.0  wkts=0  spec=spin    pri=59
+[ 111.925] [SCHED  ]   Candidate: Kagiso Rabada         skill=80  econ=0.0  wkts=0  spec=death   pri=77
+[ 111.936] [SCHED  ] DYNAMIC PRIORITY: 'Cameron Green' selected  score=84  overs_left=19  phase=POWERPLAY
+[ 111.946] [SCHED  ] CTX RESTORE ← 'Cameron Green': 0 overs, 0 runs, 0 wkts
+[ 111.954] [SCHED  ] CONTEXT SWITCH #2 -> 'Cameron Green'  overs=0/4  economy=0.0
+[ 111.963] [SCHED  ] Over 2: 'Cameron Green' (129 km/h) | Scheduler: PRIORITY | Phase: LOW(powerplay) | Intensity: 2
+[ 112.094] [THREAD ] Spawned BOWLER 'Cameron Green' [T-0976]
+[ 112.237] [THREAD ] [T-0976] BOWLER 'Cameron Green' START — over 2
+[ 112.488] [BALL   ]   [RACE] GROUND winner='David Warner' @ Fine Leg reach=434ms boundary=544ms -> THREE
+[ 112.672] [BALL   ]    1.1  Shikhar Dhawan   [1;37m   3[0m   15/0
+[ 123.347] [BALL   ]   [RACE] GROUND winner='Babar Azam' @ Mid Wicket reach=484ms boundary=307ms -> FOUR
+[ 123.484] [BALL   ]    1.2  Travis Head      [1;32m   4[0m   19/0
+[ 136.792] [BALL   ]   [RACE] GROUND winner='Babar Azam' @ Mid Wicket reach=281ms boundary=528ms -> TWO
+[ 136.899] [BALL   ]    1.3  Travis Head      [1;37m   2[0m   21/0
+[ 150.188] [BALL   ]   [RACE] GROUND winner='David Warner' @ Fine Leg reach=137ms boundary=657ms -> ONE
+[ 150.347] [BALL   ]    1.4  Travis Head      [1;37m   1[0m   22/0
+[ 150.930] [DEADLK ] [UMPIRE] ── No natural deadlock yet — injecting scenario (over 2) to demonstrate detection ──
+[ 150.979] [DEADLK ]   Travis Head holds End-0, wants End-1
+[ 150.993] [DEADLK ]   Shikhar Dhawan holds End-1, wants End-0  →  CIRCULAR WAIT
+[ 151.003] [DEADLK ] [UMPIRE] ══ DEADLOCK DETECTED ══ RAG contains a cycle:
+[ 151.011] [DEADLK ] 
+[ 151.020] [DEADLK ]   ╔══════════════════════════════════════════════════╗
+[ 151.029] [DEADLK ]   ║        RESOURCE ALLOCATION GRAPH (RAG)          ║
+[ 151.037] [DEADLK ]   ║  (OS: circular-wait condition for deadlock)      ║
+[ 151.045] [DEADLK ]   ╠══════════════════════════════════════════════════╣
+[ 151.053] [DEADLK ]   ║  Thread Travis Head   ──holds──► [End 0]         ║
+[ 151.062] [DEADLK ]   ║  Thread Travis Head   ◄──wants── [End 1]         ║
+[ 151.070] [DEADLK ]   ║                                                  ║
+[ 151.078] [DEADLK ]   ║  Thread Shikhar Dhawan  ──holds──► [End 1]         ║
+[ 151.086] [DEADLK ]   ║  Thread Shikhar Dhawan  ◄──wants── [End 0]         ║
+[ 151.094] [DEADLK ]   ╠══════════════════════════════════════════════════╣
+[ 151.103] [DEADLK ]   ║  CYCLE: Travis Head→[E1]→Shikhar Dhawan→[E0]→Travis Head
+[ 151.112] [DEADLK ]   ║  DETECTION  : RAG cycle scan by Umpire (kernel) ║
+[ 151.120] [DEADLK ]   ║  PREVENTION : Acquire End-0 before End-1 always ║
+[ 151.128] [DEADLK ]   ║  RESOLUTION : Kill lowest-priority thread (RUN OUT)║
+[ 151.136] [DEADLK ]   ╚══════════════════════════════════════════════════╝
+[ 151.144] [DEADLK ] 
+[ 151.152] [DEADLK ]   OS RESPONSE: Umpire (kernel) selects victim by lowest batting_avg (= lowest process priority)
+[ 151.160] [DEADLK ]   PREVENTION : Resource-ordering (End-0 before End-1) breaks future cycles
+[ 151.168] [DEADLK ] RESOLUTION: 'Travis Head' declared RUN OUT (avg=40.6)
+[ 151.178] [SCORE  ] RUN OUT — Score: 22/1
+[ 151.186] [BALL   ] NEW BATSMAN: 'Virat Kohli' coming to crease (after run-out)
+[ 151.450] [THREAD ] Spawned BATSMAN 'Virat Kohli' [T-8272]
+[ 151.527] [THREAD ] [T-8272] BATSMAN 'Virat Kohli' → sem_wait(crease) ...
+[ 160.929] [BALL   ]    1.5  Shikhar Dhawan   [0;37m •[0m   22/1
+[ 163.597] [THREAD ] [T-6384] BATSMAN 'Travis Head' LEFT crease -> 12(6 balls) | sem=1
+[ 163.727] [THREAD ] [T-8272] BATSMAN 'Virat Kohli' AT CREASE | wait=12.2ms | crease_sem=0
+[ 174.339] [BALL   ]    1.5  Shikhar Dhawan   [1;33m  Wd[0m   23/1
+[ 181.224] [THREAD ] [T-0976] BOWLER 'Cameron Green' DONE — 0W 11R econ=11.0
+[ 181.587] [SCHED  ] CTX SAVE  → 'Cameron Green': 1 overs, 11 runs, 0 wkts, econ=11.00
+[ 181.693] [SCHED  ] OVER 2 COMPLETE: 'Cameron Green' (1/4 overs)
+[ 181.744] [SCORE  ] End of over 2: 23/1  (Extras: 1)  Intensity: 2
+[ 222.095] [SCHED  ]   Candidate: Ravindra Jadeja       skill=78  econ=0.0  wkts=0  spec=spin    pri=55
+[ 222.232] [SCHED  ]   Candidate: Adam Zampa            skill=84  econ=0.0  wkts=0  spec=spin    pri=59
+[ 222.265] [SCHED  ]   Candidate: Trent Boult           skill=76  econ=12.0  wkts=0  spec=swing   pri=71
+[ 222.348] [SCHED  ]   Candidate: Kagiso Rabada         skill=80  econ=0.0  wkts=0  spec=death   pri=77
+[ 222.377] [SCHED  ] DYNAMIC PRIORITY: 'Kagiso Rabada' selected  score=77  overs_left=18  phase=POWERPLAY
+[ 222.403] [SCHED  ] CTX RESTORE ← 'Kagiso Rabada': 0 overs, 0 runs, 0 wkts
+[ 222.425] [SCHED  ] CONTEXT SWITCH #3 -> 'Kagiso Rabada'  overs=0/4  economy=0.0
+[ 222.448] [SCHED  ] Over 3: 'Kagiso Rabada' (142 km/h) | Scheduler: PRIORITY | Phase: LOW(powerplay) | Intensity: 5
+[ 222.650] [THREAD ] Spawned BOWLER 'Kagiso Rabada' [T-0976]
+[ 222.823] [THREAD ] [T-0976] BOWLER 'Kagiso Rabada' START — over 3
+[ 223.238] [BALL   ]   [RACE] GROUND winner='Ravindra Jadeja' @ Third Man reach=423ms boundary=633ms -> THREE
+[ 223.538] [BALL   ]    2.1  Virat Kohli      [1;37m   3[0m   26/1
+[ 234.273] [BALL   ]   [RACE] GROUND winner='Ravindra Jadeja' @ Third Man reach=185ms boundary=336ms -> ONE
+[ 234.536] [BALL   ]    2.2  Shikhar Dhawan   [1;37m   1[0m   27/1
+[ 245.353] [BALL   ]    2.3  Virat Kohli      [1;32m   6[0m   33/1
+[ 259.002] [BALL   ]    2.4  Virat Kohli      [0;37m •[0m   33/1
+[ 272.499] [BALL   ]   [RACE] GROUND winner='Ravindra Jadeja' @ Third Man reach=297ms boundary=596ms -> TWO
+[ 272.708] [BALL   ]    2.5  Virat Kohli      [1;37m   2[0m   35/1
+[ 286.221] [BALL   ]   [RACE] GROUND winner='Cameron Green' @ Long Off reach=333ms boundary=400ms -> TWO
+[ 286.472] [BALL   ]    2.6  Virat Kohli      [1;37m   2[0m   37/1
+[ 296.932] [THREAD ] [T-0976] BOWLER 'Kagiso Rabada' DONE — 0W 14R econ=14.0
+[ 297.236] [SCHED  ] CTX SAVE  → 'Kagiso Rabada': 1 overs, 14 runs, 0 wkts, econ=14.00
+[ 297.332] [SCHED  ] OVER 3 COMPLETE: 'Kagiso Rabada' (1/4 overs)
+[ 297.384] [SCORE  ] End of over 3: 37/1  (Extras: 1)  Intensity: 5
+[ 337.689] [SCHED  ]   Candidate: Cameron Green         skill=75  econ=11.0  wkts=0  spec=medium  pri=51
+[ 337.766] [SCHED  ]   Candidate: Ravindra Jadeja       skill=78  econ=0.0  wkts=0  spec=spin    pri=55
+[ 337.786] [SCHED  ]   Candidate: Adam Zampa            skill=84  econ=0.0  wkts=0  spec=spin    pri=59
+[ 337.798] [SCHED  ]   Candidate: Trent Boult           skill=76  econ=12.0  wkts=0  spec=swing   pri=71
+[ 337.810] [SCHED  ] DYNAMIC PRIORITY: 'Trent Boult' selected  score=71  overs_left=17  phase=POWERPLAY
+[ 337.821] [SCHED  ] CTX RESTORE ← 'Trent Boult': 1 overs, 12 runs, 0 wkts
+[ 337.832] [SCHED  ] CONTEXT SWITCH #4 -> 'Trent Boult'  overs=1/4  economy=12.0
+[ 337.843] [SCHED  ] Over 4: 'Trent Boult' (136 km/h) | Scheduler: PRIORITY | Phase: LOW(powerplay) | Intensity: 6
+[ 338.010] [THREAD ] Spawned BOWLER 'Trent Boult' [T-0976]
+[ 338.155] [THREAD ] [T-0976] BOWLER 'Trent Boult' START — over 4
+[ 338.433] [BALL   ]   [RACE] GROUND winner='Ravindra Jadeja' @ Third Man reach=428ms boundary=603ms -> THREE
+[ 338.589] [BALL   ]    3.1  Shikhar Dhawan   [1;37m   3[0m   40/1
+[ 348.935] [BALL   ]    3.2  Virat Kohli      [0;37m •[0m   40/1
+[ 362.202] [BALL   ] NEW BATSMAN: 'Nicholas Pooran' coming to crease
+[ 362.574] [THREAD ] Spawned BATSMAN 'Nicholas Pooran' [T-5568]
+[ 362.620] [BALL   ]    3.3  Virat Kohli      [1;31mW(R)[0m   40/2
+[ 362.640] [DEADLK ]  RUN-OUT SCENARIO: Virat Kohli ↔ Shikhar Dhawan (circular wait on crease ends) 
+[ 362.653] [DEADLK ] 
+[ 362.664] [DEADLK ]   ╔══════════════════════════════════════════════════╗
+[ 362.705] [DEADLK ]   ║        RESOURCE ALLOCATION GRAPH (RAG)          ║
+[ 362.740] [DEADLK ]   ║  (OS: circular-wait condition for deadlock)      ║
+[ 362.696] [THREAD ] [T-5568] BATSMAN 'Nicholas Pooran' → sem_wait(crease) ...
+[ 362.753] [DEADLK ]   ╠══════════════════════════════════════════════════╣
+[ 362.871] [DEADLK ]   ║  Thread Virat Kohli   ──holds──► [End 0]         ║
+[ 362.886] [DEADLK ]   ║  Thread Virat Kohli   ◄──wants── [End 1]         ║
+[ 362.896] [DEADLK ]   ║                                                  ║
+[ 362.905] [DEADLK ]   ║  Thread Shikhar Dhawan  ──holds──► [End 1]         ║
+[ 362.915] [DEADLK ]   ║  Thread Shikhar Dhawan  ◄──wants── [End 0]         ║
+[ 362.924] [DEADLK ]   ╠══════════════════════════════════════════════════╣
+[ 362.933] [DEADLK ]   ║  CYCLE: Virat Kohli→[E1]→Shikhar Dhawan→[E0]→Virat Kohli
+[ 362.944] [DEADLK ]   ║  DETECTION  : RAG cycle scan by Umpire (kernel) ║
+[ 362.953] [DEADLK ]   ║  PREVENTION : Acquire End-0 before End-1 always ║
+[ 362.962] [DEADLK ]   ║  RESOLUTION : Kill lowest-priority thread (RUN OUT)║
+[ 362.970] [DEADLK ]   ╚══════════════════════════════════════════════════╝
+[ 362.979] [DEADLK ] 
+[ 362.988] [DEADLK ] PREVENTION: Resource ordering (always acquire End0→End1) breaks cycle
+[ 362.997] [DEADLK ] DETECTION:  Umpire RAG scan detects cycle → declares victim RUN OUT
+[ 376.110] [THREAD ] [T-8272] BATSMAN 'Virat Kohli' LEFT crease -> 13(7 balls) | sem=1
+[ 376.168] [THREAD ] [T-5568] BATSMAN 'Nicholas Pooran' AT CREASE | wait=13.3ms | crease_sem=0
+[ 376.261] [BALL   ]   [RACE] GROUND winner='Ravindra Jadeja' @ Third Man reach=599ms boundary=666ms -> THREE
+[ 376.420] [BALL   ]    3.4  Nicholas Pooran  [1;37m   3[0m   43/2
+[ 383.184] [BALL   ]   [RACE] GROUND winner='David Warner' @ Fine Leg reach=177ms boundary=656ms -> ONE
+[ 383.352] [BALL   ]    3.5  Shikhar Dhawan   [1;37m   1[0m   44/2
+[ 393.737] [BALL   ]    3.6  Nicholas Pooran  [1;32m   6[0m   50/2
+[ 403.563] [THREAD ] [T-0976] BOWLER 'Trent Boult' DONE — 0W 19R econ=9.5
+[ 403.868] [SCHED  ] CTX SAVE  → 'Trent Boult': 2 overs, 19 runs, 0 wkts, econ=9.50
+[ 403.938] [SCHED  ] OVER 4 COMPLETE: 'Trent Boult' (2/4 overs)
+[ 403.968] [SCORE  ] End of over 4: 50/2  (Extras: 1)  Intensity: 6
+[ 444.258] [SCHED  ]   Candidate: Cameron Green         skill=75  econ=11.0  wkts=0  spec=medium  pri=51
+[ 444.367] [SCHED  ]   Candidate: Ravindra Jadeja       skill=78  econ=0.0  wkts=0  spec=spin    pri=55
+[ 444.385] [SCHED  ]   Candidate: Adam Zampa            skill=84  econ=0.0  wkts=0  spec=spin    pri=59
+[ 444.415] [SCHED  ]   Candidate: Kagiso Rabada         skill=80  econ=14.0  wkts=0  spec=death   pri=44
+[ 444.425] [SCHED  ] DYNAMIC PRIORITY: 'Adam Zampa' selected  score=59  overs_left=16  phase=POWERPLAY
+[ 444.435] [SCHED  ] CTX RESTORE ← 'Adam Zampa': 0 overs, 0 runs, 0 wkts
+[ 444.443] [SCHED  ] CONTEXT SWITCH #5 -> 'Adam Zampa'  overs=0/4  economy=0.0
+[ 444.452] [SCHED  ] Over 5: 'Adam Zampa' (101 km/h) | Scheduler: PRIORITY | Phase: LOW(powerplay) | Intensity: 9
+[ 444.575] [THREAD ] Spawned BOWLER 'Adam Zampa' [T-0976]
+[ 444.720] [THREAD ] [T-0976] BOWLER 'Adam Zampa' START — over 5
+[ 445.078] [BALL   ]    4.1  Shikhar Dhawan   [0;37m •[0m   50/2
+[ 458.543] [BALL   ]   [RACE] GROUND winner='David Warner' @ Fine Leg reach=146ms boundary=570ms -> ONE
+[ 458.827] [BALL   ]    4.2  Shikhar Dhawan   [1;37m   1[0m   51/2
+[ 469.575] [BALL   ]    4.3  Nicholas Pooran  [0;37m •[0m   51/2
+[ 483.042] [BALL   ]   [RACE] GROUND winner='Cameron Green' @ Cover Point reach=629ms boundary=526ms -> FOUR
+[ 483.329] [BALL   ]    4.4  Nicholas Pooran  [1;32m   4[0m   55/2
+[ 496.795] [BALL   ]   [RACE] GROUND winner='Ravindra Jadeja' @ Mid Off reach=458ms boundary=672ms -> THREE
+[ 497.071] [BALL   ]    4.5  Nicholas Pooran  [1;37m   3[0m   58/2
+[ 507.694] [BALL   ]   [RACE] GROUND winner='Cameron Green' @ Cover Point reach=40ms boundary=265ms -> ONE
+[ 507.973] [BALL   ]    4.6  Shikhar Dhawan   [1;37m   1[0m   59/2
+[ 518.421] [THREAD ] [T-0976] BOWLER 'Adam Zampa' DONE — 0W 9R econ=9.0
+[ 518.740] [SCHED  ] CTX SAVE  → 'Adam Zampa': 1 overs, 9 runs, 0 wkts, econ=9.00
+[ 518.833] [SCHED  ] OVER 5 COMPLETE: 'Adam Zampa' (1/4 overs)
+[ 518.855] [SCORE  ] End of over 5: 59/2  (Extras: 1)  Intensity: 9
+[ 559.163] [SCHED  ]   Candidate: Cameron Green         skill=75  econ=11.0  wkts=0  spec=medium  pri=50
+[ 559.253] [SCHED  ]   Candidate: Ravindra Jadeja       skill=78  econ=0.0  wkts=0  spec=spin    pri=98
+[ 559.271] [SCHED  ]   Candidate: Trent Boult           skill=76  econ=9.5  wkts=0  spec=swing   pri=47
+[ 559.282] [SCHED  ]   Candidate: Kagiso Rabada         skill=80  econ=14.0  wkts=0  spec=death   pri=30
+[ 559.322] [SCHED  ] DYNAMIC PRIORITY: 'Ravindra Jadeja' selected  score=98  overs_left=15  phase=MIDDLE
+[ 559.332] [SCHED  ] CTX RESTORE ← 'Ravindra Jadeja': 0 overs, 0 runs, 0 wkts
+[ 559.341] [SCHED  ] CONTEXT SWITCH #6 -> 'Ravindra Jadeja'  overs=0/4  economy=0.0
+[ 559.351] [SCHED  ] Over 6: 'Ravindra Jadeja' (108 km/h) | Scheduler: PRIORITY | Phase: MEDIUM | Intensity: 10
+[ 559.475] [THREAD ] Spawned BOWLER 'Ravindra Jadeja' [T-0976]
+[ 559.640] [THREAD ] [T-0976] BOWLER 'Ravindra Jadeja' START — over 6
+[ 560.011] [BALL   ]   [RACE] GROUND winner='David Warner' @ Fine Leg reach=104ms boundary=274ms -> ONE
+[ 560.144] [BALL   ]    5.1  Shikhar Dhawan   [1;37m   1[0m   60/2
+[ 571.053] [BALL   ]   [RACE] GROUND winner='Ravindra Jadeja' @ Mid Off reach=328ms boundary=617ms -> TWO
+[ 571.275] [BALL   ]    5.2  Nicholas Pooran  [1;37m   2[0m   62/2
+[ 584.541] [BALL   ]   [RACE] GROUND winner='Devon Conway' @ Square Leg reach=531ms boundary=348ms -> FOUR
+[ 584.767] [BALL   ]    5.3  Nicholas Pooran  [1;32m   4[0m   66/2
+[ 598.323] [BALL   ]    5.4  Nicholas Pooran  [0;37m •[0m   66/2
+[ 611.764] [BALL   ]   [RACE] GROUND winner='Ravindra Jadeja' @ Mid Off reach=190ms boundary=670ms -> ONE
+[ 611.961] [BALL   ]    5.5  Nicholas Pooran  [1;37m   1[0m   67/2
+[ 622.748] [BALL   ]    5.6  Shikhar Dhawan   [0;37m •[0m   67/2
+[ 633.172] [THREAD ] [T-0976] BOWLER 'Ravindra Jadeja' DONE — 0W 8R econ=8.0
+[ 633.447] [SCHED  ] CTX SAVE  → 'Ravindra Jadeja': 1 overs, 8 runs, 0 wkts, econ=8.00
+[ 633.528] [SCHED  ] OVER 6 COMPLETE: 'Ravindra Jadeja' (1/4 overs)
+[ 633.558] [SCORE  ] End of over 6: 67/2  (Extras: 1)  Intensity: 10
+[ 673.732] [SCHED  ]   Candidate: Cameron Green         skill=75  econ=11.0  wkts=0  spec=medium  pri=50
+[ 673.833] [SCHED  ]   Candidate: Adam Zampa            skill=84  econ=9.0  wkts=0  spec=spin    pri=85
+[ 673.855] [SCHED  ]   Candidate: Trent Boult           skill=76  econ=9.5  wkts=0  spec=swing   pri=47
+[ 673.868] [SCHED  ]   Candidate: Kagiso Rabada         skill=80  econ=14.0  wkts=0  spec=death   pri=30
+[ 673.881] [SCHED  ] DYNAMIC PRIORITY: 'Adam Zampa' selected  score=85  overs_left=14  phase=MIDDLE
+[ 673.892] [SCHED  ] CTX RESTORE ← 'Adam Zampa': 1 overs, 9 runs, 0 wkts
+[ 673.903] [SCHED  ] CONTEXT SWITCH #7 -> 'Adam Zampa'  overs=1/4  economy=9.0
+[ 673.916] [SCHED  ] Over 7: 'Adam Zampa' (101 km/h) | Scheduler: PRIORITY | Phase: MEDIUM | Intensity: 11
+[ 674.055] [THREAD ] Spawned BOWLER 'Adam Zampa' [T-0976]
+[ 674.206] [THREAD ] [T-0976] BOWLER 'Adam Zampa' START — over 7
+[ 674.541] [BALL   ]    6.1  Nicholas Pooran  [0;37m •[0m   67/2
+[ 688.093] [BALL   ]    6.2  Nicholas Pooran  [0;37m •[0m   67/2
+[ 701.705] [BALL   ]    6.3  Nicholas Pooran  [1;32m   6[0m   73/2
+[ 715.221] [BALL   ]   [RACE] GROUND winner='Ravindra Jadeja' @ Mid Off reach=581ms boundary=706ms -> THREE
+[ 715.432] [BALL   ]    6.4  Nicholas Pooran  [1;37m   3[0m   76/2
+[ 726.372] [BALL   ]    6.5  Shikhar Dhawan   [1;32m   6[0m   82/2
+[ 739.926] [BALL   ]    6.6  Shikhar Dhawan   [0;37m •[0m   82/2
+[ 750.393] [THREAD ] [T-0976] BOWLER 'Adam Zampa' DONE — 0W 24R econ=12.0
+[ 750.635] [SCHED  ] CTX SAVE  → 'Adam Zampa': 2 overs, 24 runs, 0 wkts, econ=12.00
+[ 750.704] [SCHED  ] OVER 7 COMPLETE: 'Adam Zampa' (2/4 overs)
+[ 750.736] [SCORE  ] End of over 7: 82/2  (Extras: 1)  Intensity: 11
+[ 790.962] [SCHED  ]   Candidate: Cameron Green         skill=75  econ=11.0  wkts=0  spec=medium  pri=50
+[ 791.000] [SCHED  ]   Candidate: Ravindra Jadeja       skill=78  econ=8.0  wkts=0  spec=spin    pri=93
+[ 791.010] [SCHED  ]   Candidate: Trent Boult           skill=76  econ=9.5  wkts=0  spec=swing   pri=47
+[ 791.017] [SCHED  ]   Candidate: Kagiso Rabada         skill=80  econ=14.0  wkts=0  spec=death   pri=30
+[ 791.022] [SCHED  ] DYNAMIC PRIORITY: 'Ravindra Jadeja' selected  score=93  overs_left=13  phase=MIDDLE
+[ 791.028] [SCHED  ] CTX RESTORE ← 'Ravindra Jadeja': 1 overs, 8 runs, 0 wkts
+[ 791.033] [SCHED  ] CONTEXT SWITCH #8 -> 'Ravindra Jadeja'  overs=1/4  economy=8.0
+[ 791.038] [SCHED  ] Over 8: 'Ravindra Jadeja' (108 km/h) | Scheduler: PRIORITY | Phase: MEDIUM | Intensity: 12
+[ 791.105] [THREAD ] Spawned BOWLER 'Ravindra Jadeja' [T-0976]
+[ 791.233] [THREAD ] [T-0976] BOWLER 'Ravindra Jadeja' START — over 8
+[ 791.363] [BALL   ]   [RACE] GROUND winner='Cameron Green' @ Long Off reach=592ms boundary=658ms -> THREE
+[ 791.565] [BALL   ]    7.1  Nicholas Pooran  [1;37m   3[0m   85/2
+[ 802.106] [BALL   ]   [RACE] GROUND winner='Cameron Green' @ Long Off reach=773ms boundary=721ms -> FOUR
+[ 802.252] [BALL   ]    7.2  Shikhar Dhawan   [1;32m   4[0m   89/2
+[ 815.660] [BALL   ]   [RACE] GROUND winner='Ravindra Jadeja' @ Mid Off reach=479ms boundary=656ms -> THREE
+[ 815.860] [BALL   ]    7.3  Shikhar Dhawan   [1;37m   3[0m   92/2
+[ 826.524] [BALL   ]   [RACE] GROUND winner='Devon Conway' @ Square Leg reach=146ms boundary=294ms -> ONE
+[ 826.699] [BALL   ]    7.4  Nicholas Pooran  [1;37m   1[0m   93/2
+[ 837.338] [BALL   ]    7.5  Shikhar Dhawan   [0;37m •[0m   93/2
+[ 850.665] [BALL   ]    7.5  Shikhar Dhawan   [1;33m  Wd[0m   94/2
+[ 864.015] [BALL   ]   [RACE] GROUND winner='Babar Azam' @ Mid Wicket reach=606ms boundary=340ms -> FOUR
+[ 864.216] [BALL   ]    7.6  Shikhar Dhawan   [1;32m   4[0m   98/2
+[ 874.500] [THREAD ] [T-0976] BOWLER 'Ravindra Jadeja' DONE — 0W 24R econ=12.0
+[ 874.787] [SCHED  ] CTX SAVE  → 'Ravindra Jadeja': 2 overs, 24 runs, 0 wkts, econ=12.00
+[ 874.847] [SCHED  ] OVER 8 COMPLETE: 'Ravindra Jadeja' (2/4 overs)
+[ 874.876] [SCORE  ] End of over 8: 98/2  (Extras: 2)  Intensity: 12
+[ 915.060] [SCHED  ]   Candidate: Cameron Green         skill=75  econ=11.0  wkts=0  spec=medium  pri=50
+[ 915.091] [SCHED  ]   Candidate: Adam Zampa            skill=84  econ=12.0  wkts=0  spec=spin    pri=66
+[ 915.096] [SCHED  ]   Candidate: Trent Boult           skill=76  econ=9.5  wkts=0  spec=swing   pri=47
+[ 915.100] [SCHED  ]   Candidate: Kagiso Rabada         skill=80  econ=14.0  wkts=0  spec=death   pri=30
+[ 915.103] [SCHED  ] DYNAMIC PRIORITY: 'Adam Zampa' selected  score=66  overs_left=12  phase=MIDDLE
+[ 915.106] [SCHED  ] CTX RESTORE ← 'Adam Zampa': 2 overs, 24 runs, 0 wkts
+[ 915.108] [SCHED  ] CONTEXT SWITCH #9 -> 'Adam Zampa'  overs=2/4  economy=12.0
+[ 915.111] [SCHED  ] Over 9: 'Adam Zampa' (101 km/h) | Scheduler: PRIORITY | Phase: MEDIUM | Intensity: 13
+[ 915.160] [THREAD ] Spawned BOWLER 'Adam Zampa' [T-0976]
+[ 915.200] [THREAD ] [T-0976] BOWLER 'Adam Zampa' START — over 9
+[ 915.279] [BALL   ]   [RACE] GROUND winner='KL Rahul' @ Mid On reach=624ms boundary=300ms -> FOUR
+[ 915.309] [BALL   ]    8.1  Nicholas Pooran  [1;32m   4[0m   102/2
+[ 928.500] [BALL   ]   [RACE] GROUND winner='Babar Azam' @ Mid Wicket reach=752ms boundary=360ms -> FOUR
+[ 928.518] [BALL   ]    8.2  Nicholas Pooran  [1;32m   4[0m   106/2
+[ 941.735] [BALL   ]   [RACE] GROUND winner='Devon Conway' @ Square Leg reach=299ms boundary=317ms -> TWO
+[ 941.767] [BALL   ]    8.3  Nicholas Pooran  [1;37m   2[0m   108/2
+[ 954.980] [BALL   ]    8.3  Nicholas Pooran  [1;33m  Wd[0m   109/2
+[ 968.173] [BALL   ]   [RACE] GROUND winner='KL Rahul' @ Mid On reach=572ms boundary=597ms -> THREE
+[ 968.196] [BALL   ]    8.4  Nicholas Pooran  [1;37m   3[0m   112/2
+[ 978.578] [BALL   ]    8.5  Shikhar Dhawan   [0;37m •[0m   112/2
+[ 991.851] [BALL   ]   [RACE] GROUND winner='Babar Azam' @ Mid Wicket reach=597ms boundary=266ms -> FOUR
+[ 991.968] [BALL   ]    8.6  Shikhar Dhawan   [1;32m   4[0m   116/2
+[1002.159] [THREAD ] [T-0976] BOWLER 'Adam Zampa' DONE — 0W 42R econ=14.0
+[1002.258] [SCHED  ] CTX SAVE  → 'Adam Zampa': 3 overs, 42 runs, 0 wkts, econ=14.00
+[1002.270] [SCHED  ] OVER 9 COMPLETE: 'Adam Zampa' (3/4 overs)
+[1002.284] [SCORE  ] End of over 9: 116/2  (Extras: 3)  Intensity: 13
+[1042.513] [SCHED  ]   Candidate: Cameron Green         skill=75  econ=11.0  wkts=0  spec=medium  pri=50
+[1042.543] [SCHED  ]   Candidate: Ravindra Jadeja       skill=78  econ=12.0  wkts=0  spec=spin    pri=60
+[1042.549] [SCHED  ]   Candidate: Trent Boult           skill=76  econ=9.5  wkts=0  spec=swing   pri=47
+[1042.553] [SCHED  ]   Candidate: Kagiso Rabada         skill=80  econ=14.0  wkts=0  spec=death   pri=30
+[1042.556] [SCHED  ] DYNAMIC PRIORITY: 'Ravindra Jadeja' selected  score=60  overs_left=11  phase=MIDDLE
+[1042.560] [SCHED  ] CTX RESTORE ← 'Ravindra Jadeja': 2 overs, 24 runs, 0 wkts
+[1042.563] [SCHED  ] CONTEXT SWITCH #10 -> 'Ravindra Jadeja'  overs=2/4  economy=12.0
+[1042.566] [SCHED  ] Over 10: 'Ravindra Jadeja' (108 km/h) | Scheduler: PRIORITY | Phase: MEDIUM | Intensity: 14
+[1042.619] [THREAD ] Spawned BOWLER 'Ravindra Jadeja' [T-0976]
+[1042.660] [THREAD ] [T-0976] BOWLER 'Ravindra Jadeja' START — over 10
+[1042.810] [BALL   ]   [RACE] GROUND winner='Babar Azam' @ Mid Wicket reach=263ms boundary=727ms -> TWO
+[1042.834] [BALL   ]    9.1  Nicholas Pooran  [1;37m   2[0m   118/2
+[1055.956] [BALL   ]   [RACE] GROUND winner='KL Rahul' @ Mid On reach=325ms boundary=402ms -> TWO
+[1055.987] [BALL   ]    9.2  Nicholas Pooran  [1;37m   2[0m   120/2
+[1069.216] [BALL   ]   [RACE] GROUND winner='KL Rahul' @ Mid On reach=545ms boundary=278ms -> FOUR
+[1069.277] [BALL   ]    9.3  Nicholas Pooran  [1;32m   4[0m   124/2
+[1082.446] [BALL   ]   [RACE] GROUND winner='KL Rahul' @ Mid On reach=607ms boundary=258ms -> FOUR
+[1082.525] [BALL   ]    9.4  Nicholas Pooran  [1;32m   4[0m   128/2
+[1095.825] [BALL   ]   [RACE] GROUND winner='KL Rahul' @ Mid On reach=763ms boundary=738ms -> FOUR
+[1095.926] [BALL   ]    9.5  Nicholas Pooran  [1;32m   4[0m   132/2
+[1109.331] [BALL   ]   [RACE] GROUND winner='KL Rahul' @ Mid On reach=616ms boundary=259ms -> FOUR
+[1109.448] [BALL   ]    9.6  Nicholas Pooran  [1;32m   4[0m   136/2
+[1119.859] [THREAD ] [T-0976] BOWLER 'Ravindra Jadeja' DONE — 0W 44R econ=14.7
+[1120.158] [SCHED  ] CTX SAVE  → 'Ravindra Jadeja': 3 overs, 44 runs, 0 wkts, econ=14.67
+[1120.235] [SCHED  ] OVER 10 COMPLETE: 'Ravindra Jadeja' (3/4 overs)
+[1120.265] [SCORE  ] End of over 10: 136/2  (Extras: 3)  Intensity: 14
+[1160.586] [SCHED  ]   Candidate: Cameron Green         skill=75  econ=11.0  wkts=0  spec=medium  pri=50
+[1160.669] [SCHED  ]   Candidate: Adam Zampa            skill=84  econ=14.0  wkts=0  spec=spin    pri=53
+[1160.685] [SCHED  ]   Candidate: Trent Boult           skill=76  econ=9.5  wkts=0  spec=swing   pri=47
+[1160.695] [SCHED  ]   Candidate: Kagiso Rabada         skill=80  econ=14.0  wkts=0  spec=death   pri=30
+[1160.704] [SCHED  ] DYNAMIC PRIORITY: 'Adam Zampa' selected  score=53  overs_left=10  phase=MIDDLE
+[1160.712] [SCHED  ] CTX RESTORE ← 'Adam Zampa': 3 overs, 42 runs, 0 wkts
+[1160.720] [SCHED  ] CONTEXT SWITCH #11 -> 'Adam Zampa'  overs=3/4  economy=14.0
+[1160.729] [SCHED  ] Over 11: 'Adam Zampa' (101 km/h) | Scheduler: PRIORITY | Phase: MEDIUM | Intensity: 15
+[1160.873] [THREAD ] Spawned BOWLER 'Adam Zampa' [T-0976]
+[1161.032] [THREAD ] [T-0976] BOWLER 'Adam Zampa' START — over 11
+[1161.353] [BALL   ]   10.0  Shikhar Dhawan   [1;33m  Wd[0m   137/2
+[1174.952] [BALL   ]   [RACE] GROUND winner='Cameron Green' @ Long Off reach=756ms boundary=627ms -> FOUR
+[1175.171] [BALL   ]   10.1  Shikhar Dhawan   [1;32m   4[0m   141/2
+[1188.645] [BALL   ]   [RACE] GROUND winner='Cameron Green' @ Cover Point reach=63ms boundary=632ms -> ONE
+[1188.890] [BALL   ]   10.2  Shikhar Dhawan   [1;37m   1[0m   142/2
+[1199.568] [BALL   ]   10.3  Nicholas Pooran  [1;32m   6[0m   148/2
+[1212.983] [BALL   ]   [RACE] GROUND winner='KL Rahul' @ Mid On reach=43ms boundary=650ms -> ONE
+[1213.083] [BALL   ]   10.4  Nicholas Pooran  [1;37m   1[0m   149/2
+[1223.846] [BALL   ]   [RACE] GROUND winner='Andre Russell' @ Long On reach=40ms boundary=325ms -> ONE
+[1224.038] [BALL   ]   10.5  Shikhar Dhawan   [1;37m   1[0m   150/2
+[1234.694] [BALL   ]   [RACE] GROUND winner='KL Rahul' @ Mid On reach=564ms boundary=598ms -> THREE
+[1234.827] [BALL   ]   10.6  Nicholas Pooran  [1;37m   3[0m   153/2
+[1245.259] [THREAD ] [T-0976] BOWLER 'Adam Zampa' DONE — 0W 59R econ=14.8
+[1245.611] [SCHED  ] CTX SAVE  → 'Adam Zampa': 4 overs, 59 runs, 0 wkts, econ=14.75
+[1245.716] [SCHED  ] OVER 11 COMPLETE: 'Adam Zampa' (4/4 overs)
+[1245.740] [SCORE  ] End of over 11: 153/2  (Extras: 4)  Intensity: 15
+[1286.041] [SCHED  ]   Candidate: Cameron Green         skill=75  econ=11.0  wkts=0  spec=medium  pri=50
+[1286.131] [SCHED  ]   Candidate: Ravindra Jadeja       skill=78  econ=14.7  wkts=0  spec=spin    pri=47
+[1286.149] [SCHED  ]   Candidate: Trent Boult           skill=76  econ=9.5  wkts=0  spec=swing   pri=47
+[1286.160] [SCHED  ]   Candidate: Kagiso Rabada         skill=80  econ=14.0  wkts=0  spec=death   pri=30
+[1286.170] [SCHED  ] DYNAMIC PRIORITY: 'Cameron Green' selected  score=50  overs_left=9  phase=MIDDLE
+[1286.179] [SCHED  ] CTX RESTORE ← 'Cameron Green': 1 overs, 11 runs, 0 wkts
+[1286.188] [SCHED  ] CONTEXT SWITCH #12 -> 'Cameron Green'  overs=1/4  economy=11.0
+[1286.198] [SCHED  ] Over 12: 'Cameron Green' (129 km/h) | Scheduler: PRIORITY | Phase: MEDIUM | Intensity: 16
+[1286.392] [THREAD ] Spawned BOWLER 'Cameron Green' [T-0976]
+[1286.545] [THREAD ] [T-0976] BOWLER 'Cameron Green' START — over 12
+[1286.834] [BALL   ]   [RACE] GROUND winner='KL Rahul' @ Mid On reach=444ms boundary=530ms -> THREE
+[1287.056] [BALL   ]   11.1  Nicholas Pooran  [1;37m   3[0m   156/2
+[1297.788] [BALL   ]   [RACE] GROUND winner='KL Rahul' @ Mid On reach=288ms boundary=645ms -> TWO
+[1298.007] [BALL   ]   11.2  Shikhar Dhawan   [1;37m   2[0m   158/2
+[1311.365] [BALL   ]   [RACE] GROUND winner='David Warner' @ Fine Leg reach=115ms boundary=683ms -> ONE
+[1311.580] [BALL   ]   11.3  Shikhar Dhawan   [1;37m   1[0m   159/2
+[1322.390] [BALL   ]   [RACE] GROUND winner='Ravindra Jadeja' @ Third Man reach=40ms boundary=532ms -> ONE
+[1322.640] [BALL   ]   11.4  Nicholas Pooran  [1;37m   1[0m   160/2
+[1333.269] [BALL   ]   11.4  Shikhar Dhawan   [1;33m  Wd[0m   161/2
+[1346.789] [BALL   ] NEW BATSMAN: 'Tim David' coming to crease
+[1347.086] [THREAD ] Spawned BATSMAN 'Tim David' [T-2864]
+[1347.120] [BALL   ]   11.5  Shikhar Dhawan   [1;31mW(B)[0m   161/3
+[1347.208] [THREAD ] [T-2864] BATSMAN 'Tim David' → sem_wait(crease) ...
+[1360.385] [THREAD ] [T-3680] BATSMAN 'Shikhar Dhawan' LEFT crease -> 48(27 balls) | sem=1
+[1360.485] [THREAD ] [T-2864] BATSMAN 'Tim David' AT CREASE | wait=13.2ms | crease_sem=0
+[1360.593] [BALL   ]   [RACE] GROUND winner='Babar Azam' @ Mid Wicket reach=427ms boundary=289ms -> FOUR
+[1360.776] [BALL   ]   11.6  Tim David        [1;32m   4[0m   165/3
+[1370.776] [THREAD ] [T-0976] BOWLER 'Cameron Green' DONE — 2W 19R econ=9.5
+[1371.091] [SCHED  ] CTX SAVE  → 'Cameron Green': 2 overs, 19 runs, 2 wkts, econ=9.50
+[1371.156] [SCHED  ] OVER 12 COMPLETE: 'Cameron Green' (2/4 overs)
+[1371.187] [SCORE  ] End of over 12: 165/3  (Extras: 5)  Intensity: 16
+[1411.425] [SCHED  ]   Candidate: Ravindra Jadeja       skill=78  econ=14.7  wkts=0  spec=spin    pri=47
+[1411.515] [SCHED  ]   Candidate: Trent Boult           skill=76  econ=9.5  wkts=0  spec=swing   pri=47
+[1411.532] [SCHED  ]   Candidate: Kagiso Rabada         skill=80  econ=14.0  wkts=0  spec=death   pri=30
+[1411.573] [SCHED  ] DYNAMIC PRIORITY: 'Ravindra Jadeja' selected  score=47  overs_left=8  phase=MIDDLE
+[1411.585] [SCHED  ] CTX RESTORE ← 'Ravindra Jadeja': 3 overs, 44 runs, 0 wkts
+[1411.594] [SCHED  ] CONTEXT SWITCH #13 -> 'Ravindra Jadeja'  overs=3/4  economy=14.7
+[1411.603] [SCHED  ] Over 13: 'Ravindra Jadeja' (108 km/h) | Scheduler: PRIORITY | Phase: MEDIUM | Intensity: 19
+[1411.773] [THREAD ] Spawned BOWLER 'Ravindra Jadeja' [T-0976]
+[1411.932] [THREAD ] [T-0976] BOWLER 'Ravindra Jadeja' START — over 13
+[1412.175] [BALL   ]   12.1  Nicholas Pooran  [0;37m •[0m   165/3
+[1425.478] [BALL   ]   12.2  Nicholas Pooran  [0;37m •[0m   165/3
+[1438.672] [BALL   ]   12.3  Nicholas Pooran  [0;37m •[0m   165/3
+[1451.837] [BALL   ]   [RACE] GROUND winner='Babar Azam' @ Mid Wicket reach=473ms boundary=699ms -> THREE
+[1451.977] [BALL   ]   12.4  Nicholas Pooran  [1;37m   3[0m   168/3
+[1462.294] [BALL   ]   [RACE] GROUND winner='Cameron Green' @ Cover Point reach=317ms boundary=596ms -> TWO
+[1462.399] [BALL   ]   12.5  Tim David        [1;37m   2[0m   170/3
+[1475.630] [BALL   ]   [RACE] GROUND winner='Cameron Green' @ Cover Point reach=56ms boundary=633ms -> ONE
+[1475.766] [BALL   ]   12.6  Tim David        [1;37m   1[0m   171/3
+[1485.959] [THREAD ] [T-0976] BOWLER 'Ravindra Jadeja' DONE — 0W 50R econ=12.5
+[1486.054] [SCHED  ] CTX SAVE  → 'Ravindra Jadeja': 4 overs, 50 runs, 0 wkts, econ=12.50
+[1486.078] [SCHED  ] OVER 13 COMPLETE: 'Ravindra Jadeja' (4/4 overs)
+[1486.087] [SCORE  ] End of over 13: 171/3  (Extras: 5)  Intensity: 19
+[1526.192] [SCHED  ]   Candidate: Cameron Green         skill=75  econ=9.5  wkts=2  spec=medium  pri=77
+[1526.218] [SCHED  ]   Candidate: Trent Boult           skill=76  econ=9.5  wkts=0  spec=swing   pri=47
+[1526.222] [SCHED  ]   Candidate: Kagiso Rabada         skill=80  econ=14.0  wkts=0  spec=death   pri=30
+[1526.225] [SCHED  ] DYNAMIC PRIORITY: 'Cameron Green' selected  score=77  overs_left=7  phase=MIDDLE
+[1526.227] [SCHED  ] CTX RESTORE ← 'Cameron Green': 2 overs, 19 runs, 2 wkts
+[1526.229] [SCHED  ] CONTEXT SWITCH #14 -> 'Cameron Green'  overs=2/4  economy=9.5
+[1526.232] [SCHED  ] Over 14: 'Cameron Green' (129 km/h) | Scheduler: PRIORITY | Phase: MEDIUM | Intensity: 20
+[1526.273] [THREAD ] Spawned BOWLER 'Cameron Green' [T-0976]
+[1526.411] [THREAD ] [T-0976] BOWLER 'Cameron Green' START — over 14
+[1526.512] [BALL   ] NEW BATSMAN: 'Rishabh Pant' coming to crease
+[1526.580] [THREAD ] Spawned BATSMAN 'Rishabh Pant' [T-0160]
+[1526.590] [BALL   ]   13.1  Tim David        [1;31mW(L)[0m   171/4
+[1526.665] [THREAD ] [T-0160] BATSMAN 'Rishabh Pant' → sem_wait(crease) ...
+[1539.664] [THREAD ] [T-2864] BATSMAN 'Tim David' LEFT crease -> 7(4 balls) | sem=1
+[1539.713] [THREAD ] [T-0160] BATSMAN 'Rishabh Pant' AT CREASE | wait=13.0ms | crease_sem=0
+[1539.749] [BALL   ]   13.2  Rishabh Pant     [0;37m •[0m   171/4
+[1552.835] [BALL   ]   [RACE] GROUND winner='Babar Azam' @ Mid Wicket reach=439ms boundary=660ms -> THREE
+[1552.927] [BALL   ]   13.3  Rishabh Pant     [1;37m   3[0m   174/4
+[1559.887] [BALL   ]   [RACE] GROUND winner='Babar Azam' @ Mid Wicket reach=254ms boundary=608ms -> TWO
+[1559.904] [BALL   ]   13.4  Nicholas Pooran  [1;37m   2[0m   176/4
+[1572.989] [BALL   ]   [RACE] GROUND winner='Babar Azam' @ Mid Wicket reach=107ms boundary=643ms -> ONE
+[1573.007] [BALL   ]   13.5  Nicholas Pooran  [1;37m   1[0m   177/4
+[1580.162] [BALL   ]   13.6  Rishabh Pant     [0;37m •[0m   177/4
+[1590.122] [THREAD ] [T-0976] BOWLER 'Cameron Green' DONE — 4W 25R econ=8.3
+[1590.302] [SCHED  ] CTX SAVE  → 'Cameron Green': 3 overs, 25 runs, 4 wkts, econ=8.33
+[1590.320] [SCHED  ] OVER 14 COMPLETE: 'Cameron Green' (3/4 overs)
+[1590.327] [SCORE  ] End of over 14: 177/4  (Extras: 5)  Intensity: 20
+[1630.538] [SCHED  ]   Candidate: Trent Boult           skill=76  econ=9.5  wkts=0  spec=swing   pri=47
+[1630.558] [SCHED  ]   Candidate: Kagiso Rabada         skill=80  econ=14.0  wkts=0  spec=death   pri=30
+[1630.562] [SCHED  ] DYNAMIC PRIORITY: 'Trent Boult' selected  score=47  overs_left=6  phase=MIDDLE
+[1630.571] [SCHED  ] CTX RESTORE ← 'Trent Boult': 2 overs, 19 runs, 0 wkts
+[1630.573] [SCHED  ] CONTEXT SWITCH #15 -> 'Trent Boult'  overs=2/4  economy=9.5
+[1630.576] [SCHED  ] Over 15: 'Trent Boult' (136 km/h) | Scheduler: PRIORITY | Phase: MEDIUM | Intensity: 23
+[1630.619] [THREAD ] Spawned BOWLER 'Trent Boult' [T-0976]
+[1630.652] [THREAD ] [T-0976] BOWLER 'Trent Boult' START — over 15
+[1630.736] [BALL   ]   [RACE] GROUND winner='KL Rahul' @ Mid On reach=618ms boundary=339ms -> FOUR
+[1630.848] [BALL   ]   14.1  Nicholas Pooran  [1;32m   4[0m   181/4
+[1643.974] [BALL   ]   [RACE] GROUND winner='Babar Azam' @ Mid Wicket reach=155ms boundary=312ms -> ONE
+[1643.990] [BALL   ]   14.2  Nicholas Pooran  [1;37m   1[0m   182/4
+[1654.249] [BALL   ]   [RACE] GROUND winner='Babar Azam' @ Mid Wicket reach=167ms boundary=583ms -> ONE
+[1654.265] [BALL   ]   14.3  Rishabh Pant     [1;37m   1[0m   183/4
+[1664.524] [BALL   ]   [RACE] GROUND winner='Babar Azam' @ Mid Wicket reach=459ms boundary=706ms -> THREE
+[1664.578] [BALL   ]   14.4  Nicholas Pooran  [1;37m   3[0m   186/4
+[1675.035] [BALL   ]   [RACE] GROUND winner='Babar Azam' @ Mid Wicket reach=252ms boundary=661ms -> TWO
+[1675.088] [BALL   ]   14.5  Rishabh Pant     [1;37m   2[0m   188/4
+[1688.374] [BALL   ]   [RACE] GROUND winner='Cameron Green' @ Cover Point reach=569ms boundary=264ms -> FOUR
+[1688.439] [BALL   ]   14.6  Rishabh Pant     [1;32m   4[0m   192/4
+[1698.594] [THREAD ] [T-0976] BOWLER 'Trent Boult' DONE — 0W 34R econ=11.3
+[1698.759] [SCHED  ] CTX SAVE  → 'Trent Boult': 3 overs, 34 runs, 0 wkts, econ=11.33
+[1698.773] [SCHED  ] OVER 15 COMPLETE: 'Trent Boult' (3/4 overs)
+[1698.784] [SCORE  ] End of over 15: 192/4  (Extras: 5)  Intensity: 23
+[1738.919] [SCHED  ]   Candidate: Cameron Green         skill=75  econ=8.3  wkts=4  spec=medium  pri=93
+[1738.944] [SCHED  ]   Candidate: Kagiso Rabada         skill=80  econ=14.0  wkts=0  spec=death   pri=75
+[1738.948] [SCHED  ] DYNAMIC PRIORITY: 'Cameron Green' selected  score=93  overs_left=5  phase=DEATH
+[1738.950] [SCHED  ] CTX RESTORE ← 'Cameron Green': 3 overs, 25 runs, 4 wkts
+[1738.953] [SCHED  ] CONTEXT SWITCH #16 -> 'Cameron Green'  overs=3/4  economy=8.3
+[1738.955] [SCHED  ] Over 16: 'Cameron Green' (129 km/h) | Scheduler: PRIORITY | Phase: HIGH(death) | Intensity: 24
+[1738.994] [THREAD ] Spawned BOWLER 'Cameron Green' [T-0976]
+[1739.113] [THREAD ] [T-0976] BOWLER 'Cameron Green' START — over 16
+[1739.199] [BALL   ]   15.0  Nicholas Pooran  [1;33m  Nb[0m   193/4
+[1752.619] [BALL   ]   [RACE] GROUND winner='Ravindra Jadeja' @ Third Man reach=324ms boundary=630ms -> TWO
+[1752.677] [BALL   ]   15.1  Nicholas Pooran  [1;37m   2[0m   195/4
+[1766.018] [BALL   ]   [RACE] GROUND winner='Cameron Green' @ Cover Point reach=592ms boundary=563ms -> FOUR
+[1766.114] [BALL   ]   15.2  Nicholas Pooran  [1;32m   4[0m   199/4
+[1779.452] [BALL   ]   15.2  Nicholas Pooran  [1;33m  Nb[0m   200/4
+[1792.967] [BALL   ]   15.3  Nicholas Pooran  [1;32m   6[0m   206/4
+[1806.466] [BALL   ]   [RACE] GROUND winner='Cameron Green' @ Cover Point reach=297ms boundary=572ms -> TWO
+[1806.662] [BALL   ]   15.4  Nicholas Pooran  [1;37m   2[0m   208/4
+[1820.130] [BALL   ]   [RACE] GROUND winner='KL Rahul' @ Mid On reach=40ms boundary=685ms -> ONE
+[1820.427] [BALL   ]   15.5  Nicholas Pooran  [1;37m   1[0m   209/4
+[1831.164] [BALL   ] NEW BATSMAN: 'Jason Holder' coming to crease
+[1831.473] [THREAD ] Spawned BATSMAN 'Jason Holder' [T-7456]
+[1831.518] [BALL   ]   15.6  Rishabh Pant     [1;31mW(L)[0m   209/5
+[1831.693] [THREAD ] [T-7456] BATSMAN 'Jason Holder' → sem_wait(crease) ...
+[1841.875] [THREAD ] [T-0976] BOWLER 'Cameron Green' DONE — 5W 42R econ=10.5
+[1842.182] [SCHED  ] CTX SAVE  → 'Cameron Green': 4 overs, 42 runs, 5 wkts, econ=10.50
+[1842.258] [SCHED  ] OVER 16 COMPLETE: 'Cameron Green' (4/4 overs)
+[1842.320] [SCORE  ] End of over 16: 209/5  (Extras: 7)  Intensity: 24
+[1844.824] [THREAD ] [T-0160] BATSMAN 'Rishabh Pant' LEFT crease -> 10(7 balls) | sem=1
+[1844.995] [THREAD ] [T-7456] BATSMAN 'Jason Holder' AT CREASE | wait=13.2ms | crease_sem=0
+[1882.638] [SCHED  ]   Candidate: Trent Boult           skill=76  econ=11.3  wkts=0  spec=swing   pri=17
+[1882.726] [SCHED  ]   Candidate: Kagiso Rabada         skill=80  econ=14.0  wkts=0  spec=death   pri=75
+[1882.744] [SCHED  ] DYNAMIC PRIORITY: 'Kagiso Rabada' selected  score=75  overs_left=4  phase=DEATH
+[1882.754] [SCHED  ] CTX RESTORE ← 'Kagiso Rabada': 1 overs, 14 runs, 0 wkts
+[1882.763] [SCHED  ] CONTEXT SWITCH #17 -> 'Kagiso Rabada'  overs=1/4  economy=14.0
+[1882.773] [SCHED  ] Over 17: 'Kagiso Rabada' (142 km/h) | Scheduler: PRIORITY | Phase: HIGH(death) | Intensity: 27
+[1882.928] [THREAD ] Spawned BOWLER 'Kagiso Rabada' [T-0976]
+[1883.075] [THREAD ] [T-0976] BOWLER 'Kagiso Rabada' START — over 17
+[1883.337] [BALL   ]   [RACE] GROUND winner='KL Rahul' @ Mid On reach=137ms boundary=697ms -> ONE
+[1883.559] [BALL   ]   16.1  Nicholas Pooran  [1;37m   1[0m   210/5
+[1894.284] [BALL   ]   [RACE] GROUND winner='Dinesh Karthik' @ Wicket Keeper reach=40ms boundary=677ms -> ONE
+[1894.497] [BALL   ]   16.2  Jason Holder     [1;37m   1[0m   211/5
+[1905.113] [BALL   ]   [RACE] AERIAL winner='Cameron Green' @ Cover Point reach=741ms flight=500ms — MISSED (fell short)
+[1905.325] [BALL   ]   16.3  Nicholas Pooran  [1;37m   2[0m   213/5
+[1918.912] [BALL   ]   16.4  Nicholas Pooran  [0;37m •[0m   213/5
+[1932.453] [BALL   ]   [RACE] GROUND winner='Cameron Green' @ Cover Point reach=482ms boundary=252ms -> FOUR
+[1932.657] [BALL   ]   16.5  Nicholas Pooran  [1;32m   4[0m   217/5
+[1946.120] [BALL   ]   [RACE] GROUND winner='Dinesh Karthik' @ Wicket Keeper reach=58ms boundary=569ms -> ONE
+[1946.317] [BALL   ]   16.6  Nicholas Pooran  [1;37m   1[0m   218/5
+[1956.726] [THREAD ] [T-0976] BOWLER 'Kagiso Rabada' DONE — 0W 23R econ=11.5
+[1957.049] [SCHED  ] CTX SAVE  → 'Kagiso Rabada': 2 overs, 23 runs, 0 wkts, econ=11.50
+[1957.126] [SCHED  ] OVER 17 COMPLETE: 'Kagiso Rabada' (2/4 overs)
+[1957.149] [SCORE  ] End of over 17: 218/5  (Extras: 7)  Intensity: 27
+[1997.450] [SCHED  ]   Candidate: Trent Boult           skill=76  econ=11.3  wkts=0  spec=swing   pri=25
+[1997.546] [SCHED  ] DYNAMIC PRIORITY: 'Trent Boult' selected  score=25  overs_left=3  phase=DEATH
+[1997.563] [SCHED  ] CTX RESTORE ← 'Trent Boult': 3 overs, 34 runs, 0 wkts
+[1997.575] [SCHED  ] CONTEXT SWITCH #18 -> 'Trent Boult'  overs=3/4  economy=11.3
+[1997.586] [SCHED  ] Over 18: 'Trent Boult' (136 km/h) | Scheduler: PRIORITY | Phase: HIGH(death) | Intensity: 28
+[1997.755] [THREAD ] Spawned BOWLER 'Trent Boult' [T-0976]
+[1997.908] [THREAD ] [T-0976] BOWLER 'Trent Boult' START — over 18
+[1998.210] [BALL   ]   [RACE] GROUND winner='Andre Russell' @ Long On reach=319ms boundary=313ms -> FOUR
+[1998.449] [BALL   ]   17.1  Nicholas Pooran  [1;32m   4[0m   222/5
+[2011.973] [BALL   ]   17.2  Nicholas Pooran  [1;32m   6[0m   228/5
+[2025.340] [BALL   ]   [RACE] GROUND winner='Babar Azam' @ Mid Wicket reach=570ms boundary=647ms -> THREE
+[2025.562] [BALL   ]   17.3  Nicholas Pooran  [1;37m   3[0m   231/5
+[2036.144] [BALL   ]   [RACE] GROUND winner='Babar Azam' @ Mid Wicket reach=618ms boundary=363ms -> FOUR
+[2036.218] [BALL   ]   17.4  Jason Holder     [1;32m   4[0m   235/5
+[2049.571] [BALL   ]   17.5  Jason Holder     [1;32m   6[0m   241/5
+[2062.922] [BALL   ]   [RACE] GROUND winner='Babar Azam' @ Mid Wicket reach=251ms boundary=313ms -> TWO
+[2062.991] [BALL   ]   17.6  Jason Holder     [1;37m   2[0m   243/5
+[2073.400] [THREAD ] [T-0976] BOWLER 'Trent Boult' DONE — 0W 59R econ=14.8
+[2073.680] [SCHED  ] CTX SAVE  → 'Trent Boult': 4 overs, 59 runs, 0 wkts, econ=14.75
+[2073.739] [SCHED  ] OVER 18 COMPLETE: 'Trent Boult' (4/4 overs)
+[2073.769] [SCORE  ] End of over 18: 243/5  (Extras: 7)  Intensity: 28
+[2113.874] [SCHED  ]   Candidate: Kagiso Rabada         skill=80  econ=11.5  wkts=0  spec=death   pri=85
+[2113.924] [SCHED  ] DYNAMIC PRIORITY: 'Kagiso Rabada' selected  score=85  overs_left=2  phase=DEATH
+[2113.934] [SCHED  ] CTX RESTORE ← 'Kagiso Rabada': 2 overs, 23 runs, 0 wkts
+[2113.965] [SCHED  ] CONTEXT SWITCH #19 -> 'Kagiso Rabada'  overs=2/4  economy=11.5
+[2113.973] [SCHED  ] Over 19: 'Kagiso Rabada' (142 km/h) | Scheduler: PRIORITY | Phase: HIGH(death) | Intensity: 29
+[2114.057] [THREAD ] Spawned BOWLER 'Kagiso Rabada' [T-0976]
+[2114.192] [THREAD ] [T-0976] BOWLER 'Kagiso Rabada' START — over 19
+[2114.357] [BALL   ]   [RACE] GROUND winner='Babar Azam' @ Mid Wicket reach=187ms boundary=512ms -> ONE
+[2114.500] [BALL   ]   18.1  Nicholas Pooran  [1;37m   1[0m   244/5
+[2124.882] [BALL   ]   18.2  Jason Holder     [0;37m •[0m   244/5
+[2138.022] [BALL   ]   [RACE] GROUND winner='Dinesh Karthik' @ Wicket Keeper reach=40ms boundary=303ms -> ONE
+[2138.143] [BALL   ]   18.3  Jason Holder     [1;37m   1[0m   245/5
+[2148.374] [BALL   ]   18.4  Nicholas Pooran  [0;37m •[0m   245/5
+[2161.494] [BALL   ]   [RACE] GROUND winner='Babar Azam' @ Mid Wicket reach=552ms boundary=334ms -> FOUR
+[2161.525] [BALL   ]   18.5  Nicholas Pooran  [1;32m   4[0m   249/5
+[2174.719] [BALL   ]   [RACE] GROUND winner='Dinesh Karthik' @ Wicket Keeper reach=40ms boundary=634ms -> ONE
+[2174.828] [BALL   ]   18.6  Nicholas Pooran  [1;37m   1[0m   250/5
+[2184.925] [THREAD ] [T-0976] BOWLER 'Kagiso Rabada' DONE — 0W 30R econ=10.0
+[2185.016] [SCHED  ] CTX SAVE  → 'Kagiso Rabada': 3 overs, 30 runs, 0 wkts, econ=10.00
+[2185.032] [SCHED  ] OVER 19 COMPLETE: 'Kagiso Rabada' (3/4 overs)
+[2185.038] [SCORE  ] End of over 19: 250/5  (Extras: 7)  Intensity: 29
+[2225.232] [SCHED  ] CTX RESTORE ← 'Kagiso Rabada': 3 overs, 30 runs, 0 wkts
+[2225.258] [SCHED  ] CONTEXT SWITCH #20 -> 'Kagiso Rabada'  overs=3/4  economy=10.0
+[2225.265] [SCHED  ] Over 20: 'Kagiso Rabada' (142 km/h) | Scheduler: PRIORITY | Phase: HIGH(death) | Intensity: 30
+[2225.336] [THREAD ] Spawned BOWLER 'Kagiso Rabada' [T-0976]
+[2225.355] [THREAD ] [T-0976] BOWLER 'Kagiso Rabada' START — over 20
+[2225.475] [BALL   ]   19.1  Nicholas Pooran  [0;37m •[0m   250/5
+[2238.566] [BALL   ]   [RACE] GROUND winner='Dinesh Karthik' @ Wicket Keeper reach=40ms boundary=283ms -> ONE
+[2238.687] [BALL   ]   19.2  Nicholas Pooran  [1;37m   1[0m   251/5
+[2249.104] [BALL   ]   19.3  Jason Holder     [0;37m •[0m   251/5
+[2262.264] [BALL   ]   [RACE] GROUND winner='Dinesh Karthik' @ Wicket Keeper reach=40ms boundary=318ms -> ONE
+[2262.374] [BALL   ]   19.4  Jason Holder     [1;37m   1[0m   252/5
+[2272.550] [BALL   ]   [RACE] AERIAL winner='Dinesh Karthik' @ Wicket Keeper reach=40ms flight=550ms — CAUGHT!
+[2272.673] [BALL   ]   c Dinesh Karthik     @ Wicket Keeper — 'Nicholas Pooran' OUT
+[2272.703] [BALL   ] NEW BATSMAN: 'Axar Patel' coming to crease
+[2272.818] [THREAD ] Spawned BATSMAN 'Axar Patel' [T-1680]
+[2272.839] [BALL   ]   19.5  Nicholas Pooran  [1;31mW(C)[0m   252/6
+[2272.893] [THREAD ] [T-1680] BATSMAN 'Axar Patel' → sem_wait(crease) ...
+[2285.939] [THREAD ] [T-5568] BATSMAN 'Nicholas Pooran' LEFT crease -> 140(59 balls) | sem=1
+[2286.054] [THREAD ] [T-1680] BATSMAN 'Axar Patel' AT CREASE | wait=13.1ms | crease_sem=0
+[2286.114] [BALL   ]   [RACE] GROUND winner='Dinesh Karthik' @ Wicket Keeper reach=54ms boundary=729ms -> ONE
+[2286.228] [BALL   ]   19.6  Axar Patel       [1;37m   1[0m   253/6
+[2293.223] [THREAD ] [T-0976] BOWLER 'Kagiso Rabada' DONE — 2W 32R econ=8.0
+[2293.365] [SCHED  ] CTX SAVE  → 'Kagiso Rabada': 4 overs, 32 runs, 2 wkts, econ=8.00
+[2293.388] [SCHED  ] OVER 20 COMPLETE: 'Kagiso Rabada' (4/4 overs)
+[2293.395] [SCORE  ] End of over 20: 253/6  (Extras: 7)  Intensity: 30
+[2333.542] [THREAD ] [T-3424] FIELDER 'Dinesh Karthik' @ Wicket Keeper exit
+[2333.542] [THREAD ] [T-0720] FIELDER 'David Warner' @ Fine Leg exit
+[2333.599] [THREAD ] [T-5312] FIELDER 'Babar Azam' @ Mid Wicket exit
+[2333.629] [THREAD ] [T-1680] BATSMAN 'Axar Patel' LEFT crease -> 1(1 balls) | sem=2
+[2333.660] [THREAD ] [T-9904] FIELDER 'Andre Russell' @ Long On exit
+[2333.595] [THREAD ] [T-8016] FIELDER 'Devon Conway' @ Square Leg exit
+[2333.598] [THREAD ] [T-1792] FIELDER 'Cameron Green' @ Cover Point exit
+[2333.597] [THREAD ] [T-9088] FIELDER 'Ravindra Jadeja' @ Third Man exit
+[2333.603] [THREAD ] [T-4496] FIELDER 'Ravindra Jadeja' @ Mid Off exit
+[2333.593] [THREAD ] [T-7200] FIELDER 'Cameron Green' @ Long Off exit
+[2333.629] [THREAD ] [T-7456] BATSMAN 'Jason Holder' LEFT crease -> 15(8 balls) | sem=2
+[2333.600] [THREAD ] [T-2608] FIELDER 'KL Rahul' @ Mid On exit
+[2334.032] [THREAD ] All fielder threads joined
+[2359.775] [THREAD ] [UMPIRE] Exiting
+[2360.029] [INFO   ] === INNINGS 1 COMPLETE: 253/6 in 20 overs ===
+[2360.074] [SCHED  ] BATTING ORDER built (FCFS: David Warner | SJF: Cameron Green ...)
+[2360.080] [SCHED  ] Scheduler: Bowler 'Jason Holder' added to RR queue (pos 0)
+[2360.084] [SCHED  ] Scheduler: Bowler 'Axar Patel' added to RR queue (pos 1)
+[2360.087] [SCHED  ] Scheduler: Bowler 'Yuzvendra Chahal' added to RR queue (pos 2)
+[2360.090] [SCHED  ] Scheduler: Bowler 'Josh Hazlewood' added to RR queue (pos 3)
+[2360.092] [SCHED  ] Scheduler: Bowler 'T Natarajan' added to RR queue (pos 4)
+[2360.139] [THREAD ] Umpire thread spawned [T-6128]
+[2360.146] [THREAD ] [UMPIRE T-6128] Kernel thread STARTED — polling every 50ms
+[2360.185] [THREAD ] [T-1792] FIELDER 'Travis Head' @ Fine Leg      -> cond_wait
+[2360.201] [THREAD ] [T-4496] FIELDER 'Shikhar Dhawan' @ Square Leg    -> cond_wait
+[2360.212] [THREAD ] [T-9088] FIELDER 'Rishabh Pant' @ Wicket Keeper -> cond_wait
+[2360.263] [THREAD ] [T-3424] FIELDER 'Virat Kohli' @ Mid Wicket    -> cond_wait
+[2360.347] [THREAD ] [T-8016] FIELDER 'Tim David' @ Long On       -> cond_wait
+[2360.357] [THREAD ] [T-0720] FIELDER 'Nicholas Pooran' @ Mid On        -> cond_wait
+[2360.378] [THREAD ] [T-5312] FIELDER 'Jason Holder' @ Long Off      -> cond_wait
+[2360.412] [THREAD ] [T-2608] FIELDER 'Axar Patel' @ Mid Off       -> cond_wait
+[2360.448] [THREAD ] [T-9904] FIELDER 'Jason Holder' @ Cover Point   -> cond_wait
+[2360.469] [THREAD ] Spawned 10 fielder threads (all sleeping on cond_wait)
+[2360.478] [THREAD ] ── THREAD POOL: 1 bowler + 2 batsmen + 10 fielders + 1 umpire + 1 scoreboard = 15 total concurrent threads ──
+[2360.514] [THREAD ] Spawned BATSMAN 'David Warner' [T-6384]
+[2360.521] [THREAD ] [T-6384] BATSMAN 'David Warner' → sem_wait(crease) ...
+[2360.529] [THREAD ] [T-6384] BATSMAN 'David Warner' AT CREASE | wait=0.0ms | crease_sem=1
+[2360.531] [THREAD ] [T-7200] FIELDER 'Axar Patel' @ Third Man     -> cond_wait
+[2360.555] [THREAD ] Spawned BATSMAN 'Devon Conway' [T-3680]
+[2360.562] [THREAD ] [T-3680] BATSMAN 'Devon Conway' → sem_wait(crease) ...
+[2360.571] [THREAD ] [T-3680] BATSMAN 'Devon Conway' AT CREASE | wait=0.0ms | crease_sem=0
+[2360.565] [SCHED  ] OPENER RULE: 'Josh Hazlewood' (swing/pace) mandated for over 1  score=111
+[2360.591] [SCHED  ] DYNAMIC PRIORITY: 'Josh Hazlewood' selected  score=111  overs_left=20  phase=POWERPLAY
+[2360.596] [SCHED  ] CTX RESTORE ← 'Josh Hazlewood': 0 overs, 0 runs, 0 wkts
+[2360.601] [SCHED  ] CONTEXT SWITCH #21 -> 'Josh Hazlewood'  overs=0/4  economy=0.0
+[2360.605] [SCHED  ] Over 1: 'Josh Hazlewood' (151 km/h) | Scheduler: PRIORITY | Phase: LOW(powerplay) | Intensity: 25
+[2360.650] [THREAD ] Spawned BOWLER 'Josh Hazlewood' [T-0976]
+[2360.726] [THREAD ] [T-0976] BOWLER 'Josh Hazlewood' START — over 1
+[2360.769] [BALL   ]   [RACE] GROUND winner='Rishabh Pant' @ Wicket Keeper reach=40ms boundary=529ms -> ONE
+[2360.790] [BALL   ]    0.1  David Warner     [1;37m   1[0m   1/0
+[2371.115] [BALL   ]   [RACE] GROUND winner='Jason Holder' @ Cover Point reach=696ms boundary=534ms -> FOUR
+[2371.154] [BALL   ]    0.2  Devon Conway     [1;32m   4[0m   5/0
+[2384.330] [BALL   ]   [RACE] GROUND winner='Tim David' @ Long On reach=449ms boundary=697ms -> THREE
+[2384.462] [BALL   ]    0.3  Devon Conway     [1;37m   3[0m   8/0
+[2395.033] [BALL   ]    0.4  David Warner     [0;37m •[0m   8/0
+[2408.343] [BALL   ]   [RACE] GROUND winner='Tim David' @ Long On reach=310ms boundary=735ms -> TWO
+[2408.504] [BALL   ]    0.5  David Warner     [1;37m   2[0m   10/0
+[2421.816] [BALL   ]   [RACE] GROUND winner='Tim David' @ Long On reach=437ms boundary=291ms -> FOUR
+[2421.994] [BALL   ]    0.6  David Warner     [1;32m   4[0m   14/0
+[2432.377] [THREAD ] [T-0976] BOWLER 'Josh Hazlewood' DONE — 0W 14R econ=14.0
+[2432.502] [SCHED  ] CTX SAVE  → 'Josh Hazlewood': 1 overs, 14 runs, 0 wkts, econ=14.00
+[2432.525] [SCHED  ] OVER 1 COMPLETE: 'Josh Hazlewood' (1/4 overs)
+[2432.540] [SCORE  ] End of over 1: 14/0  (Extras: 0)  Intensity: 25
+[2472.785] [SCHED  ]   Candidate: Jason Holder          skill=79  econ=0.0  wkts=0  spec=medium  pri=89
+[2472.857] [SCHED  ]   Candidate: Axar Patel            skill=73  econ=0.0  wkts=0  spec=spin    pri=53
+[2472.874] [SCHED  ]   Candidate: Yuzvendra Chahal      skill=75  econ=0.0  wkts=0  spec=spin    pri=48
+[2472.885] [SCHED  ]   Candidate: T Natarajan           skill=84  econ=0.0  wkts=0  spec=death   pri=80
+[2472.895] [SCHED  ] DYNAMIC PRIORITY: 'Jason Holder' selected  score=89  overs_left=19  phase=POWERPLAY
+[2472.904] [SCHED  ] CTX RESTORE ← 'Jason Holder': 0 overs, 0 runs, 0 wkts
+[2472.913] [SCHED  ] CONTEXT SWITCH #22 -> 'Jason Holder'  overs=0/4  economy=0.0
+[2472.923] [SCHED  ] Over 2: 'Jason Holder' (134 km/h) | Scheduler: PRIORITY | Phase: LOW(powerplay) | Intensity: 25
+[2473.051] [THREAD ] Spawned BOWLER 'Jason Holder' [T-0976]
+[2473.194] [THREAD ] [T-0976] BOWLER 'Jason Holder' START — over 2
+[2473.441] [BALL   ]   [RACE] GROUND winner='Tim David' @ Long On reach=599ms boundary=632ms -> THREE
+[2473.566] [BALL   ]    1.1  Devon Conway     [1;37m   3[0m   17/0
+[2484.063] [BALL   ]   [RACE] GROUND winner='Tim David' @ Long On reach=171ms boundary=725ms -> ONE
+[2484.215] [BALL   ]    1.2  David Warner     [1;37m   1[0m   18/0
+[2494.760] [BALL   ]   [RACE] GROUND winner='Tim David' @ Long On reach=40ms boundary=660ms -> ONE
+[2494.946] [BALL   ]    1.3  Devon Conway     [1;37m   1[0m   19/0
+[2505.516] [BALL   ]   [RACE] GROUND winner='Tim David' @ Long On reach=40ms boundary=735ms -> ONE
+[2505.661] [BALL   ]    1.4  David Warner     [1;37m   1[0m   20/0
+[2516.182] [BALL   ]   [RACE] GROUND winner='Tim David' @ Long On reach=284ms boundary=531ms -> TWO
+[2516.343] [BALL   ]    1.5  Devon Conway     [1;37m   2[0m   22/0
+[2529.653] [BALL   ]    1.6  Devon Conway     [0;37m •[0m   22/0
+[2539.829] [THREAD ] [T-0976] BOWLER 'Jason Holder' DONE — 0W 8R econ=8.0
+[2540.000] [SCHED  ] CTX SAVE  → 'Jason Holder': 1 overs, 8 runs, 0 wkts, econ=8.00
+[2540.041] [SCHED  ] OVER 2 COMPLETE: 'Jason Holder' (1/4 overs)
+[2540.062] [SCORE  ] End of over 2: 22/0  (Extras: 0)  Intensity: 25
+[2580.326] [SCHED  ]   Candidate: Axar Patel            skill=73  econ=0.0  wkts=0  spec=spin    pri=53
+[2580.395] [SCHED  ]   Candidate: Yuzvendra Chahal      skill=75  econ=0.0  wkts=0  spec=spin    pri=48
+[2580.412] [SCHED  ]   Candidate: Josh Hazlewood        skill=81  econ=14.0  wkts=0  spec=swing   pri=80
+[2580.425] [SCHED  ]   Candidate: T Natarajan           skill=84  econ=0.0  wkts=0  spec=death   pri=80
+[2580.435] [SCHED  ] DYNAMIC PRIORITY: 'Josh Hazlewood' selected  score=80  overs_left=18  phase=POWERPLAY
+[2580.445] [SCHED  ] CTX RESTORE ← 'Josh Hazlewood': 1 overs, 14 runs, 0 wkts
+[2580.454] [SCHED  ] CONTEXT SWITCH #23 -> 'Josh Hazlewood'  overs=1/4  economy=14.0
+[2580.464] [SCHED  ] Over 3: 'Josh Hazlewood' (151 km/h) | Scheduler: PRIORITY | Phase: LOW(powerplay) | Intensity: 25
+[2580.654] [THREAD ] Spawned BOWLER 'Josh Hazlewood' [T-0976]
+[2580.794] [THREAD ] [T-0976] BOWLER 'Josh Hazlewood' START — over 3
+[2580.996] [BALL   ]   [RACE] AERIAL winner='Tim David' @ Long On reach=321ms flight=586ms — CAUGHT!
+[2581.159] [BALL   ]   c Tim David          @ Long On       — 'David Warner' OUT
+[2581.199] [BALL   ] NEW BATSMAN: 'Babar Azam' coming to crease
+[2581.461] [THREAD ] Spawned BATSMAN 'Babar Azam' [T-8272]
+[2581.514] [BALL   ]    2.1  David Warner     [1;31mW(C)[0m   22/1
+[2581.547] [THREAD ] [T-8272] BATSMAN 'Babar Azam' → sem_wait(crease) ...
+[2594.616] [THREAD ] [T-6384] BATSMAN 'David Warner' LEFT crease -> 9(7 balls) | sem=1
+[2594.679] [THREAD ] [T-8272] BATSMAN 'Babar Azam' AT CREASE | wait=13.1ms | crease_sem=0
+[2594.721] [BALL   ]   [RACE] GROUND winner='Travis Head' @ Fine Leg reach=617ms boundary=638ms -> THREE
+[2594.866] [BALL   ]    2.2  Babar Azam       [1;37m   3[0m   25/1
+[2605.099] [BALL   ]    2.3  Devon Conway     [0;37m •[0m   25/1
+[2618.403] [BALL   ]   [RACE] GROUND winner='Tim David' @ Long On reach=270ms boundary=591ms -> TWO
+[2618.613] [BALL   ]    2.4  Devon Conway     [1;37m   2[0m   27/1
+[2631.900] [BALL   ]   [RACE] GROUND winner='Tim David' @ Long On reach=107ms boundary=640ms -> ONE
+[2632.106] [BALL   ]    2.5  Devon Conway     [1;37m   1[0m   28/1
+[2635.849] [BALL   ]    2.6  Babar Azam       [0;37m •[0m   28/1
+[2645.929] [THREAD ] [T-0976] BOWLER 'Josh Hazlewood' DONE — 2W 20R econ=10.0
+[2646.144] [SCHED  ] CTX SAVE  → 'Josh Hazlewood': 2 overs, 20 runs, 2 wkts, econ=10.00
+[2646.197] [SCHED  ] OVER 3 COMPLETE: 'Josh Hazlewood' (2/4 overs)
+[2646.225] [SCORE  ] End of over 3: 28/1  (Extras: 0)  Intensity: 25
+[2686.360] [SCHED  ]   Candidate: Jason Holder          skill=79  econ=8.0  wkts=0  spec=medium  pri=84
+[7851.722] [SCHED  ]   Candidate: Axar Patel            skill=73  econ=0.0  wkts=0  spec=spin    pri=53
+[7851.738] [SCHED  ]   Candidate: Yuzvendra Chahal      skill=75  econ=0.0  wkts=0  spec=spin    pri=48
+[7851.749] [SCHED  ]   Candidate: T Natarajan           skill=84  econ=0.0  wkts=0  spec=death   pri=80
+[7851.758] [SCHED  ] DYNAMIC PRIORITY: 'Jason Holder' selected  score=84  overs_left=17  phase=POWERPLAY
+[7851.766] [SCHED  ] CTX RESTORE ← 'Jason Holder': 1 overs, 8 runs, 0 wkts
+[7851.774] [SCHED  ] CONTEXT SWITCH #24 -> 'Jason Holder'  overs=1/4  economy=8.0
+[7851.782] [SCHED  ] Over 4: 'Jason Holder' (134 km/h) | Scheduler: PRIORITY | Phase: LOW(powerplay) | Intensity: 27
+[7851.880] [THREAD ] Spawned BOWLER 'Jason Holder' [T-0976]
+[7852.007] [THREAD ] [T-0976] BOWLER 'Jason Holder' START — over 4
+[7852.229] [BALL   ]   [RACE] GROUND winner='Nicholas Pooran' @ Mid On reach=149ms boundary=737ms -> ONE
+[7852.355] [BALL   ]    3.1  Devon Conway     [1;37m   1[0m   29/1
+[7862.829] [BALL   ]    3.2  Babar Azam       [0;37m •[0m   29/1
+[7876.261] [BALL   ]    3.3  Babar Azam       [0;37m •[0m   29/1
+[7889.480] [BALL   ]   [RACE] GROUND winner='Tim David' @ Long On reach=184ms boundary=734ms -> ONE
+[7889.589] [BALL   ]    3.4  Babar Azam       [1;37m   1[0m   30/1
+[7899.859] [BALL   ]   [RACE] GROUND winner='Rishabh Pant' @ Wicket Keeper reach=44ms boundary=302ms -> ONE
+[7900.005] [BALL   ]    3.5  Devon Conway     [1;37m   1[0m   31/1
+[7910.482] [BALL   ]    3.5  Babar Azam       [1;33m  Nb[0m   32/1
+[7923.910] [BALL   ]   [RACE] GROUND winner='Tim David' @ Long On reach=563ms boundary=603ms -> THREE
+[7924.115] [BALL   ]    3.6  Babar Azam       [1;37m   3[0m   35/1
+[7934.499] [THREAD ] [T-0976] BOWLER 'Jason Holder' DONE — 0W 15R econ=7.5
+[7934.647] [SCHED  ] CTX SAVE  → 'Jason Holder': 2 overs, 15 runs, 0 wkts, econ=7.50
+[7934.672] [SCHED  ] OVER 4 COMPLETE: 'Jason Holder' (2/4 overs)
+[7934.685] [SCORE  ] End of over 4: 35/1  (Extras: 1)  Intensity: 27
+[7974.962] [SCHED  ]   Candidate: Axar Patel            skill=73  econ=0.0  wkts=0  spec=spin    pri=53
+[7975.020] [SCHED  ]   Candidate: Yuzvendra Chahal      skill=75  econ=0.0  wkts=0  spec=spin    pri=48
+[7975.034] [SCHED  ]   Candidate: Josh Hazlewood        skill=81  econ=10.0  wkts=2  spec=swing   pri=107
+[7975.044] [SCHED  ]   Candidate: T Natarajan           skill=84  econ=0.0  wkts=0  spec=death   pri=80
+[7975.051] [SCHED  ] DYNAMIC PRIORITY: 'Josh Hazlewood' selected  score=107  overs_left=16  phase=POWERPLAY
+[7975.059] [SCHED  ] CTX RESTORE ← 'Josh Hazlewood': 2 overs, 20 runs, 2 wkts
+[7975.066] [SCHED  ] CONTEXT SWITCH #25 -> 'Josh Hazlewood'  overs=2/4  economy=10.0
+[7975.074] [SCHED  ] Over 5: 'Josh Hazlewood' (151 km/h) | Scheduler: PRIORITY | Phase: LOW(powerplay) | Intensity: 28
+[7975.192] [THREAD ] Spawned BOWLER 'Josh Hazlewood' [T-0976]
+[7975.358] [THREAD ] [T-0976] BOWLER 'Josh Hazlewood' START — over 5
+[7975.710] [BALL   ] NEW BATSMAN: 'KL Rahul' coming to crease
+[7975.918] [THREAD ] Spawned BATSMAN 'KL Rahul' [T-5568]
+[7975.982] [BALL   ]    4.1  Babar Azam       [1;31mW(B)[0m   35/2
+[7975.990] [THREAD ] [T-5568] BATSMAN 'KL Rahul' → sem_wait(crease) ...
+[7989.356] [THREAD ] [T-8272] BATSMAN 'Babar Azam' LEFT crease -> 7(7 balls) | sem=1
+[7989.437] [THREAD ] [T-5568] BATSMAN 'KL Rahul' AT CREASE | wait=13.4ms | crease_sem=0
+[7989.618] [BALL   ]   [RACE] GROUND winner='Jason Holder' @ Long Off reach=614ms boundary=571ms -> FOUR
+[7989.766] [BALL   ]    4.2  KL Rahul         [1;32m   4[0m   39/2
+[8003.207] [BALL   ]   [RACE] AERIAL winner='Jason Holder' @ Cover Point reach=141ms flight=429ms — DROPPED
+[8003.440] [BALL   ]    4.3  KL Rahul         [1;37m   2[0m   41/2
+[8016.917] [BALL   ]   [RACE] GROUND winner='Axar Patel' @ Third Man reach=283ms boundary=490ms -> TWO
+[8017.155] [BALL   ]    4.4  KL Rahul         [1;37m   2[0m   43/2
+[8030.548] [BALL   ]   [RACE] GROUND winner='Jason Holder' @ Long Off reach=584ms boundary=304ms -> FOUR
+[8030.766] [BALL   ]    4.5  KL Rahul         [1;32m   4[0m   47/2
+[8041.130] [THREAD ] [T-0976] BOWLER 'Josh Hazlewood' DONE — 4W 32R econ=10.7
+[8041.429] [SCHED  ] CTX SAVE  → 'Josh Hazlewood': 3 overs, 32 runs, 4 wkts, econ=10.67
+[8041.519] [SCHED  ] OVER 5 COMPLETE: 'Josh Hazlewood' (3/4 overs)
+[8041.557] [SCORE  ] End of over 5: 47/2  (Extras: 1)  Intensity: 28
+[8081.853] [SCHED  ]   Candidate: Jason Holder          skill=79  econ=7.5  wkts=0  spec=medium  pri=77
+[8081.950] [SCHED  ]   Candidate: Axar Patel            skill=73  econ=0.0  wkts=0  spec=spin    pri=93
+[8081.970] [SCHED  ]   Candidate: Yuzvendra Chahal      skill=75  econ=0.0  wkts=0  spec=spin    pri=95
+[8081.983] [SCHED  ]   Candidate: T Natarajan           skill=84  econ=0.0  wkts=0  spec=death   pri=67
+[8081.994] [SCHED  ] DYNAMIC PRIORITY: 'Yuzvendra Chahal' selected  score=95  overs_left=15  phase=MIDDLE
+[8082.005] [SCHED  ] CTX RESTORE ← 'Yuzvendra Chahal': 0 overs, 0 runs, 0 wkts
+[8082.016] [SCHED  ] CONTEXT SWITCH #26 -> 'Yuzvendra Chahal'  overs=0/4  economy=0.0
+[8082.026] [SCHED  ] Over 6: 'Yuzvendra Chahal' (92 km/h) | Scheduler: PRIORITY | Phase: MEDIUM | Intensity: 29
+[8082.212] [THREAD ] Spawned BOWLER 'Yuzvendra Chahal' [T-0976]
+[8082.375] [THREAD ] [T-0976] BOWLER 'Yuzvendra Chahal' START — over 6
+[8082.750] [BALL   ]   [RACE] GROUND winner='Rishabh Pant' @ Wicket Keeper reach=40ms boundary=516ms -> ONE
+[8082.960] [BALL   ]    5.1  Devon Conway     [1;37m   1[0m   48/2
+[8093.619] [BALL   ]   [RACE] AERIAL winner='Jason Holder' @ Long Off reach=553ms flight=453ms — MISSED (fell short)
+[8093.801] [BALL   ]    5.2  KL Rahul         [1;37m   2[0m   50/2
+[8107.285] [BALL   ]   [RACE] GROUND winner='Jason Holder' @ Cover Point reach=59ms boundary=729ms -> ONE
+[8107.564] [BALL   ]    5.3  KL Rahul         [1;37m   1[0m   51/2
+[8118.219] [BALL   ]    5.4  Devon Conway     [0;37m •[0m   51/2
+[8131.879] [BALL   ]    5.5  Devon Conway     [1;32m   6[0m   57/2
+[8145.550] [BALL   ]    5.6  Devon Conway     [1;32m   6[0m   63/2
+[8156.040] [THREAD ] [T-0976] BOWLER 'Yuzvendra Chahal' DONE — 0W 16R econ=16.0
+[8156.346] [SCHED  ] CTX SAVE  → 'Yuzvendra Chahal': 1 overs, 16 runs, 0 wkts, econ=16.00
+[8156.435] [SCHED  ] OVER 6 COMPLETE: 'Yuzvendra Chahal' (1/4 overs)
+[8156.469] [SCORE  ] End of over 6: 63/2  (Extras: 1)  Intensity: 29
+[8196.779] [SCHED  ]   Candidate: Jason Holder          skill=79  econ=7.5  wkts=0  spec=medium  pri=77
+[8196.878] [SCHED  ]   Candidate: Axar Patel            skill=73  econ=0.0  wkts=0  spec=spin    pri=93
+[12183.829] [SCHED  ]   Candidate: Josh Hazlewood        skill=81  econ=10.7  wkts=4  spec=swing   pri=75
+[12183.843] [SCHED  ]   Candidate: T Natarajan           skill=84  econ=0.0  wkts=0  spec=death   pri=67
+[12183.850] [SCHED  ] DYNAMIC PRIORITY: 'Axar Patel' selected  score=93  overs_left=14  phase=MIDDLE
+[12183.855] [SCHED  ] CTX RESTORE ← 'Axar Patel': 0 overs, 0 runs, 0 wkts
+[12183.860] [SCHED  ] CONTEXT SWITCH #27 -> 'Axar Patel'  overs=0/4  economy=0.0
+[12183.865] [SCHED  ] Over 7: 'Axar Patel' (118 km/h) | Scheduler: PRIORITY | Phase: MEDIUM | Intensity: 29
+[12183.962] [THREAD ] Spawned BOWLER 'Axar Patel' [T-0976]
+[12184.019] [THREAD ] [T-0976] BOWLER 'Axar Patel' START — over 7
+[12184.180] [BALL   ]   [RACE] GROUND winner='Nicholas Pooran' @ Mid On reach=690ms boundary=294ms -> FOUR
+[12184.272] [BALL   ]    6.1  KL Rahul         [1;32m   4[0m   67/2
+[12197.701] [BALL   ]    6.2  KL Rahul         [0;37m •[0m   67/2
+[12210.916] [BALL   ]    6.3  KL Rahul         [0;37m •[0m   67/2
+[12224.095] [BALL   ]    6.4  KL Rahul         [1;32m   6[0m   73/2
+[12237.270] [BALL   ]   [RACE] GROUND winner='Nicholas Pooran' @ Mid On reach=262ms boundary=535ms -> TWO
+[12237.360] [BALL   ]    6.5  KL Rahul         [1;37m   2[0m   75/2
+[12250.612] [BALL   ]    6.6  KL Rahul         [1;32m   6[0m   81/2
+[12260.960] [THREAD ] [T-0976] BOWLER 'Axar Patel' DONE — 0W 18R econ=18.0
+[12261.125] [SCHED  ] CTX SAVE  → 'Axar Patel': 1 overs, 18 runs, 0 wkts, econ=18.00
+[12261.158] [SCHED  ] OVER 7 COMPLETE: 'Axar Patel' (1/4 overs)
+[12261.175] [SCORE  ] End of over 7: 81/2  (Extras: 1)  Intensity: 29
+[12301.380] [SCHED  ]   Candidate: Jason Holder          skill=79  econ=7.5  wkts=0  spec=medium  pri=77
+[12301.430] [SCHED  ]   Candidate: Yuzvendra Chahal      skill=75  econ=16.0  wkts=0  spec=spin    pri=62
+[12301.440] [SCHED  ]   Candidate: Josh Hazlewood        skill=81  econ=10.7  wkts=4  spec=swing   pri=75
+[12301.446] [SCHED  ]   Candidate: T Natarajan           skill=84  econ=0.0  wkts=0  spec=death   pri=67
+[12301.452] [SCHED  ] DYNAMIC PRIORITY: 'Jason Holder' selected  score=77  overs_left=13  phase=MIDDLE
+[12301.457] [SCHED  ] CTX RESTORE ← 'Jason Holder': 2 overs, 15 runs, 0 wkts
+[12301.462] [SCHED  ] CONTEXT SWITCH #28 -> 'Jason Holder'  overs=2/4  economy=7.5
+[12301.468] [SCHED  ] Over 8: 'Jason Holder' (134 km/h) | Scheduler: PRIORITY | Phase: MEDIUM | Intensity: 28
+[12301.553] [THREAD ] Spawned BOWLER 'Jason Holder' [T-0976]
+[12301.673] [THREAD ] [T-0976] BOWLER 'Jason Holder' START — over 8
+[12301.961] [BALL   ]   [RACE] GROUND winner='Axar Patel' @ Third Man reach=344ms boundary=735ms -> TWO
+[12302.098] [BALL   ]    7.1  Devon Conway     [1;37m   2[0m   83/2
+[12315.451] [BALL   ]    7.2  Devon Conway     [1;32m   6[0m   89/2
+[12328.865] [BALL   ]   [RACE] GROUND winner='Tim David' @ Long On reach=106ms boundary=296ms -> ONE
+[12329.026] [BALL   ]    7.3  Devon Conway     [1;37m   1[0m   90/2
+[12339.771] [BALL   ]    7.4  KL Rahul         [0;37m •[0m   90/2
+[12353.194] [BALL   ]   [RACE] GROUND winner='Axar Patel' @ Third Man reach=420ms boundary=542ms -> THREE
+[12353.362] [BALL   ]    7.5  KL Rahul         [1;37m   3[0m   93/2
+[12364.142] [BALL   ]   [RACE] GROUND winner='Jason Holder' @ Long Off reach=182ms boundary=616ms -> ONE
+[12364.430] [BALL   ]    7.6  Devon Conway     [1;37m   1[0m   94/2
+[12374.992] [THREAD ] [T-0976] BOWLER 'Jason Holder' DONE — 0W 28R econ=9.3
+[12375.235] [SCHED  ] CTX SAVE  → 'Jason Holder': 3 overs, 28 runs, 0 wkts, econ=9.33
+[12375.279] [SCHED  ] OVER 8 COMPLETE: 'Jason Holder' (3/4 overs)
+[12375.313] [SCORE  ] End of over 8: 94/2  (Extras: 1)  Intensity: 28
+[12415.531] [SCHED  ]   Candidate: Axar Patel            skill=73  econ=18.0  wkts=0  spec=spin    pri=60
+[12415.611] [SCHED  ]   Candidate: Yuzvendra Chahal      skill=75  econ=16.0  wkts=0  spec=spin    pri=62
+[12415.626] [SCHED  ]   Candidate: Josh Hazlewood        skill=81  econ=10.7  wkts=4  spec=swing   pri=75
+[12415.638] [SCHED  ]   Candidate: T Natarajan           skill=84  econ=0.0  wkts=0  spec=death   pri=67
+[12415.647] [SCHED  ] DYNAMIC PRIORITY: 'Josh Hazlewood' selected  score=75  overs_left=12  phase=MIDDLE
+[12415.657] [SCHED  ] CTX RESTORE ← 'Josh Hazlewood': 3 overs, 32 runs, 4 wkts
+[12415.666] [SCHED  ] CONTEXT SWITCH #29 -> 'Josh Hazlewood'  overs=3/4  economy=10.7
+[12415.676] [SCHED  ] Over 9: 'Josh Hazlewood' (151 km/h) | Scheduler: PRIORITY | Phase: MEDIUM | Intensity: 28
+[12415.814] [THREAD ] Spawned BOWLER 'Josh Hazlewood' [T-0976]
+[12415.987] [THREAD ] [T-0976] BOWLER 'Josh Hazlewood' START — over 9
+[12416.501] [BALL   ]    8.1  Devon Conway     [1;32m   6[0m   100/2
+[12429.796] [BALL   ]   [RACE] GROUND winner='Nicholas Pooran' @ Mid On reach=434ms boundary=714ms -> THREE
+[12430.012] [BALL   ]    8.2  Devon Conway     [1;37m   3[0m   103/2
+[12440.664] [BALL   ]    8.3  KL Rahul         [0;37m •[0m   103/2
+[12454.020] [BALL   ]   [RACE] GROUND winner='Nicholas Pooran' @ Mid On reach=589ms boundary=534ms -> FOUR
+[12454.183] [BALL   ]    8.4  KL Rahul         [1;32m   4[0m   107/2
+[12467.341] [BALL   ]   [RACE] GROUND winner='Nicholas Pooran' @ Mid On reach=490ms boundary=716ms -> THREE
+[12467.500] [BALL   ]    8.5  KL Rahul         [1;37m   3[0m   110/2
+[12477.889] [BALL   ]   [RACE] GROUND winner='Nicholas Pooran' @ Mid On reach=285ms boundary=643ms -> TWO
+[12478.057] [BALL   ]    8.6  Devon Conway     [1;37m   2[0m   112/2
+[12488.328] [THREAD ] [T-0976] BOWLER 'Josh Hazlewood' DONE — 4W 50R econ=12.5
+[12488.492] [SCHED  ] CTX SAVE  → 'Josh Hazlewood': 4 overs, 50 runs, 4 wkts, econ=12.50
+[12488.516] [SCHED  ] OVER 9 COMPLETE: 'Josh Hazlewood' (4/4 overs)
+[12488.527] [SCORE  ] End of over 9: 112/2  (Extras: 1)  Intensity: 28
+[12528.725] [SCHED  ]   Candidate: Jason Holder          skill=79  econ=9.3  wkts=0  spec=medium  pri=50
+[12528.785] [SCHED  ]   Candidate: Axar Patel            skill=73  econ=18.0  wkts=0  spec=spin    pri=60
+[12528.796] [SCHED  ]   Candidate: Yuzvendra Chahal      skill=75  econ=16.0  wkts=0  spec=spin    pri=62
+[12528.802] [SCHED  ]   Candidate: T Natarajan           skill=84  econ=0.0  wkts=0  spec=death   pri=67
+[12528.809] [SCHED  ] DYNAMIC PRIORITY: 'T Natarajan' selected  score=67  overs_left=11  phase=MIDDLE
+[12528.816] [SCHED  ] CTX RESTORE ← 'T Natarajan': 0 overs, 0 runs, 0 wkts
+[12528.822] [SCHED  ] CONTEXT SWITCH #30 -> 'T Natarajan'  overs=0/4  economy=0.0
+[12528.828] [SCHED  ] Over 10: 'T Natarajan' (139 km/h) | Scheduler: PRIORITY | Phase: MEDIUM | Intensity: 27
+[12528.918] [THREAD ] Spawned BOWLER 'T Natarajan' [T-0976]
+[12529.061] [THREAD ] [T-0976] BOWLER 'T Natarajan' START — over 10
+[15765.582] [BALL   ]   [RACE] GROUND winner='Nicholas Pooran' @ Mid On reach=282ms boundary=474ms -> TWO
+[15765.712] [BALL   ]    9.1  KL Rahul         [1;37m   2[0m   114/2
+[15779.081] [BALL   ] NEW BATSMAN: 'Andre Russell' coming to crease
+[15779.249] [THREAD ] Spawned BATSMAN 'Andre Russell' [T-2864]
+[15779.268] [BALL   ]    9.2  KL Rahul         [1;31mW(B)[0m   114/3
+[15779.344] [THREAD ] [T-2864] BATSMAN 'Andre Russell' → sem_wait(crease) ...
+[15792.462] [THREAD ] [T-5568] BATSMAN 'KL Rahul' LEFT crease -> 45(19 balls) | sem=1
+[15792.526] [THREAD ] [T-2864] BATSMAN 'Andre Russell' AT CREASE | wait=13.1ms | crease_sem=0
+[15792.714] [BALL   ]    9.3  Andre Russell    [0;37m •[0m   114/3
+[15805.989] [BALL   ]    9.4  Andre Russell    [0;37m •[0m   114/3
+[15819.326] [BALL   ]   [RACE] GROUND winner='Rishabh Pant' @ Wicket Keeper reach=40ms boundary=293ms -> ONE
+[15819.474] [BALL   ]    9.5  Andre Russell    [1;37m   1[0m   115/3
+[15823.247] [BALL   ]   [RACE] GROUND winner='Shikhar Dhawan' @ Square Leg reach=611ms boundary=276ms -> FOUR
+[15823.411] [BALL   ]    9.6  Devon Conway     [1;32m   4[0m   119/3
+[15833.209] [THREAD ] [T-0976] BOWLER 'T Natarajan' DONE — 2W 3R econ=3.0
+[15833.487] [SCHED  ] CTX SAVE  → 'T Natarajan': 1 overs, 3 runs, 2 wkts, econ=3.00
+[15833.555] [SCHED  ] OVER 10 COMPLETE: 'T Natarajan' (1/4 overs)
+[15833.583] [SCORE  ] End of over 10: 119/3  (Extras: 1)  Intensity: 27
+[15873.883] [SCHED  ]   Candidate: Jason Holder          skill=79  econ=9.3  wkts=0  spec=medium  pri=50
+[15873.972] [SCHED  ]   Candidate: Axar Patel            skill=73  econ=18.0  wkts=0  spec=spin    pri=60
+[15873.990] [SCHED  ]   Candidate: Yuzvendra Chahal      skill=75  econ=16.0  wkts=0  spec=spin    pri=62
+[15874.002] [SCHED  ] DYNAMIC PRIORITY: 'Yuzvendra Chahal' selected  score=62  overs_left=10  phase=MIDDLE
+[15874.012] [SCHED  ] CTX RESTORE ← 'Yuzvendra Chahal': 1 overs, 16 runs, 0 wkts
+[15874.021] [SCHED  ] CONTEXT SWITCH #31 -> 'Yuzvendra Chahal'  overs=1/4  economy=16.0
+[15874.065] [SCHED  ] Over 11: 'Yuzvendra Chahal' (92 km/h) | Scheduler: PRIORITY | Phase: MEDIUM | Intensity: 30
+[15874.195] [THREAD ] Spawned BOWLER 'Yuzvendra Chahal' [T-0976]
+[15874.376] [THREAD ] [T-0976] BOWLER 'Yuzvendra Chahal' START — over 11
+[15874.587] [BALL   ]   10.0  Andre Russell    [1;33m  Wd[0m   120/3
+[15888.041] [BALL   ]   [RACE] GROUND winner='Shikhar Dhawan' @ Square Leg reach=330ms boundary=540ms -> TWO
+[15888.227] [BALL   ]   10.1  Andre Russell    [1;37m   2[0m   122/3
+[15901.731] [BALL   ] NEW BATSMAN: 'Dinesh Karthik' coming to crease
+[15902.051] [THREAD ] Spawned BATSMAN 'Dinesh Karthik' [T-0160]
+[15902.087] [BALL   ]   10.2  Andre Russell    [1;31mW(B)[0m   122/4
+[15902.231] [THREAD ] [T-0160] BATSMAN 'Dinesh Karthik' → sem_wait(crease) ...
+[15915.347] [THREAD ] [T-2864] BATSMAN 'Andre Russell' LEFT crease -> 3(5 balls) | sem=1
+[15915.503] [THREAD ] [T-0160] BATSMAN 'Dinesh Karthik' AT CREASE | wait=13.2ms | crease_sem=0
+[15915.783] [BALL   ]   10.3  Dinesh Karthik   [1;32m   6[0m   128/4
+[15929.187] [BALL   ]   [RACE] GROUND winner='Nicholas Pooran' @ Mid On reach=197ms boundary=367ms -> ONE
+[15929.411] [BALL   ]   10.4  Dinesh Karthik   [1;37m   1[0m   129/4
+[15936.110] [BALL   ]   [RACE] GROUND winner='Axar Patel' @ Third Man reach=590ms boundary=569ms -> FOUR
+[15936.349] [BALL   ]   10.5  Devon Conway     [1;32m   4[0m   133/4
+[15949.480] [BALL   ]   [RACE] GROUND winner='Nicholas Pooran' @ Mid On reach=143ms boundary=349ms -> ONE
+[15949.549] [BALL   ]   10.6  Devon Conway     [1;37m   1[0m   134/4
+[15956.370] [THREAD ] [T-0976] BOWLER 'Yuzvendra Chahal' DONE — 2W 30R econ=15.0
+[15956.508] [SCHED  ] CTX SAVE  → 'Yuzvendra Chahal': 2 overs, 30 runs, 2 wkts, econ=15.00
+[15956.537] [SCHED  ] OVER 11 COMPLETE: 'Yuzvendra Chahal' (2/4 overs)
+[15956.548] [SCORE  ] End of over 11: 134/4  (Extras: 2)  Intensity: 30
+[15996.702] [SCHED  ]   Candidate: Jason Holder          skill=79  econ=9.3  wkts=0  spec=medium  pri=50
+[15996.781] [SCHED  ]   Candidate: Axar Patel            skill=73  econ=18.0  wkts=0  spec=spin    pri=60
+[15996.797] [SCHED  ]   Candidate: T Natarajan           skill=84  econ=3.0  wkts=2  spec=death   pri=100
+[15996.808] [SCHED  ] DYNAMIC PRIORITY: 'T Natarajan' selected  score=100  overs_left=9  phase=MIDDLE
+[15996.816] [SCHED  ] CTX RESTORE ← 'T Natarajan': 1 overs, 3 runs, 2 wkts
+[15996.824] [SCHED  ] CONTEXT SWITCH #32 -> 'T Natarajan'  overs=1/4  economy=3.0
+[15996.832] [SCHED  ] Over 12: 'T Natarajan' (139 km/h) | Scheduler: PRIORITY | Phase: MEDIUM | Intensity: 30
+[15996.963] [THREAD ] Spawned BOWLER 'T Natarajan' [T-0976]
+[15997.155] [THREAD ] [T-0976] BOWLER 'T Natarajan' START — over 12
+[15997.341] [BALL   ]   11.0  Devon Conway     [1;33m  Wd[0m   135/4
+[16010.513] [BALL   ]   [RACE] GROUND winner='Jason Holder' @ Long Off reach=606ms boundary=342ms -> FOUR
+[16010.643] [BALL   ]   11.1  Devon Conway     [1;32m   4[0m   139/4
+[16023.841] [BALL   ]   [RACE] GROUND winner='Shikhar Dhawan' @ Square Leg reach=134ms boundary=257ms -> ONE
+[16023.944] [BALL   ]   11.2  Devon Conway     [1;37m   1[0m   140/4
+[16034.166] [BALL   ]   11.3  Dinesh Karthik   [0;37m •[0m   140/4
+[16047.335] [BALL   ]   11.4  Dinesh Karthik   [0;37m •[0m   140/4
+[16060.685] [BALL   ]   11.5  Dinesh Karthik   [0;37m •[0m   140/4
+[16074.051] [BALL   ]   11.6  Dinesh Karthik   [1;32m   6[0m   146/4
+[16084.360] [THREAD ] [T-0976] BOWLER 'T Natarajan' DONE — 2W 15R econ=7.5
+[16084.560] [SCHED  ] CTX SAVE  → 'T Natarajan': 2 overs, 15 runs, 2 wkts, econ=7.50
+[16084.581] [SCHED  ] OVER 12 COMPLETE: 'T Natarajan' (2/4 overs)
+[16084.596] [SCORE  ] End of over 12: 146/4  (Extras: 3)  Intensity: 30
+[16124.861] [SCHED  ]   Candidate: Jason Holder          skill=79  econ=9.3  wkts=0  spec=medium  pri=50
+[16124.916] [SCHED  ]   Candidate: Axar Patel            skill=73  econ=18.0  wkts=0  spec=spin    pri=60
+[16124.928] [SCHED  ]   Candidate: Yuzvendra Chahal      skill=75  econ=15.0  wkts=2  spec=spin    pri=75
+[16124.936] [SCHED  ] DYNAMIC PRIORITY: 'Yuzvendra Chahal' selected  score=75  overs_left=8  phase=MIDDLE
+[16124.961] [SCHED  ] CTX RESTORE ← 'Yuzvendra Chahal': 2 overs, 30 runs, 2 wkts
+[16124.969] [SCHED  ] CONTEXT SWITCH #33 -> 'Yuzvendra Chahal'  overs=2/4  economy=15.0
+[16124.976] [SCHED  ] Over 13: 'Yuzvendra Chahal' (92 km/h) | Scheduler: PRIORITY | Phase: MEDIUM | Intensity: 31
+[16125.062] [THREAD ] Spawned BOWLER 'Yuzvendra Chahal' [T-0976]
+[16125.197] [THREAD ] [T-0976] BOWLER 'Yuzvendra Chahal' START — over 13
+[19280.842] [BALL   ]   [RACE] GROUND winner='Shikhar Dhawan' @ Square Leg reach=40ms boundary=716ms -> ONE
+[19280.866] [BALL   ]   12.1  Devon Conway     [1;37m   1[0m   147/4
+[19291.243] [BALL   ]   12.2  Dinesh Karthik   [0;37m •[0m   147/4
+[19304.400] [BALL   ]   [RACE] GROUND winner='Travis Head' @ Fine Leg reach=40ms boundary=684ms -> ONE
+[19304.511] [BALL   ]   12.3  Dinesh Karthik   [1;37m   1[0m   148/4
+[19314.818] [BALL   ] NEW BATSMAN: 'Cameron Green' coming to crease
+[19314.930] [THREAD ] Spawned BATSMAN 'Cameron Green' [T-7456]
+[19314.948] [BALL   ]   12.4  Devon Conway     [1;31mW(L)[0m   148/5
+[19315.010] [THREAD ] [T-7456] BATSMAN 'Cameron Green' → sem_wait(crease) ...
+[19328.171] [THREAD ] [T-3680] BATSMAN 'Devon Conway' LEFT crease -> 67(29 balls) | sem=1
+[19328.317] [THREAD ] [T-7456] BATSMAN 'Cameron Green' AT CREASE | wait=13.3ms | crease_sem=0
+[19328.432] [BALL   ]   [RACE] GROUND winner='Jason Holder' @ Long Off reach=146ms boundary=641ms -> ONE
+[19328.547] [BALL   ]   12.5  Cameron Green    [1;37m   1[0m   149/5
+[19338.555] [BALL   ]   [RACE] GROUND winner='Rishabh Pant' @ Wicket Keeper reach=48ms boundary=267ms -> ONE
+[19338.688] [BALL   ]   12.6  Dinesh Karthik   [1;37m   1[0m   150/5
+[19348.618] [THREAD ] [T-0976] BOWLER 'Yuzvendra Chahal' DONE — 4W 33R econ=11.0
+[19348.842] [SCHED  ] CTX SAVE  → 'Yuzvendra Chahal': 3 overs, 33 runs, 4 wkts, econ=11.00
+[19348.894] [SCHED  ] OVER 13 COMPLETE: 'Yuzvendra Chahal' (3/4 overs)
+[19348.915] [SCORE  ] End of over 13: 150/5  (Extras: 3)  Intensity: 31
+[19389.165] [SCHED  ]   Candidate: Jason Holder          skill=79  econ=9.3  wkts=0  spec=medium  pri=50
+[19389.252] [SCHED  ]   Candidate: Axar Patel            skill=73  econ=18.0  wkts=0  spec=spin    pri=60
+[19389.270] [SCHED  ]   Candidate: T Natarajan           skill=84  econ=7.5  wkts=2  spec=death   pri=75
+[19389.282] [SCHED  ] DYNAMIC PRIORITY: 'T Natarajan' selected  score=75  overs_left=7  phase=MIDDLE
+[19389.327] [SCHED  ] CTX RESTORE ← 'T Natarajan': 2 overs, 15 runs, 2 wkts
+[19389.339] [SCHED  ] CONTEXT SWITCH #34 -> 'T Natarajan'  overs=2/4  economy=7.5
+[19389.351] [SCHED  ] Over 14: 'T Natarajan' (139 km/h) | Scheduler: PRIORITY | Phase: MEDIUM | Intensity: 34
+[19389.517] [THREAD ] Spawned BOWLER 'T Natarajan' [T-0976]
+[19389.603] [THREAD ] [T-0976] BOWLER 'T Natarajan' START — over 14
+[19389.810] [BALL   ]   [RACE] GROUND winner='Shikhar Dhawan' @ Square Leg reach=181ms boundary=731ms -> ONE
+[19389.990] [BALL   ]   13.1  Dinesh Karthik   [1;37m   1[0m   151/5
+[19400.580] [BALL   ]   13.2  Cameron Green    [0;37m •[0m   151/5
+[19414.117] [BALL   ]   13.3  Cameron Green    [0;37m •[0m   151/5
+[19427.478] [BALL   ]   13.3  Cameron Green    [1;33m  Nb[0m   152/5
+[19440.905] [BALL   ]   [RACE] GROUND winner='Rishabh Pant' @ Wicket Keeper reach=46ms boundary=285ms -> ONE
+[19441.096] [BALL   ]   13.4  Cameron Green    [1;37m   1[0m   153/5
+[19451.602] [BALL   ]   [RACE] GROUND winner='Jason Holder' @ Long Off reach=610ms boundary=522ms -> FOUR
+[19451.752] [BALL   ]   13.5  Dinesh Karthik   [1;32m   4[0m   157/5
+[19465.266] [BALL   ]   13.6  Dinesh Karthik   [1;32m   6[0m   163/5
+[19475.620] [THREAD ] [T-0976] BOWLER 'T Natarajan' DONE — 2W 28R econ=9.3
+[19475.885] [SCHED  ] CTX SAVE  → 'T Natarajan': 3 overs, 28 runs, 2 wkts, econ=9.33
+[19475.968] [SCHED  ] OVER 14 COMPLETE: 'T Natarajan' (3/4 overs)
+[19476.005] [SCORE  ] End of over 14: 163/5  (Extras: 4)  Intensity: 34
+[19516.336] [SCHED  ]   Candidate: Jason Holder          skill=79  econ=9.3  wkts=0  spec=medium  pri=50
+[19516.454] [SCHED  ]   Candidate: Axar Patel            skill=73  econ=18.0  wkts=0  spec=spin    pri=60
+[19516.475] [SCHED  ]   Candidate: Yuzvendra Chahal      skill=75  econ=11.0  wkts=4  spec=spin    pri=80
+[19516.489] [SCHED  ] DYNAMIC PRIORITY: 'Yuzvendra Chahal' selected  score=80  overs_left=6  phase=MIDDLE
+[19516.500] [SCHED  ] CTX RESTORE ← 'Yuzvendra Chahal': 3 overs, 33 runs, 4 wkts
+[19516.511] [SCHED  ] CONTEXT SWITCH #35 -> 'Yuzvendra Chahal'  overs=3/4  economy=11.0
+[19516.522] [SCHED  ] Over 15: 'Yuzvendra Chahal' (92 km/h) | Scheduler: PRIORITY | Phase: MEDIUM | Intensity: 35
+[19516.689] [THREAD ] Spawned BOWLER 'Yuzvendra Chahal' [T-0976]
+[19516.838] [THREAD ] [T-0976] BOWLER 'Yuzvendra Chahal' START — over 15
+[19517.112] [BALL   ]   [RACE] GROUND winner='Rishabh Pant' @ Wicket Keeper reach=40ms boundary=657ms -> ONE
+[19517.270] [BALL   ]   14.1  Cameron Green    [1;37m   1[0m   164/5
+[19527.907] [BALL   ]   [RACE] GROUND winner='Axar Patel' @ Third Man reach=591ms boundary=698ms -> THREE
+[19528.103] [BALL   ]   14.2  Dinesh Karthik   [1;37m   3[0m   167/5
+[19538.723] [BALL   ]   14.3  Cameron Green    [0;37m •[0m   167/5
+[19552.025] [BALL   ]   14.4  Cameron Green    [0;37m •[0m   167/5
+[19565.246] [BALL   ]   [RACE] GROUND winner='Axar Patel' @ Mid Off reach=167ms boundary=711ms -> ONE
+[19565.341] [BALL   ]   14.5  Cameron Green    [1;37m   1[0m   168/5
+[19575.850] [BALL   ]   [RACE] GROUND winner='Rishabh Pant' @ Wicket Keeper reach=40ms boundary=575ms -> ONE
+[19575.936] [BALL   ]   14.6  Dinesh Karthik   [1;37m   1[0m   169/5
+[19586.272] [THREAD ] [T-0976] BOWLER 'Yuzvendra Chahal' DONE — 4W 39R econ=9.8
+[19586.367] [SCHED  ] CTX SAVE  → 'Yuzvendra Chahal': 4 overs, 39 runs, 4 wkts, econ=9.75
+[19586.383] [SCHED  ] OVER 15 COMPLETE: 'Yuzvendra Chahal' (4/4 overs)
+[19586.390] [SCORE  ] End of over 15: 169/5  (Extras: 4)  Intensity: 35
+[19626.507] [SCHED  ]   Candidate: Jason Holder          skill=79  econ=9.3  wkts=0  spec=medium  pri=47
+[19626.523] [SCHED  ]   Candidate: Axar Patel            skill=73  econ=18.0  wkts=0  spec=spin    pri=30
+[19626.527] [SCHED  ]   Candidate: T Natarajan           skill=84  econ=9.3  wkts=2  spec=death   pri=93
+[19626.530] [SCHED  ] DYNAMIC PRIORITY: 'T Natarajan' selected  score=93  overs_left=5  phase=DEATH
+[19626.532] [SCHED  ] CTX RESTORE ← 'T Natarajan': 3 overs, 28 runs, 2 wkts
+[19626.534] [SCHED  ] CONTEXT SWITCH #36 -> 'T Natarajan'  overs=3/4  economy=9.3
+[19626.536] [SCHED  ] Over 16: 'T Natarajan' (139 km/h) | Scheduler: PRIORITY | Phase: HIGH(death) | Intensity: 39
+[19626.573] [THREAD ] Spawned BOWLER 'T Natarajan' [T-0976]
+[19626.705] [THREAD ] [T-0976] BOWLER 'T Natarajan' START — over 16
+[19626.773] [BALL   ]   15.0  Dinesh Karthik   [1;33m  Wd[0m   170/5
+[19640.190] [BALL   ]   15.1  Dinesh Karthik   [0;37m •[0m   170/5

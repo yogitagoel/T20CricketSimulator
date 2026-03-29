@@ -157,7 +157,7 @@ void sync_init_all() {
 }
 
 void sync_destroy_all() {
-    sem_destroy(&crease_semaphore);
+    sem_destroy(crease_semaphore);
 
     pthread_mutex_destroy(&score_mutex);
     pthread_mutex_destroy(&pitch_mutex);
