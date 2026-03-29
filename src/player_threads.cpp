@@ -25,6 +25,19 @@
 #include <cstring>
 #include <algorithm>
 #include <unistd.h>
+#include <cstdint>
+#define TID()  ((unsigned long)((uintptr_t)pthread_self() % 10000u))
+#define PID(t) ((unsigned long)((uintptr_t)(t)            % 10000u))
+ // Making compatible for MacOS
+ #ifdef __APPLE__
+ #  pragma clang diagnostic push
+ #  pragma clang diagnostic ignored "-Wdeprecated-declarations"
+ static inline void sem_val(sem_t* s, int* v){ sem_getvalue(s, v); }
+ #  pragma clang diagnostic pop
+ #else
+ static inline void sem_val(sem_t* s, int* v){ sem_getvalue(s, v); }
+ #endif
+
 
 // Per-ball result shared between bowler and batsman 
 // Protected by score_mutex — set by batsman, read by bowler for stats
@@ -40,7 +53,7 @@ int g_striker_id_local=-1;
 * Written under state_mutex, read under delivery_mutex
 * synced from ms->striker_id at delivery time
 */
-//-----------------------------------------------------------------------------
+
 //  BOWLER THREAD
 //  Role: Writer - owns the pitch (Critical Section) for each delivery
 
@@ -51,8 +64,8 @@ void* bowler_thread_func(void* arg) {
 
     p->state = THREAD_RUNNING;
     log_msg(LOG_THREAD, "[T-%04lu] BOWLER '%s' START — over %d",
-            pthread_self() % 10000, p->name.c_str(), ms->current_over);
-
+             TID(), p->name.c_str(), ms->current_over);
+  
     int legal_balls = 0;
     while (legal_balls < a->balls_to_bowl && !ms->match_over) {
 
@@ -75,22 +88,18 @@ void* bowler_thread_func(void* arg) {
         // Write delivery under delivery_mutex so batsman sees consistent data
         safe_mutex_lock(&delivery_mutex, "delivery_mutex");
 
-
-        
-
-
 memcpy(&ms->pitch_buffer, &del, sizeof(Delivery));
 g_striker_id_local = ms->striker_id;
 delivery_ready = true;
 
 // Signal striker
-pthread_cond_signal(&delivery_ready_cond);
+pthread_cond_broadcast(&delivery_ready_cond);
 
 safe_mutex_unlock(&delivery_mutex, "delivery_mutex");
 
         log_msg(LOG_DEBUG, "[T-%04lu] BOWLER '%s' → %.0f km/h (over %d.%d)",
-                pthread_self() % 10000, p->name.c_str(),
-                del.speed_kmh, del.over_num, del.ball_num);
+                TID(), p->name.c_str(),
+                del.speed_kmh, del.over_num - 1, del.ball_num);
 
         // Wait for batsman to complete stroke (Consumer acknowledges)
         safe_mutex_lock(&delivery_mutex, "delivery_mutex");
@@ -116,13 +125,13 @@ safe_mutex_unlock(&delivery_mutex, "delivery_mutex");
         pthread_mutex_lock(&g_res_mutex);
         BallOutcome outcome = g_last_outcome;
         int         runs_g  = g_last_runs;
-        // 🔥 FIX 1: If striker got out → invalidate striker immediately
+        // Scenario: If striker got out → invalidate striker immediately
     pthread_mutex_unlock(&g_res_mutex);
 
         if (outcome != BALL_WIDE && outcome != BALL_NOBALL) {
             legal_balls++;
         }
-        p->balls_bowled++;
+       if (outcome != BALL_WIDE && outcome != BALL_NOBALL) p->balls_bowled++;
         p->runs_conceded += runs_g;
         if (outcome==BALL_WICKET || outcome==BALL_LBW || outcome==BALL_CAUGHT)
             p->wickets_taken++;
@@ -141,13 +150,13 @@ safe_mutex_unlock(&delivery_mutex, "delivery_mutex");
 
     p->state = THREAD_DONE;
     log_msg(LOG_THREAD, "[T-%04lu] BOWLER '%s' DONE — %dW %dR econ=%.1f",
-            pthread_self() % 10000, p->name.c_str(),
+            TID(), p->name.c_str(),
             p->wickets_taken, p->runs_conceded,
             (p->balls_bowled > 0) ? p->runs_conceded * 6.0f / p->balls_bowled : 0.0f);
     return NULL;
 }
 
-// -------------------------------------------------------------------------------
+
 //  BATSMAN THREAD
 //  Role: Reader - reads pitch, updates score, signals fielders
 
@@ -160,7 +169,7 @@ void* batsman_thread_func(void* arg) {
     // Blocks here if 2 batsmen already at crease (3rd batsman enters WAIT state)
     p->state = THREAD_WAITING;
     log_msg(LOG_THREAD, "[T-%04lu] BATSMAN '%s' → sem_wait(crease) ...",
-            pthread_self() % 10000, p->name.c_str());
+            TID(), p->name.c_str());
 
     double t_wait = get_time_ms();
     safe_sem_wait(&crease_semaphore, "crease");
@@ -169,24 +178,29 @@ void* batsman_thread_func(void* arg) {
     p->is_active     = true;
     p->state         = THREAD_RUNNING;
 
-    int sv = 0; sem_getvalue(&crease_semaphore, &sv);
+    int sv = 0; sem_value(crease_semaphore, &sv);
     log_msg(LOG_THREAD,
             "[T-%04lu] BATSMAN '%s' AT CREASE | wait=%.1fms | crease_sem=%d",
-            pthread_self() % 10000, p->name.c_str(), p->total_wait_ms, sv);
-
+            TID(), p->name.c_str(), p->total_wait_ms, sv);
+ 
     // Play until out
     while (!p->is_out && !ms->match_over) {
 
-          /* Non-striker: 
-           * spin-wait 
-           * The non-striker has no OS work to do between balls — it waits passively.
-           * This models a thread that is READY but not RUNNING (ready queue).
-           */
-        if (p->id != ms->striker_id) {
-            p->state = THREAD_WAITING;
-            sleep_ms(20);
-            continue;
-        }
+         // Block until THIS batsman becomes the striker -
+         // OS CONCEPT: Condition Variable — non-striker yields the CPU entirely
+         // (pthread_cond_wait releases the mutex and sleeps the thread).
+         // It wakes only when striker_id changes, eliminating the busy-spin.
+       safe_mutex_lock(&striker_changed_mutex, "striker_changed_mutex");
+       while (p->id != ms->striker_id && !p->is_out && !ms->match_over) {
+             p->state = THREAD_WAITING;
+             log_msg(LOG_DEBUG,
+                     "[T-%04lu] BATSMAN '%s' NON-STRIKER — cond_wait(striker_changed)",
+                     TID(), p->name.c_str());
+             pthread_cond_wait(&striker_changed_cond, &striker_changed_mutex);
+         }
+         safe_mutex_unlock(&striker_changed_mutex, "striker_changed_mutex");
+         if (p->is_out || ms->match_over) break;
+         p->state = THREAD_RUNNING;
 
         /* Striker:
         * wait for bowler's delivery_ready signal
@@ -196,10 +210,8 @@ void* batsman_thread_func(void* arg) {
         safe_mutex_lock(&delivery_mutex, "delivery_mutex");
         p->state = THREAD_WAITING;
 
-        while ((!delivery_ready && !ms->match_over && !p->is_out)
-               && !ms->match_over && !p->is_out) {
-            pthread_cond_wait(&delivery_ready_cond, &delivery_mutex);
-        }
+        while (!delivery_ready && !ms->match_over && !p->is_out)
+             pthread_cond_wait(&delivery_ready_cond, &delivery_mutex);
 
         if (ms->match_over || p->is_out) {
             // Ensure bowler doesn't deadlock waiting for stroke_done
@@ -212,6 +224,19 @@ void* batsman_thread_func(void* arg) {
         delivery_ready     = false;
         g_striker_id_local = -1; 
 
+         // RACE GUARD: over-end swap may have fired while we were blocked ─
+         // Scenario: this batsman passed the striker_changed_cond gate just
+         // before match_engine did the end-of-over swap, so we might be the
+         // NON-STRIKER who consumed delivery_ready incorrectly.  Re-check:
+         // if no longer striker, put the token back and loop so the real
+         // striker can pick it up.
+         if (p->id != ms->striker_id) {
+             delivery_ready = true;
+             pthread_cond_broadcast(&delivery_ready_cond);
+             safe_mutex_unlock(&delivery_mutex, "delivery_mutex");
+             continue;   // re-enters outer while -> blocks at striker_changed_cond
+         }
+      
         // Read pitch buffer (Consumer side of Producer-Consumer)
         Delivery del;
         memcpy(&del, &ms->pitch_buffer, sizeof(Delivery));
@@ -219,197 +244,250 @@ void* batsman_thread_func(void* arg) {
 
         p->state = THREAD_RUNNING;
 
-        // Generate shot outcome (weighted by batsman skill vs delivery)
-        BallOutcome outcome = generate_outcome(p, &del,
-                                               a->config->enable_deadlock_sim);
-        int runs = 0;
+       // ── PHASE 1: Batsman reads ball → decides shot type / direction / power ──
+       ShotResult shot = generate_shot(p, &del, a->config->enable_deadlock_sim, ms);
+      
+        // Generate shot outcome 
+       BallOutcome outcome;
+         bool is_race       = (shot.type == SHOT_AERIAL || shot.type == SHOT_GROUND);
+         bool needs_fielding = (shot.type != SHOT_WIDE && shot.type != SHOT_NOBALL);
 
-        // Atomic score update (score_mutex)
-        // If Wide and Single happen in same clock cycle, update atomically.
-        // Both operations must complete together or not at all.
-        safe_mutex_lock(&score_mutex, "score_mutex");
-        switch (outcome) {
-            case BALL_SINGLE: runs=1; ms->total_runs+=1; p->runs_scored+=1; break;
-            case BALL_TWO:    runs=2; ms->total_runs+=2; p->runs_scored+=2; break;
-            case BALL_THREE:  runs=3; ms->total_runs+=3; p->runs_scored+=3; break;
-            case BALL_FOUR:   runs=4; ms->total_runs+=4; p->runs_scored+=4; break;
-            case BALL_SIX:    runs=6; ms->total_runs+=6; p->runs_scored+=6; break;
-            case BALL_WIDE:
-            case BALL_NOBALL: runs=1; ms->total_runs+=1; ms->extras+=1;    break;
-            case BALL_WICKET:
-            case BALL_LBW:
-            case BALL_CAUGHT:
-           case BALL_RUNOUT:
-   { runs = 0;
-    p->is_out = true;
-    ms->wickets++;
+         if (needs_fielding) {
+             // Publish shot data so every fielder thread can read it lock-free
+             shot_state_reset(ms->active_fielders);   // ← exact count, prevents hang
+             g_shot_state.type           = (int)shot.type;
+             g_shot_state.direction_zone = shot.direction_zone;
+             g_shot_state.power          = shot.power;
+             g_shot_state.flight_time_ms = shot.flight_time_ms;
 
-    // 🔥 STEP 1: find next batsman
-    Player* next_bat = nullptr;
-    for (auto& bp : *a->all_batsmen) {
-        if (!bp.is_out && !bp.is_active) {
-            next_bat = &bp;
-            break;
-        }
-    }
+             // ── PHASE 2: Broadcast — all fielder threads wake simultaneously ────
+             safe_mutex_lock(&ball_hit_mutex, "ball_hit_mutex");
+             ms->ball_in_air = true;
+             pthread_cond_broadcast(&ball_hit_cond);
+             safe_mutex_unlock(&ball_hit_mutex, "ball_hit_mutex");
 
-    if (next_bat) {
-        log_msg(LOG_EVENT, "NEW BATSMAN: '%s' coming to crease",
-                next_bat->name.c_str());
+             // ── PHASE 3: Wait — last fielder signals us when race is done ───────
+             // Safety: also exits if match ends mid-ball (e.g. umpire kills match)
+             // to prevent infinite hang if a fielder thread exited early.
+             safe_mutex_lock(&g_shot_state.mutex, "g_shot_state.mutex");
+             struct timespec deadline;
+             clock_gettime(CLOCK_REALTIME, &deadline);
+             deadline.tv_sec += 2;   // 2-second hard timeout — should never fire
+             while (!g_shot_state.fielding_done.load() && !ms->match_over)
+                 pthread_cond_timedwait(&g_shot_state.cond,
+                                        &g_shot_state.mutex, &deadline);
+             safe_mutex_unlock(&g_shot_state.mutex, "g_shot_state.mutex");
+         }
 
-        // 🔥 STEP 2: update striker + non-striker
-        safe_mutex_lock(&state_mutex, "state_mutex");
+         // ── PHASE 4: Resolve final outcome ──────────────────────────────────────
+         if (is_race) {
+             outcome = resolve_fielding_outcome(shot);
+             if (outcome == BALL_CAUGHT) {
+                 strncpy(p->caught_by,  g_shot_state.winner_name, 63);
+                 p->caught_by[63]  = '\0';
+                 strncpy(p->caught_pos, g_shot_state.winner_pos,  31);
+                 p->caught_pos[31] = '\0';
+                 log_msg(LOG_EVENT, "  c %-18s @ %-13s — '%s' OUT",
+                         g_shot_state.winner_name, g_shot_state.winner_pos,
+                         p->name.c_str());
+             }
+         } else {
+             switch (shot.type) {
+                 case SHOT_WIDE:       outcome = BALL_WIDE;   break;
+                 case SHOT_NOBALL:     outcome = BALL_NOBALL; break;
+                 case SHOT_BOWLED:     outcome = BALL_WICKET; break;
+                 case SHOT_LBW:        outcome = BALL_LBW;    break;
+                 case SHOT_RUNOUT:     outcome = BALL_RUNOUT; break;
+                 case SHOT_DOT_BLOCK:  outcome = BALL_DOT;    break;
+                 case SHOT_BOUNDARY_6: outcome = BALL_SIX;    break;
+                 default:              outcome = BALL_DOT;    break;
+             }
+         }
+         int runs = 0;
+ 
+         safe_mutex_lock(&score_mutex, "score_mutex");
+         switch (outcome) {
+             case BALL_SINGLE: runs=1; ms->total_runs+=1; p->runs_scored+=1; break;
+             case BALL_TWO:    runs=2; ms->total_runs+=2; p->runs_scored+=2; break;
+             case BALL_THREE:  runs=3; ms->total_runs+=3; p->runs_scored+=3; break;
+             case BALL_FOUR:   runs=4; ms->total_runs+=4; p->runs_scored+=4; break;
+             case BALL_SIX:    runs=6; ms->total_runs+=6; p->runs_scored+=6; break;
+             case BALL_WIDE:
+             case BALL_NOBALL: runs=1; ms->total_runs+=1; ms->extras+=1;    break;
+             case BALL_WICKET:
+             case BALL_LBW:
+             case BALL_CAUGHT:
+             case BALL_RUNOUT: {
+                 runs = 0;
+                 p->is_out = true;
+                 p->how_out = outcome;
+                 p->dismissed_by_id = del.bowler_id;
+                 ms->wickets++;
+ 
+                 Player* next_bat = nullptr;
+                 for (auto& bp : *a->all_batsmen) {
+                     if (!bp.is_out && !bp.is_active) { next_bat = &bp; break; }
+                 }
+ 
+                 if (next_bat) {
+                     log_msg(LOG_EVENT, "NEW BATSMAN: '%s' coming to crease",
+                             next_bat->name.c_str());
+                     safe_mutex_lock(&state_mutex, "state_mutex");
+                     for (auto& bp : *a->all_batsmen) {
+                         if (bp.is_active && !bp.is_out && bp.id != p->id) {
+                             ms->non_striker_id = bp.id; break;
+                         }
+                     }
+                     ms->striker_id = next_bat->id;
+                     safe_mutex_unlock(&state_mutex, "state_mutex");
 
-        for (auto& bp : *a->all_batsmen) {
-            if (bp.is_active && !bp.is_out && bp.id != p->id) {
-                ms->non_striker_id = bp.id;
-                break;
-            }
-        }
-
-        ms->striker_id = next_bat->id;
-
-        safe_mutex_unlock(&state_mutex, "state_mutex");
-
-        // 🔥 STEP 3: spawn new batsman thread
-        BatsmanArgs* nba = new BatsmanArgs{
-            next_bat, a->match, a->config, a->all_batsmen, a->event_log,
-            true, get_time_ms()
-        };
-
-        spawn_batsman(next_bat, nba);
-    }
-
-    // 🔥 STEP 4: wake bowler
-    safe_mutex_lock(&delivery_mutex, "delivery_mutex");
-    stroke_done = true;
-    pthread_cond_signal(&stroke_done_cond);
-    safe_mutex_unlock(&delivery_mutex, "delivery_mutex");
-
-    break;}
-            default:          runs=0;                                        break;
-        }
-        if (outcome != BALL_WIDE && outcome != BALL_NOBALL) {
-            p->balls_faced++;
-            ms->current_ball++;
-        }
-        safe_mutex_unlock(&score_mutex, "score_mutex");
-        // End atomic update 
-
-        // Share result with bowler thread 
-        pthread_mutex_lock(&g_res_mutex);
-        g_last_outcome = outcome;
-        g_last_runs    = runs;
-        pthread_mutex_unlock(&g_res_mutex);
-
-        // Build and log ball event
-        BallEvent ev;
-        ev.timestamp_ms = get_time_ms();
-        ev.over_num     = del.over_num;
-        ev.ball_num     = ms->current_ball;
-        ev.bowler_id    = del.bowler_id;
-        ev.batsman_id   = p->id;
-        ev.outcome      = outcome;
-        ev.runs_scored  = runs;
-        char cbuf[256];
-        snprintf(cbuf, sizeof(cbuf), "Over %d.%d  %-15s  %s",
-                 del.over_num, ms->current_ball, p->name.c_str(),
-                 outcome_to_string(outcome).c_str());
-        ev.commentary   = std::string(cbuf);
-
-        if (a->event_log) {
-            safe_mutex_lock(&state_mutex, "state_mutex");
-            a->event_log->push_back(ev);
-            safe_mutex_unlock(&state_mutex, "state_mutex");
-        }
-
-        // Ball-by-ball commentary
-        log_msg(LOG_EVENT, "  %2d.%d  %-15s  %s%4s%s   %d/%d",
-                del.over_num, ms->current_ball, p->name.c_str(),
-                outcome_color(outcome).c_str(),
-                outcome_to_string(outcome).c_str(), COL_RESET,
-                ms->total_runs.load(), ms->wickets.load());
-
-        // Wake fielders: broadcast ball_in_air
-        // All 10 fielder threads wake up and compete to field the ball.
-        // Only one succeeds (field_mutex trylock). Others go back to sleep.
-        if (outcome==BALL_FOUR  || outcome==BALL_SIX    ||
-            outcome==BALL_SINGLE|| outcome==BALL_TWO    ||
-            outcome==BALL_THREE || outcome==BALL_CAUGHT) {
-            safe_mutex_lock(&ball_hit_mutex, "ball_hit_mutex");
-            ms->ball_in_air = true;
-            pthread_cond_broadcast(&ball_hit_cond);  // wake ALL fielders
-            safe_mutex_unlock(&ball_hit_mutex, "ball_hit_mutex");
-        }
-
-        // Deadlock simulation (run-out)
-        if (outcome == BALL_RUNOUT && a->config->enable_deadlock_sim) {
-            Player* partner = nullptr;
-            for (auto& bp : *a->all_batsmen)
-                if (bp.id == ms->non_striker_id && !bp.is_out)
-                    { partner = &bp; break; }
-            if (partner) simulate_runout_attempt(p, partner, ms);
-        }
-
-        // Strike rotation 
-        if (!p->is_out && !ms->match_over) {
-            safe_mutex_lock(&state_mutex, "state_mutex");
-            if (runs % 2 == 1 || ms->current_ball >= BALLS_PER_OVER)
-                std::swap(ms->striker_id, ms->non_striker_id);
-            safe_mutex_unlock(&state_mutex, "state_mutex");
-        }
-
-        // Signal bowler: stroke complete, pitch is free 
-        safe_mutex_lock(&delivery_mutex, "delivery_mutex");
-        stroke_done = true;
-        pthread_cond_signal(&stroke_done_cond);
-        safe_mutex_unlock(&delivery_mutex, "delivery_mutex");
-
-        sleep_ms(a->config->ball_delay_ms / 3);
-    }
-
-    // Exit Crease: sem_post
-    // Release crease slot - allows next batsman's sem_wait to proceed
-    p->is_active = false;
-    p->state     = THREAD_DONE;
-
-    safe_mutex_lock(&delivery_mutex, "delivery_mutex");
-    if (!stroke_done) {
-        stroke_done = true;
-        pthread_cond_signal(&stroke_done_cond);
-    }
-    safe_mutex_unlock(&delivery_mutex, "delivery_mutex");
-
-    safe_sem_post(&crease_semaphore, "crease");
-    sv = 0; sem_getvalue(&crease_semaphore, &sv);
-    log_msg(LOG_THREAD,
-            "[T-%04lu] BATSMAN '%s' LEFT crease → %d(%d balls) | sem=%d",
-            pthread_self() % 10000, p->name.c_str(),
-            p->runs_scored, p->balls_faced, sv);
-    return NULL;
-}
-
-// -------------------------------------------------------------------------------
+                     // Wake the newly promoted striker (OS: signal on cond var)
+                     safe_mutex_lock(&striker_changed_mutex, "striker_changed_mutex");
+                     pthread_cond_broadcast(&striker_changed_cond);
+                     safe_mutex_unlock(&striker_changed_mutex, "striker_changed_mutex");
+ 
+                     BatsmanArgs* nba = new BatsmanArgs{
+                         next_bat, a->match, a->config, a->all_batsmen,
+                         a->event_log, true, get_time_ms()
+                     };
+                     spawn_batsman(next_bat, nba);
+                 }
+ 
+                 safe_mutex_lock(&delivery_mutex, "delivery_mutex");
+                 stroke_done = true;
+                 pthread_cond_signal(&stroke_done_cond);
+                 safe_mutex_unlock(&delivery_mutex, "delivery_mutex");
+                 break;
+             }
+             default: runs=0; break;
+         }
+ 
+         if (outcome != BALL_WIDE && outcome != BALL_NOBALL) {
+             p->balls_faced++;
+             ms->current_ball++;
+         }
+         safe_mutex_unlock(&score_mutex, "score_mutex");
+ 
+         pthread_mutex_lock(&g_res_mutex);
+         g_last_outcome = outcome;
+         g_last_runs    = runs;
+         pthread_mutex_unlock(&g_res_mutex);
+ 
+         BallEvent ev;
+         ev.timestamp_ms = get_time_ms();
+         ev.over_num     = del.over_num;
+         ev.ball_num     = ms->current_ball;
+         ev.bowler_id    = del.bowler_id;
+         ev.batsman_id   = p->id;
+         ev.outcome      = outcome;
+         ev.runs_scored  = runs;
+         char cbuf[256];
+         snprintf(cbuf, sizeof(cbuf), "Over %d.%d  %-15s  %s",
+                  del.over_num - 1, ms->current_ball, p->name.c_str(),
+                  outcome_to_string(outcome).c_str());
+         ev.commentary = std::string(cbuf);
+         if (a->event_log) {
+             safe_mutex_lock(&state_mutex, "state_mutex");
+             a->event_log->push_back(ev);
+             safe_mutex_unlock(&state_mutex, "state_mutex");
+         }
+ 
+         log_msg(LOG_EVENT, "  %2d.%d  %-15s  %s%4s%s   %d/%d",
+                 del.over_num - 1, ms->current_ball, p->name.c_str(),
+                 outcome_color(outcome).c_str(),
+                 outcome_to_string(outcome).c_str(), COL_RESET,
+                 ms->total_runs.load(), ms->wickets.load());
+ 
+         // (ball_in_air broadcast + fielder race already done above for legal balls)
+ 
+         if (outcome == BALL_RUNOUT && a->config->enable_deadlock_sim) {
+             Player* partner = nullptr;
+             for (auto& bp : *a->all_batsmen)
+                 if (bp.id == ms->non_striker_id && !bp.is_out)
+                     { partner = &bp; break; }
+             if (partner) simulate_runout_attempt(p, partner, ms);
+         }
+ 
+         if (!p->is_out && !ms->match_over) {
+             // CREASE SWAP RULES:
+             //  Mid-over odd batting runs (1, 3)  -> batsmen cross -> swap here
+             //  Mid-over even runs (0, 2, 4, 6)   -> no cross -> no swap
+             //  Wide / No-ball                    -> no swap; re-bowl, same striker
+             //  End of over                       -> match_engine.cpp handles swap
+             //                                       only after bowler thread joins.
+             //                                       Do not swap here too or it
+             //                                       double-cancels and the wrong
+             //                                       batter faces the next over.
+             bool is_extra        = (outcome == BALL_WIDE || outcome == BALL_NOBALL);
+             bool batting_runs_odd = !is_extra && (runs % 2 == 1);
+             safe_mutex_lock(&state_mutex, "state_mutex");
+             if (batting_runs_odd)
+                 std::swap(ms->striker_id, ms->non_striker_id);
+             safe_mutex_unlock(&state_mutex, "state_mutex");
+             // Notify both batsmen that striker may have changed
+             safe_mutex_lock(&striker_changed_mutex, "striker_changed_mutex");
+             pthread_cond_broadcast(&striker_changed_cond);
+             safe_mutex_unlock(&striker_changed_mutex, "striker_changed_mutex");
+         }
+ 
+         safe_mutex_lock(&delivery_mutex, "delivery_mutex");
+         stroke_done = true;
+         pthread_cond_signal(&stroke_done_cond);
+         safe_mutex_unlock(&delivery_mutex, "delivery_mutex");
+ 
+         sleep_ms(a->config->ball_delay_ms / 3);
+     }
+ 
+     p->is_active = false;
+     p->state     = THREAD_DONE;
+ 
+     safe_mutex_lock(&delivery_mutex, "delivery_mutex");
+     if (!stroke_done) { stroke_done = true; pthread_cond_signal(&stroke_done_cond); }
+     safe_mutex_unlock(&delivery_mutex, "delivery_mutex");
+ 
+     safe_sem_post(crease_semaphore, "crease");
+     sem_val(crease_semaphore, &sv);
+     log_msg(LOG_THREAD, "[T-%04lu] BATSMAN '%s' LEFT crease -> %d(%d balls) | sem=%d",
+             TID(), p->name.c_str(),
+             p->runs_scored, p->balls_faced, sv);
+     return NULL;
+ }
 //  FIELDER THREAD
 //  Role: Passive - sleeps on cond_wait, wakes on ball_in_air broadcast
 
 /*
- * Demonstrates: condition variables, spurious wakeup protection (while loop),
+  * Demonstrates: condition variables, spurious wakeup protection (while loop),
   and zero-CPU passive blocking (compared to busy-waiting).
  
- * OS Analogy: Fielders = I/O-blocked processes. They consume no CPU while
+  * OS Analogy: Fielders = I/O-blocked processes. They consume no CPU while
   sleeping. The OS (pthread) scheduler completely ignores them until the
   wakeup event (ball_in_air broadcast) occurs.
+  * Each fielder occupies one of 10 named cricket positions (WK + 9 outfielders).
+  * When a ball is hit, ALL fielders wake, become RUNNING, and attempt to field.
+  * The fielder whose zone matches the ball direction has the highest catch
+  * probability; every other fielder also attempts with a lower probability.
+  *
+  * Catch result is written atomically to the global catch_result struct.
+  * The batsman thread reads catch_result.caught after ball_in_air clears
+  * and uses that to confirm and log the dismissal with the catcher's name.
+  *
+  * Positions (fielder_index → FIELDING_POSITIONS[]):
+  *   0=Wicket Keeper  1=Fine Leg     2=Square Leg  3=Mid Wicket
+  *   4=Mid On         5=Long On      6=Long Off     7=Mid Off
+  *   8=Cover Point    9=Third Man
+  */
  */
 void* fielder_thread_func(void* arg) {
-    FielderArgs* a  = (FielderArgs*)arg;
-    Player*      p  = a->player;
-    MatchState*  ms = a->match;
-    bool         wk = (a->fielder_index == 0);
+     FielderArgs* a    = (FielderArgs*)arg;
+     Player*      p    = a->player;
+     MatchState*  ms   = a->match;
+     int          idx  = a->fielder_index;   // 0-9
+     bool         wk   = (idx == 0);
+     const char*  pos  = FIELDING_POSITIONS[idx % 10];
 
-    p->state = THREAD_SLEEPING;
-    log_msg(LOG_THREAD, "[T-%04lu] FIELDER '%s'(%s) → cond_wait",
-            pthread_self() % 10000, p->name.c_str(), wk ? "WK" : "F");
+     p->state = THREAD_SLEEPING;
+     log_msg(LOG_THREAD, "[T-%04lu] FIELDER '%s' @ %-13s -> cond_wait",
+             TID(), p->name.c_str(), pos);
 
     while (!ms->match_over) {
         // BLOCK: sleep until ball_in_air 
@@ -424,25 +502,109 @@ void* fielder_thread_func(void* arg) {
         // WAKE: compete to field the ball 
         // Only One fielder acts per ball - field_mutex trylock ensures this.
         p->state = THREAD_RUNNING;
-        if (pthread_mutex_trylock(&field_mutex) == 0) {
-            if (ms->ball_in_air) {
-                if      (wk && rng_chance(0.15f))
-                    log_msg(LOG_DEBUG, "  WK '%s' takes catch!", p->name.c_str());
-                else if (rng_chance(0.35f))
-                    log_msg(LOG_DEBUG, "  FIELDER '%s' saves boundary!", p->name.c_str());
-                ms->ball_in_air = false;
-            }
-            pthread_mutex_unlock(&field_mutex);
-        }
-        // Other fielders: trylock failed -> another fielder handled it -> back to sleep
-    p->state = THREAD_DONE;
-    log_msg(LOG_THREAD, "[T-%04lu] FIELDER '%s' exit",
-            pthread_self() % 10000, p->name.c_str());
-    return NULL;
-}
-}
+        log_msg(LOG_DEBUG, "  [FIELD] %-13s '%s' ACTIVE — ball in play",
+                 pos, p->name.c_str());
 
-// -------------------------------------------------------------------------------
+         // Snapshot shot type written by batsman before broadcast
+         int shot_type = g_shot_state.type;
+
+         // ── Compute reach time: how fast can THIS fielder get to the ball? ──
+         // direction_zone (0-9) was set by batsman; circular field geometry.
+         int ball_zone    = g_shot_state.direction_zone;
+         int fielder_zone = wk ? 0 : idx;
+         int zone_dist;
+         if (wk) {
+             zone_dist = 0;   // WK is always stationed for edges / nicks
+         } else {
+             zone_dist = abs(fielder_zone - ball_zone);
+             if (zone_dist > 5) zone_dist = 10 - zone_dist;   // circular wrap
+         }
+
+         // Base reach-time table (ms) by zone distance 0..5
+         static const float ZONE_BASE_MS[6] = {80.f, 210.f, 360.f, 510.f, 650.f, 790.f};
+         float base_reach  = ZONE_BASE_MS[zone_dist > 5 ? 5 : zone_dist];
+         float skill_bonus = (p->skill_rating / 100.0f) * 80.0f; // up to 80ms faster
+         float jitter      = (float)rng_range(-45, 45);
+         float reach_ms    = base_reach - skill_bonus + jitter;
+         if (reach_ms < 40.0f) reach_ms = 40.0f;
+
+         // Write to own lock-free slot (index i → unique slot, no contention)
+         g_shot_state.reach_ms[idx]     = reach_ms;
+         g_shot_state.skill_rating[idx] = p->skill_rating;
+         strncpy(g_shot_state.fielder_name[idx], p->name.c_str(), 63);
+         g_shot_state.fielder_name[idx][63] = '\0';
+         strncpy(g_shot_state.fielder_pos[idx],  pos, 31);
+         g_shot_state.fielder_pos[idx][31]  = '\0';
+
+         log_msg(LOG_DEBUG,
+                 "  [FIELD] %-13s '%-18s' zone=%d dist=%d reach=%.0fms",
+                 pos, p->name.c_str(), ball_zone, zone_dist, reach_ms);
+
+         // ── Atomic countdown — last voter (fetch_sub returns 1) resolves race ─
+         int prev = g_shot_state.fielders_remaining.fetch_sub(1);
+         if (prev == 1) {
+             // I am the last fielder to vote — find the fastest one
+             int   best_idx = -1;
+             float best_ms  =  99999.0f;
+             for (int i = 0; i < MAX_FIELDER_COUNT; i++) {
+                 if (g_shot_state.reach_ms[i] < best_ms) {
+                     best_ms  = g_shot_state.reach_ms[i];
+                     best_idx = i;
+                 }
+             }
+
+             if (best_idx >= 0 && (shot_type == SHOT_AERIAL || shot_type == SHOT_GROUND)) {
+                 g_shot_state.winner_idx      = best_idx;
+                 g_shot_state.winner_reach_ms = best_ms;
+                 strncpy(g_shot_state.winner_name, g_shot_state.fielder_name[best_idx], 63);
+                 g_shot_state.winner_name[63] = '\0';
+                 strncpy(g_shot_state.winner_pos,  g_shot_state.fielder_pos[best_idx],  31);
+                 g_shot_state.winner_pos[31]  = '\0';
+
+                 if (shot_type == SHOT_AERIAL) {
+                     float flight  = g_shot_state.flight_time_ms;
+                     bool  reached = (best_ms < flight);
+                     // Skill-weighted catch probability — WK slightly higher base
+                     float cskill  = g_shot_state.skill_rating[best_idx] / 100.0f;
+                     float cbase   = (best_idx == 0) ? 0.72f : 0.58f;
+                     bool  caught  = reached && rng_chance(cbase + cskill * 0.28f);
+                     g_shot_state.winner_caught = caught;
+                     log_msg(LOG_EVENT,
+                             "  [RACE] AERIAL winner='%s' @ %s reach=%.0fms flight=%.0fms — %s",
+                             g_shot_state.winner_name, g_shot_state.winner_pos,
+                             best_ms, flight,
+                             caught ? "CAUGHT!" : (reached ? "DROPPED" : "MISSED (fell short)"));
+                 } else {
+                     // SHOT_GROUND — log what the outcome will be
+                     float bnd = 800.0f - g_shot_state.power * 600.0f;
+                     const char* res = (best_ms >= bnd)   ? "FOUR" :
+                                       (best_ms >= 400.0f) ? "THREE" :
+                                       (best_ms >= 200.0f) ? "TWO"   : "ONE";
+                     log_msg(LOG_EVENT,
+                             "  [RACE] GROUND winner='%s' @ %s reach=%.0fms boundary=%.0fms -> %s",
+                             g_shot_state.winner_name, g_shot_state.winner_pos,
+                             best_ms, bnd, res);
+                 }
+             }
+
+             // Clear ball_in_air, then signal batsman that race is complete
+             safe_mutex_lock(&ball_hit_mutex, "ball_hit_mutex");
+             ms->ball_in_air = false;
+             safe_mutex_unlock(&ball_hit_mutex, "ball_hit_mutex");
+
+             safe_mutex_lock(&g_shot_state.mutex, "g_shot_state.mutex");
+             g_shot_state.fielding_done.store(true);
+             pthread_cond_broadcast(&g_shot_state.cond);
+             safe_mutex_unlock(&g_shot_state.mutex, "g_shot_state.mutex");
+         }
+     }
+
+     p->state = THREAD_DONE;
+     log_msg(LOG_THREAD, "[T-%04lu] FIELDER '%s' @ %s exit",
+             TID(), p->name.c_str(), pos);
+     return NULL;
+ }
+
 //  UMPIRE THREAD (Kernel / Resource Scheduler)
 //  Role: Daemon - monitors game state, detects deadlock, signals match end
 
@@ -451,13 +613,13 @@ void* umpire_thread_func(void* arg) {
     MatchState* ms = a->match;
 
     log_msg(LOG_THREAD, "[UMPIRE T-%04lu] Kernel thread STARTED — polling every %dms",
-            pthread_self() % 10000, UMPIRE_POLL_US / 1000);
+            TID(), UMPIRE_POLL_US / 1000);
 
     while (!ms->match_over) {
         usleep(UMPIRE_POLL_US);
 
         int sv = 0;
-        sem_getvalue(&crease_semaphore, &sv);
+        sem_val(crease_semaphore, &sv);
         if (sv < 0)
             log_msg(LOG_WARN, "[UMPIRE] crease_sem=%d: 3rd batsman BLOCKED", sv);
 
@@ -469,17 +631,84 @@ void* umpire_thread_func(void* arg) {
                     if (!bA) bA = &p; else bB = &p;
                 }
             }
-            if (bA && bB && detect_runout_deadlock(bA, bB)) {
-                log_msg(LOG_DEADLOCK, "[UMPIRE] DEADLOCK in RAG! Resolving...");
-                print_resource_allocation_graph(bA, bB);
-                Player* victim = (bA->batting_avg <= bB->batting_avg) ? bA : bB;
-                resolve_runout(victim, ms);
-                safe_mutex_lock(&delivery_mutex, "delivery_mutex");
-                stroke_done = true;
-                pthread_cond_signal(&stroke_done_cond);
-                safe_mutex_unlock(&delivery_mutex, "delivery_mutex");
-            }
-        }
+
+            // Guarantee one live deadlock demonstration:-
+             // OS CONCEPT: The Umpire is the kernel daemon. It uses a Resource
+             // Allocation Graph (RAG) scan to detect circular waits.
+             // If no natural run-out has set up the deadlock by over 2, we force
+             // it here so the full detect → RAG print → resolve cycle is always
+             // visible when -deadlock is passed.  Detection + resolution happen
+             // in the SAME poll cycle — no second usleep() needed.
+             static bool deadlock_forced = false;
+             if (!deadlock_forced && bA && bB
+                 && bA->holds_end == -1 && bB->holds_end == -1
+                 && ms->current_over >= 2 && !ms->match_over) {
+                 deadlock_forced = true;
+                 log_msg(LOG_DEADLOCK,
+                         "[UMPIRE] ── No natural deadlock yet — injecting scenario "
+                         "(over %d) to demonstrate detection ──",
+                         ms->current_over);
+                 // Batsman A holds End-0, wants End-1
+                 // Batsman B holds End-1, wants End-0  →  circular wait
+                 bA->holds_end = 0;  bA->wants_end = 1;
+                 bB->holds_end = 1;  bB->wants_end = 0;
+                 log_msg(LOG_DEADLOCK,
+                         "  %s holds End-0, wants End-1", bA->name.c_str());
+                 log_msg(LOG_DEADLOCK,
+                         "  %s holds End-1, wants End-0  →  CIRCULAR WAIT",
+                         bB->name.c_str());
+             }
+          if (bA && bB && detect_runout_deadlock(bA, bB)) {
+                 log_msg(LOG_DEADLOCK,
+                         "[UMPIRE] ══ DEADLOCK DETECTED ══ RAG contains a cycle:");
+                 print_resource_allocation_graph(bA, bB);
+                 log_msg(LOG_DEADLOCK,
+                         "  OS RESPONSE: Umpire (kernel) selects victim by lowest "
+                         "batting_avg (= lowest process priority)");
+                 Player* victim = (bA->batting_avg <= bB->batting_avg) ? bA : bB;
+                 log_msg(LOG_DEADLOCK,
+                         "  PREVENTION : Resource-ordering (End-0 before End-1) "
+                         "breaks future cycles");
+                 resolve_runout(victim, ms);
+
+                 // After killing the victim thread, the match must continue
+                 // 1. Make the survivor the new striker (if victim was striker)
+                 // 2. Promote the next waiting batsman to non-striker
+                 // 3. Spawn that batsman's thread
+                 Player* survivor = (victim == bA) ? bB : bA;
+                 safe_mutex_lock(&state_mutex, "state_mutex");
+                 ms->striker_id     = survivor->id;
+                 ms->non_striker_id = -1;
+                 safe_mutex_unlock(&state_mutex, "state_mutex");
+
+                 // Find and spawn the next batsman from the waiting list
+                 Player* next_bat = nullptr;
+                 for (auto& bp : *a->batsmen)
+                     if (!bp.is_out && !bp.is_active) { next_bat = &bp; break; }
+                 if (next_bat) {
+                     log_msg(LOG_EVENT, "NEW BATSMAN: '%s' coming to crease (after run-out)",
+                             next_bat->name.c_str());
+                     safe_mutex_lock(&state_mutex, "state_mutex");
+                     ms->non_striker_id = next_bat->id;
+                     safe_mutex_unlock(&state_mutex, "state_mutex");
+                     BatsmanArgs* nba = new BatsmanArgs{
+                         next_bat, ms, a->config, a->batsmen,
+                         a->event_log, true, get_time_ms()
+                     };
+                     spawn_batsman(next_bat, nba);
+                 }
+
+                 // Signal stroke_done so bowler thread doesn't hang
+                 safe_mutex_lock(&delivery_mutex, "delivery_mutex");
+                 stroke_done = true;
+                 pthread_cond_signal(&stroke_done_cond);
+                 safe_mutex_unlock(&delivery_mutex, "delivery_mutex");
+                 // Wake all batsmen — survivor is now striker
+                 safe_mutex_lock(&striker_changed_mutex, "striker_changed_mutex");
+                 pthread_cond_broadcast(&striker_changed_cond);
+                 safe_mutex_unlock(&striker_changed_mutex, "striker_changed_mutex");
+             }
+         }
 
         // Match-end conditions 
         bool all_out = (ms->wickets.load() >= MAX_PLAYERS - 1);
@@ -487,29 +716,32 @@ void* umpire_thread_func(void* arg) {
                         ms->total_runs.load() >= ms->target &&
                         ms->target > 0);
         if (all_out || chased) {
-            log_msg(LOG_THREAD, "[UMPIRE] Match-end: all_out=%d chased=%d",
-                    all_out, chased);
-            safe_mutex_lock(&state_mutex, "state_mutex");
-            ms->match_over = true;
-            safe_mutex_unlock(&state_mutex, "state_mutex");
-            // Wake all waiting threads
-            safe_mutex_lock(&ball_hit_mutex, "ball_hit_mutex");
-            ms->ball_in_air = true;
-            pthread_cond_broadcast(&ball_hit_cond);
-            safe_mutex_unlock(&ball_hit_mutex, "ball_hit_mutex");
-            safe_mutex_lock(&delivery_mutex, "delivery_mutex");
-            delivery_ready = true; stroke_done = true;
-            pthread_cond_broadcast(&delivery_ready_cond);
-            pthread_cond_broadcast(&stroke_done_cond);
-            safe_mutex_unlock(&delivery_mutex, "delivery_mutex");
-        }
+             log_msg(LOG_THREAD, "[UMPIRE] Match-end: all_out=%d chased=%d",
+                     all_out, chased);
+             safe_mutex_lock(&state_mutex, "state_mutex");
+             ms->match_over = true;
+             safe_mutex_unlock(&state_mutex, "state_mutex");
+             // Wake any non-striker threads blocked on striker_changed_cond
+             safe_mutex_lock(&striker_changed_mutex, "striker_changed_mutex");
+             pthread_cond_broadcast(&striker_changed_cond);
+             safe_mutex_unlock(&striker_changed_mutex, "striker_changed_mutex");
+             safe_mutex_lock(&ball_hit_mutex, "ball_hit_mutex");
+             ms->ball_in_air = true;
+             pthread_cond_broadcast(&ball_hit_cond);
+             safe_mutex_unlock(&ball_hit_mutex, "ball_hit_mutex");
+             safe_mutex_lock(&delivery_mutex, "delivery_mutex");
+             delivery_ready = true; stroke_done = true;
+             pthread_cond_broadcast(&delivery_ready_cond);
+             pthread_cond_broadcast(&stroke_done_cond);
+             safe_mutex_unlock(&delivery_mutex, "delivery_mutex");
+         }
     }
 
     log_msg(LOG_THREAD, "[UMPIRE] Exiting");
     return NULL;
 }
 
-// -------------------------------------------------------------------------------
+
 // SCOREBOARD THREAD
 
 void* scoreboard_thread_func(void* arg) {
@@ -522,7 +754,6 @@ void* scoreboard_thread_func(void* arg) {
     return NULL;
 }
 
-// -------------------------------------------------------------------------------
 //  THREAD MANAGEMENT HELPERS
 
 void spawn_bowler(Player* p, BowlerArgs* args) {
@@ -532,7 +763,7 @@ void spawn_bowler(Player* p, BowlerArgs* args) {
     else {
         get_timespec_now(&p->start_time);
         log_msg(LOG_THREAD, "Spawned BOWLER '%s' [T-%04lu]",
-                p->name.c_str(), p->thread_id % 10000);
+                p->name.c_str(),PID(p->thread_id));
     }
 }
 
@@ -543,7 +774,7 @@ void spawn_batsman(Player* p, BatsmanArgs* args) {
     else {
         get_timespec_now(&p->start_time);
         log_msg(LOG_THREAD, "Spawned BATSMAN '%s' [T-%04lu]",
-                p->name.c_str(), p->thread_id % 10000);
+                p->name.c_str(), PID(p->thread_id));
     }
 }
 
@@ -570,7 +801,6 @@ void terminate_batsman(Player* p, MatchState*) {
     p->state     = THREAD_DONE;
 }
 
-// -------------------------------------------------------------------------------
 //  DEADLOCK SIMULATION: Run-Out (Circular Wait)
 
 /*
@@ -609,11 +839,10 @@ bool detect_runout_deadlock(Player* a, Player* b) {
 void resolve_runout(Player* victim, MatchState* ms) {
     log_msg(LOG_DEADLOCK, "RESOLUTION: '%s' declared RUN OUT (avg=%.1f)",
             victim->name.c_str(), victim->batting_avg);
-    log_msg(LOG_DEADLOCK,
-            "  OS analogy: kernel kills deadlocked thread, releases all held resources");
     victim->holds_end = -1;
     victim->wants_end = -1;
     victim->is_out    = true;
+    victim->how_out   = BALL_RUNOUT; 
     safe_mutex_lock(&score_mutex, "score_mutex");
     ms->wickets++;
     safe_mutex_unlock(&score_mutex, "score_mutex");
@@ -622,24 +851,28 @@ void resolve_runout(Player* victim, MatchState* ms) {
 }
 
 void print_resource_allocation_graph(Player* a, Player* b) {
-    log_msg(LOG_DEADLOCK, "");
-    log_msg(LOG_DEADLOCK, "  Resource Allocation Graph (RAG):");
-    log_msg(LOG_DEADLOCK, "  ┌──────────────────────────────────────────────┐");
-    log_msg(LOG_DEADLOCK, "  │  %-12s ──holds──► [End %d]              │",
-            a->name.c_str(), a->holds_end);
-    log_msg(LOG_DEADLOCK, "  │  %-12s ◄─wants─── [End %d]              │",
-            a->name.c_str(), a->wants_end);
-    log_msg(LOG_DEADLOCK, "  │                                              │");
-    log_msg(LOG_DEADLOCK, "  │  %-12s ──holds──► [End %d]              │",
-            b->name.c_str(), b->holds_end);
-    log_msg(LOG_DEADLOCK, "  │  %-12s ◄─wants─── [End %d]              │",
-            b->name.c_str(), b->wants_end);
-    log_msg(LOG_DEADLOCK, "  │                                              │");
-    log_msg(LOG_DEADLOCK, "  │  CYCLE: %s→[E%d]→%s→[E%d]→%s         │",
-            a->name.c_str(), a->wants_end,
-            b->name.c_str(), b->wants_end,
-            a->name.c_str());
-    log_msg(LOG_DEADLOCK, "  └──────────────────────────────────────────────┘");
-    log_msg(LOG_DEADLOCK, "");
-}
+     log_msg(LOG_DEADLOCK, "");
+     log_msg(LOG_DEADLOCK, "  ╔══════════════════════════════════════════════════╗");
+     log_msg(LOG_DEADLOCK, "  ║        RESOURCE ALLOCATION GRAPH (RAG)          ║");
+     log_msg(LOG_DEADLOCK, "  ║  (OS: circular-wait condition for deadlock)      ║");
+     log_msg(LOG_DEADLOCK, "  ╠══════════════════════════════════════════════════╣");
+     log_msg(LOG_DEADLOCK, "  ║  Thread %-12s  ──holds──► [End %d]         ║",
+             a->name.c_str(), a->holds_end);
+     log_msg(LOG_DEADLOCK, "  ║  Thread %-12s  ◄──wants── [End %d]         ║",
+             a->name.c_str(), a->wants_end);
+     log_msg(LOG_DEADLOCK, "  ║                                                  ║");
+     log_msg(LOG_DEADLOCK, "  ║  Thread %-12s  ──holds──► [End %d]         ║",
+             b->name.c_str(), b->holds_end);
+     log_msg(LOG_DEADLOCK, "  ║  Thread %-12s  ◄──wants── [End %d]         ║",
+             b->name.c_str(), b->wants_end);
+     log_msg(LOG_DEADLOCK, "  ╠══════════════════════════════════════════════════╣");
+     log_msg(LOG_DEADLOCK, "  ║  CYCLE: %s→[E%d]→%s→[E%d]→%s",
+             a->name.c_str(), a->wants_end,
+             b->name.c_str(), b->wants_end, a->name.c_str());
+     log_msg(LOG_DEADLOCK, "  ║  DETECTION  : RAG cycle scan by Umpire (kernel) ║");
+     log_msg(LOG_DEADLOCK, "  ║  PREVENTION : Acquire End-0 before End-1 always ║");
+     log_msg(LOG_DEADLOCK, "  ║  RESOLUTION : Kill lowest-priority thread (RUN OUT)║");
+     log_msg(LOG_DEADLOCK, "  ╚══════════════════════════════════════════════════╝");
+     log_msg(LOG_DEADLOCK, "");
+ }
 
