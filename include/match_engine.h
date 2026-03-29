@@ -80,15 +80,14 @@ private:
 
     // Internal helpers
     void init_state(int innings, int target);
-    void run_one_over(std::vector<Player>& batsmen,
-                      std::vector<Player>& bowlers,
-                      int over_num);
-    void handle_wicket(std::vector<Player>& batsmen,
-                       Player* dismissed,
-                       BallOutcome how);
-    void rotate_strike(MatchState* ms);
     bool is_innings_over() const;
-    void write_gantt_file();
+
+    // Saving 1st-innings totals
+    int innings1_runs_ =0;
+    int innings1_wickets_ =0;
+    int innings1_extras_ = 0;
+    int innings1_overs_  = 0;
+    
 };
 
 #endif
