@@ -851,27 +851,27 @@ void resolve_runout(Player* victim, MatchState* ms) {
 
 void print_resource_allocation_graph(Player* a, Player* b) {
      log_msg(LOG_DEADLOCK, "");
-     log_msg(LOG_DEADLOCK, "  ╔══════════════════════════════════════════════════╗");
-     log_msg(LOG_DEADLOCK, "  ║        RESOURCE ALLOCATION GRAPH (RAG)          ║");
-     log_msg(LOG_DEADLOCK, "  ║  (OS: circular-wait condition for deadlock)      ║");
-     log_msg(LOG_DEADLOCK, "  ╠══════════════════════════════════════════════════╣");
-     log_msg(LOG_DEADLOCK, "  ║  Thread %-12s  ──holds──► [End %d]         ║",
+     log_msg(LOG_DEADLOCK, "  ___________________________________________________");
+     log_msg(LOG_DEADLOCK, "  |        RESOURCE ALLOCATION GRAPH (RAG)           |");
+     log_msg(LOG_DEADLOCK, "  |  (OS: circular-wait condition for deadlock)      |");
+     log_msg(LOG_DEADLOCK, "  |__________________________________________________|");
+     log_msg(LOG_DEADLOCK, "  |  Thread %-12s  ──holds──► [End %d]         |",
              a->name.c_str(), a->holds_end);
-     log_msg(LOG_DEADLOCK, "  ║  Thread %-12s  ◄──wants── [End %d]         ║",
+     log_msg(LOG_DEADLOCK, "  |  Thread %-12s  ◄──wants── [End %d]         |",
              a->name.c_str(), a->wants_end);
-     log_msg(LOG_DEADLOCK, "  ║                                                  ║");
-     log_msg(LOG_DEADLOCK, "  ║  Thread %-12s  ──holds──► [End %d]         ║",
+     log_msg(LOG_DEADLOCK, "  |                                                  |");
+     log_msg(LOG_DEADLOCK, "  |  Thread %-12s  ──holds──► [End %d]         |",
              b->name.c_str(), b->holds_end);
-     log_msg(LOG_DEADLOCK, "  ║  Thread %-12s  ◄──wants── [End %d]         ║",
+     log_msg(LOG_DEADLOCK, "  |  Thread %-12s  ◄──wants── [End %d]         |",
              b->name.c_str(), b->wants_end);
-     log_msg(LOG_DEADLOCK, "  ╠══════════════════════════════════════════════════╣");
-     log_msg(LOG_DEADLOCK, "  ║  CYCLE: %s→[E%d]→%s→[E%d]→%s",
+     log_msg(LOG_DEADLOCK, "  |__________________________________________________|");
+     log_msg(LOG_DEADLOCK, "  |  CYCLE: %s→[E%d]→%s→[E%d]→%s",
              a->name.c_str(), a->wants_end,
              b->name.c_str(), b->wants_end, a->name.c_str());
-     log_msg(LOG_DEADLOCK, "  ║  DETECTION  : RAG cycle scan by Umpire (kernel) ║");
-     log_msg(LOG_DEADLOCK, "  ║  PREVENTION : Acquire End-0 before End-1 always ║");
-     log_msg(LOG_DEADLOCK, "  ║  RESOLUTION : Kill lowest-priority thread (RUN OUT)║");
-     log_msg(LOG_DEADLOCK, "  ╚══════════════════════════════════════════════════╝");
+     log_msg(LOG_DEADLOCK, "  |  DETECTION  : RAG cycle scan by Umpire (kernel)  |");
+     log_msg(LOG_DEADLOCK, "  |  PREVENTION : Acquire End-0 before End-1 always  |");
+     log_msg(LOG_DEADLOCK, "  |  RESOLUTION : Kill lowest-priority thread (RUN OUT)|");
+     log_msg(LOG_DEADLOCK, "  |__________________________________________________|");
      log_msg(LOG_DEADLOCK, "");
  }
 
