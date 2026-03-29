@@ -2,8 +2,6 @@
 #define SCHEDULER_H
 
 /*
-  scheduler.h
-  --------------------------------------------------------------------------------
  * Custom Over Scheduler - manages bowler rotation and batting order.
  
  * OS CONCEPTS DEMONSTRATED:
@@ -21,9 +19,9 @@
 
 #include "cricket_types.h"
 #include <vector>
-#include <queue>
+#include <climits>
 
-// Bowler context 
+// Bowler PCB equivalent
 typedef struct {
     int     bowler_id;
     int     overs_bowled;
@@ -31,6 +29,7 @@ typedef struct {
     int     wickets;
     float   economy;
     int     balls_in_current_over;
+    int     runs_this_spell;
     
     ThreadState saved_state;
 } BowlerContext;
@@ -53,6 +52,9 @@ public:
                                 SchedulerType order_type);
     Player* get_next_batsman(std::vector<Player>& batsmen);
 
+     // Link live match state 
+    void    set_match_state(MatchState* ms) { ms_ = ms; }
+
     //  Stats & analysis 
     void    print_scheduler_stats() const;
     double  get_avg_wait_time() const;
@@ -61,12 +63,14 @@ public:
     // Getters 
     SchedulerType get_type() const { return type_; }
     int get_context_switches() const { return context_switches_; }
+    void add_switches(int n)         { context_switches_ += n; }
 
 private:
     SchedulerType type_;
     int max_overs_;
     int context_switches_;
     int next_batsman_idx_;
+    MatchState*   ms_;
 
     // RR bowler queue (circular)
     std::vector<Player*> bowler_queue_;
@@ -86,6 +90,17 @@ private:
     // Internal helpers
     Player* rr_next(MatchState* ms, std::vector<Player>& bowlers);
     Player* priority_next(MatchState* ms, std::vector<Player>& bowlers);
+
+    
+    /*
+     * compute_dynamic_priority()
+     * BOWLER signals:  skill + wicket_bonus − fatigue − economy_penalty
+     *                  + phase_boost + overs_left_urgency
+     * BATSMAN signals: strike_rate_bonus + overs_left_power_boost
+     *                  + batting_avg (middle overs) − slogger_risk (tail)
+     */
+    int     compute_dynamic_priority(Player* p, MatchState* ms,
+                                     int overs_left, bool is_batting);
     BowlerContext* find_context(int bowler_id);
     void    update_intensity(MatchState* ms);
 };
