@@ -343,10 +343,10 @@ std::string outcome_color(BallOutcome o) {
 void print_banner() {
     printf("\n");
     printf(COL_CYAN);
-    printf("╔══════════════════════════════════════════════════════════════╗\n");
-    printf("║         T20 CRICKET OS SIMULATOR — CSC-204                  ║\n");
-    printf("║         Pitch = CS | Players = Threads | Umpire = Kernel    ║\n");
-    printf("╚══════════════════════════════════════════════════════════════╝\n");
+    printf("_______________________________________________________________\n");
+    printf("|         T20 CRICKET OS SIMULATOR — CSC-204                  |\n");
+    printf("|         Pitch = CS | Players = Threads | Umpire = Kernel    |\n");
+    printf("|_____________________________________________________________|\n");
     printf(COL_RESET "\n");
 }
 
@@ -382,7 +382,7 @@ void print_scoreboard(const MatchState* ms,
                    p.name.c_str(), p.runs_scored, p.balls_faced,
                    (p.id == ms->striker_id ? "* STRIKER" : "  non-striker"));
     }
-    printf("└───────────────────────────────────────────────────────────────┘\n");
+    printf("───────────────────────────────────────────────────────────────\n");
     printf(COL_RESET);
     pthread_rwlock_unlock(&scoreboard_rwlock);
     (void)bowlers;
@@ -403,9 +403,9 @@ void print_match_result(const MatchState* ms,
                         const std::string& t1,
                         const std::string& t2) {
     printf(COL_CYAN);
-    printf("\n╔══════════════════════════════════════╗\n");
-    printf("║          MATCH RESULT                ║\n");
-    printf("╚══════════════════════════════════════╝\n");
+    printf("\n______________________________________\n");
+    printf("|          MATCH RESULT                |\n");
+    printf("|______________________________________|\n");
     printf(COL_RESET);
     if (ms->innings == 2) {
         int chasing = ms->total_runs.load();
@@ -452,21 +452,21 @@ void gantt_write_event(FILE* f, const BallEvent& ev) {
 void print_sjf_vs_fcfs_analysis(const std::vector<Player>& fcfs,
                                   const std::vector<Player>& sjf) {
     printf(COL_MAGENTA);
-    printf("\n╔══════════════════════════════════════════════════════════════╗\n");
-    printf("║          SJF vs FCFS BATTING ORDER ANALYSIS                 ║\n");
-    printf("╠══════════════════════════════════════════════════════════════╣\n");
-    printf("║  %-14s  %-4s  %-10s  %-10s  %-8s ║\n",
+    printf("\n_______________________________________________________________\n");
+    printf("|          SJF vs FCFS BATTING ORDER ANALYSIS                   |\n");
+    printf("|_______________________________________________________________|\n");
+    printf("|  %-14s  %-4s  %-10s  %-10s  %-8s |\n",
            "Batsman", "Pos", "FCFS Wait", "SJF Wait", "Saved");
-    printf("╠══════════════════════════════════════════════════════════════╣\n");
+    printf("|_______________________________________________________________|\n");
 
     for (size_t i = 0; i < fcfs.size() && i < sjf.size(); i++) {
         double fcfs_w = fcfs[i].total_wait_ms;
         double sjf_w  = sjf[i].total_wait_ms;
         double saved  = fcfs_w - sjf_w;
-        printf("║  %-14s  %-4zu  %8.1fms  %8.1fms  %+7.1fms ║\n",
+        printf("|  %-14s  %-4zu  %8.1fms  %8.1fms  %+7.1fms |\n",
                fcfs[i].name.c_str(), i+1, fcfs_w, sjf_w, saved);
     }
-    printf("╚══════════════════════════════════════════════════════════════╝\n");
+    printf("|_______________________________________________________________|\n");
     printf(COL_RESET "\n");
 }
 

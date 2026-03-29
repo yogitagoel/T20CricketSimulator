@@ -1,232 +1,952 @@
-[   0.581] [INFO   ] Match: Mumbai_Indians vs Chennai_Super_Kings | 5 overs | Scheduler: Round Robin
-[   0.852] [SCHED  ] BATTING ORDER built:
-[   1.030] [SCHED  ]   FCFS: Sanju Samson, Ruturaj Gaikwad, Dewald Brevis ...
-[   1.143] [SCHED  ]   SJF:  Simarajeet Singh(4), Matheesha Padhirana(5), Rahul Chahar(6) ...
-[   1.360] [SCHED  ] Scheduler: Bowler 'Jasprit Bumrah' added to RR queue (pos 0)
-[   1.465] [SCHED  ] Scheduler: Bowler 'Deepak Chahar' added to RR queue (pos 1)
-[   1.648] [SCHED  ] Scheduler: Bowler 'Trent Boult' added to RR queue (pos 2)
-[   1.785] [SCHED  ] Scheduler: Bowler 'Hardik Pandya' added to RR queue (pos 3)
-[   1.926] [SCHED  ] Scheduler: Bowler 'Mitchell Santner' added to RR queue (pos 4)
-[   2.012] [SCHED  ] Scheduler: Bowler 'Mayank Markande' added to RR queue (pos 5)
-[   2.425] [THREAD ] Umpire (Kernel) thread spawned [T-8160]
-[   2.452] [THREAD ] [UMPIRE T-8160] Kernel thread STARTED — polling every 50ms
-[   2.655] [THREAD ] [T-4016] FIELDER 'Jasprit Bumrah'(WK) → cond_wait
-[   2.786] [THREAD ] [T-9872] FIELDER 'Deepak Chahar'(F) → cond_wait
-[   2.856] [THREAD ] [T-5728] FIELDER 'Trent Boult'(F) → cond_wait
-[   2.930] [THREAD ] [T-1584] FIELDER 'Hardik Pandya'(F) → cond_wait
-[   3.042] [THREAD ] [T-7440] FIELDER 'Mitchell Santner'(F) → cond_wait
-[   3.045] [THREAD ] Spawned 6 fielder threads (all sleeping on cond_wait)
-[   3.097] [THREAD ] [T-3296] FIELDER 'Mayank Markande'(F) → cond_wait
-[   3.687] [THREAD ] Spawned BATSMAN 'Sanju Samson' [T-9152]
-[   3.734] [THREAD ] [T-9152] BATSMAN 'Sanju Samson' → sem_wait(crease) ...
-[   3.983] [THREAD ] [T-9152] BATSMAN 'Sanju Samson' AT CREASE | wait=0.0ms | crease_sem=1
-[   3.940] [THREAD ] Spawned BATSMAN 'Ruturaj Gaikwad' [T-5008]
-[   4.034] [THREAD ] [T-5008] BATSMAN 'Ruturaj Gaikwad' → sem_wait(crease) ...
-[   4.616] [THREAD ] [T-5008] BATSMAN 'Ruturaj Gaikwad' AT CREASE | wait=0.0ms | crease_sem=0
-[   4.362] [SCHED  ] CONTEXT SWITCH #1: Loading bowler 'Deepak Chahar' (overs left: 4)
-[   4.844] [SCHED  ] Over 1: 'Deepak Chahar' bowling (145 km/h) | Scheduler: RR | Intensity: LOW
-[   5.051] [THREAD ] Spawned BOWLER 'Deepak Chahar' [T-0864]
-[   5.101] [THREAD ] [T-0864] BOWLER 'Deepak Chahar' START — over 1
-[   5.457] [BALL   ]    1.1  Sanju Samson     [0;37m •[0m   0/0
-[  29.074] [BALL   ]    1.2  Sanju Samson     [1;37m   1[0m   1/0
-[  29.447] [THREAD ] [T-1584] FIELDER 'Hardik Pandya' exit
-[  52.683] [BALL   ]    1.3  Ruturaj Gaikwad  [1;37m   1[0m   2/0
-[  52.993] [THREAD ] [T-7440] FIELDER 'Mitchell Santner' exit
-[  73.683] [BALL   ]    1.4  Sanju Samson     [1;37m   2[0m   4/0
-[  74.155] [THREAD ] [T-9872] FIELDER 'Deepak Chahar' exit
-[  97.133] [BALL   ]    1.5  Sanju Samson     [0;37m •[0m   4/0
-[ 120.727] [BALL   ]    1.6  Sanju Samson     [1;32m   4[0m   8/0
-[ 121.080] [THREAD ] [T-3296] FIELDER 'Mayank Markande' exit
-[ 137.794] [THREAD ] [T-0864] BOWLER 'Deepak Chahar' DONE — 0W 8R econ=8.0
-[ 138.045] [SCHED  ] CTX SAVE  → 'Deepak Chahar': 1 overs, 8 runs, 0 wkts, econ=8.00
-[ 138.225] [SCHED  ] OVER 1 COMPLETE — 'Deepak Chahar' finished over (1/4 overs)
-[ 138.459] [SCORE  ] End of over 1: 8/0  (Extras: 0)
-[ 208.181] [SCHED  ] CONTEXT SWITCH #2: Loading bowler 'Trent Boult' (overs left: 4)
-[ 208.424] [SCHED  ] Over 2: 'Trent Boult' bowling (140 km/h) | Scheduler: RR | Intensity: LOW
-[ 208.691] [THREAD ] Spawned BOWLER 'Trent Boult' [T-0864]
-[ 208.706] [THREAD ] [T-0864] BOWLER 'Trent Boult' START — over 2
-[ 208.931] [BALL   ]    2.1  Ruturaj Gaikwad  [1;37m   1[0m   9/0
-[ 209.119] [THREAD ] [T-5728] FIELDER 'Trent Boult' exit
-[ 228.852] [BALL   ] NEW BATSMAN: 'Dewald Brevis' coming to crease
-[ 229.429] [THREAD ] Spawned BATSMAN 'Dewald Brevis' [T-6720]
-[ 229.744] [BALL   ]    2.2  Sanju Samson     [1;31mW(C)[0m   9/1
-[ 229.466] [THREAD ] [T-6720] BATSMAN 'Dewald Brevis' → sem_wait(crease) ...
-[ 230.282] [THREAD ] [T-4016] FIELDER 'Jasprit Bumrah' exit
-[ 253.999] [THREAD ] [T-9152] BATSMAN 'Sanju Samson' LEFT crease → 7(6 balls) | sem=1
-[ 254.047] [THREAD ] [T-6720] BATSMAN 'Dewald Brevis' AT CREASE | wait=23.7ms | crease_sem=0
-[ 254.936] [BALL   ] NEW BATSMAN: 'Shivam Dube' coming to crease
-[ 255.256] [THREAD ] [T-2576] BATSMAN 'Shivam Dube' → sem_wait(crease) ...
-[ 255.199] [THREAD ] Spawned BATSMAN 'Shivam Dube' [T-2576]
-[ 255.673] [BALL   ]    2.3  Dewald Brevis    [1;31mW(B)[0m   9/2
-[ 279.331] [THREAD ] [T-6720] BATSMAN 'Dewald Brevis' LEFT crease → 0(1 balls) | sem=1
-[ 279.356] [THREAD ] [T-2576] BATSMAN 'Shivam Dube' AT CREASE | wait=23.9ms | crease_sem=0
-[ 279.620] [BALL   ]    2.4  Shivam Dube      [0;37m •[0m   9/2
-[ 302.787] [BALL   ]    2.5  Shivam Dube      [0;37m •[0m   9/2
-[ 323.701] [THREAD ] [T-0864] BOWLER 'Trent Boult' DONE — 3W 1R econ=1.0
-[ 323.940] [SCHED  ] CTX SAVE  → 'Trent Boult': 1 overs, 1 runs, 3 wkts, econ=1.00
-[ 324.068] [SCHED  ] OVER 2 COMPLETE — 'Trent Boult' finished over (1/4 overs)
-[ 324.172] [SCORE  ] End of over 2: 9/2  (Extras: 0)
-[ 395.199] [SCHED  ] CONTEXT SWITCH #3: Loading bowler 'Hardik Pandya' (overs left: 4)
-[ 395.500] [SCHED  ] Over 3: 'Hardik Pandya' bowling (135 km/h) | Scheduler: RR | Intensity: LOW
-[ 396.732] [THREAD ] Spawned BOWLER 'Hardik Pandya' [T-0864]
-[ 396.950] [THREAD ] [T-0864] BOWLER 'Hardik Pandya' START — over 3
-[ 399.138] [BALL   ]    3.1  Ruturaj Gaikwad  [1;37m   2[0m   11/2
-[ 423.754] [BALL   ]    3.2  Ruturaj Gaikwad  [1;37m   2[0m   13/2
-[ 447.893] [BALL   ]    3.3  Ruturaj Gaikwad  [1;37m   1[0m   14/2
-[ 466.295] [BALL   ]    3.4  Shivam Dube      [1;37m   1[0m   15/2
-[ 487.923] [BALL   ]    3.5  Ruturaj Gaikwad  [1;37m   1[0m   16/2
-[ 505.176] [BALL   ]    3.6  Shivam Dube      [0;37m •[0m   16/2
-[ 524.416] [THREAD ] [T-0864] BOWLER 'Hardik Pandya' DONE — 0W 7R econ=7.0
-[ 524.796] [SCHED  ] CTX SAVE  → 'Hardik Pandya': 1 overs, 7 runs, 0 wkts, econ=7.00
-[ 525.003] [SCHED  ] OVER 3 COMPLETE — 'Hardik Pandya' finished over (1/4 overs)
-[ 525.188] [SCORE  ] End of over 3: 16/2  (Extras: 0)
-[ 594.159] [SCHED  ] CONTEXT SWITCH #4: Loading bowler 'Mitchell Santner' (overs left: 4)
-[ 594.392] [SCHED  ] Over 4: 'Mitchell Santner' bowling (115 km/h) | Scheduler: RR | Intensity: LOW
-[ 594.623] [THREAD ] Spawned BOWLER 'Mitchell Santner' [T-0864]
-[ 594.636] [THREAD ] [T-0864] BOWLER 'Mitchell Santner' START — over 4
-[ 595.008] [BALL   ]    4.1  Ruturaj Gaikwad  [1;32m   4[0m   20/2
-[ 615.880] [BALL   ]    4.2  Shivam Dube      [1;32m   4[0m   24/2
-[ 639.592] [BALL   ]    4.3  Shivam Dube      [1;32m   4[0m   28/2
-[ 662.637] [BALL   ]    4.4  Shivam Dube      [0;37m •[0m   28/2
-[ 685.787] [BALL   ] NEW BATSMAN: 'Shreyash Gopal' coming to crease
-[ 686.190] [THREAD ] Spawned BATSMAN 'Shreyash Gopal' [T-8432]
-[ 686.210] [THREAD ] [T-8432] BATSMAN 'Shreyash Gopal' → sem_wait(crease) ...
-[ 686.323] [BALL   ]    4.5  Shivam Dube      [1;31mW(L)[0m   28/3
-[ 710.680] [THREAD ] [T-2576] BATSMAN 'Shivam Dube' LEFT crease → 9(8 balls) | sem=1
-[ 710.714] [THREAD ] [T-8432] BATSMAN 'Shreyash Gopal' AT CREASE | wait=24.3ms | crease_sem=0
-[ 711.208] [BALL   ]    4.6  Shreyash Gopal   [1;37m   1[0m   29/3
-[ 722.891] [THREAD ] [T-0864] BOWLER 'Mitchell Santner' DONE — 2W 12R econ=12.0
-[ 723.405] [SCHED  ] CTX SAVE  → 'Mitchell Santner': 1 overs, 12 runs, 2 wkts, econ=12.00
-[ 723.609] [SCHED  ] OVER 4 COMPLETE — 'Mitchell Santner' finished over (1/4 overs)
-[ 723.767] [SCORE  ] End of over 4: 29/3  (Extras: 0)
-[ 791.396] [SCHED  ] CONTEXT SWITCH #5: Loading bowler 'Mayank Markande' (overs left: 4)
-[ 791.693] [SCHED  ] Over 5: 'Mayank Markande' bowling (100 km/h) | Scheduler: RR | Intensity: LOW
-[ 792.027] [THREAD ] Spawned BOWLER 'Mayank Markande' [T-0864]
-[ 792.062] [THREAD ] [T-0864] BOWLER 'Mayank Markande' START — over 5
-[ 792.735] [BALL   ]    5.0  Shreyash Gopal   [1;33m  Wd[0m   30/3
-[ 811.975] [BALL   ]    5.1  Ruturaj Gaikwad  [1;32m   4[0m   34/3
-[ 839.631] [BALL   ] NEW BATSMAN: 'M. S. Dhoni' coming to crease
-[ 840.231] [THREAD ] Spawned BATSMAN 'M. S. Dhoni' [T-3264]
-[ 840.435] [BALL   ]    5.2  Ruturaj Gaikwad  [1;31mW(B)[0m   34/4
-[ 840.258] [THREAD ] [T-3264] BATSMAN 'M. S. Dhoni' → sem_wait(crease) ...
-[ 866.670] [THREAD ] [T-5008] BATSMAN 'Ruturaj Gaikwad' LEFT crease → 16(9 balls) | sem=1
-[ 866.713] [THREAD ] [T-3264] BATSMAN 'M. S. Dhoni' AT CREASE | wait=25.7ms | crease_sem=0
-[ 867.477] [BALL   ]    5.3  M. S. Dhoni      [1;37m   1[0m   35/4
-[ 879.866] [BALL   ]    5.4  Shreyash Gopal   [0;37m •[0m   35/4
-[ 904.051] [BALL   ]    5.5  Shreyash Gopal   [1;37m   1[0m   36/4
-[ 917.141] [BALL   ] NEW BATSMAN: 'Shivam Dube' coming to crease
-[ 917.808] [THREAD ] Spawned BATSMAN 'Shivam Dube' [T-9120]
-[ 918.083] [BALL   ]    5.6  M. S. Dhoni      [1;31mW(B)[0m   36/5
-[ 917.840] [THREAD ] [T-9120] BATSMAN 'Shivam Dube' → sem_wait(crease) ...
-[ 929.836] [THREAD ] [T-0864] BOWLER 'Mayank Markande' DONE — 2W 7R econ=6.0
-[ 930.339] [SCHED  ] CTX SAVE  → 'Mayank Markande': 1 overs, 7 runs, 2 wkts, econ=7.00
-[ 930.706] [SCHED  ] OVER 5 COMPLETE — 'Mayank Markande' finished over (1/4 overs)
-[ 931.049] [SCORE  ] End of over 5: 36/5  (Extras: 1)
-[ 940.824] [THREAD ] [T-3264] BATSMAN 'M. S. Dhoni' LEFT crease → 1(2 balls) | sem=1
-[ 940.904] [THREAD ] [T-9120] BATSMAN 'Shivam Dube' AT CREASE | wait=22.1ms | crease_sem=0
-[ 998.649] [THREAD ] [T-8432] BATSMAN 'Shreyash Gopal' LEFT crease → 2(3 balls) | sem=1
-[1011.897] [THREAD ] [T-9120] BATSMAN 'Shivam Dube' LEFT crease → 0(0 balls) | sem=2
-[1012.342] [THREAD ] All fielder threads joined
-[1044.054] [THREAD ] [UMPIRE] Exiting
-[1044.391] [INFO   ] === INNINGS 1 COMPLETE: 36/5 in 4 overs ===
-[1044.586] [SCHED  ] BATTING ORDER built:
-[1044.735] [SCHED  ]   FCFS: Rohit Sharma, Suryakumar, Ryan Rickelton ...
-[1044.913] [SCHED  ]   SJF:  Jasprit Bumrah(3), Deepak Chahar(4), Trent Boult(5) ...
-[1045.065] [SCHED  ] Scheduler: Bowler 'Rahul Chahar' added to RR queue (pos 0)
-[1045.183] [SCHED  ] Scheduler: Bowler 'Simarajeet Chahal' added to RR queue (pos 1)
-[1045.601] [SCHED  ] Scheduler: Bowler 'Matheesha Pathirana' added to RR queue (pos 2)
-[1045.813] [SCHED  ] Scheduler: Bowler 'Khalil Ahmed' added to RR queue (pos 3)
-[1045.965] [SCHED  ] Scheduler: Bowler 'Shivam Dube' added to RR queue (pos 4)
-[1046.152] [SCHED  ] Scheduler: Bowler 'Shreyash Gopal' added to RR queue (pos 5)
-[1046.403] [THREAD ] [UMPIRE T-8160] Kernel thread STARTED — polling every 50ms
-[1046.417] [THREAD ] Umpire (Kernel) thread spawned [T-8160]
-[1046.761] [THREAD ] [T-3296] FIELDER 'Jasprit Bumrah'(WK) → cond_wait
-[1047.104] [THREAD ] [T-5728] FIELDER 'Mayank Markande'(F) → cond_wait
-[1046.845] [THREAD ] [T-1584] FIELDER 'Trent Boult'(F) → cond_wait
-[1046.948] [THREAD ] [T-4016] FIELDER 'Hardik Pandya'(F) → cond_wait
-[1046.996] [THREAD ] [T-9872] FIELDER 'Mitchell Santner'(F) → cond_wait
-[1047.058] [THREAD ] Spawned 6 fielder threads (all sleeping on cond_wait)
-[1046.811] [THREAD ] [T-7440] FIELDER 'Deepak Chahar'(F) → cond_wait
-[1048.055] [THREAD ] Spawned BATSMAN 'Rohit Sharma' [T-9152]
-[1048.083] [THREAD ] [T-9152] BATSMAN 'Rohit Sharma' → sem_wait(crease) ...
-[1048.380] [THREAD ] Spawned BATSMAN 'Suryakumar' [T-5008]
-[1048.390] [THREAD ] [T-9152] BATSMAN 'Rohit Sharma' AT CREASE | wait=0.0ms | crease_sem=1
-[1048.374] [THREAD ] [T-5008] BATSMAN 'Suryakumar' → sem_wait(crease) ...
-[1048.807] [THREAD ] [T-5008] BATSMAN 'Suryakumar' AT CREASE | wait=0.0ms | crease_sem=0
-[1048.526] [SCHED  ] CONTEXT SWITCH #1: Loading bowler 'Simarajeet Chahal' (overs left: 4)
-[1048.955] [SCHED  ] Over 1: 'Simarajeet Chahal' bowling (140 km/h) | Scheduler: RR | Intensity: LOW
-[1049.155] [THREAD ] Spawned BOWLER 'Simarajeet Chahal' [T-0864]
-[1049.178] [THREAD ] [T-0864] BOWLER 'Simarajeet Chahal' START — over 1
-[1049.410] [BALL   ] NEW BATSMAN: 'Ryan Rickelton' coming to crease
-[1049.644] [THREAD ] Spawned BATSMAN 'Ryan Rickelton' [T-6720]
-[1049.780] [BALL   ]    1.1  Rohit Sharma     [1;31mW(C)[0m   0/1
-[1049.671] [THREAD ] [T-6720] BATSMAN 'Ryan Rickelton' → sem_wait(crease) ...
-[1049.997] [THREAD ] [T-1584] FIELDER 'Trent Boult' exit
-[1074.615] [THREAD ] [T-9152] BATSMAN 'Rohit Sharma' LEFT crease → 0(1 balls) | sem=1
-[1074.676] [THREAD ] [T-6720] BATSMAN 'Ryan Rickelton' AT CREASE | wait=24.6ms | crease_sem=0
-[1075.722] [BALL   ]    1.2  Ryan Rickelton   [1;37m   1[0m   1/1
-[1076.137] [THREAD ] [T-4016] FIELDER 'Hardik Pandya' exit
-[1091.089] [BALL   ]    1.3  Suryakumar       [1;32m   4[0m   5/1
-[1091.474] [THREAD ] [T-9872] FIELDER 'Mitchell Santner' exit
-[1114.708] [BALL   ]    1.4  Suryakumar       [0;37m •[0m   5/1
-[1140.014] [BALL   ]    1.5  Suryakumar       [0;37m •[0m   5/1
-[1161.563] [THREAD ] [T-0864] BOWLER 'Simarajeet Chahal' DONE — 2W 5R econ=5.0
-[1162.116] [SCHED  ] CTX SAVE  → 'Simarajeet Chahal': 1 overs, 5 runs, 2 wkts, econ=5.00
-[1162.464] [SCHED  ] OVER 1 COMPLETE — 'Simarajeet Chahal' finished over (1/4 overs)
-[1162.858] [SCORE  ] End of over 1: 6/1  (Extras: 0)
-[1162.768] [BALL   ]    1.6  Suryakumar       [1;37m   1[0m   6/1
-[1163.696] [THREAD ] [T-7440] FIELDER 'Deepak Chahar' exit
-[1231.026] [SCHED  ] CONTEXT SWITCH #2: Loading bowler 'Matheesha Pathirana' (overs left: 4)
-[1231.330] [SCHED  ] Over 2: 'Matheesha Pathirana' bowling (143 km/h) | Scheduler: RR | Intensity: LOW
-[1231.656] [THREAD ] Spawned BOWLER 'Matheesha Pathirana' [T-0864]
-[1231.731] [THREAD ] [T-0864] BOWLER 'Matheesha Pathirana' START — over 2
-[1232.288] [BALL   ]    2.1  Suryakumar       [1;37m   2[0m   8/1
-[1232.584] [THREAD ] [T-5728] FIELDER 'Mayank Markande' exit
-[1255.972] [BALL   ]    2.2  Suryakumar       [1;37m   2[0m   10/1
-[1256.422] [THREAD ] [T-3296] FIELDER 'Jasprit Bumrah' exit
-[1279.449] [BALL   ]    2.3  Suryakumar       [1;37m   1[0m   11/1
-[1300.919] [BALL   ]    2.4  Ryan Rickelton   [1;37m   2[0m   13/1
-[1324.931] [BALL   ]    2.5  Ryan Rickelton   [1;37m   1[0m   14/1
-[1350.426] [BALL   ]    2.6  Suryakumar       [1;37m   2[0m   16/1
-[1367.800] [THREAD ] [T-0864] BOWLER 'Matheesha Pathirana' DONE — 0W 10R econ=10.0
-[1368.238] [SCHED  ] CTX SAVE  → 'Matheesha Pathirana': 1 overs, 10 runs, 0 wkts, econ=10.00
-[1368.433] [SCHED  ] OVER 2 COMPLETE — 'Matheesha Pathirana' finished over (1/4 overs)
-[1368.614] [SCORE  ] End of over 2: 16/1  (Extras: 0)
-[1437.394] [SCHED  ] CONTEXT SWITCH #3: Loading bowler 'Khalil Ahmed' (overs left: 4)
-[1437.729] [SCHED  ] Over 3: 'Khalil Ahmed' bowling (100 km/h) | Scheduler: RR | Intensity: LOW
-[1438.080] [THREAD ] Spawned BOWLER 'Khalil Ahmed' [T-0864]
-[1438.127] [THREAD ] [T-0864] BOWLER 'Khalil Ahmed' START — over 3
-[1439.677] [BALL   ]    3.1  Suryakumar       [0;37m •[0m   16/1
-[1464.127] [BALL   ]    3.2  Suryakumar       [1;37m   2[0m   18/1
-[1487.304] [BALL   ]    3.3  Suryakumar       [1;37m   1[0m   19/1
-[1509.422] [BALL   ]    3.3  Ryan Rickelton   [1;33m  Wd[0m   20/1
-[1528.193] [BALL   ] NEW BATSMAN: 'Corbin Bosch' coming to crease
-[1528.702] [THREAD ] Spawned BATSMAN 'Corbin Bosch' [T-2576]
-[1528.986] [BALL   ]    3.4  Suryakumar       [1;31mW(L)[0m   20/2
-[1528.730] [THREAD ] [T-2576] BATSMAN 'Corbin Bosch' → sem_wait(crease) ...
-[1556.652] [THREAD ] [T-5008] BATSMAN 'Suryakumar' LEFT crease → 15(12 balls) | sem=1
-[1556.692] [THREAD ] [T-2576] BATSMAN 'Corbin Bosch' AT CREASE | wait=26.5ms | crease_sem=0
-[1557.252] [BALL   ]    3.5  Corbin Bosch     [1;32m   4[0m   24/2
-[1580.487] [BALL   ]    3.6  Corbin Bosch     [1;32m   4[0m   28/2
-[1580.592] [THREAD ] [T-0864] BOWLER 'Khalil Ahmed' DONE — 2W 8R econ=6.9
-[1581.188] [SCHED  ] CTX SAVE  → 'Khalil Ahmed': 1 overs, 8 runs, 2 wkts, econ=8.00
-[1581.508] [SCHED  ] OVER 3 COMPLETE — 'Khalil Ahmed' finished over (1/4 overs)
-[1581.907] [SCORE  ] End of over 3: 28/2  (Extras: 1)
-[1649.173] [SCHED  ] CONTEXT SWITCH #4: Loading bowler 'Shivam Dube' (overs left: 4)
-[1649.494] [SCHED  ] Over 4: 'Shivam Dube' bowling (110 km/h) | Scheduler: RR | Intensity: LOW
-[1649.871] [THREAD ] Spawned BOWLER 'Shivam Dube' [T-0864]
-[1649.906] [THREAD ] [T-0864] BOWLER 'Shivam Dube' START — over 4
-[1650.519] [BALL   ]    4.1  Corbin Bosch     [1;32m   4[0m   32/2
-[1678.477] [BALL   ]    4.2  Corbin Bosch     [1;32m   4[0m   36/2
-[1703.971] [BALL   ]    4.3  Corbin Bosch     [1;32m   4[0m   40/2
-[1722.589] [THREAD ] [UMPIRE] Match-end: all_out=0 chased=1
-[1723.107] [THREAD ] [UMPIRE] Exiting
-[1726.804] [THREAD ] [T-2576] BATSMAN 'Corbin Bosch' LEFT crease → 20(5 balls) | sem=1
-[1732.790] [THREAD ] [T-6720] BATSMAN 'Ryan Rickelton' LEFT crease → 4(3 balls) | sem=2
-[1741.133] [THREAD ] [T-0864] BOWLER 'Shivam Dube' DONE — 0W 16R econ=24.0
-[1741.452] [SCHED  ] CTX SAVE  → 'Shivam Dube': 0 overs, 16 runs, 0 wkts, econ=0.00
-[1741.725] [SCHED  ] OVER 4 COMPLETE — 'Shivam Dube' finished over (0/4 overs)
-[1741.891] [SCORE  ] End of over 4: 40/2  (Extras: 1)
-[1812.671] [THREAD ] All fielder threads joined
-[1813.045] [INFO   ] === INNINGS 2 COMPLETE: 40/2 in 3 overs ===
-[1813.358] [SCHED  ] === Scheduler Stats === Type: Round Robin | Context Switches: 4 | Avg Wait: 0.0ms
+[   0.238] [INFO   ] Match: Mumbai Indians vs Chennai Super Kings | 20 overs | Scheduler: Round Robin
+[   0.337] [SCHED  ] BATTING ORDER built (FCFS: David Warner | SJF: Kieron Pollard ...)
+[   0.344] [SCHED  ] Scheduler: Bowler 'Cameron Green' added to RR queue (pos 0)
+[   0.356] [SCHED  ] Scheduler: Bowler 'Glenn Maxwell' added to RR queue (pos 1)
+[   0.361] [SCHED  ] Scheduler: Bowler 'Adam Zampa' added to RR queue (pos 2)
+[   0.365] [SCHED  ] Scheduler: Bowler 'Lockie Ferguson' added to RR queue (pos 3)
+[   0.369] [SCHED  ] Scheduler: Bowler 'Kagiso Rabada' added to RR queue (pos 4)
+[   0.415] [THREAD ] Umpire thread spawned [T-6432]
+[   0.435] [THREAD ] [UMPIRE T-6432] Kernel thread STARTED — polling every 50ms
+[   0.472] [THREAD ] [T-1024] FIELDER 'Rohit Sharma' @ Fine Leg      -> cond_wait
+[   0.489] [THREAD ] [T-8320] FIELDER 'Shikhar Dhawan' @ Square Leg    -> cond_wait
+[   0.506] [THREAD ] [T-5616] FIELDER 'Joe Root' @ Mid Wicket    -> cond_wait
+[   0.516] [THREAD ] [T-3728] FIELDER 'Alex Carey' @ Wicket Keeper -> cond_wait
+[   0.525] [THREAD ] [T-2912] FIELDER 'KL Rahul' @ Mid On        -> cond_wait
+[   0.562] [THREAD ] [T-7504] FIELDER 'Cameron Green' @ Long Off      -> cond_wait
+[   0.578] [THREAD ] [T-4800] FIELDER 'Glenn Maxwell' @ Mid Off       -> cond_wait
+[   0.594] [THREAD ] [T-0208] FIELDER 'Andre Russell' @ Long On       -> cond_wait
+[   0.599] [THREAD ] [T-2096] FIELDER 'Cameron Green' @ Cover Point   -> cond_wait
+[   0.614] [THREAD ] Spawned 10 fielder threads (all sleeping on cond_wait)
+[   0.631] [THREAD ] ── THREAD POOL: 1 bowler + 2 batsmen + 10 fielders + 1 umpire + 1 scoreboard = 15 total concurrent threads ──
+[   0.659] [THREAD ] Spawned BATSMAN 'David Warner' [T-6688]
+[   0.672] [THREAD ] [T-9392] FIELDER 'Glenn Maxwell' @ Third Man     -> cond_wait
+[   0.685] [THREAD ] Spawned BATSMAN 'Devon Conway' [T-3984]
+[   0.690] [THREAD ] [T-3984] BATSMAN 'Devon Conway' → sem_wait(crease) ...
+[   0.700] [THREAD ] [T-3984] BATSMAN 'Devon Conway' AT CREASE | wait=0.0ms | crease_sem=1
+[   0.703] [THREAD ] [T-6688] BATSMAN 'David Warner' → sem_wait(crease) ...
+[   0.732] [THREAD ] [T-6688] BATSMAN 'David Warner' AT CREASE | wait=0.0ms | crease_sem=0
+[   0.706] [SCHED  ] CTX RESTORE ← 'Glenn Maxwell': 0 overs, 0 runs, 0 wkts
+[   0.747] [SCHED  ] CONTEXT SWITCH #1 -> 'Glenn Maxwell'  overs=0/4  economy=0.0
+[   0.751] [SCHED  ] Over 1: 'Glenn Maxwell' (101 km/h) | Scheduler: RR | Phase: LOW(powerplay) | Intensity: 1
+[   0.780] [THREAD ] Spawned BOWLER 'Glenn Maxwell' [T-1280]
+[   0.785] [THREAD ] [T-1280] BOWLER 'Glenn Maxwell' START — over 1
+[   0.855] [BALL   ]   [RACE] GROUND winner='Glenn Maxwell' @ Third Man reach=588ms boundary=736ms -> THREE
+[   0.955] [BALL   ]    0.1  David Warner     [1;37m   3[0m   3/0
+[  11.134] [BALL   ]    0.1  Devon Conway     [1;33m  Wd[0m   4/0
+[  24.310] [BALL   ]   [RACE] GROUND winner='Glenn Maxwell' @ Third Man reach=437ms boundary=564ms -> THREE
+[  24.405] [BALL   ]    0.2  Devon Conway     [1;37m   3[0m   7/0
+[  34.710] [BALL   ]    0.3  David Warner     [0;37m •[0m   7/0
+[  47.949] [BALL   ]   [RACE] GROUND winner='Cameron Green' @ Cover Point reach=171ms boundary=634ms -> ONE
+[  48.130] [BALL   ]    0.4  David Warner     [1;37m   1[0m   8/0
+[  58.568] [BALL   ]    0.4  Devon Conway     [1;33m  Wd[0m   9/0
+[  71.751] [BALL   ]    0.4  Devon Conway     [1;33m  Nb[0m   10/0
+[  85.130] [BALL   ]   [RACE] GROUND winner='KL Rahul' @ Mid On reach=288ms boundary=702ms -> TWO
+[  85.256] [BALL   ]    0.5  Devon Conway     [1;37m   2[0m   12/0
+[  98.605] [BALL   ]   [RACE] GROUND winner='KL Rahul' @ Mid On reach=110ms boundary=329ms -> ONE
+[  98.743] [BALL   ]    0.6  Devon Conway     [1;37m   1[0m   13/0
+[ 108.912] [THREAD ] [T-1280] BOWLER 'Glenn Maxwell' DONE — 0W 13R econ=13.0
+[ 109.063] [SCHED  ] CTX SAVE  → 'Glenn Maxwell': 1 overs, 13 runs, 0 wkts, econ=13.00
+[ 109.119] [SCHED  ] RR QUANTUM EXPIRED (quantum=6 balls) → CTX SAVE 'Glenn Maxwell':
+[ 109.137] [SCHED  ] OVER 1 COMPLETE: 'Glenn Maxwell' (1/4 overs)
+[ 109.168] [SCORE  ] End of over 1: 13/0  (Extras: 3)  Intensity: 1
+[ 149.554] [SCHED  ] CTX RESTORE ← 'Adam Zampa': 0 overs, 0 runs, 0 wkts
+[ 149.622] [SCHED  ] CONTEXT SWITCH #2 -> 'Adam Zampa'  overs=0/4  economy=0.0
+[ 149.640] [SCHED  ] Over 2: 'Adam Zampa' (92 km/h) | Scheduler: RR | Phase: LOW(powerplay) | Intensity: 2
+[ 149.729] [THREAD ] Spawned BOWLER 'Adam Zampa' [T-1280]
+[ 149.864] [THREAD ] [T-1280] BOWLER 'Adam Zampa' START — over 2
+[ 150.082] [BALL   ]    1.1  Devon Conway     [1;32m   6[0m   19/0
+[ 163.322] [BALL   ]    1.2  Devon Conway     [0;37m •[0m   19/0
+[ 176.629] [BALL   ]   [RACE] GROUND winner='Joe Root' @ Mid Wicket reach=435ms boundary=731ms -> THREE
+[ 176.847] [BALL   ]    1.3  Devon Conway     [1;37m   3[0m   22/0
+[ 187.423] [BALL   ]   [RACE] GROUND winner='KL Rahul' @ Mid On reach=261ms boundary=527ms -> TWO
+[ 187.521] [BALL   ]    1.4  David Warner     [1;37m   2[0m   24/0
+[ 200.712] [BALL   ]   [RACE] GROUND winner='Rohit Sharma' @ Fine Leg reach=43ms boundary=343ms -> ONE
+[ 200.827] [BALL   ]    1.5  David Warner     [1;37m   1[0m   25/0
+[ 211.268] [BALL   ] NEW BATSMAN: 'Shahi Hope' coming to crease
+[ 211.374] [THREAD ] Spawned BATSMAN 'Shahi Hope' [T-8576]
+[ 211.390] [BALL   ]    1.6  Devon Conway     [1;31mW(B)[0m   25/1
+[ 211.462] [THREAD ] [T-8576] BATSMAN 'Shahi Hope' → sem_wait(crease) ...
+[ 221.664] [THREAD ] [T-1280] BOWLER 'Adam Zampa' DONE — 1W 12R econ=12.0
+[ 221.878] [SCHED  ] CTX SAVE  → 'Adam Zampa': 1 overs, 12 runs, 1 wkts, econ=12.00
+[ 221.915] [SCHED  ] RR QUANTUM EXPIRED (quantum=6 balls) → CTX SAVE 'Adam Zampa':
+[ 221.923] [SCHED  ] OVER 2 COMPLETE: 'Adam Zampa' (1/4 overs)
+[ 221.948] [SCORE  ] End of over 2: 25/1  (Extras: 3)  Intensity: 2
+[ 224.466] [THREAD ] [T-3984] BATSMAN 'Devon Conway' LEFT crease -> 15(7 balls) | sem=1
+[ 224.531] [THREAD ] [T-8576] BATSMAN 'Shahi Hope' AT CREASE | wait=13.0ms | crease_sem=0
+[ 262.179] [SCHED  ] CTX RESTORE ← 'Lockie Ferguson': 0 overs, 0 runs, 0 wkts
+[ 262.215] [SCHED  ] CONTEXT SWITCH #3 -> 'Lockie Ferguson'  overs=0/4  economy=0.0
+[ 262.226] [SCHED  ] Over 3: 'Lockie Ferguson' (148 km/h) | Scheduler: RR | Phase: LOW(powerplay) | Intensity: 5
+[ 262.283] [THREAD ] Spawned BOWLER 'Lockie Ferguson' [T-1280]
+[ 262.430] [THREAD ] [T-1280] BOWLER 'Lockie Ferguson' START — over 3
+[ 262.671] [BALL   ]    2.1  David Warner     [1;32m   6[0m   31/1
+[ 275.940] [BALL   ]    2.2  David Warner     [0;37m •[0m   31/1
+[ 289.213] [BALL   ]   [RACE] GROUND winner='Glenn Maxwell' @ Third Man reach=59ms boundary=654ms -> ONE
+[ 289.335] [BALL   ]    2.3  David Warner     [1;37m   1[0m   32/1
+[ 299.697] [BALL   ]    2.3  Shahi Hope       [1;33m  Wd[0m   33/1
+[ 312.977] [BALL   ]    2.3  Shahi Hope       [1;33m  Wd[0m   34/1
+[ 326.214] [BALL   ]   [RACE] GROUND winner='Rohit Sharma' @ Fine Leg reach=40ms boundary=561ms -> ONE
+[ 326.379] [BALL   ]    2.4  Shahi Hope       [1;37m   1[0m   35/1
+[ 336.912] [BALL   ]   [RACE] GROUND winner='Alex Carey' @ Wicket Keeper reach=40ms boundary=301ms -> ONE
+[ 336.985] [BALL   ]    2.5  David Warner     [1;37m   1[0m   36/1
+[ 347.420] [BALL   ]    2.5  Shahi Hope       [1;33m  Wd[0m   37/1
+[ 360.571] [BALL   ]   [RACE] GROUND winner='Rohit Sharma' @ Fine Leg reach=567ms boundary=690ms -> THREE
+[ 360.637] [BALL   ]    2.6  Shahi Hope       [1;37m   3[0m   40/1
+[ 370.934] [THREAD ] [T-1280] BOWLER 'Lockie Ferguson' DONE — 0W 15R econ=15.0
+[ 371.127] [SCHED  ] CTX SAVE  → 'Lockie Ferguson': 1 overs, 15 runs, 0 wkts, econ=15.00
+[ 371.149] [SCHED  ] RR QUANTUM EXPIRED (quantum=6 balls) → CTX SAVE 'Lockie Ferguson':
+[ 371.155] [SCHED  ] OVER 3 COMPLETE: 'Lockie Ferguson' (1/4 overs)
+[ 371.168] [SCORE  ] End of over 3: 40/1  (Extras: 6)  Intensity: 5
+[ 411.407] [SCHED  ] CTX RESTORE ← 'Kagiso Rabada': 0 overs, 0 runs, 0 wkts
+[ 411.448] [SCHED  ] CONTEXT SWITCH #4 -> 'Kagiso Rabada'  overs=0/4  economy=0.0
+[ 411.460] [SCHED  ] Over 4: 'Kagiso Rabada' (147 km/h) | Scheduler: RR | Phase: LOW(powerplay) | Intensity: 6
+[ 411.567] [THREAD ] Spawned BOWLER 'Kagiso Rabada' [T-1280]
+[ 411.582] [THREAD ] [T-1280] BOWLER 'Kagiso Rabada' START — over 4
+[ 411.742] [BALL   ]    3.1  Shahi Hope       [0;37m •[0m   40/1
+[ 425.064] [BALL   ]    3.2  Shahi Hope       [0;37m •[0m   40/1
+[ 438.420] [BALL   ]   [RACE] GROUND winner='Alex Carey' @ Wicket Keeper reach=40ms boundary=663ms -> ONE
+[ 438.541] [BALL   ]    3.3  Shahi Hope       [1;37m   1[0m   41/1
+[ 449.023] [BALL   ]   [RACE] GROUND winner='KL Rahul' @ Mid On reach=134ms boundary=638ms -> ONE
+[ 449.130] [BALL   ]    3.4  David Warner     [1;37m   1[0m   42/1
+[ 459.367] [BALL   ]   [RACE] GROUND winner='Alex Carey' @ Wicket Keeper reach=40ms boundary=579ms -> ONE
+[ 459.443] [BALL   ]    3.5  Shahi Hope       [1;37m   1[0m   43/1
+[ 469.800] [BALL   ]   [RACE] GROUND winner='Joe Root' @ Mid Wicket reach=613ms boundary=549ms -> FOUR
+[ 469.990] [BALL   ]    3.6  David Warner     [1;32m   4[0m   47/1
+[ 480.217] [THREAD ] [T-1280] BOWLER 'Kagiso Rabada' DONE — 0W 7R econ=7.0
+[ 480.405] [SCHED  ] CTX SAVE  → 'Kagiso Rabada': 1 overs, 7 runs, 0 wkts, econ=7.00
+[ 480.433] [SCHED  ] RR QUANTUM EXPIRED (quantum=6 balls) → CTX SAVE 'Kagiso Rabada':
+[ 480.437] [SCHED  ] OVER 4 COMPLETE: 'Kagiso Rabada' (1/4 overs)
+[ 480.446] [SCORE  ] End of over 4: 47/1  (Extras: 6)  Intensity: 6
+[ 520.792] [SCHED  ] CTX RESTORE ← 'Cameron Green': 0 overs, 0 runs, 0 wkts
+[ 520.879] [SCHED  ] CONTEXT SWITCH #5 -> 'Cameron Green'  overs=0/4  economy=0.0
+[ 520.911] [SCHED  ] Over 5: 'Cameron Green' (133 km/h) | Scheduler: RR | Phase: LOW(powerplay) | Intensity: 7
+[ 521.074] [THREAD ] Spawned BOWLER 'Cameron Green' [T-1280]
+[ 521.231] [THREAD ] [T-1280] BOWLER 'Cameron Green' START — over 5
+[ 521.602] [BALL   ]   [RACE] GROUND winner='Andre Russell' @ Long On reach=155ms boundary=711ms -> ONE
+[ 521.780] [BALL   ]    4.1  Shahi Hope       [1;37m   1[0m   48/1
+[ 532.315] [BALL   ]    4.1  David Warner     [1;33m  Wd[0m   49/1
+[ 545.608] [BALL   ]    4.2  David Warner     [0;37m •[0m   49/1
+[ 558.811] [BALL   ]   [RACE] GROUND winner='Glenn Maxwell' @ Third Man reach=314ms boundary=253ms -> FOUR
+[ 558.997] [BALL   ]    4.3  David Warner     [1;32m   4[0m   53/1
+[ 572.425] [BALL   ]    4.4  David Warner     [0;37m •[0m   53/1
+[ 585.803] [BALL   ]   [RACE] GROUND winner='Alex Carey' @ Wicket Keeper reach=40ms boundary=656ms -> ONE
+[ 585.882] [BALL   ]    4.5  David Warner     [1;37m   1[0m   54/1
+[ 596.313] [BALL   ]   [RACE] GROUND winner='Glenn Maxwell' @ Third Man reach=634ms boundary=331ms -> FOUR
+[ 596.473] [BALL   ]    4.6  Shahi Hope       [1;32m   4[0m   58/1
+[ 606.799] [THREAD ] [T-1280] BOWLER 'Cameron Green' DONE — 0W 11R econ=11.0
+[ 607.010] [SCHED  ] CTX SAVE  → 'Cameron Green': 1 overs, 11 runs, 0 wkts, econ=11.00
+[ 607.074] [SCHED  ] RR QUANTUM EXPIRED (quantum=6 balls) → CTX SAVE 'Cameron Green':
+[ 607.091] [SCHED  ] OVER 5 COMPLETE: 'Cameron Green' (1/4 overs)
+[ 607.130] [SCORE  ] End of over 5: 58/1  (Extras: 7)  Intensity: 7
+[ 647.423] [SCHED  ] CTX RESTORE ← 'Glenn Maxwell': 1 overs, 13 runs, 0 wkts
+[ 647.498] [SCHED  ] CONTEXT SWITCH #6 -> 'Glenn Maxwell'  overs=1/4  economy=13.0
+[ 647.524] [SCHED  ] Over 6: 'Glenn Maxwell' (101 km/h) | Scheduler: RR | Phase: MEDIUM | Intensity: 8
+[ 647.666] [THREAD ] Spawned BOWLER 'Glenn Maxwell' [T-1280]
+[ 647.814] [THREAD ] [T-1280] BOWLER 'Glenn Maxwell' START — over 6
+[ 648.112] [BALL   ]   [RACE] AERIAL winner='Andre Russell' @ Long On reach=40ms flight=567ms — CAUGHT!
+[ 648.287] [BALL   ]   c Andre Russell      @ Long On       — 'David Warner' OUT
+[ 648.367] [BALL   ] NEW BATSMAN: 'Rahmanullah Gurbaz' coming to crease
+[ 648.566] [THREAD ] Spawned BATSMAN 'Rahmanullah Gurbaz' [T-5872]
+[ 648.595] [BALL   ]    5.1  David Warner     [1;31mW(C)[0m   58/2
+[ 648.750] [THREAD ] [T-5872] BATSMAN 'Rahmanullah Gurbaz' → sem_wait(crease) ...
+[ 661.813] [THREAD ] [T-6688] BATSMAN 'David Warner' LEFT crease -> 25(16 balls) | sem=1
+[ 661.909] [THREAD ] [T-5872] BATSMAN 'Rahmanullah Gurbaz' AT CREASE | wait=13.1ms | crease_sem=0
+[ 662.073] [BALL   ]    5.2  Rahmanullah Gurbaz  [0;37m •[0m   58/2
+[ 675.281] [BALL   ]   [RACE] GROUND winner='Alex Carey' @ Wicket Keeper reach=40ms boundary=639ms -> ONE
+[ 675.419] [BALL   ]    5.3  Rahmanullah Gurbaz  [1;37m   1[0m   59/2
+[ 682.539] [BALL   ]   [RACE] GROUND winner='Andre Russell' @ Long On reach=172ms boundary=626ms -> ONE
+[ 682.637] [BALL   ]    5.4  Shahi Hope       [1;37m   1[0m   60/2
+[ 692.618] [BALL   ]   [RACE] GROUND winner='Andre Russell' @ Long On reach=99ms boundary=651ms -> ONE
+[ 692.668] [BALL   ]    5.5  Rahmanullah Gurbaz  [1;37m   1[0m   61/2
+[ 703.044] [BALL   ]    5.6  Shahi Hope       [0;37m •[0m   61/2
+[ 712.864] [THREAD ] [T-1280] BOWLER 'Glenn Maxwell' DONE — 2W 16R econ=8.0
+[ 713.032] [SCHED  ] CTX SAVE  → 'Glenn Maxwell': 2 overs, 16 runs, 2 wkts, econ=8.00
+[ 713.081] [SCHED  ] RR QUANTUM EXPIRED (quantum=6 balls) → CTX SAVE 'Glenn Maxwell':
+[ 713.094] [SCHED  ] OVER 6 COMPLETE: 'Glenn Maxwell' (2/4 overs)
+[ 713.121] [SCORE  ] End of over 6: 61/2  (Extras: 7)  Intensity: 8
+[ 753.455] [SCHED  ] CTX RESTORE ← 'Adam Zampa': 1 overs, 12 runs, 1 wkts
+[ 753.561] [SCHED  ] CONTEXT SWITCH #7 -> 'Adam Zampa'  overs=1/4  economy=12.0
+[ 753.587] [SCHED  ] Over 7: 'Adam Zampa' (92 km/h) | Scheduler: RR | Phase: MEDIUM | Intensity: 11
+[ 753.769] [THREAD ] Spawned BOWLER 'Adam Zampa' [T-1280]
+[ 753.886] [THREAD ] [T-1280] BOWLER 'Adam Zampa' START — over 7
+[ 754.175] [BALL   ]    6.1  Rahmanullah Gurbaz  [0;37m •[0m   61/2
+[ 767.467] [BALL   ]   [RACE] GROUND winner='Andre Russell' @ Long On reach=166ms boundary=325ms -> ONE
+[ 767.589] [BALL   ]    6.2  Rahmanullah Gurbaz  [1;37m   1[0m   62/2
+[ 778.085] [BALL   ]   [RACE] GROUND winner='Rohit Sharma' @ Fine Leg reach=52ms boundary=256ms -> ONE
+[ 778.208] [BALL   ]    6.3  Shahi Hope       [1;37m   1[0m   63/2
+[ 788.769] [BALL   ]   [RACE] GROUND winner='Rohit Sharma' @ Fine Leg reach=430ms boundary=505ms -> THREE
+[ 788.969] [BALL   ]    6.4  Rahmanullah Gurbaz  [1;37m   3[0m   66/2
+[ 799.621] [BALL   ]    6.5  Shahi Hope       [0;37m •[0m   66/2
+[ 813.005] [BALL   ]   [RACE] GROUND winner='Joe Root' @ Mid Wicket reach=114ms boundary=623ms -> ONE
+[ 813.292] [BALL   ]    6.6  Shahi Hope       [1;37m   1[0m   67/2
+[ 823.525] [THREAD ] [T-1280] BOWLER 'Adam Zampa' DONE — 1W 18R econ=9.0
+[ 823.734] [SCHED  ] CTX SAVE  → 'Adam Zampa': 2 overs, 18 runs, 1 wkts, econ=9.00
+[ 823.801] [SCHED  ] RR QUANTUM EXPIRED (quantum=6 balls) → CTX SAVE 'Adam Zampa':
+[ 823.819] [SCHED  ] OVER 7 COMPLETE: 'Adam Zampa' (2/4 overs)
+[ 823.855] [SCORE  ] End of over 7: 67/2  (Extras: 7)  Intensity: 11
+[ 864.114] [SCHED  ] CTX RESTORE ← 'Lockie Ferguson': 1 overs, 15 runs, 0 wkts
+[ 864.165] [SCHED  ] CONTEXT SWITCH #8 -> 'Lockie Ferguson'  overs=1/4  economy=15.0
+[ 864.181] [SCHED  ] Over 8: 'Lockie Ferguson' (148 km/h) | Scheduler: RR | Phase: MEDIUM | Intensity: 12
+[ 864.279] [THREAD ] Spawned BOWLER 'Lockie Ferguson' [T-1280]
+[ 864.334] [THREAD ] [T-1280] BOWLER 'Lockie Ferguson' START — over 8
+[ 864.559] [BALL   ]   [RACE] AERIAL winner='Cameron Green' @ Cover Point reach=119ms flight=587ms — DROPPED
+[ 864.715] [BALL   ]    7.1  Shahi Hope       [1;37m   2[0m   69/2
+[ 877.976] [BALL   ]   [RACE] GROUND winner='Joe Root' @ Mid Wicket reach=294ms boundary=692ms -> TWO
+[ 878.059] [BALL   ]    7.2  Shahi Hope       [1;37m   2[0m   71/2
+[ 891.282] [BALL   ]   [RACE] GROUND winner='Alex Carey' @ Wicket Keeper reach=40ms boundary=621ms -> ONE
+[ 891.532] [BALL   ]    7.3  Shahi Hope       [1;37m   1[0m   72/2
+[ 902.154] [BALL   ]   [RACE] GROUND winner='Glenn Maxwell' @ Third Man reach=62ms boundary=613ms -> ONE
+[ 902.247] [BALL   ]    7.4  Rahmanullah Gurbaz  [1;37m   1[0m   73/2
+[ 912.518] [BALL   ]    7.5  Shahi Hope       [0;37m •[0m   73/2
+[ 925.764] [BALL   ]   [RACE] AERIAL winner='Alex Carey' @ Wicket Keeper reach=40ms flight=476ms — CAUGHT!
+[ 925.965] [BALL   ]   c Alex Carey         @ Wicket Keeper — 'Shahi Hope' OUT
+[ 926.050] [BALL   ] NEW BATSMAN: 'Kieron Pollard' coming to crease
+[ 926.245] [THREAD ] Spawned BATSMAN 'Kieron Pollard' [T-3168]
+[ 926.290] [THREAD ] [T-3168] BATSMAN 'Kieron Pollard' → sem_wait(crease) ...
+[ 926.311] [BALL   ]    7.6  Shahi Hope       [1;31mW(C)[0m   73/3
+[ 936.604] [THREAD ] [T-1280] BOWLER 'Lockie Ferguson' DONE — 1W 21R econ=10.5
+[ 936.819] [SCHED  ] CTX SAVE  → 'Lockie Ferguson': 2 overs, 21 runs, 1 wkts, econ=10.50
+[ 936.871] [SCHED  ] RR QUANTUM EXPIRED (quantum=6 balls) → CTX SAVE 'Lockie Ferguson':
+[ 936.890] [SCHED  ] OVER 8 COMPLETE: 'Lockie Ferguson' (2/4 overs)
+[ 936.933] [SCORE  ] End of over 8: 73/3  (Extras: 7)  Intensity: 12
+[ 939.511] [THREAD ] [T-8576] BATSMAN 'Shahi Hope' LEFT crease -> 19(18 balls) | sem=1
+[ 939.675] [THREAD ] [T-3168] BATSMAN 'Kieron Pollard' AT CREASE | wait=13.3ms | crease_sem=0
+[ 977.201] [SCHED  ] CTX RESTORE ← 'Kagiso Rabada': 1 overs, 7 runs, 0 wkts
+[ 977.262] [SCHED  ] CONTEXT SWITCH #9 -> 'Kagiso Rabada'  overs=1/4  economy=7.0
+[ 977.277] [SCHED  ] Over 9: 'Kagiso Rabada' (147 km/h) | Scheduler: RR | Phase: MEDIUM | Intensity: 15
+[ 977.366] [THREAD ] Spawned BOWLER 'Kagiso Rabada' [T-1280]
+[ 977.435] [THREAD ] [T-1280] BOWLER 'Kagiso Rabada' START — over 9
+[ 977.526] [BALL   ]   [RACE] AERIAL winner='Cameron Green' @ Cover Point reach=490ms flight=472ms — MISSED (fell short)
+[ 977.639] [BALL   ]    8.1  Rahmanullah Gurbaz  [1;37m   2[0m   75/3
+[ 990.898] [BALL   ]   [RACE] GROUND winner='KL Rahul' @ Mid On reach=706ms boundary=513ms -> FOUR
+[ 991.048] [BALL   ]    8.2  Rahmanullah Gurbaz  [1;32m   4[0m   79/3
+[1004.445] [BALL   ]    8.3  Rahmanullah Gurbaz  [1;32m   6[0m   85/3
+[1017.589] [BALL   ]   [RACE] AERIAL winner='Shikhar Dhawan' @ Square Leg reach=156ms flight=489ms — CAUGHT!
+[1017.646] [BALL   ]   c Shikhar Dhawan     @ Square Leg    — 'Rahmanullah Gurbaz' OUT
+[1017.666] [BALL   ] NEW BATSMAN: 'Sanju Samson' coming to crease
+[1017.732] [THREAD ] Spawned BATSMAN 'Sanju Samson' [T-0464]
+[1017.744] [BALL   ]    8.4  Rahmanullah Gurbaz  [1;31mW(C)[0m   85/4
+[1017.742] [THREAD ] [T-0464] BATSMAN 'Sanju Samson' → sem_wait(crease) ...
+[1030.874] [THREAD ] [T-5872] BATSMAN 'Rahmanullah Gurbaz' LEFT crease -> 19(11 balls) | sem=1
+[1031.015] [THREAD ] [T-0464] BATSMAN 'Sanju Samson' AT CREASE | wait=13.2ms | crease_sem=0
+[1031.056] [BALL   ]   [RACE] GROUND winner='Rohit Sharma' @ Fine Leg reach=178ms boundary=686ms -> ONE
+[1031.147] [BALL   ]    8.5  Sanju Samson     [1;37m   1[0m   86/4
+[1041.220] [BALL   ]    8.6  Kieron Pollard   [0;37m •[0m   86/4
+[1051.336] [THREAD ] [T-1280] BOWLER 'Kagiso Rabada' DONE — 2W 20R econ=10.0
+[1051.471] [SCHED  ] CTX SAVE  → 'Kagiso Rabada': 2 overs, 20 runs, 2 wkts, econ=10.00
+[1051.497] [SCHED  ] RR QUANTUM EXPIRED (quantum=6 balls) → CTX SAVE 'Kagiso Rabada':
+[1051.509] [SCHED  ] OVER 9 COMPLETE: 'Kagiso Rabada' (2/4 overs)
+[1051.531] [SCORE  ] End of over 9: 86/4  (Extras: 7)  Intensity: 15
+[1091.750] [SCHED  ] CTX RESTORE ← 'Cameron Green': 1 overs, 11 runs, 0 wkts
+[1091.820] [SCHED  ] CONTEXT SWITCH #10 -> 'Cameron Green'  overs=1/4  economy=11.0
+[1091.840] [SCHED  ] Over 10: 'Cameron Green' (133 km/h) | Scheduler: RR | Phase: MEDIUM | Intensity: 18
+[1091.941] [THREAD ] Spawned BOWLER 'Cameron Green' [T-1280]
+[1092.025] [THREAD ] [T-1280] BOWLER 'Cameron Green' START — over 10
+[1092.157] [BALL   ]   [RACE] GROUND winner='KL Rahul' @ Mid On reach=756ms boundary=610ms -> FOUR
+[1092.259] [BALL   ]    9.1  Sanju Samson     [1;32m   4[0m   90/4
+[1105.723] [BALL   ]    9.2  Sanju Samson     [1;32m   6[0m   96/4
+[1119.141] [BALL   ]   [RACE] GROUND winner='Rohit Sharma' @ Fine Leg reach=290ms boundary=488ms -> TWO
+[1119.324] [BALL   ]    9.3  Sanju Samson     [1;37m   2[0m   98/4
+[1132.739] [BALL   ]   [RACE] GROUND winner='Rohit Sharma' @ Fine Leg reach=40ms boundary=658ms -> ONE
+[1132.925] [BALL   ]    9.4  Sanju Samson     [1;37m   1[0m   99/4
+[1143.459] [BALL   ]   [RACE] GROUND winner='Glenn Maxwell' @ Mid Off reach=186ms boundary=722ms -> ONE
+[1143.686] [BALL   ]    9.5  Kieron Pollard   [1;37m   1[0m   100/4
+[1154.506] [BALL   ]    9.6  Sanju Samson     [0;37m •[0m   100/4
+[1164.727] [THREAD ] [T-1280] BOWLER 'Cameron Green' DONE — 0W 25R econ=12.5
+[1164.911] [SCHED  ] CTX SAVE  → 'Cameron Green': 2 overs, 25 runs, 0 wkts, econ=12.50
+[1164.942] [SCHED  ] RR QUANTUM EXPIRED (quantum=6 balls) → CTX SAVE 'Cameron Green':
+[1164.951] [SCHED  ] OVER 10 COMPLETE: 'Cameron Green' (2/4 overs)
+[1164.971] [SCORE  ] End of over 10: 100/4  (Extras: 7)  Intensity: 18
+[1205.260] [SCHED  ] CTX RESTORE ← 'Glenn Maxwell': 2 overs, 16 runs, 2 wkts
+[1205.370] [SCHED  ] CONTEXT SWITCH #11 -> 'Glenn Maxwell'  overs=2/4  economy=8.0
+[1205.398] [SCHED  ] Over 11: 'Glenn Maxwell' (101 km/h) | Scheduler: RR | Phase: MEDIUM | Intensity: 19
+[1205.539] [THREAD ] Spawned BOWLER 'Glenn Maxwell' [T-1280]
+[1205.696] [THREAD ] [T-1280] BOWLER 'Glenn Maxwell' START — over 11
+[1206.041] [BALL   ]   [RACE] GROUND winner='Andre Russell' @ Long On reach=585ms boundary=529ms -> FOUR
+[1206.212] [BALL   ]   10.1  Kieron Pollard   [1;32m   4[0m   104/4
+[1219.492] [BALL   ]   [RACE] GROUND winner='Andre Russell' @ Long On reach=292ms boundary=608ms -> TWO
+[1219.635] [BALL   ]   10.2  Kieron Pollard   [1;37m   2[0m   106/4
+[1233.031] [BALL   ]   [RACE] GROUND winner='Cameron Green' @ Cover Point reach=285ms boundary=663ms -> TWO
+[1233.162] [BALL   ]   10.3  Kieron Pollard   [1;37m   2[0m   108/4
+[1246.485] [BALL   ]   [RACE] GROUND winner='Andre Russell' @ Long On reach=432ms boundary=581ms -> THREE
+[1246.656] [BALL   ]   10.4  Kieron Pollard   [1;37m   3[0m   111/4
+[1257.073] [BALL   ]   10.5  Sanju Samson     [1;32m   6[0m   117/4
+[1270.582] [BALL   ]   10.6  Sanju Samson     [0;37m •[0m   117/4
+[1281.026] [THREAD ] [T-1280] BOWLER 'Glenn Maxwell' DONE — 2W 33R econ=11.0
+[1281.275] [SCHED  ] CTX SAVE  → 'Glenn Maxwell': 3 overs, 33 runs, 2 wkts, econ=11.00
+[1281.327] [SCHED  ] RR QUANTUM EXPIRED (quantum=6 balls) → CTX SAVE 'Glenn Maxwell':
+[1281.345] [SCHED  ] OVER 11 COMPLETE: 'Glenn Maxwell' (3/4 overs)
+[1281.403] [SCORE  ] End of over 11: 117/4  (Extras: 7)  Intensity: 19
+[1321.700] [SCHED  ] CTX RESTORE ← 'Adam Zampa': 2 overs, 18 runs, 1 wkts
+[1321.779] [SCHED  ] CONTEXT SWITCH #12 -> 'Adam Zampa'  overs=2/4  economy=9.0
+[1321.806] [SCHED  ] Over 12: 'Adam Zampa' (92 km/h) | Scheduler: RR | Phase: MEDIUM | Intensity: 20
+[1321.965] [THREAD ] Spawned BOWLER 'Adam Zampa' [T-1280]
+[1322.030] [THREAD ] [T-1280] BOWLER 'Adam Zampa' START — over 12
+[1322.271] [BALL   ]   [RACE] GROUND winner='Andre Russell' @ Long On reach=298ms boundary=726ms -> TWO
+[1322.492] [BALL   ]   11.1  Kieron Pollard   [1;37m   2[0m   119/4
+[1335.951] [BALL   ]   [RACE] GROUND winner='Cameron Green' @ Cover Point reach=261ms boundary=579ms -> TWO
+[1336.121] [BALL   ]   11.2  Kieron Pollard   [1;37m   2[0m   121/4
+[1349.594] [BALL   ]   11.3  Kieron Pollard   [0;37m •[0m   121/4
+[1363.101] [BALL   ]   11.4  Kieron Pollard   [1;32m   6[0m   127/4
+[1376.552] [BALL   ]   11.5  Kieron Pollard   [0;37m •[0m   127/4
+[1389.942] [BALL   ]   11.6  Kieron Pollard   [1;32m   6[0m   133/4
+[1400.257] [THREAD ] [T-1280] BOWLER 'Adam Zampa' DONE — 1W 34R econ=11.3
+[1400.561] [SCHED  ] CTX SAVE  → 'Adam Zampa': 3 overs, 34 runs, 1 wkts, econ=11.33
+[1400.618] [SCHED  ] RR QUANTUM EXPIRED (quantum=6 balls) → CTX SAVE 'Adam Zampa':
+[1400.636] [SCHED  ] OVER 12 COMPLETE: 'Adam Zampa' (3/4 overs)
+[1400.680] [SCORE  ] End of over 12: 133/4  (Extras: 7)  Intensity: 20
+[1440.823] [SCHED  ] CTX RESTORE ← 'Lockie Ferguson': 2 overs, 21 runs, 1 wkts
+[1440.894] [SCHED  ] CONTEXT SWITCH #13 -> 'Lockie Ferguson'  overs=2/4  economy=10.5
+[1440.917] [SCHED  ] Over 13: 'Lockie Ferguson' (148 km/h) | Scheduler: RR | Phase: MEDIUM | Intensity: 21
+[1441.067] [THREAD ] Spawned BOWLER 'Lockie Ferguson' [T-1280]
+[1441.132] [THREAD ] [T-1280] BOWLER 'Lockie Ferguson' START — over 13
+[1441.417] [BALL   ]   12.1  Sanju Samson     [0;37m •[0m   133/4
+[1454.744] [BALL   ]   [RACE] GROUND winner='Alex Carey' @ Wicket Keeper reach=40ms boundary=536ms -> ONE
+[1454.930] [BALL   ]   12.2  Sanju Samson     [1;37m   1[0m   134/4
+[1465.557] [BALL   ]   12.3  Kieron Pollard   [0;37m •[0m   134/4
+[1479.043] [BALL   ]   12.4  Kieron Pollard   [0;37m •[0m   134/4
+[1492.406] [BALL   ]   12.5  Kieron Pollard   [0;37m •[0m   134/4
+[1505.750] [BALL   ]   [RACE] GROUND winner='Glenn Maxwell' @ Third Man reach=261ms boundary=638ms -> TWO
+[1505.929] [BALL   ]   12.6  Kieron Pollard   [1;37m   2[0m   136/4
+[1516.300] [THREAD ] [T-1280] BOWLER 'Lockie Ferguson' DONE — 1W 24R econ=8.0
+[1516.556] [SCHED  ] CTX SAVE  → 'Lockie Ferguson': 3 overs, 24 runs, 1 wkts, econ=8.00
+[1516.641] [SCHED  ] RR QUANTUM EXPIRED (quantum=6 balls) → CTX SAVE 'Lockie Ferguson':
+[1516.661] [SCHED  ] OVER 13 COMPLETE: 'Lockie Ferguson' (3/4 overs)
+[1516.713] [SCORE  ] End of over 13: 136/4  (Extras: 7)  Intensity: 21
+[1556.866] [SCHED  ] CTX RESTORE ← 'Kagiso Rabada': 2 overs, 20 runs, 2 wkts
+[1556.954] [SCHED  ] CONTEXT SWITCH #14 -> 'Kagiso Rabada'  overs=2/4  economy=10.0
+[1556.981] [SCHED  ] Over 14: 'Kagiso Rabada' (147 km/h) | Scheduler: RR | Phase: MEDIUM | Intensity: 22
+[1557.129] [THREAD ] Spawned BOWLER 'Kagiso Rabada' [T-1280]
+[1557.216] [THREAD ] [T-1280] BOWLER 'Kagiso Rabada' START — over 14
+[1557.487] [BALL   ]   [RACE] GROUND winner='Andre Russell' @ Long On reach=300ms boundary=718ms -> TWO
+[1557.644] [BALL   ]   13.1  Sanju Samson     [1;37m   2[0m   138/4
+[1570.953] [BALL   ]   13.1  Sanju Samson     [1;33m  Wd[0m   139/4
+[1584.494] [BALL   ]   13.2  Sanju Samson     [1;32m   6[0m   145/4
+[1597.966] [BALL   ]   13.3  Sanju Samson     [0;37m •[0m   145/4
+[1611.523] [BALL   ]   13.4  Sanju Samson     [1;32m   6[0m   151/4
+[1624.940] [BALL   ]   13.5  Sanju Samson     [0;37m •[0m   151/4
+[1638.228] [BALL   ]   [RACE] GROUND winner='Alex Carey' @ Wicket Keeper reach=40ms boundary=719ms -> ONE
+[1638.513] [BALL   ]   13.6  Sanju Samson     [1;37m   1[0m   152/4
+[1648.935] [THREAD ] [T-1280] BOWLER 'Kagiso Rabada' DONE — 2W 36R econ=12.0
+[1649.164] [SCHED  ] CTX SAVE  → 'Kagiso Rabada': 3 overs, 36 runs, 2 wkts, econ=12.00
+[1649.247] [SCHED  ] RR QUANTUM EXPIRED (quantum=6 balls) → CTX SAVE 'Kagiso Rabada':
+[1649.272] [SCHED  ] OVER 14 COMPLETE: 'Kagiso Rabada' (3/4 overs)
+[1649.321] [SCORE  ] End of over 14: 152/4  (Extras: 8)  Intensity: 22
+[1689.595] [SCHED  ] CTX RESTORE ← 'Cameron Green': 2 overs, 25 runs, 0 wkts
+[1689.660] [SCHED  ] CONTEXT SWITCH #15 -> 'Cameron Green'  overs=2/4  economy=12.5
+[1689.684] [SCHED  ] Over 15: 'Cameron Green' (133 km/h) | Scheduler: RR | Phase: MEDIUM | Intensity: 23
+[1689.829] [THREAD ] Spawned BOWLER 'Cameron Green' [T-1280]
+[1689.859] [THREAD ] [T-1280] BOWLER 'Cameron Green' START — over 15
+[1690.097] [BALL   ]   [RACE] AERIAL winner='Alex Carey' @ Wicket Keeper reach=40ms flight=582ms — CAUGHT!
+[1690.250] [BALL   ]   c Alex Carey         @ Wicket Keeper — 'Sanju Samson' OUT
+[1690.297] [BALL   ] NEW BATSMAN: 'Jason Holder' coming to crease
+[1690.495] [THREAD ] Spawned BATSMAN 'Jason Holder' [T-7760]
+[1690.527] [THREAD ] [T-7760] BATSMAN 'Jason Holder' → sem_wait(crease) ...
+[1690.558] [BALL   ]   14.1  Sanju Samson     [1;31mW(C)[0m   152/5
+[1703.807] [THREAD ] [T-0464] BATSMAN 'Sanju Samson' LEFT crease -> 36(17 balls) | sem=1
+[1703.960] [THREAD ] [T-7760] BATSMAN 'Jason Holder' AT CREASE | wait=13.4ms | crease_sem=0
+[1704.055] [BALL   ]   [RACE] GROUND winner='KL Rahul' @ Mid On reach=301ms boundary=294ms -> FOUR
+[1704.193] [BALL   ]   14.2  Jason Holder     [1;32m   4[0m   156/5
+[1717.441] [BALL   ]   14.3  Jason Holder     [0;37m •[0m   156/5
+[1730.887] [BALL   ]   14.4  Jason Holder     [1;32m   6[0m   162/5
+[1744.219] [BALL   ]   [RACE] GROUND winner='Joe Root' @ Mid Wicket reach=136ms boundary=257ms -> ONE
+[1744.421] [BALL   ]   14.5  Jason Holder     [1;37m   1[0m   163/5
+[1754.787] [THREAD ] [T-1280] BOWLER 'Cameron Green' DONE — 2W 36R econ=12.0
+[1755.053] [SCHED  ] CTX SAVE  → 'Cameron Green': 3 overs, 36 runs, 2 wkts, econ=12.00
+[1755.137] [SCHED  ] RR QUANTUM EXPIRED (quantum=6 balls) → CTX SAVE 'Cameron Green':
+[1755.158] [SCHED  ] OVER 15 COMPLETE: 'Cameron Green' (3/4 overs)
+[1755.237] [SCORE  ] End of over 15: 163/5  (Extras: 8)  Intensity: 23
+[1795.429] [SCHED  ] CTX RESTORE ← 'Glenn Maxwell': 3 overs, 33 runs, 2 wkts
+[1795.509] [SCHED  ] CONTEXT SWITCH #16 -> 'Glenn Maxwell'  overs=3/4  economy=11.0
+[1795.536] [SCHED  ] Over 16: 'Glenn Maxwell' (101 km/h) | Scheduler: RR | Phase: HIGH(death) | Intensity: 26
+[1795.693] [THREAD ] Spawned BOWLER 'Glenn Maxwell' [T-1280]
+[1795.725] [THREAD ] [T-1280] BOWLER 'Glenn Maxwell' START — over 16
+[1795.946] [BALL   ]   [RACE] GROUND winner='KL Rahul' @ Mid On reach=333ms boundary=718ms -> TWO
+[1796.062] [BALL   ]   15.1  Jason Holder     [1;37m   2[0m   165/5
+[1809.324] [BALL   ]   [RACE] GROUND winner='Joe Root' @ Mid Wicket reach=40ms boundary=636ms -> ONE
+[1809.441] [BALL   ]   15.2  Jason Holder     [1;37m   1[0m   166/5
+[1820.001] [BALL   ]   [RACE] GROUND winner='Cameron Green' @ Long Off reach=431ms boundary=711ms -> THREE
+[1820.109] [BALL   ]   15.3  Kieron Pollard   [1;37m   3[0m   169/5
+[1830.766] [BALL   ]   15.4  Jason Holder     [1;32m   6[0m   175/5
+[1843.936] [BALL   ]   [RACE] GROUND winner='Alex Carey' @ Wicket Keeper reach=40ms boundary=595ms -> ONE
+[1844.009] [BALL   ]   15.5  Jason Holder     [1;37m   1[0m   176/5
+[1854.456] [BALL   ]   [RACE] GROUND winner='Cameron Green' @ Long Off reach=284ms boundary=277ms -> FOUR
+[1854.517] [BALL   ]   15.6  Kieron Pollard   [1;32m   4[0m   180/5
+[1864.691] [THREAD ] [T-1280] BOWLER 'Glenn Maxwell' DONE — 2W 50R econ=12.5
+[1864.895] [SCHED  ] CTX SAVE  → 'Glenn Maxwell': 4 overs, 50 runs, 2 wkts, econ=12.50
+[1864.916] [SCHED  ] RR QUANTUM EXPIRED (quantum=6 balls) → CTX SAVE 'Glenn Maxwell':
+[1864.922] [SCHED  ] OVER 16 COMPLETE: 'Glenn Maxwell' (4/4 overs)
+[1864.934] [SCORE  ] End of over 16: 180/5  (Extras: 8)  Intensity: 26
+[1905.027] [SCHED  ] CTX RESTORE ← 'Adam Zampa': 3 overs, 34 runs, 1 wkts
+[1905.057] [SCHED  ] CONTEXT SWITCH #17 -> 'Adam Zampa'  overs=3/4  economy=11.3
+[1905.063] [SCHED  ] Over 17: 'Adam Zampa' (92 km/h) | Scheduler: RR | Phase: HIGH(death) | Intensity: 27
+[1905.114] [THREAD ] Spawned BOWLER 'Adam Zampa' [T-1280]
+[1905.155] [THREAD ] [T-1280] BOWLER 'Adam Zampa' START — over 17
+[1905.216] [BALL   ]   [RACE] GROUND winner='Andre Russell' @ Long On reach=173ms boundary=694ms -> ONE
+[1905.255] [BALL   ]   16.1  Jason Holder     [1;37m   1[0m   181/5
+[1915.483] [BALL   ]   [RACE] GROUND winner='Glenn Maxwell' @ Mid Off reach=129ms boundary=736ms -> ONE
+[1915.528] [BALL   ]   16.2  Kieron Pollard   [1;37m   1[0m   182/5
+[1925.813] [BALL   ]   [RACE] GROUND winner='Cameron Green' @ Cover Point reach=40ms boundary=698ms -> ONE
+[1925.847] [BALL   ]   16.3  Jason Holder     [1;37m   1[0m   183/5
+[1936.312] [BALL   ]   [RACE] GROUND winner='Glenn Maxwell' @ Mid Off reach=40ms boundary=666ms -> ONE
+[1936.332] [BALL   ]   16.4  Kieron Pollard   [1;37m   1[0m   184/5
+[1946.709] [BALL   ]   [RACE] GROUND winner='Cameron Green' @ Cover Point reach=701ms boundary=318ms -> FOUR
+[1946.736] [BALL   ]   16.5  Jason Holder     [1;32m   4[0m   188/5
+[1959.942] [BALL   ]   16.6  Jason Holder     [0;37m •[0m   188/5
+[1970.318] [THREAD ] [T-1280] BOWLER 'Adam Zampa' DONE — 1W 42R econ=10.5
+[1970.523] [SCHED  ] CTX SAVE  → 'Adam Zampa': 4 overs, 42 runs, 1 wkts, econ=10.50
+[1970.590] [SCHED  ] RR QUANTUM EXPIRED (quantum=6 balls) → CTX SAVE 'Adam Zampa':
+[1970.605] [SCHED  ] OVER 17 COMPLETE: 'Adam Zampa' (4/4 overs)
+[1970.633] [SCORE  ] End of over 17: 188/5  (Extras: 8)  Intensity: 27
+[2010.778] [SCHED  ] CTX RESTORE ← 'Lockie Ferguson': 3 overs, 24 runs, 1 wkts
+[2010.853] [SCHED  ] CONTEXT SWITCH #18 -> 'Lockie Ferguson'  overs=3/4  economy=8.0
+[2010.879] [SCHED  ] Over 18: 'Lockie Ferguson' (148 km/h) | Scheduler: RR | Phase: HIGH(death) | Intensity: 28
+[2011.017] [THREAD ] Spawned BOWLER 'Lockie Ferguson' [T-1280]
+[2011.035] [THREAD ] [T-1280] BOWLER 'Lockie Ferguson' START — over 18
+[2011.283] [BALL   ]   [RACE] GROUND winner='Glenn Maxwell' @ Mid Off reach=138ms boundary=728ms -> ONE
+[2011.374] [BALL   ]   17.1  Kieron Pollard   [1;37m   1[0m   189/5
+[2021.928] [BALL   ]   17.2  Jason Holder     [0;37m •[0m   189/5
+[2035.217] [BALL   ]   [RACE] GROUND winner='Glenn Maxwell' @ Third Man reach=40ms boundary=702ms -> ONE
+[2035.300] [BALL   ]   17.3  Jason Holder     [1;37m   1[0m   190/5
+[2045.513] [BALL   ]   [RACE] GROUND winner='Glenn Maxwell' @ Mid Off reach=300ms boundary=662ms -> TWO
+[2045.572] [BALL   ]   17.4  Kieron Pollard   [1;37m   2[0m   192/5
+[2058.691] [BALL   ]   [RACE] GROUND winner='Glenn Maxwell' @ Mid Off reach=112ms boundary=733ms -> ONE
+[2058.768] [BALL   ]   17.5  Kieron Pollard   [1;37m   1[0m   193/5
+[2069.302] [BALL   ]   [RACE] GROUND winner='Cameron Green' @ Cover Point reach=51ms boundary=736ms -> ONE
+[2069.407] [BALL   ]   17.6  Jason Holder     [1;37m   1[0m   194/5
+[2079.658] [THREAD ] [T-1280] BOWLER 'Lockie Ferguson' DONE — 1W 30R econ=7.5
+[2079.787] [SCHED  ] CTX SAVE  → 'Lockie Ferguson': 4 overs, 30 runs, 1 wkts, econ=7.50
+[2079.804] [SCHED  ] RR QUANTUM EXPIRED (quantum=6 balls) → CTX SAVE 'Lockie Ferguson':
+[2079.809] [SCHED  ] OVER 18 COMPLETE: 'Lockie Ferguson' (4/4 overs)
+[2079.819] [SCORE  ] End of over 18: 194/5  (Extras: 8)  Intensity: 28
+[2119.996] [SCHED  ] CTX RESTORE ← 'Kagiso Rabada': 3 overs, 36 runs, 2 wkts
+[2120.064] [SCHED  ] CONTEXT SWITCH #19 -> 'Kagiso Rabada'  overs=3/4  economy=12.0
+[2120.088] [SCHED  ] Over 19: 'Kagiso Rabada' (147 km/h) | Scheduler: RR | Phase: HIGH(death) | Intensity: 29
+[2120.217] [THREAD ] Spawned BOWLER 'Kagiso Rabada' [T-1280]
+[2120.278] [THREAD ] [T-1280] BOWLER 'Kagiso Rabada' START — over 19
+[2120.512] [BALL   ]   [RACE] GROUND winner='Cameron Green' @ Cover Point reach=288ms boundary=458ms -> TWO
+[2120.633] [BALL   ]   18.1  Jason Holder     [1;37m   2[0m   196/5
+[2133.894] [BALL   ]   [RACE] GROUND winner='Cameron Green' @ Cover Point reach=594ms boundary=585ms -> FOUR
+[2133.979] [BALL   ]   18.2  Jason Holder     [1;32m   4[0m   200/5
+[2147.260] [BALL   ]   [RACE] GROUND winner='Alex Carey' @ Wicket Keeper reach=40ms boundary=536ms -> ONE
+[2147.414] [BALL   ]   18.3  Jason Holder     [1;37m   1[0m   201/5
+[2157.883] [BALL   ]   18.4  Kieron Pollard   [0;37m •[0m   201/5
+[2171.326] [BALL   ]   [RACE] GROUND winner='Alex Carey' @ Wicket Keeper reach=40ms boundary=688ms -> ONE
+[2171.565] [BALL   ]   18.5  Kieron Pollard   [1;37m   1[0m   202/5
+[2182.153] [BALL   ]   18.6  Jason Holder     [0;37m •[0m   202/5
+[2192.379] [THREAD ] [T-1280] BOWLER 'Kagiso Rabada' DONE — 2W 44R econ=11.0
+[2192.526] [SCHED  ] CTX SAVE  → 'Kagiso Rabada': 4 overs, 44 runs, 2 wkts, econ=11.00
+[2192.570] [SCHED  ] RR QUANTUM EXPIRED (quantum=6 balls) → CTX SAVE 'Kagiso Rabada':
+[2192.586] [SCHED  ] OVER 19 COMPLETE: 'Kagiso Rabada' (4/4 overs)
+[2192.637] [SCORE  ] End of over 19: 202/5  (Extras: 8)  Intensity: 29
+[2232.906] [SCHED  ] CTX RESTORE ← 'Cameron Green': 3 overs, 36 runs, 2 wkts
+[2232.981] [SCHED  ] CONTEXT SWITCH #20 -> 'Cameron Green'  overs=3/4  economy=12.0
+[2233.004] [SCHED  ] Over 20: 'Cameron Green' (133 km/h) | Scheduler: RR | Phase: HIGH(death) | Intensity: 30
+[2233.148] [THREAD ] Spawned BOWLER 'Cameron Green' [T-1280]
+[2233.225] [THREAD ] [T-1280] BOWLER 'Cameron Green' START — over 20
+[2233.508] [BALL   ]   19.1  Kieron Pollard   [1;32m   6[0m   208/5
+[2246.843] [BALL   ]   [RACE] GROUND winner='Rohit Sharma' @ Fine Leg reach=166ms boundary=716ms -> ONE
+[2247.039] [BALL   ]   19.2  Kieron Pollard   [1;37m   1[0m   209/5
+[2257.576] [BALL   ]   19.3  Jason Holder     [1;32m   6[0m   215/5
+[2270.871] [BALL   ]   [RACE] GROUND winner='Andre Russell' @ Long On reach=599ms boundary=672ms -> THREE
+[2271.024] [BALL   ]   19.4  Jason Holder     [1;37m   3[0m   218/5
+[2281.769] [BALL   ]   19.5  Kieron Pollard   [0;37m •[0m   218/5
+[2295.137] [BALL   ] NEW BATSMAN: 'Wanindu Hasaranga' coming to crease
+[2295.450] [THREAD ] Spawned BATSMAN 'Wanindu Hasaranga' [T-6864]
+[2295.508] [BALL   ]   19.6  Kieron Pollard   [1;31mW(B)[0m   218/6
+[2295.570] [THREAD ] [T-6864] BATSMAN 'Wanindu Hasaranga' → sem_wait(crease) ...
+[2305.773] [THREAD ] [T-1280] BOWLER 'Cameron Green' DONE — 3W 52R econ=13.0
+[2305.944] [SCHED  ] CTX SAVE  → 'Cameron Green': 4 overs, 52 runs, 3 wkts, econ=13.00
+[2305.984] [SCHED  ] RR QUANTUM EXPIRED (quantum=6 balls) → CTX SAVE 'Cameron Green':
+[2306.000] [SCHED  ] OVER 20 COMPLETE: 'Cameron Green' (4/4 overs)
+[2306.037] [SCORE  ] End of over 20: 218/6  (Extras: 8)  Intensity: 30
+[2308.636] [THREAD ] [T-3168] BATSMAN 'Kieron Pollard' LEFT crease -> 51(29 balls) | sem=1
+[2308.764] [THREAD ] [T-6864] BATSMAN 'Wanindu Hasaranga' AT CREASE | wait=13.1ms | crease_sem=0
+[2346.394] [THREAD ] [T-2912] FIELDER 'KL Rahul' @ Mid On exit
+[2346.403] [THREAD ] [T-2096] FIELDER 'Cameron Green' @ Cover Point exit
+[2346.406] [THREAD ] [T-6864] BATSMAN 'Wanindu Hasaranga' LEFT crease -> 0(0 balls) | sem=1
+[2346.433] [THREAD ] [T-5616] FIELDER 'Joe Root' @ Mid Wicket exit
+[2346.438] [THREAD ] [T-7760] BATSMAN 'Jason Holder' LEFT crease -> 45(21 balls) | sem=2
+[2346.450] [THREAD ] [T-1024] FIELDER 'Rohit Sharma' @ Fine Leg exit
+[2346.448] [THREAD ] [T-9392] FIELDER 'Glenn Maxwell' @ Third Man exit
+[2346.453] [THREAD ] [T-8320] FIELDER 'Shikhar Dhawan' @ Square Leg exit
+[2346.458] [THREAD ] [T-0208] FIELDER 'Andre Russell' @ Long On exit
+[2346.468] [THREAD ] [T-4800] FIELDER 'Glenn Maxwell' @ Mid Off exit
+[2346.470] [THREAD ] [T-7504] FIELDER 'Cameron Green' @ Long Off exit
+[2346.488] [THREAD ] [T-3728] FIELDER 'Alex Carey' @ Wicket Keeper exit
+[2348.614] [THREAD ] All fielder threads joined
+[2358.469] [THREAD ] [UMPIRE] Exiting
+[2358.666] [INFO   ] === INNINGS 1 COMPLETE: 218/6 in 20 overs ===
+[2358.770] [SCHED  ] BATTING ORDER built (FCFS: Rohit Sharma | SJF: Andre Russell ...)
+[2358.789] [SCHED  ] Scheduler: Bowler 'Jason Holder' added to RR queue (pos 0)
+[2358.806] [SCHED  ] Scheduler: Bowler 'Wanindu Hasaranga' added to RR queue (pos 1)
+[2358.822] [SCHED  ] Scheduler: Bowler 'Adil Rashid' added to RR queue (pos 2)
+[2358.836] [SCHED  ] Scheduler: Bowler 'Trent Boult' added to RR queue (pos 3)
+[2358.850] [SCHED  ] Scheduler: Bowler 'Mustafizur Rahman' added to RR queue (pos 4)
+[2358.938] [THREAD ] Umpire thread spawned [T-6432]
+[2358.987] [THREAD ] [UMPIRE T-6432] Kernel thread STARTED — polling every 50ms
+[2359.103] [THREAD ] [T-4800] FIELDER 'Devon Conway' @ Square Leg    -> cond_wait
+[2359.111] [THREAD ] [T-2096] FIELDER 'David Warner' @ Fine Leg      -> cond_wait
+[2359.116] [THREAD ] [T-9392] FIELDER 'Sanju Samson' @ Wicket Keeper -> cond_wait
+[2359.329] [THREAD ] [T-3728] FIELDER 'Shahi Hope' @ Mid Wicket    -> cond_wait
+[2359.365] [THREAD ] [T-1024] FIELDER 'Rahmanullah Gurbaz' @ Mid On        -> cond_wait
+[2359.389] [THREAD ] [T-8320] FIELDER 'Kieron Pollard' @ Long On       -> cond_wait
+[2359.521] [THREAD ] [T-2912] FIELDER 'Wanindu Hasaranga' @ Mid Off       -> cond_wait
+[2359.624] [THREAD ] Spawned 10 fielder threads (all sleeping on cond_wait)
+[2359.532] [THREAD ] [T-5616] FIELDER 'Jason Holder' @ Long Off      -> cond_wait
+[2359.626] [THREAD ] [T-0208] FIELDER 'Jason Holder' @ Cover Point   -> cond_wait
+[2359.665] [THREAD ] ── THREAD POOL: 1 bowler + 2 batsmen + 10 fielders + 1 umpire + 1 scoreboard = 15 total concurrent threads ──
+[2359.635] [THREAD ] [T-7504] FIELDER 'Wanindu Hasaranga' @ Third Man     -> cond_wait
+[2360.022] [THREAD ] Spawned BATSMAN 'Rohit Sharma' [T-6688]
+[2360.045] [THREAD ] [T-6688] BATSMAN 'Rohit Sharma' → sem_wait(crease) ...
+[2360.106] [THREAD ] [T-6688] BATSMAN 'Rohit Sharma' AT CREASE | wait=0.0ms | crease_sem=1
+[2360.141] [THREAD ] Spawned BATSMAN 'Shikhar Dhawan' [T-3984]
+[2360.167] [THREAD ] [T-3984] BATSMAN 'Shikhar Dhawan' → sem_wait(crease) ...
+[2360.221] [THREAD ] [T-3984] BATSMAN 'Shikhar Dhawan' AT CREASE | wait=0.0ms | crease_sem=0
+[2360.193] [SCHED  ] CTX RESTORE ← 'Wanindu Hasaranga': 0 overs, 0 runs, 0 wkts
+[2360.275] [SCHED  ] CONTEXT SWITCH #21 -> 'Wanindu Hasaranga'  overs=0/4  economy=0.0
+[2360.296] [SCHED  ] Over 1: 'Wanindu Hasaranga' (103 km/h) | Scheduler: RR | Phase: LOW(powerplay) | Intensity: 21
+[2360.417] [THREAD ] Spawned BOWLER 'Wanindu Hasaranga' [T-1280]
+[2360.453] [THREAD ] [T-1280] BOWLER 'Wanindu Hasaranga' START — over 1
+[2360.643] [BALL   ] NEW BATSMAN: 'Joe Root' coming to crease
+[2360.797] [THREAD ] Spawned BATSMAN 'Joe Root' [T-8576]
+[2360.815] [THREAD ] [T-8576] BATSMAN 'Joe Root' → sem_wait(crease) ...
+[2360.840] [BALL   ]    0.1  Rohit Sharma     [1;31mW(B)[0m   0/1
+[2373.988] [THREAD ] [T-6688] BATSMAN 'Rohit Sharma' LEFT crease -> 0(1 balls) | sem=1
+[2374.041] [THREAD ] [T-8576] BATSMAN 'Joe Root' AT CREASE | wait=13.2ms | crease_sem=0
+[2374.137] [BALL   ]    0.2  Joe Root         [0;37m •[0m   0/1
+[2387.327] [BALL   ]   [RACE] GROUND winner='David Warner' @ Fine Leg reach=49ms boundary=342ms -> ONE
+[2387.465] [BALL   ]    0.3  Joe Root         [1;37m   1[0m   1/1
+[2391.552] [BALL   ]   [RACE] GROUND winner='Devon Conway' @ Square Leg reach=612ms boundary=345ms -> FOUR
+[2391.675] [BALL   ]    0.4  Shikhar Dhawan   [1;32m   4[0m   5/1
+[2404.975] [BALL   ]    0.5  Shikhar Dhawan   [1;32m   6[0m   11/1
+[2418.417] [BALL   ]    0.6  Shikhar Dhawan   [0;37m •[0m   11/1
+[2421.837] [THREAD ] [T-1280] BOWLER 'Wanindu Hasaranga' DONE — 2W 11R econ=11.0
+[2422.058] [SCHED  ] CTX SAVE  → 'Wanindu Hasaranga': 1 overs, 11 runs, 2 wkts, econ=11.00
+[2422.114] [SCHED  ] RR QUANTUM EXPIRED (quantum=6 balls) → CTX SAVE 'Wanindu Hasaranga':
+[2422.134] [SCHED  ] OVER 1 COMPLETE: 'Wanindu Hasaranga' (1/4 overs)
+[2422.172] [SCORE  ] End of over 1: 11/1  (Extras: 0)  Intensity: 21
+[2462.340] [SCHED  ] CTX RESTORE ← 'Adil Rashid': 0 overs, 0 runs, 0 wkts
+[2462.432] [SCHED  ] CONTEXT SWITCH #22 -> 'Adil Rashid'  overs=0/4  economy=0.0
+[2462.451] [SCHED  ] Over 2: 'Adil Rashid' (91 km/h) | Scheduler: RR | Phase: LOW(powerplay) | Intensity: 22
+[2462.568] [THREAD ] Spawned BOWLER 'Adil Rashid' [T-1280]
+[2462.705] [THREAD ] [T-1280] BOWLER 'Adil Rashid' START — over 2
+[2462.899] [BALL   ]   [RACE] GROUND winner='Kieron Pollard' @ Long On reach=419ms boundary=352ms -> FOUR
+[2463.019] [BALL   ]    1.1  Joe Root         [1;32m   4[0m   15/1
+[2476.203] [BALL   ]   [RACE] GROUND winner='Sanju Samson' @ Wicket Keeper reach=40ms boundary=580ms -> ONE
+[2476.370] [BALL   ]    1.2  Joe Root         [1;37m   1[0m   16/1
+[2487.148] [BALL   ]    1.3  Shikhar Dhawan   [0;37m •[0m   16/1
+[2500.427] [BALL   ]   [RACE] GROUND winner='Sanju Samson' @ Wicket Keeper reach=40ms boundary=686ms -> ONE
+[2500.591] [BALL   ]    1.4  Shikhar Dhawan   [1;37m   1[0m   17/1
+[2511.027] [BALL   ]   [RACE] GROUND winner='David Warner' @ Fine Leg reach=297ms boundary=354ms -> TWO
+[2511.152] [BALL   ]    1.5  Joe Root         [1;37m   2[0m   19/1
+[2524.435] [BALL   ]    1.6  Joe Root         [0;37m •[0m   19/1
+[2534.863] [THREAD ] [T-1280] BOWLER 'Adil Rashid' DONE — 0W 8R econ=8.0
+[2535.084] [SCHED  ] CTX SAVE  → 'Adil Rashid': 1 overs, 8 runs, 0 wkts, econ=8.00
+[2535.147] [SCHED  ] RR QUANTUM EXPIRED (quantum=6 balls) → CTX SAVE 'Adil Rashid':
+[2535.162] [SCHED  ] OVER 2 COMPLETE: 'Adil Rashid' (1/4 overs)
+[2535.198] [SCORE  ] End of over 2: 19/1  (Extras: 0)  Intensity: 22
+[2575.390] [SCHED  ] CTX RESTORE ← 'Trent Boult': 0 overs, 0 runs, 0 wkts
+[2575.461] [SCHED  ] CONTEXT SWITCH #23 -> 'Trent Boult'  overs=0/4  economy=0.0
+[2575.483] [SCHED  ] Over 3: 'Trent Boult' (144 km/h) | Scheduler: RR | Phase: LOW(powerplay) | Intensity: 23
+[2575.583] [THREAD ] Spawned BOWLER 'Trent Boult' [T-1280]
+[2575.659] [THREAD ] [T-1280] BOWLER 'Trent Boult' START — over 3
+[2575.924] [BALL   ]    2.1  Shikhar Dhawan   [1;32m   6[0m   25/1
+[2589.217] [BALL   ]   [RACE] GROUND winner='Shahi Hope' @ Mid Wicket reach=416ms boundary=711ms -> THREE
+[2589.405] [BALL   ]    2.2  Shikhar Dhawan   [1;37m   3[0m   28/1
+[2599.845] [BALL   ]    2.2  Joe Root         [1;33m  Wd[0m   29/1
+[2613.086] [BALL   ]    2.3  Joe Root         [0;37m •[0m   29/1
+[2626.428] [BALL   ]    2.4  Joe Root         [0;37m •[0m   29/1
+[2639.639] [BALL   ]   [RACE] GROUND winner='Devon Conway' @ Square Leg reach=283ms boundary=555ms -> TWO
+[2639.795] [BALL   ]    2.5  Joe Root         [1;37m   2[0m   31/1
+[2653.013] [BALL   ]   [RACE] GROUND winner='Devon Conway' @ Square Leg reach=404ms boundary=358ms -> FOUR
+[2653.174] [BALL   ]    2.6  Joe Root         [1;32m   4[0m   35/1
+[2663.487] [THREAD ] [T-1280] BOWLER 'Trent Boult' DONE — 0W 16R econ=16.0
+[2663.610] [SCHED  ] CTX SAVE  → 'Trent Boult': 1 overs, 16 runs, 0 wkts, econ=16.00
+[2663.645] [SCHED  ] RR QUANTUM EXPIRED (quantum=6 balls) → CTX SAVE 'Trent Boult':
+[2663.657] [SCHED  ] OVER 3 COMPLETE: 'Trent Boult' (1/4 overs)
+[2663.681] [SCORE  ] End of over 3: 35/1  (Extras: 1)  Intensity: 23
+[2704.009] [SCHED  ] CTX RESTORE ← 'Mustafizur Rahman': 0 overs, 0 runs, 0 wkts
+[2704.099] [SCHED  ] CONTEXT SWITCH #24 -> 'Mustafizur Rahman'  overs=0/4  economy=0.0
+[2704.128] [SCHED  ] Over 4: 'Mustafizur Rahman' (140 km/h) | Scheduler: RR | Phase: LOW(powerplay) | Intensity: 22
+[2704.254] [THREAD ] Spawned BOWLER 'Mustafizur Rahman' [T-1280]
+[2704.432] [THREAD ] [T-1280] BOWLER 'Mustafizur Rahman' START — over 4
+[2704.784] [BALL   ]    3.1  Shikhar Dhawan   [0;37m •[0m   35/1
+[2718.079] [BALL   ]    3.1  Shikhar Dhawan   [1;33m  Wd[0m   36/1
+[2731.413] [BALL   ]   [RACE] GROUND winner='Kieron Pollard' @ Long On reach=550ms boundary=366ms -> FOUR
+[2731.543] [BALL   ]    3.2  Shikhar Dhawan   [1;32m   4[0m   40/1
+[2744.785] [BALL   ]    3.2  Shikhar Dhawan   [1;33m  Wd[0m   41/1
+[2758.072] [BALL   ]   [RACE] GROUND winner='Kieron Pollard' @ Long On reach=578ms boundary=738ms -> THREE
+[2758.185] [BALL   ]    3.3  Shikhar Dhawan   [1;37m   3[0m   44/1
+[2768.988] [BALL   ]    3.4  Joe Root         [0;37m •[0m   44/1
+[2782.420] [BALL   ]   [RACE] GROUND winner='Wanindu Hasaranga' @ Mid Off reach=484ms boundary=690ms -> THREE
+[2782.556] [BALL   ]    3.5  Joe Root         [1;37m   3[0m   47/1
+[2792.959] [BALL   ]   [RACE] GROUND winner='Jason Holder' @ Cover Point reach=154ms boundary=324ms -> ONE
+[2793.033] [BALL   ]    3.6  Shikhar Dhawan   [1;37m   1[0m   48/1
+[2803.418] [THREAD ] [T-1280] BOWLER 'Mustafizur Rahman' DONE — 0W 13R econ=13.0
+[2803.694] [SCHED  ] CTX SAVE  → 'Mustafizur Rahman': 1 overs, 13 runs, 0 wkts, econ=13.00
+[2803.778] [SCHED  ] RR QUANTUM EXPIRED (quantum=6 balls) → CTX SAVE 'Mustafizur Rahman':
+[2803.791] [SCHED  ] OVER 4 COMPLETE: 'Mustafizur Rahman' (1/4 overs)
+[2803.825] [SCORE  ] End of over 4: 48/1  (Extras: 3)  Intensity: 22
+[2843.979] [SCHED  ] CTX RESTORE ← 'Jason Holder': 0 overs, 0 runs, 0 wkts
+[2844.043] [SCHED  ] CONTEXT SWITCH #25 -> 'Jason Holder'  overs=0/4  economy=0.0
+[2844.062] [SCHED  ] Over 5: 'Jason Holder' (126 km/h) | Scheduler: RR | Phase: LOW(powerplay) | Intensity: 22
+[2844.178] [THREAD ] Spawned BOWLER 'Jason Holder' [T-1280]
+[2844.287] [THREAD ] [T-1280] BOWLER 'Jason Holder' START — over 5
+[2844.457] [BALL   ]   [RACE] GROUND winner='David Warner' @ Fine Leg reach=146ms boundary=665ms -> ONE
+[2844.549] [BALL   ]    4.1  Shikhar Dhawan   [1;37m   1[0m   49/1
+[2855.143] [BALL   ]   [RACE] GROUND winner='Wanindu Hasaranga' @ Third Man reach=738ms boundary=582ms -> FOUR
+[2855.386] [BALL   ]    4.2  Joe Root         [1;32m   4[0m   53/1
+[2868.808] [BALL   ]   [RACE] GROUND winner='Wanindu Hasaranga' @ Mid Off reach=281ms boundary=399ms -> TWO
+[2869.026] [BALL   ]    4.3  Joe Root         [1;37m   2[0m   55/1
+[2882.594] [BALL   ]    4.4  Joe Root         [1;32m   6[0m   61/1
+[2895.961] [BALL   ]   [RACE] GROUND winner='Sanju Samson' @ Wicket Keeper reach=40ms boundary=717ms -> ONE
+[2896.144] [BALL   ]    4.5  Joe Root         [1;37m   1[0m   62/1
+[2906.845] [BALL   ]    4.6  Shikhar Dhawan   [0;37m •[0m   62/1
+[2917.297] [THREAD ] [T-1280] BOWLER 'Jason Holder' DONE — 0W 14R econ=14.0
+[2917.566] [SCHED  ] CTX SAVE  → 'Jason Holder': 1 overs, 14 runs, 0 wkts, econ=14.00
+[2917.631] [SCHED  ] RR QUANTUM EXPIRED (quantum=6 balls) → CTX SAVE 'Jason Holder':
+[2917.645] [SCHED  ] OVER 5 COMPLETE: 'Jason Holder' (1/4 overs)
+[2917.683] [SCORE  ] End of over 5: 62/1  (Extras: 3)  Intensity: 22
+[2957.835] [SCHED  ] CTX RESTORE ← 'Wanindu Hasaranga': 1 overs, 11 runs, 2 wkts
+[2957.946] [SCHED  ] CONTEXT SWITCH #26 -> 'Wanindu Hasaranga'  overs=1/4  economy=11.0
+[2957.979] [SCHED  ] Over 6: 'Wanindu Hasaranga' (103 km/h) | Scheduler: RR | Phase: MEDIUM | Intensity: 21
+[2958.129] [THREAD ] Spawned BOWLER 'Wanindu Hasaranga' [T-1280]
+[2958.226] [THREAD ] [T-1280] BOWLER 'Wanindu Hasaranga' START — over 6
+[2958.503] [BALL   ]    5.1  Joe Root         [1;32m   6[0m   68/1
+[2971.853] [BALL   ]   [RACE] GROUND winner='Jason Holder' @ Cover Point reach=485ms boundary=550ms -> THREE
+[2972.047] [BALL   ]    5.2  Joe Root         [1;37m   3[0m   71/1
+[2982.688] [BALL   ]    5.3  Shikhar Dhawan   [0;37m •[0m   71/1
+[2996.070] [BALL   ]   [RACE] GROUND winner='Shahi Hope' @ Mid Wicket reach=420ms boundary=717ms -> THREE
+[2996.156] [BALL   ]    5.4  Shikhar Dhawan   [1;37m   3[0m   74/1
+[3006.599] [BALL   ]    5.5  Joe Root         [1;32m   6[0m   80/1
+[3020.043] [BALL   ] NEW BATSMAN: 'KL Rahul' coming to crease
+[3020.234] [THREAD ] Spawned BATSMAN 'KL Rahul' [T-5872]
+[3020.272] [BALL   ]    5.6  Joe Root         [1;31mW(B)[0m   80/2
+[3020.403] [THREAD ] [T-5872] BATSMAN 'KL Rahul' → sem_wait(crease) ...
+[3030.538] [THREAD ] [T-1280] BOWLER 'Wanindu Hasaranga' DONE — 3W 29R econ=14.5
+[3030.703] [SCHED  ] CTX SAVE  → 'Wanindu Hasaranga': 2 overs, 29 runs, 3 wkts, econ=14.50
+[3030.762] [SCHED  ] RR QUANTUM EXPIRED (quantum=6 balls) → CTX SAVE 'Wanindu Hasaranga':
+[3030.784] [SCHED  ] OVER 6 COMPLETE: 'Wanindu Hasaranga' (2/4 overs)
+[3030.826] [SCORE  ] End of over 6: 80/2  (Extras: 3)  Intensity: 21
+[3033.638] [THREAD ] [T-8576] BATSMAN 'Joe Root' LEFT crease -> 45(20 balls) | sem=1
+[3033.782] [THREAD ] [T-5872] BATSMAN 'KL Rahul' AT CREASE | wait=13.3ms | crease_sem=0
+[3071.205] [SCHED  ] CTX RESTORE ← 'Adil Rashid': 1 overs, 8 runs, 0 wkts
+[3071.293] [SCHED  ] CONTEXT SWITCH #27 -> 'Adil Rashid'  overs=1/4  economy=8.0
+[3071.317] [SCHED  ] Over 7: 'Adil Rashid' (91 km/h) | Scheduler: RR | Phase: MEDIUM | Intensity: 21
+[3071.523] [THREAD ] Spawned BOWLER 'Adil Rashid' [T-1280]
+[3071.652] [THREAD ] [T-1280] BOWLER 'Adil Rashid' START — over 7
+[3071.948] [BALL   ]   [RACE] GROUND winner='Shahi Hope' @ Mid Wicket reach=695ms boundary=677ms -> FOUR
+[3072.138] [BALL   ]    6.1  Shikhar Dhawan   [1;32m   4[0m   84/2
+[3085.674] [BALL   ]    6.2  Shikhar Dhawan   [1;32m   6[0m   90/2
+[3099.244] [BALL   ]    6.3  Shikhar Dhawan   [1;32m   6[0m   96/2
+[3112.568] [BALL   ]   [RACE] GROUND winner='Jason Holder' @ Cover Point reach=278ms boundary=738ms -> TWO
+[3112.618] [BALL   ]    6.4  Shikhar Dhawan   [1;37m   2[0m   98/2
+[3125.865] [BALL   ]   [RACE] GROUND winner='Jason Holder' @ Cover Point reach=309ms boundary=488ms -> TWO
+[3125.975] [BALL   ]    6.5  Shikhar Dhawan   [1;37m   2[0m   100/2
+[3139.316] [BALL   ]   [RACE] GROUND winner='Shahi Hope' @ Mid Wicket reach=593ms boundary=633ms -> THREE
+[3139.531] [BALL   ]    6.6  Shikhar Dhawan   [1;37m   3[0m   103/2
+[3149.955] [THREAD ] [T-1280] BOWLER 'Adil Rashid' DONE — 0W 31R econ=15.5
+[3150.198] [SCHED  ] CTX SAVE  → 'Adil Rashid': 2 overs, 31 runs, 0 wkts, econ=15.50
+[3150.264] [SCHED  ] RR QUANTUM EXPIRED (quantum=6 balls) → CTX SAVE 'Adil Rashid':
+[3150.282] [SCHED  ] OVER 7 COMPLETE: 'Adil Rashid' (2/4 overs)
+[3150.313] [SCORE  ] End of over 7: 103/2  (Extras: 3)  Intensity: 21
+[3190.548] [SCHED  ] CTX RESTORE ← 'Trent Boult': 1 overs, 16 runs, 0 wkts
+[3190.627] [SCHED  ] CONTEXT SWITCH #28 -> 'Trent Boult'  overs=1/4  economy=16.0
+[3190.650] [SCHED  ] Over 8: 'Trent Boult' (144 km/h) | Scheduler: RR | Phase: MEDIUM | Intensity: 19
+[3190.810] [THREAD ] Spawned BOWLER 'Trent Boult' [T-1280]
+[3190.893] [THREAD ] [T-1280] BOWLER 'Trent Boult' START — over 8
+[3191.185] [BALL   ]   [RACE] GROUND winner='Devon Conway' @ Square Leg reach=469ms boundary=709ms -> THREE
+[3191.337] [BALL   ]    7.1  Shikhar Dhawan   [1;37m   3[0m   106/2
+[3201.825] [BALL   ]   [RACE] GROUND winner='Jason Holder' @ Long Off reach=122ms boundary=712ms -> ONE
+[3202.045] [BALL   ]    7.2  KL Rahul         [1;37m   1[0m   107/2
+[3212.483] [BALL   ]   [RACE] GROUND winner='Devon Conway' @ Square Leg reach=180ms boundary=358ms -> ONE
+[3212.636] [BALL   ]    7.3  Shikhar Dhawan   [1;37m   1[0m   108/2
+[3222.983] [BALL   ]    7.4  KL Rahul         [0;37m •[0m   108/2
+[3236.374] [BALL   ]   [RACE] GROUND winner='Shahi Hope' @ Mid Wicket reach=720ms boundary=250ms -> FOUR
+[3236.508] [BALL   ]    7.5  KL Rahul         [1;32m   4[0m   112/2
+[3249.850] [BALL   ]   [RACE] GROUND winner='Shahi Hope' @ Mid Wicket reach=263ms boundary=528ms -> TWO
+[3250.000] [BALL   ]    7.6  KL Rahul         [1;37m   2[0m   114/2
+[3260.300] [THREAD ] [T-1280] BOWLER 'Trent Boult' DONE — 0W 27R econ=13.5
+[3260.417] [SCHED  ] CTX SAVE  → 'Trent Boult': 2 overs, 27 runs, 0 wkts, econ=13.50
+[3260.476] [SCHED  ] RR QUANTUM EXPIRED (quantum=6 balls) → CTX SAVE 'Trent Boult':
+[3260.493] [SCHED  ] OVER 8 COMPLETE: 'Trent Boult' (2/4 overs)
+[3260.519] [SCORE  ] End of over 8: 114/2  (Extras: 3)  Intensity: 19
+[3300.739] [SCHED  ] CTX RESTORE ← 'Mustafizur Rahman': 1 overs, 13 runs, 0 wkts
+[3300.822] [SCHED  ] CONTEXT SWITCH #29 -> 'Mustafizur Rahman'  overs=1/4  economy=13.0
+[3300.848] [SCHED  ] Over 9: 'Mustafizur Rahman' (140 km/h) | Scheduler: RR | Phase: MEDIUM | Intensity: 19
+[3301.013] [THREAD ] Spawned BOWLER 'Mustafizur Rahman' [T-1280]
+[3301.038] [THREAD ] [T-1280] BOWLER 'Mustafizur Rahman' START — over 9
+[3301.316] [BALL   ]   [RACE] GROUND winner='Jason Holder' @ Long Off reach=334ms boundary=579ms -> TWO
+[3301.519] [BALL   ]    8.1  Shikhar Dhawan   [1;37m   2[0m   116/2
+[3314.936] [BALL   ]    8.2  Shikhar Dhawan   [0;37m •[0m   116/2
+[3328.194] [BALL   ]   [RACE] GROUND winner='David Warner' @ Fine Leg reach=162ms boundary=273ms -> ONE
+[3328.340] [BALL   ]    8.3  Shikhar Dhawan   [1;37m   1[0m   117/2
+[3338.904] [BALL   ]    8.4  KL Rahul         [0;37m •[0m   117/2
+[3352.361] [BALL   ]   [RACE] AERIAL winner='Sanju Samson' @ Wicket Keeper reach=40ms flight=609ms — CAUGHT!
+[3352.497] [BALL   ]   c Sanju Samson       @ Wicket Keeper — 'KL Rahul' OUT
+[3352.535] [BALL   ] NEW BATSMAN: 'Andre Russell' coming to crease
+[3352.642] [THREAD ] Spawned BATSMAN 'Andre Russell' [T-3168]
+[3352.659] [BALL   ]    8.5  KL Rahul         [1;31mW(C)[0m   117/3
+[3352.718] [THREAD ] [T-3168] BATSMAN 'Andre Russell' → sem_wait(crease) ...
+[3365.742] [THREAD ] [T-5872] BATSMAN 'KL Rahul' LEFT crease -> 7(6 balls) | sem=1
+[3365.898] [THREAD ] [T-3168] BATSMAN 'Andre Russell' AT CREASE | wait=13.1ms | crease_sem=0
+[3365.993] [BALL   ]    8.6  Andre Russell    [0;37m •[0m   117/3
+[3375.970] [THREAD ] [T-1280] BOWLER 'Mustafizur Rahman' DONE — 2W 16R econ=8.0
+[3376.174] [SCHED  ] CTX SAVE  → 'Mustafizur Rahman': 2 overs, 16 runs, 2 wkts, econ=8.00
+[3376.209] [SCHED  ] RR QUANTUM EXPIRED (quantum=6 balls) → CTX SAVE 'Mustafizur Rahman':
+[3376.220] [SCHED  ] OVER 9 COMPLETE: 'Mustafizur Rahman' (2/4 overs)
+[3376.243] [SCORE  ] End of over 9: 117/3  (Extras: 3)  Intensity: 19
+[3416.537] [SCHED  ] CTX RESTORE ← 'Jason Holder': 1 overs, 14 runs, 0 wkts
+[3416.624] [SCHED  ] CONTEXT SWITCH #30 -> 'Jason Holder'  overs=1/4  economy=14.0
+[3416.651] [SCHED  ] Over 10: 'Jason Holder' (126 km/h) | Scheduler: RR | Phase: MEDIUM | Intensity: 21
+[3416.792] [THREAD ] Spawned BOWLER 'Jason Holder' [T-1280]
+[3416.949] [THREAD ] [T-1280] BOWLER 'Jason Holder' START — over 10
+[3417.175] [BALL   ]    9.0  Shikhar Dhawan   [1;33m  Nb[0m   118/3
+[3430.508] [BALL   ]   [RACE] GROUND winner='Jason Holder' @ Long Off reach=40ms boundary=257ms -> ONE
+[3430.677] [BALL   ]    9.1  Shikhar Dhawan   [1;37m   1[0m   119/3
+[3441.078] [BALL   ]   [RACE] GROUND winner='Sanju Samson' @ Wicket Keeper reach=40ms boundary=574ms -> ONE
+[3441.257] [BALL   ]    9.2  Andre Russell    [1;37m   1[0m   120/3
+[3451.732] [BALL   ]   [RACE] GROUND winner='Wanindu Hasaranga' @ Third Man reach=40ms boundary=571ms -> ONE
+[3451.883] [BALL   ]    9.3  Shikhar Dhawan   [1;37m   1[0m   121/3
+[3462.108] [BALL   ]   [RACE] GROUND winner='Wanindu Hasaranga' @ Third Man reach=574ms boundary=659ms -> THREE
+[3462.186] [BALL   ]    9.4  Andre Russell    [1;37m   3[0m   124/3
+[3472.641] [BALL   ]   [RACE] GROUND winner='Wanindu Hasaranga' @ Mid Off reach=308ms boundary=354ms -> TWO
+[3472.795] [BALL   ]    9.5  Shikhar Dhawan   [1;37m   2[0m   126/3
+[3486.245] [BALL   ]   [RACE] GROUND winner='Shahi Hope' @ Mid Wicket reach=40ms boundary=719ms -> ONE
+[3486.379] [BALL   ]    9.6  Shikhar Dhawan   [1;37m   1[0m   127/3
+[3496.547] [THREAD ] [T-1280] BOWLER 'Jason Holder' DONE — 0W 24R econ=12.0
+[3496.687] [SCHED  ] CTX SAVE  → 'Jason Holder': 2 overs, 24 runs, 0 wkts, econ=12.00
+[3496.728] [SCHED  ] RR QUANTUM EXPIRED (quantum=6 balls) → CTX SAVE 'Jason Holder':
+[3496.738] [SCHED  ] OVER 10 COMPLETE: 'Jason Holder' (2/4 overs)
+[3496.758] [SCORE  ] End of over 10: 127/3  (Extras: 4)  Intensity: 21
+[3537.157] [SCHED  ] CTX RESTORE ← 'Wanindu Hasaranga': 2 overs, 29 runs, 3 wkts
+[3537.244] [SCHED  ] CONTEXT SWITCH #31 -> 'Wanindu Hasaranga'  overs=2/4  economy=14.5
+[3537.270] [SCHED  ] Over 11: 'Wanindu Hasaranga' (103 km/h) | Scheduler: RR | Phase: MEDIUM | Intensity: 21
+[3537.428] [THREAD ] Spawned BOWLER 'Wanindu Hasaranga' [T-1280]
+[3537.498] [THREAD ] [T-1280] BOWLER 'Wanindu Hasaranga' START — over 11
+[3537.734] [BALL   ]   [RACE] GROUND winner='Sanju Samson' @ Wicket Keeper reach=40ms boundary=648ms -> ONE
+[3537.945] [BALL   ]   10.1  Shikhar Dhawan   [1;37m   1[0m   128/3
+[3548.383] [BALL   ]   10.1  Andre Russell    [1;33m  Nb[0m   129/3
+[3561.611] [BALL   ]   [RACE] GROUND winner='Wanindu Hasaranga' @ Mid Off reach=265ms boundary=735ms -> TWO
+[3561.736] [BALL   ]   10.2  Andre Russell    [1;37m   2[0m   131/3
+[3574.987] [BALL   ]   [RACE] GROUND winner='Jason Holder' @ Long Off reach=432ms boundary=634ms -> THREE
+[3575.143] [BALL   ]   10.3  Andre Russell    [1;37m   3[0m   134/3
+[3585.730] [BALL   ]   [RACE] GROUND winner='Wanindu Hasaranga' @ Mid Off reach=180ms boundary=726ms -> ONE
+[3585.916] [BALL   ]   10.4  Shikhar Dhawan   [1;37m   1[0m   135/3
+[3596.450] [BALL   ]   [RACE] GROUND winner='Kieron Pollard' @ Long On reach=434ms boundary=339ms -> FOUR
+[3596.588] [BALL   ]   10.5  Andre Russell    [1;32m   4[0m   139/3
+[3609.840] [BALL   ]   [RACE] GROUND winner='Kieron Pollard' @ Long On reach=65ms boundary=523ms -> ONE
+[3609.912] [BALL   ]   10.6  Andre Russell    [1;37m   1[0m   140/3
+[3620.166] [THREAD ] [T-1280] BOWLER 'Wanindu Hasaranga' DONE — 3W 42R econ=14.0
+[3620.333] [SCHED  ] CTX SAVE  → 'Wanindu Hasaranga': 3 overs, 42 runs, 3 wkts, econ=14.00
+[3620.406] [SCHED  ] RR QUANTUM EXPIRED (quantum=6 balls) → CTX SAVE 'Wanindu Hasaranga':
+[3620.423] [SCHED  ] OVER 11 COMPLETE: 'Wanindu Hasaranga' (3/4 overs)
+[3620.456] [SCORE  ] End of over 11: 140/3  (Extras: 5)  Intensity: 21
+[3660.770] [SCHED  ] CTX RESTORE ← 'Adil Rashid': 2 overs, 31 runs, 0 wkts
+[3660.835] [SCHED  ] CONTEXT SWITCH #32 -> 'Adil Rashid'  overs=2/4  economy=15.5
+[3660.855] [SCHED  ] Over 12: 'Adil Rashid' (91 km/h) | Scheduler: RR | Phase: MEDIUM | Intensity: 20
+[3660.991] [THREAD ] Spawned BOWLER 'Adil Rashid' [T-1280]
+[3661.022] [THREAD ] [T-1280] BOWLER 'Adil Rashid' START — over 12
+[3661.276] [BALL   ]   [RACE] GROUND winner='Kieron Pollard' @ Long On reach=296ms boundary=705ms -> TWO
+[3661.460] [BALL   ]   11.1  Andre Russell    [1;37m   2[0m   142/3
+[3674.785] [BALL   ]   [RACE] GROUND winner='Kieron Pollard' @ Long On reach=44ms boundary=455ms -> ONE
+[3674.890] [BALL   ]   11.2  Andre Russell    [1;37m   1[0m   143/3
+[3685.257] [BALL   ]   [RACE] GROUND winner='Jason Holder' @ Long Off reach=136ms boundary=621ms -> ONE
+[3685.417] [BALL   ]   11.3  Shikhar Dhawan   [1;37m   1[0m   144/3
+[3695.751] [BALL   ]   [RACE] GROUND winner='Wanindu Hasaranga' @ Mid Off reach=258ms boundary=293ms -> TWO
+[3695.929] [BALL   ]   11.4  Andre Russell    [1;37m   2[0m   146/3
+[3709.214] [BALL   ]   11.5  Andre Russell    [0;37m •[0m   146/3
+[3722.470] [BALL   ]   [RACE] GROUND winner='Jason Holder' @ Cover Point reach=255ms boundary=734ms -> TWO
+[3722.584] [BALL   ]   11.6  Andre Russell    [1;37m   2[0m   148/3
+[3732.725] [THREAD ] [T-1280] BOWLER 'Adil Rashid' DONE — 0W 39R econ=13.0
+[3732.924] [SCHED  ] CTX SAVE  → 'Adil Rashid': 3 overs, 39 runs, 0 wkts, econ=13.00
+[3732.943] [SCHED  ] RR QUANTUM EXPIRED (quantum=6 balls) → CTX SAVE 'Adil Rashid':
+[3732.948] [SCHED  ] OVER 12 COMPLETE: 'Adil Rashid' (3/4 overs)
+[3732.957] [SCORE  ] End of over 12: 148/3  (Extras: 5)  Intensity: 20
+[3773.190] [SCHED  ] CTX RESTORE ← 'Trent Boult': 2 overs, 27 runs, 0 wkts
+[3773.216] [SCHED  ] CONTEXT SWITCH #33 -> 'Trent Boult'  overs=2/4  economy=13.5
+[3773.221] [SCHED  ] Over 13: 'Trent Boult' (144 km/h) | Scheduler: RR | Phase: MEDIUM | Intensity: 20
+[3773.265] [THREAD ] Spawned BOWLER 'Trent Boult' [T-1280]
+[3773.332] [THREAD ] [T-1280] BOWLER 'Trent Boult' START — over 13
+[3773.415] [BALL   ]   [RACE] GROUND winner='Shahi Hope' @ Mid Wicket reach=247ms boundary=599ms -> TWO
+[3773.442] [BALL   ]   12.1  Shikhar Dhawan   [1;37m   2[0m   150/3
+[3786.734] [BALL   ]   [RACE] GROUND winner='Jason Holder' @ Cover Point reach=40ms boundary=708ms -> ONE
+[3786.859] [BALL   ]   12.2  Shikhar Dhawan   [1;37m   1[0m   151/3
+[3797.371] [BALL   ]   [RACE] GROUND winner='Sanju Samson' @ Wicket Keeper reach=40ms boundary=633ms -> ONE
+[3797.518] [BALL   ]   12.3  Andre Russell    [1;37m   1[0m   152/3
+[3807.968] [BALL   ]   [RACE] GROUND winner='Kieron Pollard' @ Long On reach=486ms boundary=693ms -> THREE
+[3808.139] [BALL   ]   12.4  Shikhar Dhawan   [1;37m   3[0m   155/3
+[3818.692] [BALL   ]   [RACE] GROUND winner='David Warner' @ Fine Leg reach=181ms boundary=679ms -> ONE
+[3818.873] [BALL   ]   12.5  Andre Russell    [1;37m   1[0m   156/3
+[3829.180] [BALL   ]   [RACE] GROUND winner='Jason Holder' @ Long Off reach=251ms boundary=340ms -> TWO
+[3829.360] [BALL   ]   12.6  Shikhar Dhawan   [1;37m   2[0m   158/3
+[3839.638] [THREAD ] [T-1280] BOWLER 'Trent Boult' DONE — 0W 37R econ=12.3
+[3839.909] [SCHED  ] CTX SAVE  → 'Trent Boult': 3 overs, 37 runs, 0 wkts, econ=12.33
+[3839.976] [SCHED  ] RR QUANTUM EXPIRED (quantum=6 balls) → CTX SAVE 'Trent Boult':
+[3839.990] [SCHED  ] OVER 13 COMPLETE: 'Trent Boult' (3/4 overs)
+[3840.029] [SCORE  ] End of over 13: 158/3  (Extras: 5)  Intensity: 20
+[3880.206] [SCHED  ] CTX RESTORE ← 'Mustafizur Rahman': 2 overs, 16 runs, 2 wkts
+[3880.264] [SCHED  ] CONTEXT SWITCH #34 -> 'Mustafizur Rahman'  overs=2/4  economy=8.0
+[3880.280] [SCHED  ] Over 14: 'Mustafizur Rahman' (140 km/h) | Scheduler: RR | Phase: MEDIUM | Intensity: 20
+[3880.417] [THREAD ] Spawned BOWLER 'Mustafizur Rahman' [T-1280]
+[3880.491] [THREAD ] [T-1280] BOWLER 'Mustafizur Rahman' START — over 14
+[3880.695] [BALL   ]   [RACE] GROUND winner='Wanindu Hasaranga' @ Third Man reach=605ms boundary=667ms -> THREE
+[3880.825] [BALL   ]   13.1  Andre Russell    [1;37m   3[0m   161/3
+[3891.128] [BALL   ]   [RACE] GROUND winner='Rahmanullah Gurbaz' @ Mid On reach=172ms boundary=318ms -> ONE
+[3891.202] [BALL   ]   13.2  Shikhar Dhawan   [1;37m   1[0m   162/3
+[3901.893] [BALL   ]   [RACE] GROUND winner='Sanju Samson' @ Wicket Keeper reach=40ms boundary=363ms -> ONE
+[3902.105] [BALL   ]   13.3  Andre Russell    [1;37m   1[0m   163/3
+[3912.482] [BALL   ] NEW BATSMAN: 'Alex Carey' coming to crease
+[3912.615] [THREAD ] Spawned BATSMAN 'Alex Carey' [T-0464]
+[3912.633] [BALL   ]   13.4  Shikhar Dhawan   [1;31mW(L)[0m   163/4
+[3912.641] [THREAD ] [T-0464] BATSMAN 'Alex Carey' → sem_wait(crease) ...
+[3925.756] [THREAD ] [T-3984] BATSMAN 'Shikhar Dhawan' LEFT crease -> 79(39 balls) | sem=1
+[3925.815] [THREAD ] [T-0464] BATSMAN 'Alex Carey' AT CREASE | wait=13.1ms | crease_sem=0
+[3925.917] [BALL   ]   [RACE] GROUND winner='Rahmanullah Gurbaz' @ Mid On reach=147ms boundary=360ms -> ONE
+[3926.047] [BALL   ]   13.5  Alex Carey       [1;37m   1[0m   164/4
+[3936.220] [BALL   ]   13.6  Andre Russell    [0;37m •[0m   164/4
+[3946.118] [THREAD ] [T-1280] BOWLER 'Mustafizur Rahman' DONE — 4W 22R econ=7.3
+[3946.313] [SCHED  ] CTX SAVE  → 'Mustafizur Rahman': 3 overs, 22 runs, 4 wkts, econ=7.33
+[3946.396] [SCHED  ] RR QUANTUM EXPIRED (quantum=6 balls) → CTX SAVE 'Mustafizur Rahman':
+[3946.437] [SCHED  ] OVER 14 COMPLETE: 'Mustafizur Rahman' (3/4 overs)
+[3946.494] [SCORE  ] End of over 14: 164/4  (Extras: 5)  Intensity: 20
+[3986.593] [SCHED  ] CTX RESTORE ← 'Jason Holder': 2 overs, 24 runs, 0 wkts
+[3986.620] [SCHED  ] CONTEXT SWITCH #35 -> 'Jason Holder'  overs=2/4  economy=12.0
+[3986.627] [SCHED  ] Over 15: 'Jason Holder' (126 km/h) | Scheduler: RR | Phase: MEDIUM | Intensity: 22
+[3986.659] [THREAD ] Spawned BOWLER 'Jason Holder' [T-1280]
+[3986.675] [THREAD ] [T-1280] BOWLER 'Jason Holder' START — over 15
+[3986.811] [BALL   ]   14.1  Alex Carey       [0;37m •[0m   164/4
+[3999.983] [BALL   ]   [RACE] GROUND winner='Sanju Samson' @ Wicket Keeper reach=40ms boundary=712ms -> ONE
+[4000.102] [BALL   ]   14.2  Alex Carey       [1;37m   1[0m   165/4
+[4010.540] [BALL   ]   14.2  Andre Russell    [1;33m  Nb[0m   166/4
+[4023.862] [BALL   ]   [RACE] GROUND winner='David Warner' @ Fine Leg reach=309ms boundary=676ms -> TWO
+[4024.078] [BALL   ]   14.3  Andre Russell    [1;37m   2[0m   168/4
+[4037.522] [BALL   ]   14.4  Andre Russell    [0;37m •[0m   168/4
+[4050.843] [BALL   ]   [RACE] GROUND winner='Jason Holder' @ Long Off reach=260ms boundary=689ms -> TWO
+[4050.978] [BALL   ]   14.5  Andre Russell    [1;37m   2[0m   170/4
+[4064.230] [BALL   ]   [RACE] GROUND winner='Shahi Hope' @ Mid Wicket reach=143ms boundary=653ms -> ONE
+[4064.513] [BALL   ]   14.6  Andre Russell    [1;37m   1[0m   171/4
+[4074.908] [THREAD ] [T-1280] BOWLER 'Jason Holder' DONE — 0W 31R econ=10.3
+[4075.083] [SCHED  ] CTX SAVE  → 'Jason Holder': 3 overs, 31 runs, 0 wkts, econ=10.33
+[4075.136] [SCHED  ] RR QUANTUM EXPIRED (quantum=6 balls) → CTX SAVE 'Jason Holder':
+[4075.151] [SCHED  ] OVER 15 COMPLETE: 'Jason Holder' (3/4 overs)
+[4075.182] [SCORE  ] End of over 15: 171/4  (Extras: 6)  Intensity: 22
+[4115.545] [SCHED  ] CTX RESTORE ← 'Wanindu Hasaranga': 3 overs, 42 runs, 3 wkts
+[4115.640] [SCHED  ] CONTEXT SWITCH #36 -> 'Wanindu Hasaranga'  overs=3/4  economy=14.0
+[4115.667] [SCHED  ] Over 16: 'Wanindu Hasaranga' (103 km/h) | Scheduler: RR | Phase: HIGH(death) | Intensity: 23
+[4115.802] [THREAD ] Spawned BOWLER 'Wanindu Hasaranga' [T-1280]
+[4115.969] [THREAD ] [T-1280] BOWLER 'Wanindu Hasaranga' START — over 16
+[4116.271] [BALL   ]   [RACE] GROUND winner='David Warner' @ Fine Leg reach=301ms boundary=600ms -> TWO
+[4116.497] [BALL   ]   15.1  Andre Russell    [1;37m   2[0m   173/4
+[4129.703] [BALL   ]   [RACE] GROUND winner='Devon Conway' @ Square Leg reach=113ms boundary=250ms -> ONE
+[4129.819] [BALL   ]   15.2  Andre Russell    [1;37m   1[0m   174/4
+[4140.168] [BALL   ]   [RACE] GROUND winner='Kieron Pollard' @ Long On reach=150ms boundary=298ms -> ONE
+[4140.415] [BALL   ]   15.3  Alex Carey       [1;37m   1[0m   175/4
+[4150.860] [BALL   ]   15.4  Andre Russell    [0;37m •[0m   175/4
+[4164.239] [BALL   ]   [RACE] GROUND winner='Kieron Pollard' @ Long On reach=40ms boundary=259ms -> ONE
+[4164.398] [BALL   ]   15.5  Andre Russell    [1;37m   1[0m   176/4
+[4174.679] [BALL   ]   15.6  Alex Carey       [1;32m   6[0m   182/4
+[4185.045] [THREAD ] [T-1280] BOWLER 'Wanindu Hasaranga' DONE — 3W 53R econ=13.2
+[4185.217] [SCHED  ] CTX SAVE  → 'Wanindu Hasaranga': 4 overs, 53 runs, 3 wkts, econ=13.25
+[4185.249] [SCHED  ] RR QUANTUM EXPIRED (quantum=6 balls) → CTX SAVE 'Wanindu Hasaranga':
+[4185.258] [SCHED  ] OVER 16 COMPLETE: 'Wanindu Hasaranga' (4/4 overs)
+[4185.277] [SCORE  ] End of over 16: 182/4  (Extras: 6)  Intensity: 23
+[4225.461] [SCHED  ] CTX RESTORE ← 'Adil Rashid': 3 overs, 39 runs, 0 wkts
+[4225.544] [SCHED  ] CONTEXT SWITCH #37 -> 'Adil Rashid'  overs=3/4  economy=13.0
+[4225.564] [SCHED  ] Over 17: 'Adil Rashid' (91 km/h) | Scheduler: RR | Phase: HIGH(death) | Intensity: 22
+[4225.701] [THREAD ] Spawned BOWLER 'Adil Rashid' [T-1280]
+[4225.765] [THREAD ] [T-1280] BOWLER 'Adil Rashid' START — over 17
+[4225.989] [BALL   ]   [RACE] GROUND winner='David Warner' @ Fine Leg reach=256ms boundary=293ms -> TWO
+[4226.137] [BALL   ]   16.1  Andre Russell    [1;37m   2[0m   184/4
+[4239.557] [BALL   ]   16.2  Andre Russell    [1;32m   6[0m   190/4
+[4252.863] [BALL   ]   [RACE] GROUND winner='Jason Holder' @ Long Off reach=131ms boundary=585ms -> ONE
+[4253.042] [BALL   ]   16.3  Andre Russell    [1;37m   1[0m   191/4
+[4263.659] [BALL   ]   16.4  Alex Carey       [0;37m •[0m   191/4
+[4276.861] [BALL   ]   [RACE] GROUND winner='Sanju Samson' @  reach=40ms boundary=677ms -> ONE
+[4276.970] [BALL   ]   16.5  Alex Carey       [1;37m   1[0m   192/4
+[4287.427] [BALL   ]   [RACE] GROUND winner='Wanindu Hasaranga' @ Third Man reach=437ms boundary=670ms -> THREE
+[4287.561] [BALL   ]   16.6  Andre Russell    [1;37m   3[0m   195/4
+[4297.854] [THREAD ] [T-1280] BOWLER 'Adil Rashid' DONE — 0W 52R econ=13.0
+[4298.109] [SCHED  ] CTX SAVE  → 'Adil Rashid': 4 overs, 52 runs, 0 wkts, econ=13.00
+[4298.166] [SCHED  ] RR QUANTUM EXPIRED (quantum=6 balls) → CTX SAVE 'Adil Rashid':
+[4298.185] [SCHED  ] OVER 17 COMPLETE: 'Adil Rashid' (4/4 overs)
+[4298.217] [SCORE  ] End of over 17: 195/4  (Extras: 6)  Intensity: 22
+[4338.481] [SCHED  ] CTX RESTORE ← 'Trent Boult': 3 overs, 37 runs, 0 wkts
+[4338.548] [SCHED  ] CONTEXT SWITCH #38 -> 'Trent Boult'  overs=3/4  economy=12.3
+[4338.565] [SCHED  ] Over 18: 'Trent Boult' (144 km/h) | Scheduler: RR | Phase: HIGH(death) | Intensity: 40
+[4338.693] [THREAD ] Spawned BOWLER 'Trent Boult' [T-1280]
+[4338.751] [THREAD ] [T-1280] BOWLER 'Trent Boult' START — over 18
+[4338.903] [BALL   ]   [RACE] GROUND winner='Shahi Hope' @ Mid Wicket reach=176ms boundary=727ms -> ONE
+[4338.963] [BALL   ]   17.1  Andre Russell    [1;37m   1[0m   196/4
+[4349.609] [BALL   ]   [RACE] GROUND winner='Jason Holder' @ Long Off reach=53ms boundary=691ms -> ONE
+[4349.827] [BALL   ]   17.2  Alex Carey       [1;37m   1[0m   197/4
+[4360.258] [BALL   ]   [RACE] GROUND winner='David Warner' @ Fine Leg reach=161ms boundary=310ms -> ONE
+[4360.420] [BALL   ]   17.3  Andre Russell    [1;37m   1[0m   198/4
+[4370.994] [BALL   ]   [RACE] GROUND winner='David Warner' @ Fine Leg reach=145ms boundary=361ms -> ONE
+[4371.090] [BALL   ]   17.4  Alex Carey       [1;37m   1[0m   199/4
+[4381.484] [BALL   ]   [RACE] GROUND winner='David Warner' @ Fine Leg reach=460ms boundary=652ms -> THREE
+[4381.683] [BALL   ]   17.5  Andre Russell    [1;37m   3[0m   202/4
+[4392.164] [BALL   ]   [RACE] GROUND winner='Devon Conway' @ Square Leg reach=544ms boundary=310ms -> FOUR
+[4392.289] [BALL   ]   17.6  Alex Carey       [1;32m   4[0m   206/4
+[4402.565] [THREAD ] [T-1280] BOWLER 'Trent Boult' DONE — 0W 48R econ=12.0
+[4402.780] [SCHED  ] CTX SAVE  → 'Trent Boult': 4 overs, 48 runs, 0 wkts, econ=12.00
+[4402.831] [SCHED  ] RR QUANTUM EXPIRED (quantum=6 balls) → CTX SAVE 'Trent Boult':
+[4402.851] [SCHED  ] OVER 18 COMPLETE: 'Trent Boult' (4/4 overs)
+[4402.905] [SCORE  ] End of over 18: 206/4  (Extras: 6)  Intensity: 40
+[4443.168] [SCHED  ] CTX RESTORE ← 'Mustafizur Rahman': 3 overs, 22 runs, 4 wkts
+[4443.237] [SCHED  ] CONTEXT SWITCH #39 -> 'Mustafizur Rahman'  overs=3/4  economy=7.3
+[4443.259] [SCHED  ] Over 19: 'Mustafizur Rahman' (140 km/h) | Scheduler: RR | Phase: HIGH(death) | Intensity: 37
+[4443.400] [THREAD ] Spawned BOWLER 'Mustafizur Rahman' [T-1280]
+[4443.576] [THREAD ] [T-1280] BOWLER 'Mustafizur Rahman' START — over 19
+[4443.833] [BALL   ]   [RACE] GROUND winner='Wanindu Hasaranga' @ Mid Off reach=616ms boundary=728ms -> THREE
+[4443.973] [BALL   ]   18.1  Andre Russell    [1;37m   3[0m   209/4
+[4454.576] [BALL   ]   [RACE] GROUND winner='David Warner' @ Fine Leg reach=689ms boundary=727ms -> THREE
+[4454.811] [BALL   ]   18.2  Alex Carey       [1;37m   3[0m   212/4
+[4465.398] [BALL   ]   18.3  Andre Russell    [0;37m •[0m   212/4
+[4478.600] [BALL   ]   [RACE] GROUND winner='Sanju Samson' @ Wicket Keeper reach=40ms boundary=333ms -> ONE
+[4478.665] [BALL   ]   18.4  Andre Russell    [1;37m   1[0m   213/4
+[4489.011] [BALL   ]   18.4  Alex Carey       [1;33m  Wd[0m   214/4
+[4502.390] [BALL   ]   [RACE] GROUND winner='Jason Holder' @ Cover Point reach=570ms boundary=662ms -> THREE
+[4502.615] [BALL   ]   18.5  Alex Carey       [1;37m   3[0m   217/4
+[4513.068] [BALL   ]   [RACE] GROUND winner='Shahi Hope' @ Mid Wicket reach=126ms boundary=675ms -> ONE
+[4513.237] [BALL   ]   18.6  Andre Russell    [1;37m   1[0m   218/4
+[4523.485] [THREAD ] [T-1280] BOWLER 'Mustafizur Rahman' DONE — 4W 34R econ=8.5
+[4523.694] [SCHED  ] CTX SAVE  → 'Mustafizur Rahman': 4 overs, 34 runs, 4 wkts, econ=8.50
+[4523.754] [SCHED  ] RR QUANTUM EXPIRED (quantum=6 balls) → CTX SAVE 'Mustafizur Rahman':
+[4523.772] [SCHED  ] OVER 19 COMPLETE: 'Mustafizur Rahman' (4/4 overs)
+[4523.806] [SCORE  ] End of over 19: 218/4  (Extras: 7)  Intensity: 37
+[4564.107] [SCHED  ] CTX RESTORE ← 'Jason Holder': 3 overs, 31 runs, 0 wkts
+[4564.181] [SCHED  ] CONTEXT SWITCH #40 -> 'Jason Holder'  overs=3/4  economy=10.3
+[4564.206] [SCHED  ] Over 20: 'Jason Holder' (126 km/h) | Scheduler: RR | Phase: HIGH(death) | Intensity: 26
+[4564.329] [THREAD ] Spawned BOWLER 'Jason Holder' [T-1280]
+[4564.477] [THREAD ] [T-1280] BOWLER 'Jason Holder' START — over 20
+[4564.730] [BALL   ]   [RACE] GROUND winner='Sanju Samson' @ Wicket Keeper reach=40ms boundary=324ms -> ONE
+[4564.865] [BALL   ]   19.1  Andre Russell    [1;37m   1[0m   219/4
+[4575.161] [BALL   ]   19.1  Alex Carey       [1;33m  Wd[0m   220/4
+[4588.422] [BALL   ]   [RACE] GROUND winner='Sanju Samson' @ Wicket Keeper reach=46ms boundary=348ms -> ONE
+[4588.502] [BALL   ]   19.2  Alex Carey       [1;37m   1[0m   221/4
+[4599.066] [BALL   ]   [RACE] GROUND winner='Sanju Samson' @ Wicket Keeper reach=40ms boundary=542ms -> ONE
+[4599.130] [BALL   ]   19.3  Andre Russell    [1;37m   1[0m   222/4
+[4609.514] [BALL   ]   19.4  Alex Carey       [0;37m •[0m   222/4
+[4614.568] [THREAD ] [UMPIRE] Match-end: all_out=0 chased=1
+[4614.640] [THREAD ] [UMPIRE] Exiting
+[4614.642] [THREAD ] [T-9392] FIELDER 'Sanju Samson' @ Wicket Keeper exit
+[4614.686] [THREAD ] [T-3168] BATSMAN 'Andre Russell' LEFT crease -> 60(38 balls) | sem=1
+[4614.719] [THREAD ] [T-2912] FIELDER 'Wanindu Hasaranga' @ Mid Off exit
+[4614.761] [THREAD ] [T-4800] FIELDER 'Devon Conway' @ Square Leg exit
+[4614.718] [THREAD ] [T-5616] FIELDER 'Jason Holder' @ Long Off exit
+[4614.737] [THREAD ] [T-3728] FIELDER 'Shahi Hope' @ Mid Wicket exit
+[4614.735] [THREAD ] [T-2096] FIELDER 'David Warner' @ Fine Leg exit
+[4614.738] [THREAD ] [T-1024] FIELDER 'Rahmanullah Gurbaz' @ Mid On exit
+[4614.746] [THREAD ] [T-8320] FIELDER 'Kieron Pollard' @ Long On exit
+[4614.763] [THREAD ] [T-7504] FIELDER 'Wanindu Hasaranga' @ Third Man exit
+[4614.707] [THREAD ] [T-0208] FIELDER 'Jason Holder' @ Cover Point exit
+[4619.705] [THREAD ] [T-1280] BOWLER 'Jason Holder' DONE — 0W 35R econ=9.5
+[4619.912] [SCHED  ] CTX SAVE  → 'Jason Holder': 3 overs, 35 runs, 0 wkts, econ=11.67
+[4619.958] [SCHED  ] RR QUANTUM EXPIRED (quantum=6 balls) → CTX SAVE 'Jason Holder':
+[4619.976] [SCHED  ] OVER 20 COMPLETE: 'Jason Holder' (3/4 overs)
+[4620.018] [SCORE  ] End of over 20: 222/4  (Extras: 8)  Intensity: 26
+[4622.640] [THREAD ] [T-0464] BATSMAN 'Alex Carey' LEFT crease -> 23(14 balls) | sem=2
+[4660.672] [THREAD ] All fielder threads joined
+[4660.784] [INFO   ] === INNINGS 2 COMPLETE: 222/4 in 20 overs ===
+[4661.223] [SCHED  ] === Scheduler Stats === Type: Round Robin | Context Switches: 40 | Avg Wait: 0.0ms
